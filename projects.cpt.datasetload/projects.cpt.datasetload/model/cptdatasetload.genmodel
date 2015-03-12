@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/projects.cpt.datasetload/src" modelPluginID="projects.cpt.datasetload"
+    modelName="Cptdatasetload" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false"
+    usedGenPackages="../../com.misc.common.moplaf.datasetload.emf/model/datasetload.genmodel#//datasetload ../../com.misc.common.moplaf.datasetload.ora.emf/model/datasetloadora.genmodel#//DatasetLoadOra"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>cptdatasetload.ecore</foreignModel>
+  <genPackages prefix="CptDatasetLoad" basePackage="com.misc.projects" disposableProviderFactory="true"
+      ecorePackage="cptdatasetload.ecore#/">
+    <genClasses ecoreClass="cptdatasetload.ecore#//FPD">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cptdatasetload.ecore#//FPD/MasterData"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cptdatasetload.ecore#//FPD/SortingPlansSets"/>
+    </genClasses>
+    <genClasses ecoreClass="cptdatasetload.ecore#//FPDTableGroup">
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference cptdatasetload.ecore#//FPDTableGroup/FPD"/>
+    </genClasses>
+    <genClasses ecoreClass="cptdatasetload.ecore#//FPDMasterData">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cptdatasetload.ecore#//FPDMasterData/SortingLevelTable"/>
+    </genClasses>
+    <genClasses ecoreClass="cptdatasetload.ecore#//FPDSortingPlansSet">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cptdatasetload.ecore#//FPDSortingPlansSet/FromDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cptdatasetload.ecore#//FPDSortingPlansSet/ToDate"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cptdatasetload.ecore#//FPDSortingPlansSet/SortingPlansTable"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cptdatasetload.ecore#//FPDSortingPlansSet/SortingPlanOutputsTable"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cptdatasetload.ecore#//FPDSortingPlansSet/SortingPlanInputsTable"/>
+    </genClasses>
+    <genClasses ecoreClass="cptdatasetload.ecore#//FPDSortingPanRow">
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference cptdatasetload.ecore#//FPDSortingPanRow/FPDSortingPlanTable"/>
+    </genClasses>
+    <genClasses ecoreClass="cptdatasetload.ecore#//FPDSortingPlanTable">
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference cptdatasetload.ecore#//FPDSortingPlanTable/FPDSortingPlansSet"/>
+    </genClasses>
+    <genClasses ecoreClass="cptdatasetload.ecore#//MasterDataTable"/>
+    <genClasses ecoreClass="cptdatasetload.ecore#//SortingLevelsTable">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cptdatasetload.ecore#//SortingLevelsTable/SortinglevelRow"/>
+      <genOperations ecoreOperation="cptdatasetload.ecore#//SortingLevelsTable/getRow">
+        <genParameters ecoreParameter="cptdatasetload.ecore#//SortingLevelsTable/getRow/sk"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="cptdatasetload.ecore#//SortingPlansTable">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cptdatasetload.ecore#//SortingPlansTable/SortingPlansRow"/>
+      <genOperations ecoreOperation="cptdatasetload.ecore#//SortingPlansTable/getRow">
+        <genParameters ecoreParameter="cptdatasetload.ecore#//SortingPlansTable/getRow/sk"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="cptdatasetload.ecore#//SortingPlanInputTable">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cptdatasetload.ecore#//SortingPlanInputTable/SortingPlanInputRow"/>
+      <genOperations ecoreOperation="cptdatasetload.ecore#//SortingPlanInputTable/getRow">
+        <genParameters ecoreParameter="cptdatasetload.ecore#//SortingPlanInputTable/getRow/sortingPlanSk"/>
+        <genParameters ecoreParameter="cptdatasetload.ecore#//SortingPlanInputTable/getRow/sortingLevelSk"/>
+        <genParameters ecoreParameter="cptdatasetload.ecore#//SortingPlanInputTable/getRow/mechanizationLevelSk"/>
+        <genParameters ecoreParameter="cptdatasetload.ecore#//SortingPlanInputTable/getRow/throughputTypeSk"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="cptdatasetload.ecore#//SortingPlanOutputTable">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cptdatasetload.ecore#//SortingPlanOutputTable/SortingPlanOutputRow"/>
+      <genOperations ecoreOperation="cptdatasetload.ecore#//SortingPlanOutputTable/getRow">
+        <genParameters ecoreParameter="cptdatasetload.ecore#//SortingPlanOutputTable/getRow/sortingPlanSk"/>
+        <genParameters ecoreParameter="cptdatasetload.ecore#//SortingPlanOutputTable/getRow/sortingLevelSk"/>
+        <genParameters ecoreParameter="cptdatasetload.ecore#//SortingPlanOutputTable/getRow/mechanizationLevelSk"/>
+        <genParameters ecoreParameter="cptdatasetload.ecore#//SortingPlanOutputTable/getRow/throughputTypeSk"/>
+        <genParameters ecoreParameter="cptdatasetload.ecore#//SortingPlanOutputTable/getRow/destination"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="cptdatasetload.ecore#//SortingLevelRow" labelFeature="#//CptDatasetLoad/SortingLevelRow/Description">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cptdatasetload.ecore#//SortingLevelRow/SortingLevelSk"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cptdatasetload.ecore#//SortingLevelRow/SortingLevelName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cptdatasetload.ecore#//SortingLevelRow/Description"/>
+    </genClasses>
+    <genClasses ecoreClass="cptdatasetload.ecore#//SortingPlanRow" labelFeature="#//CptDatasetLoad/SortingPlanRow/Description">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cptdatasetload.ecore#//SortingPlanRow/SortingPlanSk"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cptdatasetload.ecore#//SortingPlanRow/SortingPlanName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cptdatasetload.ecore#//SortingPlanRow/SortingLevelPLAGGSk"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cptdatasetload.ecore#//SortingPlanRow/Inputs"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cptdatasetload.ecore#//SortingPlanRow/Outputs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cptdatasetload.ecore#//SortingPlanRow/Description"/>
+    </genClasses>
+    <genClasses ecoreClass="cptdatasetload.ecore#//SortingPlanOutputRow" labelFeature="#//CptDatasetLoad/SortingPlanOutputRow/Description">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cptdatasetload.ecore#//SortingPlanOutputRow/SortingPlanSk"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cptdatasetload.ecore#//SortingPlanOutputRow/SortingLevelAVCSSk"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cptdatasetload.ecore#//SortingPlanOutputRow/MechanizationLevelSk"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cptdatasetload.ecore#//SortingPlanOutputRow/ThroughputTypeSk"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cptdatasetload.ecore#//SortingPlanOutputRow/DestinationSk"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cptdatasetload.ecore#//SortingPlanOutputRow/SortingPlan"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference cptdatasetload.ecore#//SortingPlanOutputRow/SortingLevel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cptdatasetload.ecore#//SortingPlanOutputRow/Description"/>
+    </genClasses>
+    <genClasses ecoreClass="cptdatasetload.ecore#//SortingPlanInputRow" labelFeature="#//CptDatasetLoad/SortingPlanInputRow/Description">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cptdatasetload.ecore#//SortingPlanInputRow/SortingPlanSk"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cptdatasetload.ecore#//SortingPlanInputRow/SortingLevelAVCSSk"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cptdatasetload.ecore#//SortingPlanInputRow/MechanizationLevelSk"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cptdatasetload.ecore#//SortingPlanInputRow/ThroughputTypeSk"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cptdatasetload.ecore#//SortingPlanInputRow/SortingPlan"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference cptdatasetload.ecore#//SortingPlanInputRow/SortingLevel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cptdatasetload.ecore#//SortingPlanInputRow/Description"/>
+    </genClasses>
+    <genClasses ecoreClass="cptdatasetload.ecore#//FPO">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cptdatasetload.ecore#//FPO/ForecastUploads"/>
+    </genClasses>
+    <genClasses ecoreClass="cptdatasetload.ecore#//FPOForecastUpload">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cptdatasetload.ecore#//FPOForecastUpload/FromDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cptdatasetload.ecore#//FPOForecastUpload/ToDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cptdatasetload.ecore#//FPOForecastUpload/Kind"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cptdatasetload.ecore#//FPOForecastUpload/ForecastTable"/>
+    </genClasses>
+    <genClasses ecoreClass="cptdatasetload.ecore#//FPOForecastBucket">
+      <genFeatures createChild="false" propertyCategory="1 Time" ecoreFeature="ecore:EAttribute cptdatasetload.ecore#//FPOForecastBucket/BucketDate"/>
+      <genFeatures createChild="false" propertyCategory="1 Time" ecoreFeature="ecore:EAttribute cptdatasetload.ecore#//FPOForecastBucket/BucketBeginTime"/>
+      <genFeatures createChild="false" propertyCategory="1 Time" ecoreFeature="ecore:EAttribute cptdatasetload.ecore#//FPOForecastBucket/BucketEndTime"/>
+      <genFeatures createChild="false" propertyCategory="1 Time" ecoreFeature="ecore:EAttribute cptdatasetload.ecore#//FPOForecastBucket/BucketHour"/>
+      <genFeatures createChild="false" propertyCategory="2 Forecast Dimension" ecoreFeature="ecore:EAttribute cptdatasetload.ecore#//FPOForecastBucket/Customer"/>
+      <genFeatures createChild="false" propertyCategory="2 Forecast Dimension" ecoreFeature="ecore:EAttribute cptdatasetload.ecore#//FPOForecastBucket/FirstSortingImc"/>
+      <genFeatures createChild="false" propertyCategory="2 Forecast Dimension" ecoreFeature="ecore:EAttribute cptdatasetload.ecore#//FPOForecastBucket/IntakeChannel"/>
+      <genFeatures createChild="false" propertyCategory="2 Forecast Dimension" propertyDescription=""
+          ecoreFeature="ecore:EAttribute cptdatasetload.ecore#//FPOForecastBucket/IntakeLocation"/>
+      <genFeatures createChild="false" propertyCategory="2 Forecast Dimension" propertyDescription=""
+          ecoreFeature="ecore:EAttribute cptdatasetload.ecore#//FPOForecastBucket/DayPlus"/>
+      <genFeatures createChild="false" propertyCategory="2 Forecast Dimension" propertyDescription=""
+          ecoreFeature="ecore:EAttribute cptdatasetload.ecore#//FPOForecastBucket/ThroughputType"/>
+      <genFeatures createChild="false" propertyCategory="2 Forecast Dimension" propertyDescription=""
+          ecoreFeature="ecore:EAttribute cptdatasetload.ecore#//FPOForecastBucket/MechanizationLevel"/>
+      <genFeatures createChild="false" propertyCategory="2 Forecast Dimension" propertyDescription=""
+          ecoreFeature="ecore:EAttribute cptdatasetload.ecore#//FPOForecastBucket/SortingLevelAGG"/>
+      <genFeatures createChild="false" propertyCategory="3 Volume" propertyDescription=""
+          ecoreFeature="ecore:EAttribute cptdatasetload.ecore#//FPOForecastBucket/Volume"/>
+      <genFeatures createChild="false" propertyCategory="0 Bucket" ecoreFeature="ecore:EAttribute cptdatasetload.ecore#//FPOForecastBucket/PublicationID"/>
+      <genFeatures createChild="false" propertyCategory="0 Bucket" propertyDescription=""
+          ecoreFeature="ecore:EAttribute cptdatasetload.ecore#//FPOForecastBucket/TimeSeriesID"/>
+      <genFeatures createChild="false" propertyCategory="0 Bucket" propertyDescription=""
+          ecoreFeature="ecore:EAttribute cptdatasetload.ecore#//FPOForecastBucket/BucketID"/>
+    </genClasses>
+    <genClasses ecoreClass="cptdatasetload.ecore#//FPOForecastBuckets">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cptdatasetload.ecore#//FPOForecastBuckets/ForecastRows"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

@@ -1,0 +1,14 @@
+Note: to describe the dependency graph
+  Use indentation to show Parent-child relationship
+  Use sequence to show the antecedents
+
+  PropagatorCalcScenarioRefreshSelectedSortingPlan // create/remove the SortingPlans
+    PropagatorCalcSortingPlanRefresh               // create/remove the inputs/outputs of a sorting plan
+  PropagatorLayerSortingPlansRefresh               // create/remove the inputs/outputs of the sorting plans
+  PropagatorCalcScenarioRefreshSortingPlanProducts // create/remove the (sortinplan) products
+  PropagatorCalcScenarioRefreshEndProducts         // create/remove the endproducts
+    PropagatorCalcEndProductRefreshSortingPlans    // create/remove the endproducts for a sorting plan
+  PropagatorLayerEndProductRefreshSortingPlans     // create/remove the endproducts for the sorting plans
+PropagatorScopeScenario
+
+  

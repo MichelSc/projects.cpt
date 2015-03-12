@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated forecast -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="com.misc.projects.Forecast.presentation.ForecastModelWizardID"
+            name="%_UI_ForecastModelWizard_label"
+            class="com.misc.projects.Forecast.presentation.ForecastModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ForecastModelFile.gif">
+         <description>%_UI_ForecastModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated forecast -->
+      <editor
+            id="com.misc.projects.Forecast.presentation.ForecastEditorID"
+            name="%_UI_ForecastEditor_label"
+            icon="icons/full/obj16/ForecastModelFile.gif"
+            extensions="forecast"
+            class="com.misc.projects.Forecast.presentation.ForecastEditor"
+            contributorClass="com.misc.projects.Forecast.presentation.ForecastActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

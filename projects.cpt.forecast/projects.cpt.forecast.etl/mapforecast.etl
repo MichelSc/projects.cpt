@@ -1,0 +1,64 @@
+// this etl expects following items from its invocation context
+//   - property ForecastMappingName
+//   - model reference IN, conforms to "http://com.misc.projects.cpt.datasetload"
+//   - model reference OUT, conform to "http://com.misc.projects.cpt.forecast"
+//   - model reference MAP, conform to "http://com.misc.projects.cpt.forecast"
+
+pre {
+	"Map Forecast called".println();
+	("..uses mapping:"+ForecastMappingName).println();
+	var result  : new OUT!MappingResult;
+	var scenario = MAP!Scenario.all.first();
+	var mapping = scenario.Mappings.selectOne(m|m.Name=ForecastMappingName);
+	("Map Forecast mapping got").println();
+	("..number of elements "+mapping.Elements.size()).println();
+	var nofBucketsToMap = 0;
+	var nofBucketsMapped = 0;
+	var today = new Native("java.util.Date")();
+}
+
+
+rule ForecastBucketToSourceVolume
+	transform bucket : IN!FPOForecastBucket 
+	to source : OUT!SourceBucket {
+	
+	nofBucketsToMap = nofBucketsToMap+1;
+
+	// get the mapping element	
+    var mappingElement = mapping.Elements.selectOne(e| e.FromCustomer        = bucket.Customer
+                                                   and e.FromFirstSortingImc = bucket.FirstSortingImc
+                                                   and e.FromSortingLevelAGG = bucket.SortingLevelAGG);
+    
+    if ( mappingElement.isDefined() ){
+        // copied dimensions
+    	source.BucketBeginTime    = bucket.BucketBeginTime;
+    	source.BucketEndTime      = bucket.BucketEndTime;
+    	source.ThroughputType     = bucket.ThroughputType;
+    	source.MechanizationLevel = bucket.MechanizationLevel;
+    	// mapped dimensions
+    	source.SortingLevelAVCS   = mappingElement.ToSortingLevelAVCS;
+    	source.SortingImc         = mappingElement.ToSortingImc;
+    	// derived dimension
+    	var bucketDateAsTime         = bucket.BucketDate.getTime();
+    	var bucketDeliveryDateAsTime = bucketDateAsTime+bucket.DayPlus*1000*60*60*24;
+    	var bucketDeliveryDate       = new Native("java.util.Date")(bucketDeliveryDateAsTime);
+    	source.DeliveryDate       = bucketDeliveryDate;
+    	source.Volume             = bucket.Volume;
+    	// own the source	
+		result.Sources.add(source);
+		// count 
+		nofBucketsMapped = nofBucketsMapped+1;
+     } else {
+        delete source;
+     }
+}
+
+post {
+  "Map Forecast done".println();
+  ("..nof Buckets to map "+nofBucketsToMap).println();
+  ("..nof Buckets mapped "+nofBucketsMapped).println();
+  var today = new Native("java.util.Date")();
+  result.Mapped = today;
+  result.NumberOfBucketsToMap = nofBucketsToMap;
+  result.NumberOfBucketsMapped = nofBucketsMapped;
+}

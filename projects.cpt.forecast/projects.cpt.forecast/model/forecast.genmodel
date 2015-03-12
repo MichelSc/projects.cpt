@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/projects.cpt.forecast/src" modelPluginID="projects.cpt.forecast"
+    modelName="Forecast" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false"
+    usedGenPackages="../../projects.cpt.datasetload/model/cptdatasetload.genmodel#//CptDatasetLoad ../../com.misc.common.moplaf.datasetload.emf/model/datasetload.genmodel#//datasetload ../../com.misc.common.moplaf.datasetload.ora.emf/model/datasetloadora.genmodel#//DatasetLoadOra"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>forecast.ecore</foreignModel>
+  <genPackages prefix="Forecast" basePackage="com.misc.projects" disposableProviderFactory="true"
+      ecorePackage="forecast.ecore#/">
+    <genClasses ecoreClass="forecast.ecore#//Scenario">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference forecast.ecore#//Scenario/Selections"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forecast.ecore#//Scenario/Name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference forecast.ecore#//Scenario/Mappings"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference forecast.ecore#//Scenario/ChildScenarios"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference forecast.ecore#//Scenario/MappingResults"/>
+    </genClasses>
+    <genClasses ecoreClass="forecast.ecore#//FPOForecastBucketsSelection">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference forecast.ecore#//FPOForecastBucketsSelection/Upload"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference forecast.ecore#//FPOForecastBucketsSelection/SelectedBuckets"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forecast.ecore#//FPOForecastBucketsSelection/SelectBucketDates"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forecast.ecore#//FPOForecastBucketsSelection/SelectThroughputTypes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forecast.ecore#//FPOForecastBucketsSelection/SelectMechanizationLevel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forecast.ecore#//FPOForecastBucketsSelection/SelectSortingLevelAGGs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forecast.ecore#//FPOForecastBucketsSelection/SelectFirstSortingIMCs"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute forecast.ecore#//FPOForecastBucketsSelection/SelectionSize"/>
+      <genOperations ecoreOperation="forecast.ecore#//FPOForecastBucketsSelection/isSelected">
+        <genParameters ecoreParameter="forecast.ecore#//FPOForecastBucketsSelection/isSelected/bucket"/>
+      </genOperations>
+      <genOperations ecoreOperation="forecast.ecore#//FPOForecastBucketsSelection/refreshSelectedBuckets"/>
+      <genOperations ecoreOperation="forecast.ecore#//FPOForecastBucketsSelection/sortSelectedBuckets"/>
+    </genClasses>
+    <genClasses ecoreClass="forecast.ecore#//SourceBucket">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forecast.ecore#//SourceBucket/BucketBeginTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forecast.ecore#//SourceBucket/BucketEndTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forecast.ecore#//SourceBucket/Volume"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forecast.ecore#//SourceBucket/ThroughputType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forecast.ecore#//SourceBucket/SortingLevelAVCS"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forecast.ecore#//SourceBucket/MechanizationLevel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forecast.ecore#//SourceBucket/SortingImc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forecast.ecore#//SourceBucket/DeliveryDate"/>
+    </genClasses>
+    <genClasses ecoreClass="forecast.ecore#//ForecastMapping">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference forecast.ecore#//ForecastMapping/Elements"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forecast.ecore#//ForecastMapping/Name"/>
+    </genClasses>
+    <genClasses ecoreClass="forecast.ecore#//ForecastMappingElement">
+      <genFeatures createChild="false" propertyCategory="1 from" ecoreFeature="ecore:EAttribute forecast.ecore#//ForecastMappingElement/FromCustomer"/>
+      <genFeatures createChild="false" propertyCategory="1 from" ecoreFeature="ecore:EAttribute forecast.ecore#//ForecastMappingElement/FromFirstSortingImc"/>
+      <genFeatures createChild="false" propertyCategory="1 from" ecoreFeature="ecore:EAttribute forecast.ecore#//ForecastMappingElement/FromIntakeLocation"/>
+      <genFeatures createChild="false" propertyCategory="1 from" ecoreFeature="ecore:EAttribute forecast.ecore#//ForecastMappingElement/FromSortingLevelAGG"/>
+      <genFeatures createChild="false" propertyCategory="2 to" ecoreFeature="ecore:EAttribute forecast.ecore#//ForecastMappingElement/ToSortingImc"/>
+      <genFeatures createChild="false" propertyCategory="2 to" ecoreFeature="ecore:EAttribute forecast.ecore#//ForecastMappingElement/ToSortingLevelAVCS"/>
+    </genClasses>
+    <genClasses ecoreClass="forecast.ecore#//MappingResult">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference forecast.ecore#//MappingResult/ForecastMapping"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference forecast.ecore#//MappingResult/ForecastSelection"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference forecast.ecore#//MappingResult/Sources"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute forecast.ecore#//MappingResult/NumberOfBucketsMapped"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute forecast.ecore#//MappingResult/NumberOfBucketsToMap"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute forecast.ecore#//MappingResult/Mapped"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

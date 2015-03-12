@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/CPT/src" modelPluginID="CPT" modelName="CPT" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>CPT.ecore</foreignModel>
+  <genPackages prefix="Cpt" disposableProviderFactory="true" ecorePackage="CPT.ecore#/">
+    <genClasses ecoreClass="CPT.ecore#//Domain">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CPT.ecore#//Domain/Name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CPT.ecore#//Domain/DataSets"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CPT.ecore#//Domain/Problems"/>
+    </genClasses>
+    <genClasses ecoreClass="CPT.ecore#//DataSet">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CPT.ecore#//DataSet/Name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CPT.ecore#//DataSet/Products"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CPT.ecore#//DataSet/SortingPlans"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CPT.ecore#//DataSet/SortingSplits"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CPT.ecore#//DataSet/Volumes"/>
+    </genClasses>
+    <genClasses ecoreClass="CPT.ecore#//Product">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CPT.ecore#//Product/Name"/>
+    </genClasses>
+    <genClasses ecoreClass="CPT.ecore#//SortingPlan">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CPT.ecore#//SortingPlan/Outputs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CPT.ecore#//SortingPlan/Name"/>
+    </genClasses>
+    <genClasses ecoreClass="CPT.ecore#//SortingSplit">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CPT.ecore#//SortingSplit/EndProducts"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CPT.ecore#//SortingSplit/Name"/>
+    </genClasses>
+    <genClasses ecoreClass="CPT.ecore#//Volume">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CPT.ecore#//Volume/Product"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CPT.ecore#//Volume/Volume"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CPT.ecore#//Volume/SortingSplit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CPT.ecore#//Volume/SourceTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CPT.ecore#//Volume/DeliveryDate"/>
+    </genClasses>
+    <genClasses ecoreClass="CPT.ecore#//SortingSplitProduct">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CPT.ecore#//SortingSplitProduct/EndProduct"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CPT.ecore#//SortingSplitProduct/Weight"/>
+    </genClasses>
+    <genClasses ecoreClass="CPT.ecore#//UnsortedProduct">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CPT.ecore#//UnsortedProduct/EndProducts"/>
+    </genClasses>
+    <genClasses ecoreClass="CPT.ecore#//EndProduct">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CPT.ecore#//EndProduct/CutOffHours"/>
+    </genClasses>
+    <genClasses ecoreClass="CPT.ecore#//Problem">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CPT.ecore#//Problem/SortingPlans"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CPT.ecore#//Problem/DataSet"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CPT.ecore#//Problem/Volumes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CPT.ecore#//Problem/Name"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

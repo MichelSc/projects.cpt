@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="cpt" nsURI="www.michel.be/cpt" nsPrefix="cpt">
+  <eClassifiers xsi:type="ecore:EClass" name="Domain">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="DataSets" upperBound="-1"
+        eType="#//DataSet" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Problems" eType="#//Problem"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataSet">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Products" upperBound="-1"
+        eType="#//Product" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SortingPlans" upperBound="-1"
+        eType="#//SortingPlan" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SortingSplits" upperBound="-1"
+        eType="#//SortingSplit" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Volumes" eType="#//Volume"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Product">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SortingPlan">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Outputs" upperBound="-1"
+        eType="#//Product"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SortingSplit">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="EndProducts" upperBound="-1"
+        eType="#//SortingSplitProduct" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Volume">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Product" lowerBound="1"
+        eType="#//UnsortedProduct"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Volume" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SortingSplit" lowerBound="1"
+        eType="#//SortingSplit"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="SourceTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="DeliveryDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SortingSplitProduct">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="EndProduct" eType="#//EndProduct"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Weight" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UnsortedProduct" eSuperTypes="#//Product">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="EndProducts" upperBound="-1"
+        eType="#//EndProduct"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EndProduct" eSuperTypes="#//Product">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="CutOffHours" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Problem">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SortingPlans" upperBound="-1"
+        eType="#//SortingPlan"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="DataSet" lowerBound="1"
+        eType="#//DataSet"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Volumes" upperBound="-1"
+        eType="#//Volume"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" name="sortingplans" version="8.1.0">
+  <ownedViewpoints name="projects.cpt.sortingplans.viewpointy" label="Standard viewpoint for SortingPlans">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="projects.cpt.sortingplans.diagram" label="Standard diagram for sortingplans" domainClass="SortingPlans.Scenario">
+      <metamodel href="../../projects.cpt.sortingplans/model/sortingplans.ecore#/"/>
+      <defaultLayer name="Default">
+        <nodeMappings name="projects.cpt.sortingplans.diagram.sortingplan" label="Node SortingPlan for diagram SortingPlans" semanticCandidatesExpression="feature:SortingPlans" domainClass="SortingPlans.SortingPlan">
+          <style xsi:type="style:DotDescription" labelExpression="feature:Description" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="projects.cpt.sortingplans.diagram.product" label="Node Product for diagram SortingPlans" preconditionExpression="[self.EndProduct = null /]" domainClass="SortingPlans.SortingPlanProduct">
+          <style xsi:type="style:DotDescription" labelExpression="feature:Description" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='orange']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='orange']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='orange']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="projects.cpt.sortingplans.diagram.sortingplaninpput" label="sortingplaninput for diagram SortingPlans" sourceMapping="//@ownedViewpoints[name='projects.cpt.sortingplans.viewpointy']/@ownedRepresentations[name='projects.cpt.sortingplans.diagram']/@defaultLayer/@nodeMappings[name='projects.cpt.sortingplans.diagram.product']" targetMapping="//@ownedViewpoints[name='projects.cpt.sortingplans.viewpointy']/@ownedRepresentations[name='projects.cpt.sortingplans.diagram']/@defaultLayer/@nodeMappings[name='projects.cpt.sortingplans.diagram.sortingplan']" targetFinderExpression="feature:SortingPlan" sourceFinderExpression="feature:InputProduct" domainClass="SortingPlans.SortingPlanInput" useDomainElement="true">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="projects.cpt.sortingplans.diagram.sortingplanoutput" label="sortingplanoutput for diagram SortingPlans" sourceMapping="//@ownedViewpoints[name='projects.cpt.sortingplans.viewpointy']/@ownedRepresentations[name='projects.cpt.sortingplans.diagram']/@defaultLayer/@nodeMappings[name='projects.cpt.sortingplans.diagram.sortingplan']" targetMapping="//@ownedViewpoints[name='projects.cpt.sortingplans.viewpointy']/@ownedRepresentations[name='projects.cpt.sortingplans.diagram']/@defaultLayer/@nodeMappings[name='projects.cpt.sortingplans.diagram.product']" targetFinderExpression="feature:OutputProduct" sourceFinderExpression="feature:SortingPlan" domainClass="SortingPlans.SortingPlanOutput" useDomainElement="true">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+      </defaultLayer>
+    </ownedRepresentations>
+  </ownedViewpoints>
+</description:Group>

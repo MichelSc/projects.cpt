@@ -1,0 +1,64 @@
+<?xml version="1.0"?> 
+
+<!--
+	The following build script illustrates how to launch the example via ANT.
+	Ensure that External Tools Configuration specifies that the JRE to be used
+	is the same as the workspace.
+		1) Click External Tools Configuration... from the External Tools dropdown.
+		2) Select the ANT build for this build script.
+		3) Click the JRE tab.
+		4) Select the option that reads: "Run in the same JRE as the workspace."
+		5) Click Apply.
+		6) Click Run.
+-->
+
+<project default="main"  xmlns:if="ant:if">
+	<property name="register" value="false"/>
+	<property name="ForecastMappingName" value="mapping01"/>
+
+ 	<target name="loadmodels">
+ 		<echo message="target loadmodels started"/>
+
+ 		<epsilon.emf.register if:true="${register}" 
+ 			                  file="../../../git/common.moplaf.datasetload/com.misc.common.moplaf.datasetload.emf/model/datasetload.ecore"/>
+ 		
+ 		<epsilon.emf.register if:true="${register}" 
+             				  file="../../../git/projects.cpt.datasetload/projects.cpt.datasetload/model/cptdatasetload.ecore"/>
+ 		 		
+ 		<epsilon.emf.loadModel name="IN"
+                               modelFile="extraction.cptdatasetload"
+                               metamodelUri="http://com.misc.projects.cpt.datasetload"
+                               read="true" 
+                               store="false"/>
+ 		
+ 		<epsilon.emf.loadModel name="MAP"
+                               modelFile="mapping.forecast"
+					           metamodelUri="http://com.misc.projects.cpt.forecast"
+                               read="true" 
+                               store="false"/>
+ 		
+ 		<epsilon.emf.loadModel name="OUT"
+                               modelFile="mapped02.forecast"
+                               metamodelUri="http://com.misc.projects.cpt.forecast"
+                               read="false" 
+                               store="true"/>
+ 		
+ 		<echo message="target task loadmodels complete"/>
+		
+ 	</target>
+ 	
+	<target name="main" depends="loadmodels">
+
+ 		<echo message="target main started"/>
+
+		<epsilon.etl src="mapforecast.etl">
+			<model ref="IN"/>
+			<model ref="MAP"/>
+			<model ref="OUT"/>
+			<uses ref="ForecastMappingName" as="ForecastMappingName"/>
+		</epsilon.etl>
+
+ 		<echo message="target main complete"/>
+</target>
+</project>
+

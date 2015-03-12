@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:eef-components="http://www.eclipse.org/emf/eef/components/1.0.0" xmlns:eef-views="http://www.eclipse.org/emf/eef/views/1.0.0">
+  <eef-components:PropertiesEditionContext xmi:id="_q6TGwG9aEeSi2_75XwHZjw" documentation="Edition Context for SortingPlans GenPackage">
+    <categories xmi:id="_q6Tt0G9aEeSi2_75XwHZjw" name="SortingPlans">
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_q6Tt0W9aEeSi2_75XwHZjw" name="Scenarios" views="_q6U78W9aEeSi2_75XwHZjw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_q6Tt0m9aEeSi2_75XwHZjw" name="Name" views="_q6U7829aEeSi2_75XwHZjw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/projects.cpt.sortingplans/model/sortingplans.ecore#//Scenarios/Name"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/projects.cpt.sortingplans/model/sortingplans.ecore#//Scenarios"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_q6Tt029aEeSi2_75XwHZjw" name="Scenario" views="_q6U79G9aEeSi2_75XwHZjw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_q6Tt1G9aEeSi2_75XwHZjw" name="Name" views="_q6U79m9aEeSi2_75XwHZjw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/projects.cpt.sortingplans/model/sortingplans.ecore#//Scenario/Name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_q6Tt1W9aEeSi2_75XwHZjw" name="SortingLevelsWithDestination" views="_q6U7929aEeSi2_75XwHZjw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/projects.cpt.sortingplans/model/sortingplans.ecore#//Scenario/SortingLevelsWithDestination"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_q6Tt1m9aEeSi2_75XwHZjw" name="SelectedSortingPlans" views="_q6U7-G9aEeSi2_75XwHZjw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/projects.cpt.sortingplans/model/sortingplans.ecore#//Scenario/SelectedSortingPlans"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/projects.cpt.sortingplans/model/sortingplans.ecore#//Scenario"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_q6Tt129aEeSi2_75XwHZjw" name="SortingPlan" views="_q6U7-W9aEeSi2_75XwHZjw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_q6Tt2G9aEeSi2_75XwHZjw" name="EndProducts" views="_q6U7-29aEeSi2_75XwHZjw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/projects.cpt.sortingplans/model/sortingplans.ecore#//SortingPlan/EndProducts"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_q6Tt2W9aEeSi2_75XwHZjw" name="FPDSortingPlan" views="_q6U7_G9aEeSi2_75XwHZjw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/projects.cpt.sortingplans/model/sortingplans.ecore#//SortingPlan/FPDSortingPlan"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_q6Tt2m9aEeSi2_75XwHZjw" name="Scenario" views="_q6U7_W9aEeSi2_75XwHZjw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/projects.cpt.sortingplans/model/sortingplans.ecore#//SortingPlan/Scenario"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/projects.cpt.sortingplans/model/sortingplans.ecore#//SortingPlan"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_q6Tt229aEeSi2_75XwHZjw" name="EndProduct" views="_q6U7_m9aEeSi2_75XwHZjw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_q6Tt3G9aEeSi2_75XwHZjw" name="FPDSortingLevel" views="_q6U8AG9aEeSi2_75XwHZjw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/projects.cpt.sortingplans/model/sortingplans.ecore#//EndProduct/FPDSortingLevel"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_q6Tt3W9aEeSi2_75XwHZjw" name="SortingPlanProduct" views="_q6U8AW9aEeSi2_75XwHZjw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/projects.cpt.sortingplans/model/sortingplans.ecore#//EndProduct/SortingPlanProduct"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_q6Tt3m9aEeSi2_75XwHZjw" name="whichSortingPlans" views="_q6U8Am9aEeSi2_75XwHZjw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/projects.cpt.sortingplans/model/sortingplans.ecore#//EndProduct/whichSortingPlans"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_q6UU4G9aEeSi2_75XwHZjw" name="Scenario" views="_q6U8A29aEeSi2_75XwHZjw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/projects.cpt.sortingplans/model/sortingplans.ecore#//EndProduct/Scenario"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/projects.cpt.sortingplans/model/sortingplans.ecore#//EndProduct"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_q6UU4W9aEeSi2_75XwHZjw" name="SortingPlanProduct" views="_q6U8BG9aEeSi2_75XwHZjw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_q6UU4m9aEeSi2_75XwHZjw" name="FPDSortingLevel" views="_q6U8Bm9aEeSi2_75XwHZjw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/projects.cpt.sortingplans/model/sortingplans.ecore#//SortingPlanProduct/FPDSortingLevel"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_q6UU429aEeSi2_75XwHZjw" name="SortingPlansProducing" views="_q6U8B29aEeSi2_75XwHZjw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/projects.cpt.sortingplans/model/sortingplans.ecore#//SortingPlanProduct/SortingPlansProducing"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_q6UU5G9aEeSi2_75XwHZjw" name="SortingPlansAccepting" views="_q6U8CG9aEeSi2_75XwHZjw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/projects.cpt.sortingplans/model/sortingplans.ecore#//SortingPlanProduct/SortingPlansAccepting"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_q6UU5W9aEeSi2_75XwHZjw" name="SortingLevelAVCSSk" views="_q6U8CW9aEeSi2_75XwHZjw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/projects.cpt.sortingplans/model/sortingplans.ecore#//SortingPlanProduct/SortingLevelAVCSSk"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_q6UU5m9aEeSi2_75XwHZjw" name="MechanizationLevelSk" views="_q6U8Cm9aEeSi2_75XwHZjw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/projects.cpt.sortingplans/model/sortingplans.ecore#//SortingPlanProduct/MechanizationLevelSk"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_q6UU529aEeSi2_75XwHZjw" name="ThroughputTypeSk" views="_q6U8C29aEeSi2_75XwHZjw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/projects.cpt.sortingplans/model/sortingplans.ecore#//SortingPlanProduct/ThroughputTypeSk"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_q6UU6G9aEeSi2_75XwHZjw" name="DestinationSk" views="_q6U8DG9aEeSi2_75XwHZjw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/projects.cpt.sortingplans/model/sortingplans.ecore#//SortingPlanProduct/DestinationSk"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_q6UU6W9aEeSi2_75XwHZjw" name="EndProduct" views="_q6U8DW9aEeSi2_75XwHZjw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/projects.cpt.sortingplans/model/sortingplans.ecore#//SortingPlanProduct/EndProduct"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/projects.cpt.sortingplans/model/sortingplans.ecore#//SortingPlanProduct"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_q6UU6m9aEeSi2_75XwHZjw" name="SortingPlanEndProduct" views="_q6U8Dm9aEeSi2_75XwHZjw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_q6UU629aEeSi2_75XwHZjw" name="Output" views="_q6U8EG9aEeSi2_75XwHZjw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/projects.cpt.sortingplans/model/sortingplans.ecore#//SortingPlanEndProduct/Output"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_q6UU7G9aEeSi2_75XwHZjw" name="EndProduct" views="_q6U8EW9aEeSi2_75XwHZjw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/projects.cpt.sortingplans/model/sortingplans.ecore#//SortingPlanEndProduct/EndProduct"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_q6UU7W9aEeSi2_75XwHZjw" name="SortingPlan" views="_q6VjAG9aEeSi2_75XwHZjw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/projects.cpt.sortingplans/model/sortingplans.ecore#//SortingPlanEndProduct/SortingPlan"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/projects.cpt.sortingplans/model/sortingplans.ecore#//SortingPlanEndProduct"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_q6UU7m9aEeSi2_75XwHZjw" name="SortingPlanOutput" views="_q6VjAW9aEeSi2_75XwHZjw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_q6UU729aEeSi2_75XwHZjw" name="FPDSortingPlanOutput" views="_q6VjA29aEeSi2_75XwHZjw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/projects.cpt.sortingplans/model/sortingplans.ecore#//SortingPlanOutput/FPDSortingPlanOutput"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_q6UU8G9aEeSi2_75XwHZjw" name="OutputProduct" views="_q6VjBG9aEeSi2_75XwHZjw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/projects.cpt.sortingplans/model/sortingplans.ecore#//SortingPlanOutput/OutputProduct"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_q6UU8W9aEeSi2_75XwHZjw" name="SortingPlanEndProduct" views="_q6VjBW9aEeSi2_75XwHZjw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/projects.cpt.sortingplans/model/sortingplans.ecore#//SortingPlanOutput/SortingPlanEndProduct"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_q6UU8m9aEeSi2_75XwHZjw" name="SortingPlan" views="_q6VjBm9aEeSi2_75XwHZjw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/projects.cpt.sortingplans/model/sortingplans.ecore#//SortingPlanOutput/SortingPlan"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/projects.cpt.sortingplans/model/sortingplans.ecore#//SortingPlanOutput"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_q6UU829aEeSi2_75XwHZjw" name="SortingPlanInput" views="_q6VjB29aEeSi2_75XwHZjw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_q6UU9G9aEeSi2_75XwHZjw" name="InputProduct" views="_q6VjCW9aEeSi2_75XwHZjw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/projects.cpt.sortingplans/model/sortingplans.ecore#//SortingPlanInput/InputProduct"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_q6UU9W9aEeSi2_75XwHZjw" name="FPDSortingPlanInput" views="_q6VjCm9aEeSi2_75XwHZjw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/projects.cpt.sortingplans/model/sortingplans.ecore#//SortingPlanInput/FPDSortingPlanInput"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_q6UU9m9aEeSi2_75XwHZjw" name="SortingPlan" views="_q6VjC29aEeSi2_75XwHZjw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/projects.cpt.sortingplans/model/sortingplans.ecore#//SortingPlanInput/SortingPlan"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/projects.cpt.sortingplans/model/sortingplans.ecore#//SortingPlanInput"/>
+      </bindings>
+    </categories>
+    <model href="platform:/resource/projects.cpt.sortingplans/model/sortingplans.genmodel#//SortingPlans"/>
+  </eef-components:PropertiesEditionContext>
+  <eef-views:ViewsRepository xmi:id="_q6UU929aEeSi2_75XwHZjw" documentation="Views repository for SortingPlans GenPackage" name="SortingPlans">
+    <RepositoryKind>SWT</RepositoryKind>
+    <RepositoryKind>Form</RepositoryKind>
+    <categories xmi:id="_q6U78G9aEeSi2_75XwHZjw" name="SortingPlans">
+      <views xmi:id="_q6U78W9aEeSi2_75XwHZjw" name="Scenarios">
+        <elements xsi:type="eef-views:Container" xmi:id="_q6U78m9aEeSi2_75XwHZjw" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_q6U7829aEeSi2_75XwHZjw" name="Name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_q6U79G9aEeSi2_75XwHZjw" name="Scenario">
+        <elements xsi:type="eef-views:Container" xmi:id="_q6U79W9aEeSi2_75XwHZjw" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_q6U79m9aEeSi2_75XwHZjw" name="Name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_q6U7929aEeSi2_75XwHZjw" name="SortingLevelsWithDestination">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_q6U7-G9aEeSi2_75XwHZjw" name="SelectedSortingPlans">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_q6U7-W9aEeSi2_75XwHZjw" name="SortingPlan">
+        <elements xsi:type="eef-views:Container" xmi:id="_q6U7-m9aEeSi2_75XwHZjw" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_q6U7-29aEeSi2_75XwHZjw" name="EndProducts">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_q6U7_G9aEeSi2_75XwHZjw" name="FPDSortingPlan">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_q6U7_W9aEeSi2_75XwHZjw" name="Scenario">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_q6U7_m9aEeSi2_75XwHZjw" name="EndProduct">
+        <elements xsi:type="eef-views:Container" xmi:id="_q6U7_29aEeSi2_75XwHZjw" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_q6U8AG9aEeSi2_75XwHZjw" name="FPDSortingLevel">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_q6U8AW9aEeSi2_75XwHZjw" name="SortingPlanProduct">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_q6U8Am9aEeSi2_75XwHZjw" name="whichSortingPlans">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.1"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_q6U8A29aEeSi2_75XwHZjw" name="Scenario">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_q6U8BG9aEeSi2_75XwHZjw" name="SortingPlanProduct">
+        <elements xsi:type="eef-views:Container" xmi:id="_q6U8BW9aEeSi2_75XwHZjw" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_q6U8Bm9aEeSi2_75XwHZjw" name="FPDSortingLevel">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_q6U8B29aEeSi2_75XwHZjw" name="SortingPlansProducing">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_q6U8CG9aEeSi2_75XwHZjw" name="SortingPlansAccepting">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_q6U8CW9aEeSi2_75XwHZjw" name="SortingLevelAVCSSk">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_q6U8Cm9aEeSi2_75XwHZjw" name="MechanizationLevelSk">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_q6U8C29aEeSi2_75XwHZjw" name="ThroughputTypeSk">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_q6U8DG9aEeSi2_75XwHZjw" name="DestinationSk">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_q6U8DW9aEeSi2_75XwHZjw" name="EndProduct">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_q6U8Dm9aEeSi2_75XwHZjw" name="SortingPlanEndProduct">
+        <elements xsi:type="eef-views:Container" xmi:id="_q6U8D29aEeSi2_75XwHZjw" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_q6U8EG9aEeSi2_75XwHZjw" name="Output">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_q6U8EW9aEeSi2_75XwHZjw" name="EndProduct">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_q6VjAG9aEeSi2_75XwHZjw" name="SortingPlan">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_q6VjAW9aEeSi2_75XwHZjw" name="SortingPlanOutput">
+        <elements xsi:type="eef-views:Container" xmi:id="_q6VjAm9aEeSi2_75XwHZjw" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_q6VjA29aEeSi2_75XwHZjw" name="FPDSortingPlanOutput">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_q6VjBG9aEeSi2_75XwHZjw" name="OutputProduct">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_q6VjBW9aEeSi2_75XwHZjw" name="SortingPlanEndProduct">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_q6VjBm9aEeSi2_75XwHZjw" name="SortingPlan">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_q6VjB29aEeSi2_75XwHZjw" name="SortingPlanInput">
+        <elements xsi:type="eef-views:Container" xmi:id="_q6VjCG9aEeSi2_75XwHZjw" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_q6VjCW9aEeSi2_75XwHZjw" name="InputProduct">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_q6VjCm9aEeSi2_75XwHZjw" name="FPDSortingPlanInput">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_q6VjC29aEeSi2_75XwHZjw" name="SortingPlan">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+    </categories>
+  </eef-views:ViewsRepository>
+</xmi:XMI>
