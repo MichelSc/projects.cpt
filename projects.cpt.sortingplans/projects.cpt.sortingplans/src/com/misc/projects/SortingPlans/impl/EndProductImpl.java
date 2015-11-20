@@ -399,6 +399,7 @@ public class EndProductImpl extends MinimalEObjectImpl.Container implements EndP
 			if ( tobe==null){
 				// remove spepAsIs
 				spepAsIs.setSortingPlan(null);  
+				spepAsIs.setOutput(null);
 				spepAsIs.setEndProduct(null);  // owning
 			} else {
 				// update
@@ -407,16 +408,15 @@ public class EndProductImpl extends MinimalEObjectImpl.Container implements EndP
 				result.remove(tobe);
 			}
 		}
-		// create
 		for (  AlgorithmSortingPlan spepToBe : result.values()	){
 			SortingPlanOutput spout = spepToBe.sortingPlanOut;
 			SortingPlan sp = spout.getSortingPlan();
 			// create 
 			SortingPlanEndProduct newspep = cptspFactory.eINSTANCE.createSortingPlanEndProduct();
 			newspep.setSortingPlan(sp);   // not owning
-			newspep.setEndProduct(this);  // owning
 			newspep.setOutput(spout);
 			newspep.setSortingDistance(spepToBe.distanceSorting);
+			newspep.setEndProduct(this);  // owning
 		}
 
 		// clean up
