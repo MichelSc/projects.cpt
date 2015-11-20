@@ -22,13 +22,13 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.SortingPlans.impl.SortingPlanInputImpl#getInputProduct <em>Input Product</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.impl.SortingPlanInputImpl#getFPDSortingPlanInput <em>FPD Sorting Plan Input</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.impl.SortingPlanInputImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.impl.SortingPlanInputImpl#getSortingPlan <em>Sorting Plan</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

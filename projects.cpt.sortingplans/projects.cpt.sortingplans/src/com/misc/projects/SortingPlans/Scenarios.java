@@ -13,11 +13,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.SortingPlans.Scenarios#getScenarios <em>Scenarios</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.Scenarios#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @see com.misc.projects.SortingPlans.cptspPackage#getScenarios()
  * @model

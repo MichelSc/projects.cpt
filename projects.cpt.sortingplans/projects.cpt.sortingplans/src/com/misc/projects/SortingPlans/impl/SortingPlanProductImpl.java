@@ -28,6 +28,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.SortingPlans.impl.SortingPlanProductImpl#getFPDSortingLevel <em>FPD Sorting Level</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.impl.SortingPlanProductImpl#getSortingPlansProducing <em>Sorting Plans Producing</em>}</li>
@@ -39,7 +40,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.misc.projects.SortingPlans.impl.SortingPlanProductImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.impl.SortingPlanProductImpl#getEndProduct <em>End Product</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

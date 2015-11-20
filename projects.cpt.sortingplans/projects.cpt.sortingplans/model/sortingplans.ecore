@@ -71,7 +71,7 @@
         eOpposite="#//EndProduct/SortingPlanProduct"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SortingPlanEndProduct">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Output" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Output" lowerBound="1"
         eType="#//SortingPlanOutput" eOpposite="#//SortingPlanOutput/SortingPlanEndProduct"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="EndProduct" lowerBound="1"
         eType="#//EndProduct" eOpposite="#//EndProduct/SortingPlans"/>
@@ -79,6 +79,8 @@
         eType="#//SortingPlan" eOpposite="#//SortingPlan/EndProducts"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         changeable="false" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="SortingDistance" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="0"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SortingPlanOutput">
     <eStructuralFeatures xsi:type="ecore:EReference" name="FPDSortingPlanOutput" eType="ecore:EClass ../../projects.cpt.datasetload/model/cptdatasetload.ecore#//SortingPlanOutputRow"/>

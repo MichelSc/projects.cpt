@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.SortingPlans.SortingPlanOutput#getFPDSortingPlanOutput <em>FPD Sorting Plan Output</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.SortingPlanOutput#getOutputProduct <em>Output Product</em>}</li>
@@ -21,7 +22,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.misc.projects.SortingPlans.SortingPlanOutput#getSortingPlanEndProduct <em>Sorting Plan End Product</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.SortingPlanOutput#getSortingPlan <em>Sorting Plan</em>}</li>
  * </ul>
- * </p>
  *
  * @see com.misc.projects.SortingPlans.cptspPackage#getSortingPlanOutput()
  * @model

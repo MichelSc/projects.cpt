@@ -14,6 +14,7 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.SortingPlans.SortingPlan#getOutputs <em>Outputs</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.SortingPlan#getEndProducts <em>End Products</em>}</li>
@@ -22,7 +23,6 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link com.misc.projects.SortingPlans.SortingPlan#getScenario <em>Scenario</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.SortingPlan#getDescription <em>Description</em>}</li>
  * </ul>
- * </p>
  *
  * @see com.misc.projects.SortingPlans.cptspPackage#getSortingPlan()
  * @model

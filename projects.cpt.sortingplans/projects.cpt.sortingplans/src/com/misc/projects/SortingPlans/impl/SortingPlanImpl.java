@@ -36,6 +36,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.SortingPlans.impl.SortingPlanImpl#getOutputs <em>Outputs</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.impl.SortingPlanImpl#getEndProducts <em>End Products</em>}</li>
@@ -44,7 +45,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.misc.projects.SortingPlans.impl.SortingPlanImpl#getScenario <em>Scenario</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.impl.SortingPlanImpl#getDescription <em>Description</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

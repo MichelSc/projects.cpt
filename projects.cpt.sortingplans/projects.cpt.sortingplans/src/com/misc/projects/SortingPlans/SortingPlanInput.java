@@ -12,13 +12,13 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.SortingPlans.SortingPlanInput#getInputProduct <em>Input Product</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.SortingPlanInput#getFPDSortingPlanInput <em>FPD Sorting Plan Input</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.SortingPlanInput#getDescription <em>Description</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.SortingPlanInput#getSortingPlan <em>Sorting Plan</em>}</li>
  * </ul>
- * </p>
  *
  * @see com.misc.projects.SortingPlans.cptspPackage#getSortingPlanInput()
  * @model

@@ -27,6 +27,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.SortingPlans.impl.SortingPlanOutputImpl#getFPDSortingPlanOutput <em>FPD Sorting Plan Output</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.impl.SortingPlanOutputImpl#getOutputProduct <em>Output Product</em>}</li>
@@ -34,7 +35,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.misc.projects.SortingPlans.impl.SortingPlanOutputImpl#getSortingPlanEndProduct <em>Sorting Plan End Product</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.impl.SortingPlanOutputImpl#getSortingPlan <em>Sorting Plan</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -216,7 +216,7 @@ public class SortingPlanOutputImpl extends MinimalEObjectImpl.Container implemen
 	 */
 	public EList<SortingPlanEndProduct> getSortingPlanEndProduct() {
 		if (sortingPlanEndProduct == null) {
-			sortingPlanEndProduct = new EObjectWithInverseResolvingEList.ManyInverse<SortingPlanEndProduct>(SortingPlanEndProduct.class, this, cptspPackage.SORTING_PLAN_OUTPUT__SORTING_PLAN_END_PRODUCT, cptspPackage.SORTING_PLAN_END_PRODUCT__OUTPUT);
+			sortingPlanEndProduct = new EObjectWithInverseResolvingEList<SortingPlanEndProduct>(SortingPlanEndProduct.class, this, cptspPackage.SORTING_PLAN_OUTPUT__SORTING_PLAN_END_PRODUCT, cptspPackage.SORTING_PLAN_END_PRODUCT__OUTPUT);
 		}
 		return sortingPlanEndProduct;
 	}

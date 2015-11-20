@@ -14,7 +14,6 @@ import com.misc.projects.CptDatasetLoad.SortingPlanRow;
 import com.misc.projects.SortingPlans.EndProduct;
 import com.misc.projects.SortingPlans.Scenario;
 import com.misc.projects.SortingPlans.SortingPlan;
-import com.misc.projects.SortingPlans.SortingPlanEndProduct;
 import com.misc.projects.SortingPlans.SortingPlanInput;
 import com.misc.projects.SortingPlans.SortingPlanOutput;
 import com.misc.projects.SortingPlans.SortingPlanProduct;
@@ -56,6 +55,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.SortingPlans.impl.ScenarioImpl#getSortingPlans <em>Sorting Plans</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.impl.ScenarioImpl#getEndProducts <em>End Products</em>}</li>
@@ -64,7 +64,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.misc.projects.SortingPlans.impl.ScenarioImpl#getSortingLevelsWithDestination <em>Sorting Levels With Destination</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.impl.ScenarioImpl#getSelectedSortingPlans <em>Selected Sorting Plans</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

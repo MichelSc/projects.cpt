@@ -13,6 +13,7 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.SortingPlans.EndProduct#getFPDSortingLevel <em>FPD Sorting Level</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.EndProduct#getSortingPlanProduct <em>Sorting Plan Product</em>}</li>
@@ -21,7 +22,6 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link com.misc.projects.SortingPlans.EndProduct#isWhichSortingPlans <em>Which Sorting Plans</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.EndProduct#getScenario <em>Scenario</em>}</li>
  * </ul>
- * </p>
  *
  * @see com.misc.projects.SortingPlans.cptspPackage#getEndProduct()
  * @model

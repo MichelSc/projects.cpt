@@ -607,7 +607,7 @@ public interface cptspPackage extends EPackage {
 	int SORTING_PLAN_END_PRODUCT = 5;
 
 	/**
-	 * The feature id for the '<em><b>Output</b></em>' reference list.
+	 * The feature id for the '<em><b>Output</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -643,13 +643,22 @@ public interface cptspPackage extends EPackage {
 	int SORTING_PLAN_END_PRODUCT__DESCRIPTION = 3;
 
 	/**
+	 * The feature id for the '<em><b>Sorting Distance</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_END_PRODUCT__SORTING_DISTANCE = 4;
+
+	/**
 	 * The number of structural features of the '<em>Sorting Plan End Product</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_END_PRODUCT_FEATURE_COUNT = 4;
+	int SORTING_PLAN_END_PRODUCT_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Sorting Plan End Product</em>' class.
@@ -1258,10 +1267,10 @@ public interface cptspPackage extends EPackage {
 	EClass getSortingPlanEndProduct();
 
 	/**
-	 * Returns the meta object for the reference list '{@link com.misc.projects.SortingPlans.SortingPlanEndProduct#getOutput <em>Output</em>}'.
+	 * Returns the meta object for the reference '{@link com.misc.projects.SortingPlans.SortingPlanEndProduct#getOutput <em>Output</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Output</em>'.
+	 * @return the meta object for the reference '<em>Output</em>'.
 	 * @see com.misc.projects.SortingPlans.SortingPlanEndProduct#getOutput()
 	 * @see #getSortingPlanEndProduct()
 	 * @generated
@@ -1300,6 +1309,17 @@ public interface cptspPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getSortingPlanEndProduct_Description();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.misc.projects.SortingPlans.SortingPlanEndProduct#getSortingDistance <em>Sorting Distance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Sorting Distance</em>'.
+	 * @see com.misc.projects.SortingPlans.SortingPlanEndProduct#getSortingDistance()
+	 * @see #getSortingPlanEndProduct()
+	 * @generated
+	 */
+	EAttribute getSortingPlanEndProduct_SortingDistance();
 
 	/**
 	 * Returns the meta object for class '{@link com.misc.projects.SortingPlans.SortingPlanOutput <em>Sorting Plan Output</em>}'.
@@ -1816,7 +1836,7 @@ public interface cptspPackage extends EPackage {
 		EClass SORTING_PLAN_END_PRODUCT = eINSTANCE.getSortingPlanEndProduct();
 
 		/**
-		 * The meta object literal for the '<em><b>Output</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Output</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1846,6 +1866,14 @@ public interface cptspPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SORTING_PLAN_END_PRODUCT__DESCRIPTION = eINSTANCE.getSortingPlanEndProduct_Description();
+
+		/**
+		 * The meta object literal for the '<em><b>Sorting Distance</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SORTING_PLAN_END_PRODUCT__SORTING_DISTANCE = eINSTANCE.getSortingPlanEndProduct_SortingDistance();
 
 		/**
 		 * The meta object literal for the '{@link com.misc.projects.SortingPlans.impl.SortingPlanOutputImpl <em>Sorting Plan Output</em>}' class.
