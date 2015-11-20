@@ -315,23 +315,15 @@ public class EndProductImpl extends MinimalEObjectImpl.Container implements EndP
 			eNotify(new ENotificationImpl(this, Notification.SET, cptspPackage.END_PRODUCT__SCENARIO, newScenario, newScenario));
 	}
 
-//	 SortingPlanOutputVisitor SpoutVisitor = new SortingPlanOutputVisitor(){
-//		 @Override
-//		 public void visit(SortingPlanOutput spout) {
-//			 EndProduct thisEndProduct = EndProductImpl.this;
-//			 SortingPlan newSp = spout.getSortingPlan();
-//			 SortingPlanOutput current = thisEndProduct.get
-//		 }
-//	 }; 
-	 
 	 private class AlgorithmSortingPlan implements Comparable<AlgorithmSortingPlan>{
 		 public SortingPlanOutput sortingPlanOut;
 		 public int distanceSorting;
-		 boolean marked = false;
-		public AlgorithmSortingPlan (SortingPlanOutput sortingPlanOut, int distanceSorting){
-			this.sortingPlanOut = sortingPlanOut;
-			this.distanceSorting = distanceSorting;
-		}
+		 
+		 public AlgorithmSortingPlan (SortingPlanOutput sortingPlanOut, int distanceSorting){
+			 this.sortingPlanOut = sortingPlanOut;
+			 this.distanceSorting = distanceSorting;
+		 }
+		 
 		@Override
 		public int compareTo(AlgorithmSortingPlan o) {
 			if      ( this.distanceSorting < o.distanceSorting ) return -1;
@@ -340,31 +332,31 @@ public class EndProductImpl extends MinimalEObjectImpl.Container implements EndP
 		}
 	 };
 	 
-	 private class AlgorithmQueue extends PriorityQueue<AlgorithmSortingPlan>{
-		 
-	 }
+	 @SuppressWarnings("serial")
+	 private class AlgorithmQueue extends PriorityQueue<AlgorithmSortingPlan>{};
 	 
-	 private class AlgorithmResult extends HashMap<SortingPlan, AlgorithmSortingPlan>{
-		 
-	 }
+	 @SuppressWarnings("serial")
+	 private class AlgorithmResult extends HashMap<SortingPlan, AlgorithmSortingPlan>{};
 	 
 	 private void algorithmUpdate(AlgorithmQueue queue, AlgorithmResult result, SortingPlanOutput spout, int distance){
+		 // spout becomes optimal
 		 SortingPlan sp = spout.getSortingPlan();
 		 for ( SortingPlanInput spin : sp.getInputs()){
 			 SortingPlanProduct spp = spin.getInputProduct();
 			 for ( SortingPlanOutput newspout : spp.getSortingPlansProducing()){
 				 SortingPlan newsp = newspout.getSortingPlan();
-				 AlgorithmSortingPlan newalgsp = result.get(newsp);
-				 if ( newalgsp == null ){
-					 // new, add and initialize
-					 newalgsp = new AlgorithmSortingPlan(newspout, distance+1);
-					 result.put(newsp, newalgsp);
-					 queue.add(newalgsp);
+				 AlgorithmSortingPlan algsp = result.get(newsp);
+				 if ( algsp == null ){
+					 // new (never visited): add and initialize
+					 algsp = new AlgorithmSortingPlan(newspout, distance+1);
+					 result.put(newsp, algsp);
+					 queue.add(algsp);
 				 } else {
-					 if ( newalgsp.distanceSorting>distance+1){
+					 // already visited
+					 if ( algsp.distanceSorting>distance+1){
 						 // update, is better
-						 newalgsp.distanceSorting = distance;
-						 newalgsp.sortingPlanOut = newspout;
+						 algsp.distanceSorting = distance;
+						 algsp.sortingPlanOut = newspout;
 					 } else {
 						 // ignore, not better
 					 }
@@ -379,9 +371,10 @@ public class EndProductImpl extends MinimalEObjectImpl.Container implements EndP
 	 */
 	public void refreshSortingPlans() {
 		CommonPlugin.INSTANCE.log("EndProduct "+ this.getDescription()+" begin refresh Sortingplans");
+
 		// calculate the to be
 		AlgorithmResult result = new AlgorithmResult();
-		AlgorithmQueue queue = new AlgorithmQueue(); 
+		AlgorithmQueue  queue  = new AlgorithmQueue(); 
 		if ( this.isWhichSortingPlans() 
 			&& this.eContainer!=null
 			&& this.getSortingPlanProduct()!=null){
@@ -389,7 +382,9 @@ public class EndProductImpl extends MinimalEObjectImpl.Container implements EndP
 			for ( SortingPlanOutput spout : thispp.getSortingPlansProducing()){
 				// insert the spout
 				SortingPlan sp = spout.getSortingPlan();
-				this.algorithmUpdate(queue, result, spout, 0);
+				AlgorithmSortingPlan algsp = new AlgorithmSortingPlan(spout, 0);
+				result.put(sp, algsp);
+				queue.add(algsp);
 			}
 		}
 		while ( !queue.isEmpty()){
@@ -399,47 +394,42 @@ public class EndProductImpl extends MinimalEObjectImpl.Container implements EndP
 		//traverse the asis
 		// remove
 		for ( SortingPlanEndProduct spepAsIs: this.getSortingPlans()){
-			BasicEList<SortingPlanOutput> spoutToRemove = new BasicEList<SortingPlanOutput>();
-			for (SortingPlanOutput spout : spepAsIs.getOutput()){
-				if ( spoutsToBe.contains(spout)){
-					spoutsToBe.remove(spout);
-				} else {
-					spoutToRemove.add(spout);
-				}
+			SortingPlan sp = spepAsIs.getSortingPlan();
+			AlgorithmSortingPlan tobe = result.get(sp);
+			if ( tobe==null){
+				// remove spepAsIs
+				spepAsIs.setSortingPlan(null);  
+				spepAsIs.setEndProduct(null);  // owning
+			} else {
+				// update
+				spepAsIs.setSortingDistance(tobe.distanceSorting);
+				spepAsIs.setOutput(tobe.sortingPlanOut);
+				result.remove(tobe);
 			}
-			spepAsIs.getOutput().removeAll(spoutToRemove);
 		}
 		// create
-		for ( SortingPlanOutput spoutToBe : spoutsToBe){
-			SortingPlan sp = spoutToBe.getSortingPlan();
-			// get
-			SortingPlanEndProduct spep = null;
-			Iterator<SortingPlanEndProduct> spepIter = this.getSortingPlans().iterator();
-			while ( spepIter.hasNext() && spep==null){
-				SortingPlanEndProduct spepTmp = spepIter.next();
-				if ( spepTmp.getSortingPlan()==sp){
-					spep = spepTmp;
-				}
-			}
+		for (  AlgorithmSortingPlan spepToBe : result.values()	){
+			SortingPlanOutput spout = spepToBe.sortingPlanOut;
+			SortingPlan sp = spout.getSortingPlan();
 			// create 
-			if ( spep==null ){
-				spep = cptspFactory.eINSTANCE.createSortingPlanEndProduct();
-				spep.setSortingPlan(sp);   // not owning
-				spep.setEndProduct(this);  // owning
-			}
-			spoutToBe.getSortingPlanEndProduct().add(spep);  // N-ary reference
+			SortingPlanEndProduct newspep = cptspFactory.eINSTANCE.createSortingPlanEndProduct();
+			newspep.setSortingPlan(sp);   // not owning
+			newspep.setEndProduct(this);  // owning
+			newspep.setOutput(spout);
+			newspep.setSortingDistance(spepToBe.distanceSorting);
 		}
+
 		// clean up
-		BasicEList<SortingPlanEndProduct> spepToDelete = new BasicEList<SortingPlanEndProduct>();
-		for ( SortingPlanEndProduct spep : this.getSortingPlans()){
-			if ( spep.getOutput().size()==0){
-				spepToDelete.add(spep);
-			}
-		}
-		for ( SortingPlanEndProduct spep : spepToDelete){
-			spep.setSortingPlan(null);  
-			spep.setEndProduct(null);  // owning
-		}
+//		BasicEList<SortingPlanEndProduct> spepToDelete = new BasicEList<SortingPlanEndProduct>();
+//		for ( SortingPlanEndProduct spep : this.getSortingPlans()){
+//			if ( spep.getOutput().size()==0){
+//				spepToDelete.add(spep);
+//			}
+//		}
+//		for ( SortingPlanEndProduct spep : spepToDelete){
+//			spep.setSortingPlan(null);  
+//			spep.setEndProduct(null);  // owning
+//		}
 		CommonPlugin.INSTANCE.log("EndProduct "+ this.getDescription()+" end refresh Sortingplans");
 	}
 

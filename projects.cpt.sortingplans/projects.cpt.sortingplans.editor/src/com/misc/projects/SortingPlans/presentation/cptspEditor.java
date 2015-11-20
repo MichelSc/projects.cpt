@@ -1439,22 +1439,21 @@ public class cptspEditor
 					// Set the selection to the widget.
 					//
 					selectionViewer.setSelection(new StructuredSelection(selectionList));
-				}
+				}  // selection viewer
 				else if ( currentViewerPane.getViewer()== listViewer){
 					BasicEList<SortingPlanOutput> outputs = new BasicEList<SortingPlanOutput>();
 					if ( selectedElement instanceof EndProduct ){
 						for ( SortingPlanEndProduct spep : ((EndProduct)selectedElement).getSortingPlans()){
-							for ( SortingPlanOutput spo : spep.getOutput()){
-								outputs.add(spo);
-							}
+							SortingPlanOutput spo = spep.getOutput();
+							outputs.add(spo);
 						}
 					}
-					ItemProvider listRoot = new ItemProvider("SortingPlans",
-							                                 null,
-							                                 outputs);
+					ItemProvider listRoot = new ItemProvider("SortingPlans", // text 	
+							                                 null,           // image
+							                                 outputs);       // children
 					listViewer.setInput(listRoot);
 					currentViewerPane.setTitle(listRoot);
-				}
+				} // list viewer 
 				else {
 					// Set the input to the widget.
 					//
