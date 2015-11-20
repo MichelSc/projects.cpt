@@ -64,6 +64,7 @@ public class SortingPlanEndProductItemProvider
 			addOutputPropertyDescriptor(object);
 			addEndProductPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
+			addSortingDistancePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -130,6 +131,28 @@ public class SortingPlanEndProductItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Sorting Distance feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSortingDistancePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_SortingPlanEndProduct_SortingDistance_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SortingPlanEndProduct_SortingDistance_feature", "_UI_SortingPlanEndProduct_type"),
+				 cptspPackage.Literals.SORTING_PLAN_END_PRODUCT__SORTING_DISTANCE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -205,6 +228,7 @@ public class SortingPlanEndProductItemProvider
 			case cptspPackage.SORTING_PLAN_END_PRODUCT__END_PRODUCT:
 			case cptspPackage.SORTING_PLAN_END_PRODUCT__SORTING_PLAN:
 			case cptspPackage.SORTING_PLAN_END_PRODUCT__DESCRIPTION:
+			case cptspPackage.SORTING_PLAN_END_PRODUCT__SORTING_DISTANCE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case cptspPackage.SORTING_PLAN_END_PRODUCT__OUTPUT:

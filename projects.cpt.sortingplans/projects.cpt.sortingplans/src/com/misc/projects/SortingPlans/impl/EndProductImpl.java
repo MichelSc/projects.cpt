@@ -11,7 +11,6 @@ import com.misc.projects.SortingPlans.SortingPlan;
 import com.misc.projects.SortingPlans.SortingPlanEndProduct;
 import com.misc.projects.SortingPlans.SortingPlanInput;
 import com.misc.projects.SortingPlans.SortingPlanOutput;
-import com.misc.projects.SortingPlans.SortingPlanOutputVisitor;
 import com.misc.projects.SortingPlans.SortingPlanProduct;
 import com.misc.projects.SortingPlans.cptspFactory;
 import com.misc.projects.SortingPlans.cptspPackage;
@@ -19,14 +18,11 @@ import com.misc.projects.SortingPlans.calc.PropagatorCalcEndProductRefreshSortin
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
 import java.util.PriorityQueue;
 
 import org.eclipse.emf.common.CommonPlugin;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;

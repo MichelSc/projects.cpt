@@ -119,8 +119,6 @@ import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.emf.edit.ui.provider.UnwrappingSelectionProvider;
 import org.eclipse.emf.edit.ui.util.EditUIMarkerHelper;
 import org.eclipse.emf.edit.ui.util.EditUIUtil;
-import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
-
 import com.misc.projects.SortingPlans.EndProduct;
 import com.misc.projects.SortingPlans.Scenario;
 import com.misc.projects.SortingPlans.SortingPlanEndProduct;
@@ -137,14 +135,13 @@ import org.eclipse.ui.actions.WorkspaceModifyOperation;
 /**
  * This is an example of a cptsp model editor.
  * <!-- begin-user-doc -->
+ * @implements ITabbedPropertySheetPageContributor
  * <!-- end-user-doc -->
  * @generated
- * @implements ITabbedPropertySheetPageContributor
  */
 public class cptspEditor
 	extends MultiPageEditorPart
-	implements IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGotoMarker,
-	ITabbedPropertySheetPageContributor
+	implements IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGotoMarker, ITabbedPropertySheetPageContributor
 	{
 	/**
 	 * This keeps track of the editing domain that is used to track all changes to the model.
@@ -974,10 +971,11 @@ public class cptspEditor
 	 * @generated
 	 */
 	public Diagnostic analyzeResourceProblems(Resource resource, Exception exception) {
-		if (!resource.getErrors().isEmpty() || !resource.getWarnings().isEmpty()) {
+		boolean hasErrors = !resource.getErrors().isEmpty();
+		if (hasErrors || !resource.getWarnings().isEmpty()) {
 			BasicDiagnostic basicDiagnostic =
 				new BasicDiagnostic
-					(Diagnostic.ERROR,
+					(hasErrors ? Diagnostic.ERROR : Diagnostic.WARNING,
 					 "projects.cpt.sortingplans.editor",
 					 0,
 					 getString("_UI_CreateModelError_message", resource.getURI()),
