@@ -181,24 +181,6 @@ public class cptspPackageImpl extends EPackageImpl implements cptspPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getScenarios__RefreshSortingPlanProducts() {
-		return scenariosEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getScenarios__RefreshEndProducts() {
-		return scenariosEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getScenario() {
 		return scenarioEClass;
 	}
@@ -343,6 +325,15 @@ public class cptspPackageImpl extends EPackageImpl implements cptspPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getSortingPlan_Selected() {
+		return (EAttribute)sortingPlanEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EOperation getSortingPlan__RefreshInputs() {
 		return sortingPlanEClass.getEOperations().get(0);
 	}
@@ -363,6 +354,15 @@ public class cptspPackageImpl extends EPackageImpl implements cptspPackage {
 	 */
 	public EOperation getSortingPlan__Refresh() {
 		return sortingPlanEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getSortingPlan__RefreshSelected() {
+		return sortingPlanEClass.getEOperations().get(3);
 	}
 
 	/**
@@ -550,6 +550,24 @@ public class cptspPackageImpl extends EPackageImpl implements cptspPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getSortingPlanProduct_Selected() {
+		return (EAttribute)sortingPlanProductEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getSortingPlanProduct__RefreshSelected() {
+		return sortingPlanProductEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getSortingPlanEndProduct() {
 		return sortingPlanEndProductEClass;
 	}
@@ -658,6 +676,24 @@ public class cptspPackageImpl extends EPackageImpl implements cptspPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getSortingPlanOutput_Selected() {
+		return (EAttribute)sortingPlanOutputEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getSortingPlanOutput__RefreshSelected() {
+		return sortingPlanOutputEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getSortingPlanInput() {
 		return sortingPlanInputEClass;
 	}
@@ -703,6 +739,24 @@ public class cptspPackageImpl extends EPackageImpl implements cptspPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getSortingPlanInput_Selected() {
+		return (EAttribute)sortingPlanInputEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getSortingPlanInput__RefreshSelected() {
+		return sortingPlanInputEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public cptspFactory getcptspFactory() {
 		return (cptspFactory)getEFactoryInstance();
 	}
@@ -729,8 +783,6 @@ public class cptspPackageImpl extends EPackageImpl implements cptspPackage {
 		scenariosEClass = createEClass(SCENARIOS);
 		createEReference(scenariosEClass, SCENARIOS__SCENARIOS);
 		createEAttribute(scenariosEClass, SCENARIOS__NAME);
-		createEOperation(scenariosEClass, SCENARIOS___REFRESH_SORTING_PLAN_PRODUCTS);
-		createEOperation(scenariosEClass, SCENARIOS___REFRESH_END_PRODUCTS);
 
 		scenarioEClass = createEClass(SCENARIO);
 		createEReference(scenarioEClass, SCENARIO__SORTING_PLANS);
@@ -751,9 +803,11 @@ public class cptspPackageImpl extends EPackageImpl implements cptspPackage {
 		createEReference(sortingPlanEClass, SORTING_PLAN__INPUTS);
 		createEReference(sortingPlanEClass, SORTING_PLAN__SCENARIO);
 		createEAttribute(sortingPlanEClass, SORTING_PLAN__DESCRIPTION);
+		createEAttribute(sortingPlanEClass, SORTING_PLAN__SELECTED);
 		createEOperation(sortingPlanEClass, SORTING_PLAN___REFRESH_INPUTS);
 		createEOperation(sortingPlanEClass, SORTING_PLAN___REFRESH_OUTPUTS);
 		createEOperation(sortingPlanEClass, SORTING_PLAN___REFRESH);
+		createEOperation(sortingPlanEClass, SORTING_PLAN___REFRESH_SELECTED);
 
 		endProductEClass = createEClass(END_PRODUCT);
 		createEReference(endProductEClass, END_PRODUCT__FPD_SORTING_LEVEL);
@@ -774,6 +828,8 @@ public class cptspPackageImpl extends EPackageImpl implements cptspPackage {
 		createEAttribute(sortingPlanProductEClass, SORTING_PLAN_PRODUCT__DESTINATION_SK);
 		createEAttribute(sortingPlanProductEClass, SORTING_PLAN_PRODUCT__DESCRIPTION);
 		createEReference(sortingPlanProductEClass, SORTING_PLAN_PRODUCT__END_PRODUCT);
+		createEAttribute(sortingPlanProductEClass, SORTING_PLAN_PRODUCT__SELECTED);
+		createEOperation(sortingPlanProductEClass, SORTING_PLAN_PRODUCT___REFRESH_SELECTED);
 
 		sortingPlanEndProductEClass = createEClass(SORTING_PLAN_END_PRODUCT);
 		createEReference(sortingPlanEndProductEClass, SORTING_PLAN_END_PRODUCT__OUTPUT);
@@ -788,12 +844,16 @@ public class cptspPackageImpl extends EPackageImpl implements cptspPackage {
 		createEAttribute(sortingPlanOutputEClass, SORTING_PLAN_OUTPUT__DESCRIPTION);
 		createEReference(sortingPlanOutputEClass, SORTING_PLAN_OUTPUT__SORTING_PLAN_END_PRODUCT);
 		createEReference(sortingPlanOutputEClass, SORTING_PLAN_OUTPUT__SORTING_PLAN);
+		createEAttribute(sortingPlanOutputEClass, SORTING_PLAN_OUTPUT__SELECTED);
+		createEOperation(sortingPlanOutputEClass, SORTING_PLAN_OUTPUT___REFRESH_SELECTED);
 
 		sortingPlanInputEClass = createEClass(SORTING_PLAN_INPUT);
 		createEReference(sortingPlanInputEClass, SORTING_PLAN_INPUT__INPUT_PRODUCT);
 		createEReference(sortingPlanInputEClass, SORTING_PLAN_INPUT__FPD_SORTING_PLAN_INPUT);
 		createEAttribute(sortingPlanInputEClass, SORTING_PLAN_INPUT__DESCRIPTION);
 		createEReference(sortingPlanInputEClass, SORTING_PLAN_INPUT__SORTING_PLAN);
+		createEAttribute(sortingPlanInputEClass, SORTING_PLAN_INPUT__SELECTED);
+		createEOperation(sortingPlanInputEClass, SORTING_PLAN_INPUT___REFRESH_SELECTED);
 	}
 
 	/**
@@ -832,15 +892,14 @@ public class cptspPackageImpl extends EPackageImpl implements cptspPackage {
 		scenarioEClass.getESuperTypes().add(thePropagatorPackage.getObjectWithPropagatorFunctionAdapterScope());
 		sortingPlanEClass.getESuperTypes().add(thePropagatorPackage.getObjectWithPropagatorFunctionAdapter());
 		endProductEClass.getESuperTypes().add(thePropagatorPackage.getObjectWithPropagatorFunctionAdapter());
+		sortingPlanProductEClass.getESuperTypes().add(thePropagatorPackage.getObjectWithPropagatorFunctionAdapter());
+		sortingPlanOutputEClass.getESuperTypes().add(thePropagatorPackage.getObjectWithPropagatorFunctionAdapter());
+		sortingPlanInputEClass.getESuperTypes().add(thePropagatorPackage.getObjectWithPropagatorFunctionAdapter());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(scenariosEClass, Scenarios.class, "Scenarios", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getScenarios_Scenarios(), this.getScenario(), null, "Scenarios", null, 0, -1, Scenarios.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getScenarios_Name(), ecorePackage.getEString(), "Name", null, 0, 1, Scenarios.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEOperation(getScenarios__RefreshSortingPlanProducts(), null, "refreshSortingPlanProducts", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		initEOperation(getScenarios__RefreshEndProducts(), null, "refreshEndProducts", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(scenarioEClass, Scenario.class, "Scenario", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getScenario_SortingPlans(), this.getSortingPlan(), this.getSortingPlan_Scenario(), "SortingPlans", null, 0, -1, Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -865,12 +924,15 @@ public class cptspPackageImpl extends EPackageImpl implements cptspPackage {
 		initEReference(getSortingPlan_Inputs(), this.getSortingPlanInput(), this.getSortingPlanInput_SortingPlan(), "Inputs", null, 0, -1, SortingPlan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSortingPlan_Scenario(), this.getScenario(), this.getScenario_SortingPlans(), "Scenario", null, 1, 1, SortingPlan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSortingPlan_Description(), ecorePackage.getEString(), "Description", null, 0, 1, SortingPlan.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSortingPlan_Selected(), ecorePackage.getEBoolean(), "selected", null, 0, 1, SortingPlan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getSortingPlan__RefreshInputs(), null, "refreshInputs", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEOperation(getSortingPlan__RefreshOutputs(), null, "refreshOutputs", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEOperation(getSortingPlan__Refresh(), null, "refresh", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getSortingPlan__RefreshSelected(), null, "refreshSelected", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(endProductEClass, EndProduct.class, "EndProduct", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEndProduct_FPDSortingLevel(), theCptDatasetLoadPackage.getSortingLevelRow(), null, "FPDSortingLevel", null, 0, 1, EndProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -892,6 +954,9 @@ public class cptspPackageImpl extends EPackageImpl implements cptspPackage {
 		initEAttribute(getSortingPlanProduct_DestinationSk(), ecorePackage.getEBigDecimal(), "DestinationSk", null, 0, 1, SortingPlanProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSortingPlanProduct_Description(), ecorePackage.getEString(), "Description", null, 0, 1, SortingPlanProduct.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getSortingPlanProduct_EndProduct(), this.getEndProduct(), this.getEndProduct_SortingPlanProduct(), "EndProduct", null, 0, 1, SortingPlanProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSortingPlanProduct_Selected(), ecorePackage.getEBoolean(), "selected", null, 0, 1, SortingPlanProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEOperation(getSortingPlanProduct__RefreshSelected(), null, "refreshSelected", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(sortingPlanEndProductEClass, SortingPlanEndProduct.class, "SortingPlanEndProduct", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSortingPlanEndProduct_Output(), this.getSortingPlanOutput(), this.getSortingPlanOutput_SortingPlanEndProduct(), "Output", null, 1, 1, SortingPlanEndProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -906,12 +971,18 @@ public class cptspPackageImpl extends EPackageImpl implements cptspPackage {
 		initEAttribute(getSortingPlanOutput_Description(), ecorePackage.getEString(), "Description", null, 0, 1, SortingPlanOutput.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getSortingPlanOutput_SortingPlanEndProduct(), this.getSortingPlanEndProduct(), this.getSortingPlanEndProduct_Output(), "SortingPlanEndProduct", null, 0, -1, SortingPlanOutput.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSortingPlanOutput_SortingPlan(), this.getSortingPlan(), this.getSortingPlan_Outputs(), "SortingPlan", null, 0, 1, SortingPlanOutput.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSortingPlanOutput_Selected(), ecorePackage.getEBoolean(), "selected", null, 0, 1, SortingPlanOutput.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEOperation(getSortingPlanOutput__RefreshSelected(), null, "refreshSelected", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(sortingPlanInputEClass, SortingPlanInput.class, "SortingPlanInput", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSortingPlanInput_InputProduct(), this.getSortingPlanProduct(), this.getSortingPlanProduct_SortingPlansAccepting(), "InputProduct", null, 1, 1, SortingPlanInput.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSortingPlanInput_FPDSortingPlanInput(), theCptDatasetLoadPackage.getSortingPlanInputRow(), null, "FPDSortingPlanInput", null, 0, 1, SortingPlanInput.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSortingPlanInput_Description(), ecorePackage.getEString(), "Description", null, 0, 1, SortingPlanInput.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getSortingPlanInput_SortingPlan(), this.getSortingPlan(), this.getSortingPlan_Inputs(), "SortingPlan", null, 0, 1, SortingPlanInput.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSortingPlanInput_Selected(), ecorePackage.getEBoolean(), "selected", null, 0, 1, SortingPlanInput.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEOperation(getSortingPlanInput__RefreshSelected(), null, "refreshSelected", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

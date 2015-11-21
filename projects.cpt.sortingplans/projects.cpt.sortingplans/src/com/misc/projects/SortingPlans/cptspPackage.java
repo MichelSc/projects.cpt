@@ -96,31 +96,13 @@ public interface cptspPackage extends EPackage {
 	int SCENARIOS_FEATURE_COUNT = 2;
 
 	/**
-	 * The operation id for the '<em>Refresh Sorting Plan Products</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SCENARIOS___REFRESH_SORTING_PLAN_PRODUCTS = 0;
-
-	/**
-	 * The operation id for the '<em>Refresh End Products</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SCENARIOS___REFRESH_END_PRODUCTS = 1;
-
-	/**
 	 * The number of operations of the '<em>Scenarios</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCENARIOS_OPERATION_COUNT = 2;
+	int SCENARIOS_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link com.misc.projects.SortingPlans.impl.ScenarioImpl <em>Scenario</em>}' class.
@@ -314,13 +296,22 @@ public interface cptspPackage extends EPackage {
 	int SORTING_PLAN__DESCRIPTION = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>Selected</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN__SELECTED = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 6;
+
+	/**
 	 * The number of structural features of the '<em>Sorting Plan</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_FEATURE_COUNT = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 6;
+	int SORTING_PLAN_FEATURE_COUNT = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 7;
 
 	/**
 	 * The operation id for the '<em>Add Propagator Function Adapter</em>' operation.
@@ -359,13 +350,22 @@ public interface cptspPackage extends EPackage {
 	int SORTING_PLAN___REFRESH = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_OPERATION_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Refresh Selected</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN___REFRESH_SELECTED = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_OPERATION_COUNT + 3;
+
+	/**
 	 * The number of operations of the '<em>Sorting Plan</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_OPERATION_COUNT = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_OPERATION_COUNT + 3;
+	int SORTING_PLAN_OPERATION_COUNT = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_OPERATION_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link com.misc.projects.SortingPlans.impl.EndProductImpl <em>End Product</em>}' class.
@@ -484,7 +484,7 @@ public interface cptspPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_PRODUCT__FPD_SORTING_LEVEL = 0;
+	int SORTING_PLAN_PRODUCT__FPD_SORTING_LEVEL = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Sorting Plans Producing</b></em>' reference list.
@@ -493,7 +493,7 @@ public interface cptspPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_PRODUCT__SORTING_PLANS_PRODUCING = 1;
+	int SORTING_PLAN_PRODUCT__SORTING_PLANS_PRODUCING = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Sorting Plans Accepting</b></em>' reference list.
@@ -502,7 +502,7 @@ public interface cptspPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_PRODUCT__SORTING_PLANS_ACCEPTING = 2;
+	int SORTING_PLAN_PRODUCT__SORTING_PLANS_ACCEPTING = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Sorting Level AVCS Sk</b></em>' attribute.
@@ -511,7 +511,7 @@ public interface cptspPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_PRODUCT__SORTING_LEVEL_AVCS_SK = 3;
+	int SORTING_PLAN_PRODUCT__SORTING_LEVEL_AVCS_SK = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Mechanization Level Sk</b></em>' attribute.
@@ -520,7 +520,7 @@ public interface cptspPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_PRODUCT__MECHANIZATION_LEVEL_SK = 4;
+	int SORTING_PLAN_PRODUCT__MECHANIZATION_LEVEL_SK = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Throughput Type Sk</b></em>' attribute.
@@ -529,7 +529,7 @@ public interface cptspPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_PRODUCT__THROUGHPUT_TYPE_SK = 5;
+	int SORTING_PLAN_PRODUCT__THROUGHPUT_TYPE_SK = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Destination Sk</b></em>' attribute.
@@ -538,7 +538,7 @@ public interface cptspPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_PRODUCT__DESTINATION_SK = 6;
+	int SORTING_PLAN_PRODUCT__DESTINATION_SK = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -547,7 +547,7 @@ public interface cptspPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_PRODUCT__DESCRIPTION = 7;
+	int SORTING_PLAN_PRODUCT__DESCRIPTION = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>End Product</b></em>' reference.
@@ -556,7 +556,16 @@ public interface cptspPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_PRODUCT__END_PRODUCT = 8;
+	int SORTING_PLAN_PRODUCT__END_PRODUCT = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Selected</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_PRODUCT__SELECTED = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Sorting Plan Product</em>' class.
@@ -565,7 +574,25 @@ public interface cptspPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_PRODUCT_FEATURE_COUNT = 9;
+	int SORTING_PLAN_PRODUCT_FEATURE_COUNT = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 10;
+
+	/**
+	 * The operation id for the '<em>Add Propagator Function Adapter</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_PRODUCT___ADD_PROPAGATOR_FUNCTION_ADAPTER = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER___ADD_PROPAGATOR_FUNCTION_ADAPTER;
+
+	/**
+	 * The operation id for the '<em>Refresh Selected</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_PRODUCT___REFRESH_SELECTED = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Sorting Plan Product</em>' class.
@@ -574,7 +601,7 @@ public interface cptspPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_PRODUCT_OPERATION_COUNT = 0;
+	int SORTING_PLAN_PRODUCT_OPERATION_COUNT = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link com.misc.projects.SortingPlans.impl.SortingPlanOutputImpl <em>Sorting Plan Output</em>}' class.
@@ -676,7 +703,7 @@ public interface cptspPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_OUTPUT__FPD_SORTING_PLAN_OUTPUT = 0;
+	int SORTING_PLAN_OUTPUT__FPD_SORTING_PLAN_OUTPUT = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Output Product</b></em>' reference.
@@ -685,7 +712,7 @@ public interface cptspPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_OUTPUT__OUTPUT_PRODUCT = 1;
+	int SORTING_PLAN_OUTPUT__OUTPUT_PRODUCT = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -694,7 +721,7 @@ public interface cptspPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_OUTPUT__DESCRIPTION = 2;
+	int SORTING_PLAN_OUTPUT__DESCRIPTION = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Sorting Plan End Product</b></em>' reference list.
@@ -703,7 +730,7 @@ public interface cptspPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_OUTPUT__SORTING_PLAN_END_PRODUCT = 3;
+	int SORTING_PLAN_OUTPUT__SORTING_PLAN_END_PRODUCT = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Sorting Plan</b></em>' container reference.
@@ -712,7 +739,16 @@ public interface cptspPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_OUTPUT__SORTING_PLAN = 4;
+	int SORTING_PLAN_OUTPUT__SORTING_PLAN = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Selected</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_OUTPUT__SELECTED = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Sorting Plan Output</em>' class.
@@ -721,7 +757,25 @@ public interface cptspPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_OUTPUT_FEATURE_COUNT = 5;
+	int SORTING_PLAN_OUTPUT_FEATURE_COUNT = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 6;
+
+	/**
+	 * The operation id for the '<em>Add Propagator Function Adapter</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_OUTPUT___ADD_PROPAGATOR_FUNCTION_ADAPTER = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER___ADD_PROPAGATOR_FUNCTION_ADAPTER;
+
+	/**
+	 * The operation id for the '<em>Refresh Selected</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_OUTPUT___REFRESH_SELECTED = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Sorting Plan Output</em>' class.
@@ -730,7 +784,7 @@ public interface cptspPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_OUTPUT_OPERATION_COUNT = 0;
+	int SORTING_PLAN_OUTPUT_OPERATION_COUNT = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_OPERATION_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Input Product</b></em>' reference.
@@ -739,7 +793,7 @@ public interface cptspPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_INPUT__INPUT_PRODUCT = 0;
+	int SORTING_PLAN_INPUT__INPUT_PRODUCT = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>FPD Sorting Plan Input</b></em>' reference.
@@ -748,7 +802,7 @@ public interface cptspPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_INPUT__FPD_SORTING_PLAN_INPUT = 1;
+	int SORTING_PLAN_INPUT__FPD_SORTING_PLAN_INPUT = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -757,7 +811,7 @@ public interface cptspPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_INPUT__DESCRIPTION = 2;
+	int SORTING_PLAN_INPUT__DESCRIPTION = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Sorting Plan</b></em>' container reference.
@@ -766,7 +820,16 @@ public interface cptspPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_INPUT__SORTING_PLAN = 3;
+	int SORTING_PLAN_INPUT__SORTING_PLAN = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Selected</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_INPUT__SELECTED = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Sorting Plan Input</em>' class.
@@ -775,7 +838,25 @@ public interface cptspPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_INPUT_FEATURE_COUNT = 4;
+	int SORTING_PLAN_INPUT_FEATURE_COUNT = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>Add Propagator Function Adapter</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_INPUT___ADD_PROPAGATOR_FUNCTION_ADAPTER = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER___ADD_PROPAGATOR_FUNCTION_ADAPTER;
+
+	/**
+	 * The operation id for the '<em>Refresh Selected</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_INPUT___REFRESH_SELECTED = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Sorting Plan Input</em>' class.
@@ -784,7 +865,7 @@ public interface cptspPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_INPUT_OPERATION_COUNT = 0;
+	int SORTING_PLAN_INPUT_OPERATION_COUNT = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_OPERATION_COUNT + 1;
 
 
 	/**
@@ -818,26 +899,6 @@ public interface cptspPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getScenarios_Name();
-
-	/**
-	 * Returns the meta object for the '{@link com.misc.projects.SortingPlans.Scenarios#refreshSortingPlanProducts() <em>Refresh Sorting Plan Products</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Refresh Sorting Plan Products</em>' operation.
-	 * @see com.misc.projects.SortingPlans.Scenarios#refreshSortingPlanProducts()
-	 * @generated
-	 */
-	EOperation getScenarios__RefreshSortingPlanProducts();
-
-	/**
-	 * Returns the meta object for the '{@link com.misc.projects.SortingPlans.Scenarios#refreshEndProducts() <em>Refresh End Products</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Refresh End Products</em>' operation.
-	 * @see com.misc.projects.SortingPlans.Scenarios#refreshEndProducts()
-	 * @generated
-	 */
-	EOperation getScenarios__RefreshEndProducts();
 
 	/**
 	 * Returns the meta object for class '{@link com.misc.projects.SortingPlans.Scenario <em>Scenario</em>}'.
@@ -1010,6 +1071,17 @@ public interface cptspPackage extends EPackage {
 	EAttribute getSortingPlan_Description();
 
 	/**
+	 * Returns the meta object for the attribute '{@link com.misc.projects.SortingPlans.SortingPlan#isSelected <em>Selected</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Selected</em>'.
+	 * @see com.misc.projects.SortingPlans.SortingPlan#isSelected()
+	 * @see #getSortingPlan()
+	 * @generated
+	 */
+	EAttribute getSortingPlan_Selected();
+
+	/**
 	 * Returns the meta object for the '{@link com.misc.projects.SortingPlans.SortingPlan#refreshInputs() <em>Refresh Inputs</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1038,6 +1110,16 @@ public interface cptspPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getSortingPlan__Refresh();
+
+	/**
+	 * Returns the meta object for the '{@link com.misc.projects.SortingPlans.SortingPlan#refreshSelected() <em>Refresh Selected</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Refresh Selected</em>' operation.
+	 * @see com.misc.projects.SortingPlans.SortingPlan#refreshSelected()
+	 * @generated
+	 */
+	EOperation getSortingPlan__RefreshSelected();
 
 	/**
 	 * Returns the meta object for the reference list '{@link com.misc.projects.SortingPlans.SortingPlan#getEndProducts <em>End Products</em>}'.
@@ -1257,6 +1339,27 @@ public interface cptspPackage extends EPackage {
 	EReference getSortingPlanProduct_EndProduct();
 
 	/**
+	 * Returns the meta object for the attribute '{@link com.misc.projects.SortingPlans.SortingPlanProduct#isSelected <em>Selected</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Selected</em>'.
+	 * @see com.misc.projects.SortingPlans.SortingPlanProduct#isSelected()
+	 * @see #getSortingPlanProduct()
+	 * @generated
+	 */
+	EAttribute getSortingPlanProduct_Selected();
+
+	/**
+	 * Returns the meta object for the '{@link com.misc.projects.SortingPlans.SortingPlanProduct#refreshSelected() <em>Refresh Selected</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Refresh Selected</em>' operation.
+	 * @see com.misc.projects.SortingPlans.SortingPlanProduct#refreshSelected()
+	 * @generated
+	 */
+	EOperation getSortingPlanProduct__RefreshSelected();
+
+	/**
 	 * Returns the meta object for class '{@link com.misc.projects.SortingPlans.SortingPlanEndProduct <em>Sorting Plan End Product</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1387,6 +1490,27 @@ public interface cptspPackage extends EPackage {
 	EReference getSortingPlanOutput_SortingPlan();
 
 	/**
+	 * Returns the meta object for the attribute '{@link com.misc.projects.SortingPlans.SortingPlanOutput#isSelected <em>Selected</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Selected</em>'.
+	 * @see com.misc.projects.SortingPlans.SortingPlanOutput#isSelected()
+	 * @see #getSortingPlanOutput()
+	 * @generated
+	 */
+	EAttribute getSortingPlanOutput_Selected();
+
+	/**
+	 * Returns the meta object for the '{@link com.misc.projects.SortingPlans.SortingPlanOutput#refreshSelected() <em>Refresh Selected</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Refresh Selected</em>' operation.
+	 * @see com.misc.projects.SortingPlans.SortingPlanOutput#refreshSelected()
+	 * @generated
+	 */
+	EOperation getSortingPlanOutput__RefreshSelected();
+
+	/**
 	 * Returns the meta object for class '{@link com.misc.projects.SortingPlans.SortingPlanInput <em>Sorting Plan Input</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1441,6 +1565,27 @@ public interface cptspPackage extends EPackage {
 	EReference getSortingPlanInput_SortingPlan();
 
 	/**
+	 * Returns the meta object for the attribute '{@link com.misc.projects.SortingPlans.SortingPlanInput#isSelected <em>Selected</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Selected</em>'.
+	 * @see com.misc.projects.SortingPlans.SortingPlanInput#isSelected()
+	 * @see #getSortingPlanInput()
+	 * @generated
+	 */
+	EAttribute getSortingPlanInput_Selected();
+
+	/**
+	 * Returns the meta object for the '{@link com.misc.projects.SortingPlans.SortingPlanInput#refreshSelected() <em>Refresh Selected</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Refresh Selected</em>' operation.
+	 * @see com.misc.projects.SortingPlans.SortingPlanInput#refreshSelected()
+	 * @generated
+	 */
+	EOperation getSortingPlanInput__RefreshSelected();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1488,22 +1633,6 @@ public interface cptspPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SCENARIOS__NAME = eINSTANCE.getScenarios_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Refresh Sorting Plan Products</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation SCENARIOS___REFRESH_SORTING_PLAN_PRODUCTS = eINSTANCE.getScenarios__RefreshSortingPlanProducts();
-
-		/**
-		 * The meta object literal for the '<em><b>Refresh End Products</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation SCENARIOS___REFRESH_END_PRODUCTS = eINSTANCE.getScenarios__RefreshEndProducts();
 
 		/**
 		 * The meta object literal for the '{@link com.misc.projects.SortingPlans.impl.ScenarioImpl <em>Scenario</em>}' class.
@@ -1638,6 +1767,14 @@ public interface cptspPackage extends EPackage {
 		EAttribute SORTING_PLAN__DESCRIPTION = eINSTANCE.getSortingPlan_Description();
 
 		/**
+		 * The meta object literal for the '<em><b>Selected</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SORTING_PLAN__SELECTED = eINSTANCE.getSortingPlan_Selected();
+
+		/**
 		 * The meta object literal for the '<em><b>Refresh Inputs</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1660,6 +1797,14 @@ public interface cptspPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation SORTING_PLAN___REFRESH = eINSTANCE.getSortingPlan__Refresh();
+
+		/**
+		 * The meta object literal for the '<em><b>Refresh Selected</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation SORTING_PLAN___REFRESH_SELECTED = eINSTANCE.getSortingPlan__RefreshSelected();
 
 		/**
 		 * The meta object literal for the '<em><b>End Products</b></em>' reference list feature.
@@ -1826,6 +1971,22 @@ public interface cptspPackage extends EPackage {
 		EReference SORTING_PLAN_PRODUCT__END_PRODUCT = eINSTANCE.getSortingPlanProduct_EndProduct();
 
 		/**
+		 * The meta object literal for the '<em><b>Selected</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SORTING_PLAN_PRODUCT__SELECTED = eINSTANCE.getSortingPlanProduct_Selected();
+
+		/**
+		 * The meta object literal for the '<em><b>Refresh Selected</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation SORTING_PLAN_PRODUCT___REFRESH_SELECTED = eINSTANCE.getSortingPlanProduct__RefreshSelected();
+
+		/**
 		 * The meta object literal for the '{@link com.misc.projects.SortingPlans.impl.SortingPlanEndProductImpl <em>Sorting Plan End Product</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1926,6 +2087,22 @@ public interface cptspPackage extends EPackage {
 		EReference SORTING_PLAN_OUTPUT__SORTING_PLAN = eINSTANCE.getSortingPlanOutput_SortingPlan();
 
 		/**
+		 * The meta object literal for the '<em><b>Selected</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SORTING_PLAN_OUTPUT__SELECTED = eINSTANCE.getSortingPlanOutput_Selected();
+
+		/**
+		 * The meta object literal for the '<em><b>Refresh Selected</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation SORTING_PLAN_OUTPUT___REFRESH_SELECTED = eINSTANCE.getSortingPlanOutput__RefreshSelected();
+
+		/**
 		 * The meta object literal for the '{@link com.misc.projects.SortingPlans.impl.SortingPlanInputImpl <em>Sorting Plan Input</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1966,6 +2143,22 @@ public interface cptspPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SORTING_PLAN_INPUT__SORTING_PLAN = eINSTANCE.getSortingPlanInput_SortingPlan();
+
+		/**
+		 * The meta object literal for the '<em><b>Selected</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SORTING_PLAN_INPUT__SELECTED = eINSTANCE.getSortingPlanInput_Selected();
+
+		/**
+		 * The meta object literal for the '<em><b>Refresh Selected</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation SORTING_PLAN_INPUT___REFRESH_SELECTED = eINSTANCE.getSortingPlanInput__RefreshSelected();
 
 	}
 

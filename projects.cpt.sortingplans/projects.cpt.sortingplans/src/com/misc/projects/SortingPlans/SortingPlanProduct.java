@@ -2,12 +2,11 @@
  */
 package com.misc.projects.SortingPlans;
 
+import com.misc.common.moplaf.propagator.ObjectWithPropagatorFunctionAdapter;
 import com.misc.projects.CptDatasetLoad.SortingLevelRow;
 
 import java.math.BigDecimal;
 import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,13 +26,14 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.misc.projects.SortingPlans.SortingPlanProduct#getDestinationSk <em>Destination Sk</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.SortingPlanProduct#getDescription <em>Description</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.SortingPlanProduct#getEndProduct <em>End Product</em>}</li>
+ *   <li>{@link com.misc.projects.SortingPlans.SortingPlanProduct#isSelected <em>Selected</em>}</li>
  * </ul>
  *
  * @see com.misc.projects.SortingPlans.cptspPackage#getSortingPlanProduct()
  * @model
  * @generated
  */
-public interface SortingPlanProduct extends EObject {
+public interface SortingPlanProduct extends ObjectWithPropagatorFunctionAdapter {
 	/**
 	 * Returns the value of the '<em><b>FPD Sorting Level</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -242,5 +242,39 @@ public interface SortingPlanProduct extends EObject {
 	 * @generated
 	 */
 	void setEndProduct(EndProduct value);
+
+	/**
+	 * Returns the value of the '<em><b>Selected</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Selected</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Selected</em>' attribute.
+	 * @see #setSelected(boolean)
+	 * @see com.misc.projects.SortingPlans.cptspPackage#getSortingPlanProduct_Selected()
+	 * @model
+	 * @generated
+	 */
+	boolean isSelected();
+
+	/**
+	 * Sets the value of the '{@link com.misc.projects.SortingPlans.SortingPlanProduct#isSelected <em>Selected</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Selected</em>' attribute.
+	 * @see #isSelected()
+	 * @generated
+	 */
+	void setSelected(boolean value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void refreshSelected();
 
 } // SortingPlanProduct

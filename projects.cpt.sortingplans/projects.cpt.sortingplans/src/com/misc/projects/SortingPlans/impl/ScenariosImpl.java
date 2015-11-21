@@ -5,8 +5,6 @@ package com.misc.projects.SortingPlans.impl;
 import com.misc.projects.SortingPlans.Scenario;
 import com.misc.projects.SortingPlans.Scenarios;
 import com.misc.projects.SortingPlans.cptspPackage;
-
-import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -124,28 +122,6 @@ public class ScenariosImpl extends MinimalEObjectImpl.Container implements Scena
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void refreshSortingPlanProducts() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void refreshEndProducts() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -223,24 +199,6 @@ public class ScenariosImpl extends MinimalEObjectImpl.Container implements Scena
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case cptspPackage.SCENARIOS___REFRESH_SORTING_PLAN_PRODUCTS:
-				refreshSortingPlanProducts();
-				return null;
-			case cptspPackage.SCENARIOS___REFRESH_END_PRODUCTS:
-				refreshEndProducts();
-				return null;
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

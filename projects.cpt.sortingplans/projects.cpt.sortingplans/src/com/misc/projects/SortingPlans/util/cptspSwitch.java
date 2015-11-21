@@ -97,6 +97,7 @@ public class cptspSwitch<T> extends Switch<T> {
 			case cptspPackage.SORTING_PLAN_PRODUCT: {
 				SortingPlanProduct sortingPlanProduct = (SortingPlanProduct)theEObject;
 				T result = caseSortingPlanProduct(sortingPlanProduct);
+				if (result == null) result = caseObjectWithPropagatorFunctionAdapter(sortingPlanProduct);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -109,12 +110,14 @@ public class cptspSwitch<T> extends Switch<T> {
 			case cptspPackage.SORTING_PLAN_OUTPUT: {
 				SortingPlanOutput sortingPlanOutput = (SortingPlanOutput)theEObject;
 				T result = caseSortingPlanOutput(sortingPlanOutput);
+				if (result == null) result = caseObjectWithPropagatorFunctionAdapter(sortingPlanOutput);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case cptspPackage.SORTING_PLAN_INPUT: {
 				SortingPlanInput sortingPlanInput = (SortingPlanInput)theEObject;
 				T result = caseSortingPlanInput(sortingPlanInput);
+				if (result == null) result = caseObjectWithPropagatorFunctionAdapter(sortingPlanInput);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

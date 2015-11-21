@@ -9,6 +9,14 @@ Note: to describe the dependency graph
   PropagatorCalcScenarioRefreshEndProducts         // create/remove the endproducts
     PropagatorCalcEndProductRefreshSortingPlans    // create/remove the endproducts for a sorting plan
   PropagatorLayerEndProductRefreshSortingPlans     // create/remove the endproducts for the sorting plans
+    PropagatorCalcSortingPlanOutputRefreshSelected // calculate selected
+  PropagatorLayerSortingPlanOutputRefreshSelected  // calculate selected
+    PropagatorCalcSortingPlanRefreshSelected       // calculate selected
+  PropagatorLayerSortingPlanRefreshSelected        // calculate selected
+    PropagatorCalcSortingPlanInputRefreshSelected  // calculate selected
+  PropagatorLayerSortingPlanInputRefreshSelected   // calculate selected
+    PropagatorCalcSortingPlanProductRefreshSelected// calculate selected
+  PropagatorLayerSortingPlanProductRefreshSelected // calculate selected
 PropagatorScopeScenario
 
   

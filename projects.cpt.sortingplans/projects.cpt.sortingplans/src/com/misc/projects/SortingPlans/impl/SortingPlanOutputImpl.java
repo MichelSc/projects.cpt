@@ -2,13 +2,16 @@
  */
 package com.misc.projects.SortingPlans.impl;
 
+import com.misc.common.moplaf.propagator.Util;
 import com.misc.projects.CptDatasetLoad.SortingPlanOutputRow;
 import com.misc.projects.SortingPlans.SortingPlan;
 import com.misc.projects.SortingPlans.SortingPlanEndProduct;
 import com.misc.projects.SortingPlans.SortingPlanOutput;
 import com.misc.projects.SortingPlans.SortingPlanProduct;
 import com.misc.projects.SortingPlans.cptspPackage;
+import com.misc.projects.SortingPlans.calc.PropagatorCalcSortingPlanOutputRefreshSelected;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -34,11 +37,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.misc.projects.SortingPlans.impl.SortingPlanOutputImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.impl.SortingPlanOutputImpl#getSortingPlanEndProduct <em>Sorting Plan End Product</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.impl.SortingPlanOutputImpl#getSortingPlan <em>Sorting Plan</em>}</li>
+ *   <li>{@link com.misc.projects.SortingPlans.impl.SortingPlanOutputImpl#isSelected <em>Selected</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class SortingPlanOutputImpl extends MinimalEObjectImpl.Container implements SortingPlanOutput {
+	
+	
 	/**
 	 * The cached value of the '{@link #getFPDSortingPlanOutput() <em>FPD Sorting Plan Output</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -78,6 +84,26 @@ public class SortingPlanOutputImpl extends MinimalEObjectImpl.Container implemen
 	 * @ordered
 	 */
 	protected EList<SortingPlanEndProduct> sortingPlanEndProduct;
+
+	/**
+	 * The default value of the '{@link #isSelected() <em>Selected</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSelected()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean SELECTED_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isSelected() <em>Selected</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSelected()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean selected = SELECTED_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -267,6 +293,44 @@ public class SortingPlanOutputImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isSelected() {
+		return selected;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSelected(boolean newSelected) {
+		boolean oldSelected = selected;
+		selected = newSelected;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, cptspPackage.SORTING_PLAN_OUTPUT__SELECTED, oldSelected, selected));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 */
+	public void refreshSelected() {
+		boolean selected = this.getSortingPlanEndProduct().size()>0;
+		this.setSelected(selected);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 */
+	public void addPropagatorFunctionAdapter() {
+		Util.adapt(this, PropagatorCalcSortingPlanOutputRefreshSelected.class);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -337,6 +401,8 @@ public class SortingPlanOutputImpl extends MinimalEObjectImpl.Container implemen
 				return getSortingPlanEndProduct();
 			case cptspPackage.SORTING_PLAN_OUTPUT__SORTING_PLAN:
 				return getSortingPlan();
+			case cptspPackage.SORTING_PLAN_OUTPUT__SELECTED:
+				return isSelected();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -363,6 +429,9 @@ public class SortingPlanOutputImpl extends MinimalEObjectImpl.Container implemen
 			case cptspPackage.SORTING_PLAN_OUTPUT__SORTING_PLAN:
 				setSortingPlan((SortingPlan)newValue);
 				return;
+			case cptspPackage.SORTING_PLAN_OUTPUT__SELECTED:
+				setSelected((Boolean)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -387,6 +456,9 @@ public class SortingPlanOutputImpl extends MinimalEObjectImpl.Container implemen
 			case cptspPackage.SORTING_PLAN_OUTPUT__SORTING_PLAN:
 				setSortingPlan((SortingPlan)null);
 				return;
+			case cptspPackage.SORTING_PLAN_OUTPUT__SELECTED:
+				setSelected(SELECTED_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -409,8 +481,44 @@ public class SortingPlanOutputImpl extends MinimalEObjectImpl.Container implemen
 				return sortingPlanEndProduct != null && !sortingPlanEndProduct.isEmpty();
 			case cptspPackage.SORTING_PLAN_OUTPUT__SORTING_PLAN:
 				return getSortingPlan() != null;
+			case cptspPackage.SORTING_PLAN_OUTPUT__SELECTED:
+				return selected != SELECTED_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case cptspPackage.SORTING_PLAN_OUTPUT___REFRESH_SELECTED:
+				refreshSelected();
+				return null;
+			case cptspPackage.SORTING_PLAN_OUTPUT___ADD_PROPAGATOR_FUNCTION_ADAPTER:
+				addPropagatorFunctionAdapter();
+				return null;
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (selected: ");
+		result.append(selected);
+		result.append(')');
+		return result.toString();
 	}
 
 } //SortingPlanOutputImpl

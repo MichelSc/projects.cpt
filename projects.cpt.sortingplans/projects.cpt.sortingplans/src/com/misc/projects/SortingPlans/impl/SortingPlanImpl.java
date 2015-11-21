@@ -44,6 +44,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.misc.projects.SortingPlans.impl.SortingPlanImpl#getInputs <em>Inputs</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.impl.SortingPlanImpl#getScenario <em>Scenario</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.impl.SortingPlanImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link com.misc.projects.SortingPlans.impl.SortingPlanImpl#isSelected <em>Selected</em>}</li>
  * </ul>
  *
  * @generated
@@ -97,6 +98,26 @@ public class SortingPlanImpl extends MinimalEObjectImpl.Container implements Sor
 	 * @ordered
 	 */
 	protected static final String DESCRIPTION_EDEFAULT = null;
+
+	/**
+	 * The default value of the '{@link #isSelected() <em>Selected</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSelected()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean SELECTED_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isSelected() <em>Selected</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSelected()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean selected = SELECTED_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -195,6 +216,27 @@ public class SortingPlanImpl extends MinimalEObjectImpl.Container implements Sor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSelected() {
+		return selected;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSelected(boolean newSelected) {
+		boolean oldSelected = selected;
+		selected = newSelected;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, cptspPackage.SORTING_PLAN__SELECTED, oldSelected, selected));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 */
 	public void refreshInputs() {
 		HashSet<SortingPlanInputRow> tobes = new HashSet<SortingPlanInputRow>();
@@ -262,6 +304,19 @@ public class SortingPlanImpl extends MinimalEObjectImpl.Container implements Sor
 	public void refresh() {
 		this.refreshInputs();
 		this.refreshOutputs();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 */
+	public void refreshSelected() {
+		boolean selected = false;
+		for ( SortingPlanOutput spout : this.getOutputs()){
+			if ( selected ) { break; }
+			selected = spout.isSelected();
+		}
+		this.setSelected(selected);
 	}
 
 	/**
@@ -400,6 +455,8 @@ public class SortingPlanImpl extends MinimalEObjectImpl.Container implements Sor
 				return getScenario();
 			case cptspPackage.SORTING_PLAN__DESCRIPTION:
 				return getDescription();
+			case cptspPackage.SORTING_PLAN__SELECTED:
+				return isSelected();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -431,6 +488,9 @@ public class SortingPlanImpl extends MinimalEObjectImpl.Container implements Sor
 			case cptspPackage.SORTING_PLAN__SCENARIO:
 				setScenario((Scenario)newValue);
 				return;
+			case cptspPackage.SORTING_PLAN__SELECTED:
+				setSelected((Boolean)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -458,6 +518,9 @@ public class SortingPlanImpl extends MinimalEObjectImpl.Container implements Sor
 			case cptspPackage.SORTING_PLAN__SCENARIO:
 				setScenario((Scenario)null);
 				return;
+			case cptspPackage.SORTING_PLAN__SELECTED:
+				setSelected(SELECTED_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -482,6 +545,8 @@ public class SortingPlanImpl extends MinimalEObjectImpl.Container implements Sor
 				return getScenario() != null;
 			case cptspPackage.SORTING_PLAN__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? getDescription() != null : !DESCRIPTION_EDEFAULT.equals(getDescription());
+			case cptspPackage.SORTING_PLAN__SELECTED:
+				return selected != SELECTED_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -503,11 +568,30 @@ public class SortingPlanImpl extends MinimalEObjectImpl.Container implements Sor
 			case cptspPackage.SORTING_PLAN___REFRESH:
 				refresh();
 				return null;
+			case cptspPackage.SORTING_PLAN___REFRESH_SELECTED:
+				refreshSelected();
+				return null;
 			case cptspPackage.SORTING_PLAN___ADD_PROPAGATOR_FUNCTION_ADAPTER:
 				addPropagatorFunctionAdapter();
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (selected: ");
+		result.append(selected);
+		result.append(')');
+		return result.toString();
 	}
 
 } //SortingPlanImpl

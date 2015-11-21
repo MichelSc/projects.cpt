@@ -66,20 +66,4 @@ public interface Scenarios extends EObject {
 	 */
 	void setName(String value);
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	void refreshSortingPlanProducts();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	void refreshEndProducts();
-
 } // Scenarios

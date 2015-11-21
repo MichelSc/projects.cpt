@@ -9,6 +9,7 @@ import com.misc.projects.SortingPlans.SortingPlanOutput;
 import com.misc.projects.SortingPlans.SortingPlanProduct;
 import com.misc.projects.SortingPlans.cptspPackage;
 
+import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
 import java.util.Collection;
 
@@ -39,6 +40,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.misc.projects.SortingPlans.impl.SortingPlanProductImpl#getDestinationSk <em>Destination Sk</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.impl.SortingPlanProductImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.impl.SortingPlanProductImpl#getEndProduct <em>End Product</em>}</li>
+ *   <li>{@link com.misc.projects.SortingPlans.impl.SortingPlanProductImpl#isSelected <em>Selected</em>}</li>
  * </ul>
  *
  * @generated
@@ -173,6 +175,26 @@ public class SortingPlanProductImpl extends MinimalEObjectImpl.Container impleme
 	 * @ordered
 	 */
 	protected EndProduct endProduct;
+
+	/**
+	 * The default value of the '{@link #isSelected() <em>Selected</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSelected()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean SELECTED_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isSelected() <em>Selected</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSelected()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean selected = SELECTED_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -418,6 +440,51 @@ public class SortingPlanProductImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isSelected() {
+		return selected;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSelected(boolean newSelected) {
+		boolean oldSelected = selected;
+		selected = newSelected;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, cptspPackage.SORTING_PLAN_PRODUCT__SELECTED, oldSelected, selected));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 */
+	public void refreshSelected() {
+		boolean selected = false;
+		for ( SortingPlanOutput spout : this.getSortingPlansProducing()){
+			if ( selected ) { break; }
+			selected = spout.isSelected();
+		}
+		for ( SortingPlanInput spin : this.getSortingPlansAccepting()){
+			if ( selected ) { break; }
+			selected = spin.isSelected();
+		}
+		this.setSelected(selected);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 */
+	public void addPropagatorFunctionAdapter() {
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -480,6 +547,8 @@ public class SortingPlanProductImpl extends MinimalEObjectImpl.Container impleme
 			case cptspPackage.SORTING_PLAN_PRODUCT__END_PRODUCT:
 				if (resolve) return getEndProduct();
 				return basicGetEndProduct();
+			case cptspPackage.SORTING_PLAN_PRODUCT__SELECTED:
+				return isSelected();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -519,6 +588,9 @@ public class SortingPlanProductImpl extends MinimalEObjectImpl.Container impleme
 			case cptspPackage.SORTING_PLAN_PRODUCT__END_PRODUCT:
 				setEndProduct((EndProduct)newValue);
 				return;
+			case cptspPackage.SORTING_PLAN_PRODUCT__SELECTED:
+				setSelected((Boolean)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -555,6 +627,9 @@ public class SortingPlanProductImpl extends MinimalEObjectImpl.Container impleme
 			case cptspPackage.SORTING_PLAN_PRODUCT__END_PRODUCT:
 				setEndProduct((EndProduct)null);
 				return;
+			case cptspPackage.SORTING_PLAN_PRODUCT__SELECTED:
+				setSelected(SELECTED_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -585,8 +660,28 @@ public class SortingPlanProductImpl extends MinimalEObjectImpl.Container impleme
 				return DESCRIPTION_EDEFAULT == null ? getDescription() != null : !DESCRIPTION_EDEFAULT.equals(getDescription());
 			case cptspPackage.SORTING_PLAN_PRODUCT__END_PRODUCT:
 				return endProduct != null;
+			case cptspPackage.SORTING_PLAN_PRODUCT__SELECTED:
+				return selected != SELECTED_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case cptspPackage.SORTING_PLAN_PRODUCT___REFRESH_SELECTED:
+				refreshSelected();
+				return null;
+			case cptspPackage.SORTING_PLAN_PRODUCT___ADD_PROPAGATOR_FUNCTION_ADAPTER:
+				addPropagatorFunctionAdapter();
+				return null;
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**
@@ -607,6 +702,8 @@ public class SortingPlanProductImpl extends MinimalEObjectImpl.Container impleme
 		result.append(throughputTypeSk);
 		result.append(", DestinationSk: ");
 		result.append(destinationSk);
+		result.append(", selected: ");
+		result.append(selected);
 		result.append(')');
 		return result.toString();
 	}

@@ -22,6 +22,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link com.misc.projects.SortingPlans.SortingPlan#getInputs <em>Inputs</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.SortingPlan#getScenario <em>Scenario</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.SortingPlan#getDescription <em>Description</em>}</li>
+ *   <li>{@link com.misc.projects.SortingPlans.SortingPlan#isSelected <em>Selected</em>}</li>
  * </ul>
  *
  * @see com.misc.projects.SortingPlans.cptspPackage#getSortingPlan()
@@ -109,6 +110,32 @@ public interface SortingPlan extends ObjectWithPropagatorFunctionAdapter {
 	String getDescription();
 
 	/**
+	 * Returns the value of the '<em><b>Selected</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Selected</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Selected</em>' attribute.
+	 * @see #setSelected(boolean)
+	 * @see com.misc.projects.SortingPlans.cptspPackage#getSortingPlan_Selected()
+	 * @model
+	 * @generated
+	 */
+	boolean isSelected();
+
+	/**
+	 * Sets the value of the '{@link com.misc.projects.SortingPlans.SortingPlan#isSelected <em>Selected</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Selected</em>' attribute.
+	 * @see #isSelected()
+	 * @generated
+	 */
+	void setSelected(boolean value);
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model
@@ -131,6 +158,14 @@ public interface SortingPlan extends ObjectWithPropagatorFunctionAdapter {
 	 * @generated
 	 */
 	void refresh();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void refreshSelected();
 
 	/**
 	 * Returns the value of the '<em><b>End Products</b></em>' reference list.
