@@ -2,12 +2,15 @@
  */
 package com.misc.projects.SortingPlans.impl;
 
+import com.misc.common.moplaf.propagator.Util;
 import com.misc.projects.CptDatasetLoad.SortingLevelRow;
 import com.misc.projects.SortingPlans.EndProduct;
 import com.misc.projects.SortingPlans.SortingPlanInput;
 import com.misc.projects.SortingPlans.SortingPlanOutput;
 import com.misc.projects.SortingPlans.SortingPlanProduct;
 import com.misc.projects.SortingPlans.cptspPackage;
+import com.misc.projects.SortingPlans.calc.PropagatorCalcSortingPlanOutputRefreshSelected;
+import com.misc.projects.SortingPlans.calc.PropagatorCalcSortingPlanProductRefreshSelected;
 
 import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
@@ -478,6 +481,7 @@ public class SortingPlanProductImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 */
 	public void addPropagatorFunctionAdapter() {
+		Util.adapt(this, PropagatorCalcSortingPlanProductRefreshSelected.class);
 	}
 
 	/**

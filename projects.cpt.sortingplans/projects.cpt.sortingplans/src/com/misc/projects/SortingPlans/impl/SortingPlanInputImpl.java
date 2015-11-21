@@ -2,11 +2,14 @@
  */
 package com.misc.projects.SortingPlans.impl;
 
+import com.misc.common.moplaf.propagator.Util;
 import com.misc.projects.CptDatasetLoad.SortingPlanInputRow;
 import com.misc.projects.SortingPlans.SortingPlan;
 import com.misc.projects.SortingPlans.SortingPlanInput;
 import com.misc.projects.SortingPlans.SortingPlanProduct;
 import com.misc.projects.SortingPlans.cptspPackage;
+import com.misc.projects.SortingPlans.calc.PropagatorCalcSortingPlanInputRefreshSelected;
+import com.misc.projects.SortingPlans.calc.PropagatorCalcSortingPlanOutputRefreshSelected;
 
 import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.notify.Notification;
@@ -289,7 +292,8 @@ public class SortingPlanInputImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 */
 	public void addPropagatorFunctionAdapter() {
-	}
+		Util.adapt(this, PropagatorCalcSortingPlanInputRefreshSelected.class);	
+		}
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -13,7 +13,10 @@ import com.misc.projects.SortingPlans.SortingPlanInput;
 import com.misc.projects.SortingPlans.SortingPlanOutput;
 import com.misc.projects.SortingPlans.cptspFactory;
 import com.misc.projects.SortingPlans.cptspPackage;
+import com.misc.projects.SortingPlans.calc.PropagatorCalcSortingPlanOutputRefreshSelected;
 import com.misc.projects.SortingPlans.calc.PropagatorCalcSortingPlanRefresh;
+import com.misc.projects.SortingPlans.calc.PropagatorCalcSortingPlanRefreshSelected;
+
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import java.util.HashSet;
@@ -325,6 +328,7 @@ public class SortingPlanImpl extends MinimalEObjectImpl.Container implements Sor
 	 */
 	public void addPropagatorFunctionAdapter() {
 		Util.adapt(this, PropagatorCalcSortingPlanRefresh.class);
+		Util.adapt(this, PropagatorCalcSortingPlanRefreshSelected.class);
 	}
 
 	/**

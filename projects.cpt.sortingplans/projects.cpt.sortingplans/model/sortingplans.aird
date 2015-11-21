@@ -330,7 +330,7 @@
             </children>
             <styles xmi:type="notation:ConnectorStyle" xmi:id="_bg2hcY95EeW-Cb71_Mde-Q"/>
             <styles xmi:type="notation:FontStyle" xmi:id="_bg2hco95EeW-Cb71_Mde-Q" fontColor="7490599" fontHeight="8"/>
-            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_bg2hc495EeW-Cb71_Mde-Q" points="[-86, 10, 594, -608]$[-152, 18, 528, -600]$[-722, -6, -42, -624]$[-685, 558, -5, -60]"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_bg2hc495EeW-Cb71_Mde-Q" points="[-100, -6, 594, -624]$[-732, -6, -38, -624]$[-698, 558, -4, -60]"/>
             <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_bhFyAI95EeW-Cb71_Mde-Q" id="(0.5,0.5)"/>
             <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_bhFyAY95EeW-Cb71_Mde-Q" id="(0.37875192360242194,0.41384917297448837)"/>
           </edges>
