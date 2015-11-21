@@ -23,6 +23,7 @@ import java.util.PriorityQueue;
 import org.eclipse.emf.common.CommonPlugin;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -388,15 +389,14 @@ public class EndProductImpl extends MinimalEObjectImpl.Container implements EndP
 			this.algorithmUpdate(queue, result, candidate.sortingPlanOut, candidate.distanceSorting);
 		}
 		//traverse the asis
+		BasicEList<SortingPlanEndProduct> spepToDelete = new BasicEList<SortingPlanEndProduct>();
 		// remove
 		for ( SortingPlanEndProduct spepAsIs: this.getSortingPlans()){
 			SortingPlan sp = spepAsIs.getSortingPlan();
 			AlgorithmSortingPlan tobe = result.get(sp);
 			if ( tobe==null){
 				// remove spepAsIs
-				spepAsIs.setSortingPlan(null);  
-				spepAsIs.setOutput(null);
-				spepAsIs.setEndProduct(null);  // owning
+				spepToDelete.add(spepAsIs);
 			} else {
 				// update
 				spepAsIs.setSortingDistance(tobe.distanceSorting);
@@ -416,16 +416,10 @@ public class EndProductImpl extends MinimalEObjectImpl.Container implements EndP
 		}
 
 		// clean up
-//		BasicEList<SortingPlanEndProduct> spepToDelete = new BasicEList<SortingPlanEndProduct>();
-//		for ( SortingPlanEndProduct spep : this.getSortingPlans()){
-//			if ( spep.getOutput().size()==0){
-//				spepToDelete.add(spep);
-//			}
-//		}
-//		for ( SortingPlanEndProduct spep : spepToDelete){
-//			spep.setSortingPlan(null);  
-//			spep.setEndProduct(null);  // owning
-//		}
+		for ( SortingPlanEndProduct spep : spepToDelete){
+			spep.setSortingPlan(null);  
+			spep.setEndProduct(null);  // owning
+		}
 		CommonPlugin.INSTANCE.log("EndProduct "+ this.getDescription()+" end refresh Sortingplans");
 	}
 

@@ -11,8 +11,6 @@
     <genClasses ecoreClass="sortingplans.ecore#//Scenarios">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sortingplans.ecore#//Scenarios/Scenarios"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sortingplans.ecore#//Scenarios/Name"/>
-      <genOperations ecoreOperation="sortingplans.ecore#//Scenarios/refreshSortingPlanProducts"/>
-      <genOperations ecoreOperation="sortingplans.ecore#//Scenarios/refreshEndProducts"/>
     </genClasses>
     <genClasses ecoreClass="sortingplans.ecore#//Scenario">
       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference sortingplans.ecore#//Scenario/SortingPlans"/>
@@ -20,11 +18,9 @@
       <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference sortingplans.ecore#//Scenario/SortingPlanProducts"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sortingplans.ecore#//Scenario/Name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sortingplans.ecore#//Scenario/SortingLevelsWithDestination"/>
-      <genOperations ecoreOperation="sortingplans.ecore#//Scenario/addSortingPlan">
-        <genParameters ecoreParameter="sortingplans.ecore#//Scenario/addSortingPlan/sp"/>
-      </genOperations>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sortingplans.ecore#//Scenario/SelectedSortingPlans"/>
+      <genOperations ecoreOperation="sortingplans.ecore#//Scenario/refreshSelectedSortingPlans"/>
       <genOperations ecoreOperation="sortingplans.ecore#//Scenario/refresh"/>
-      <genOperations ecoreOperation="sortingplans.ecore#//Scenario/activate"/>
       <genOperations ecoreOperation="sortingplans.ecore#//Scenario/refreshSortingPlanProduct"/>
       <genOperations ecoreOperation="sortingplans.ecore#//Scenario/refreshEndProducts"/>
     </genClasses>
@@ -62,11 +58,13 @@
       <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sortingplans.ecore#//SortingPlanProduct/EndProduct"/>
     </genClasses>
     <genClasses ecoreClass="sortingplans.ecore#//SortingPlanEndProduct">
-      <genFeatures children="true" createChild="false" propertySortChoices="true"
+      <genFeatures property="Readonly" createChild="false" propertySortChoices="true"
           ecoreFeature="ecore:EReference sortingplans.ecore#//SortingPlanEndProduct/Output"/>
-      <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sortingplans.ecore#//SortingPlanEndProduct/EndProduct"/>
+      <genFeatures property="Readonly" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference sortingplans.ecore#//SortingPlanEndProduct/EndProduct"/>
       <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference sortingplans.ecore#//SortingPlanEndProduct/SortingPlan"/>
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute sortingplans.ecore#//SortingPlanEndProduct/Description"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute sortingplans.ecore#//SortingPlanEndProduct/SortingDistance"/>
     </genClasses>
     <genClasses ecoreClass="sortingplans.ecore#//SortingPlanOutput">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sortingplans.ecore#//SortingPlanOutput/FPDSortingPlanOutput"/>
