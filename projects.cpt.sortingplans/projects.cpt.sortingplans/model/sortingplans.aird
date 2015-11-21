@@ -860,14 +860,6 @@
                 <styles xmi:type="notation:FontStyle" xmi:id="_4AwHG49tEeW7v-7kY5GYtA"/>
                 <layoutConstraint xmi:type="notation:Location" xmi:id="_oH6M8UriEeSakPtBSsZULg"/>
               </children>
-              <children xmi:type="notation:Node" xmi:id="_k8VdcEsREeSakPtBSsZULg" type="3010" element="_k7wOoEsREeSakPtBSsZULg">
-                <styles xmi:type="notation:FontStyle" xmi:id="_4AwHHI9tEeW7v-7kY5GYtA"/>
-                <layoutConstraint xmi:type="notation:Location" xmi:id="_k8VdcUsREeSakPtBSsZULg"/>
-              </children>
-              <children xmi:type="notation:Node" xmi:id="_mt_BQEsREeSakPtBSsZULg" type="3010" element="_mtX9QEsREeSakPtBSsZULg">
-                <styles xmi:type="notation:FontStyle" xmi:id="_4AwHHY9tEeW7v-7kY5GYtA"/>
-                <layoutConstraint xmi:type="notation:Location" xmi:id="_mt_BQUsREeSakPtBSsZULg"/>
-              </children>
               <styles xmi:type="notation:SortingStyle" xmi:id="_YnUKMUcvEeSQZ4EF8nk5eA"/>
               <styles xmi:type="notation:FilteringStyle" xmi:id="_YnUKMkcvEeSQZ4EF8nk5eA"/>
             </children>
@@ -1298,22 +1290,6 @@
             <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
-        </ownedElements>
-        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_k7wOoEsREeSakPtBSsZULg" name="refreshSortingPlanProducts()" tooltipText="refreshSortingPlanProducts()">
-          <target xmi:type="ecore:EOperation" href="sortingplans.ecore#//Scenarios/refreshSortingPlanProducts"/>
-          <semanticElements xmi:type="ecore:EOperation" href="sortingplans.ecore#//Scenarios/refreshSortingPlanProducts"/>
-          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_k7wOoUsREeSakPtBSsZULg" labelAlignment="LEFT">
-            <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']/@style"/>
-          </ownedStyle>
-          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']"/>
-        </ownedElements>
-        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_mtX9QEsREeSakPtBSsZULg" name="refreshEndProducts()" tooltipText="refreshEndProducts()">
-          <target xmi:type="ecore:EOperation" href="sortingplans.ecore#//Scenarios/refreshEndProducts"/>
-          <semanticElements xmi:type="ecore:EOperation" href="sortingplans.ecore#//Scenarios/refreshEndProducts"/>
-          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_mtZLYEsREeSakPtBSsZULg" labelAlignment="LEFT">
-            <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']/@style"/>
-          </ownedStyle>
-          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']"/>
         </ownedElements>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_ZACzQEcvEeSQZ4EF8nk5eA" name="Scenario" tooltipText="" outgoingEdges="_ZAk-wEcvEeSQZ4EF8nk5eA _SH_60FCaEeSnQ7PiAXhYuA _PleXYFazEeS7aN0GSIlIfw" incomingEdges="_ZAcb4EcvEeSQZ4EF8nk5eA _Hr0HQEuhEeSakPtBSsZULg _6rkrMFYAEeSwEtbZQQeBCg" width="12" height="10">

@@ -21,5 +21,5 @@ Require-Bundle: org.eclipse.core.runtime,
  com.misc.common.moplaf.datasetload.ora.emf.edit;visibility:=reexport,
  com.misc.common.moplaf.propagator;visibility:=reexport,
  com.misc.common.moplaf.propagator.edit;visibility:=reexport,
- org.eclipse.emf.eef.runtime;bundle-version="1.3.0";visibility:=reexport
+ org.eclipse.emf.eef.runtime;bundle-version="1.5.0";visibility:=reexport
 Bundle-ActivationPolicy: lazy

@@ -80,8 +80,7 @@ import org.eclipse.ui.views.contentoutline.ContentOutlinePage;
 import org.eclipse.ui.views.contentoutline.IContentOutlinePage;
 import org.eclipse.ui.views.properties.IPropertySheetPage;
 import org.eclipse.ui.views.properties.PropertySheet;
-import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor;
-import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
+import org.eclipse.ui.views.properties.PropertySheetPage;
 import org.eclipse.emf.common.command.BasicCommandStack;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.command.CommandStack;
@@ -119,6 +118,7 @@ import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.emf.edit.ui.provider.UnwrappingSelectionProvider;
 import org.eclipse.emf.edit.ui.util.EditUIMarkerHelper;
 import org.eclipse.emf.edit.ui.util.EditUIUtil;
+import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 import com.misc.projects.SortingPlans.EndProduct;
 import com.misc.projects.SortingPlans.Scenario;
 import com.misc.projects.SortingPlans.SortingPlanEndProduct;
@@ -135,13 +135,12 @@ import org.eclipse.ui.actions.WorkspaceModifyOperation;
 /**
  * This is an example of a cptsp model editor.
  * <!-- begin-user-doc -->
- * @implements ITabbedPropertySheetPageContributor
  * <!-- end-user-doc -->
  * @generated
  */
 public class cptspEditor
 	extends MultiPageEditorPart
-	implements IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGotoMarker, ITabbedPropertySheetPageContributor
+	implements IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGotoMarker
 	{
 	/**
 	 * This keeps track of the editing domain that is used to track all changes to the model.
@@ -187,9 +186,9 @@ public class cptspEditor
 	 * This is the property sheet page.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
-	protected List<TabbedPropertySheetPage> propertySheetPages = new ArrayList<TabbedPropertySheetPage>();
+	protected List<PropertySheetPage> propertySheetPages = new ArrayList<PropertySheetPage>();
 
 	/**
 	 * This is the viewer that shadows the selection in the content outline.
@@ -717,8 +716,8 @@ public class cptspEditor
 								  if (mostRecentCommand != null) {
 									  setSelectionToViewer(mostRecentCommand.getAffectedObjects());
 								  }
-								  for (Iterator<TabbedPropertySheetPage> i = propertySheetPages.iterator(); i.hasNext(); ) {
-									  TabbedPropertySheetPage propertySheetPage = i.next();
+								  for (Iterator<PropertySheetPage> i = propertySheetPages.iterator(); i.hasNext(); ) {
+									  PropertySheetPage propertySheetPage = i.next();
 									  if (propertySheetPage.getControl().isDisposed()) {
 										  i.remove();
 									  }
@@ -1387,11 +1386,10 @@ public class cptspEditor
 	 * This accesses a cached version of the property sheet.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public IPropertySheetPage getPropertySheetPage() {
-		TabbedPropertySheetPage propertySheetPage = new TabbedPropertySheetPage(cptspEditor.this);
-		/*
+		PropertySheetPage propertySheetPage =
 			new ExtendedPropertySheetPage(editingDomain) {
 				@Override
 				public void setSelectionToViewer(List<?> selection) {
@@ -1406,7 +1404,6 @@ public class cptspEditor
 				}
 			};
 		propertySheetPage.setPropertySourceProvider(new AdapterFactoryContentProvider(adapterFactory));
-		*/
 		propertySheetPages.add(propertySheetPage);
 
 		return propertySheetPage;
@@ -1789,7 +1786,7 @@ public class cptspEditor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	@Override
 	public void dispose() {
@@ -1805,7 +1802,7 @@ public class cptspEditor
 			getActionBarContributor().setActiveEditor(null);
 		}
 
-		for (TabbedPropertySheetPage propertySheetPage : propertySheetPages) {
+		for (PropertySheetPage propertySheetPage : propertySheetPages) {
 			propertySheetPage.dispose();
 		}
 
@@ -1826,17 +1823,4 @@ public class cptspEditor
 		return true;
 	}
 
-	/**
-	 * @generated NOT
-	 */
-	public static final String PROPERTIES_CONTRIBUTOR = "com.misc.projects.SortingPlans.properties";
-
-	@Override
-	/** (non-Javadoc)
-	 * @see org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor#getContributorId()
-	 * @generated NOT
-	 */
-	public String getContributorId() {
-	    return PROPERTIES_CONTRIBUTOR;
-	}
 }
