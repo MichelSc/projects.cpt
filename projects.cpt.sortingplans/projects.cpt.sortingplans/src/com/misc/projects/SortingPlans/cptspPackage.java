@@ -169,13 +169,22 @@ public interface cptspPackage extends EPackage {
 	int SCENARIO__SELECTED_SORTING_PLANS = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>Selected End Products</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCENARIO__SELECTED_END_PRODUCTS = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 6;
+
+	/**
 	 * The number of structural features of the '<em>Scenario</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCENARIO_FEATURE_COUNT = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 6;
+	int SCENARIO_FEATURE_COUNT = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 7;
 
 	/**
 	 * The operation id for the '<em>Add Propagator Function Adapter</em>' operation.
@@ -414,22 +423,22 @@ public interface cptspPackage extends EPackage {
 	int END_PRODUCT__SORTING_PLANS = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Which Sorting Plans</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int END_PRODUCT__WHICH_SORTING_PLANS = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 4;
-
-	/**
 	 * The feature id for the '<em><b>Scenario</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int END_PRODUCT__SCENARIO = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 5;
+	int END_PRODUCT__SCENARIO = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Scenario As Selected</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int END_PRODUCT__SCENARIO_AS_SELECTED = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>End Product</em>' class.
@@ -977,6 +986,17 @@ public interface cptspPackage extends EPackage {
 	EReference getScenario_SelectedSortingPlans();
 
 	/**
+	 * Returns the meta object for the reference list '{@link com.misc.projects.SortingPlans.Scenario#getSelectedEndProducts <em>Selected End Products</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Selected End Products</em>'.
+	 * @see com.misc.projects.SortingPlans.Scenario#getSelectedEndProducts()
+	 * @see #getScenario()
+	 * @generated
+	 */
+	EReference getScenario_SelectedEndProducts();
+
+	/**
 	 * Returns the meta object for the '{@link com.misc.projects.SortingPlans.Scenario#refreshSelectedSortingPlans() <em>Refresh Selected Sorting Plans</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1198,17 +1218,6 @@ public interface cptspPackage extends EPackage {
 	EReference getEndProduct_SortingPlans();
 
 	/**
-	 * Returns the meta object for the attribute '{@link com.misc.projects.SortingPlans.EndProduct#isWhichSortingPlans <em>Which Sorting Plans</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Which Sorting Plans</em>'.
-	 * @see com.misc.projects.SortingPlans.EndProduct#isWhichSortingPlans()
-	 * @see #getEndProduct()
-	 * @generated
-	 */
-	EAttribute getEndProduct_WhichSortingPlans();
-
-	/**
 	 * Returns the meta object for the container reference '{@link com.misc.projects.SortingPlans.EndProduct#getScenario <em>Scenario</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1218,6 +1227,17 @@ public interface cptspPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getEndProduct_Scenario();
+
+	/**
+	 * Returns the meta object for the reference '{@link com.misc.projects.SortingPlans.EndProduct#getScenarioAsSelected <em>Scenario As Selected</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Scenario As Selected</em>'.
+	 * @see com.misc.projects.SortingPlans.EndProduct#getScenarioAsSelected()
+	 * @see #getEndProduct()
+	 * @generated
+	 */
+	EReference getEndProduct_ScenarioAsSelected();
 
 	/**
 	 * Returns the meta object for the '{@link com.misc.projects.SortingPlans.EndProduct#refreshSortingPlans() <em>Refresh Sorting Plans</em>}' operation.
@@ -1693,6 +1713,14 @@ public interface cptspPackage extends EPackage {
 		EReference SCENARIO__SELECTED_SORTING_PLANS = eINSTANCE.getScenario_SelectedSortingPlans();
 
 		/**
+		 * The meta object literal for the '<em><b>Selected End Products</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SCENARIO__SELECTED_END_PRODUCTS = eINSTANCE.getScenario_SelectedEndProducts();
+
+		/**
 		 * The meta object literal for the '<em><b>Refresh Selected Sorting Plans</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1865,20 +1893,20 @@ public interface cptspPackage extends EPackage {
 		EReference END_PRODUCT__SORTING_PLANS = eINSTANCE.getEndProduct_SortingPlans();
 
 		/**
-		 * The meta object literal for the '<em><b>Which Sorting Plans</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute END_PRODUCT__WHICH_SORTING_PLANS = eINSTANCE.getEndProduct_WhichSortingPlans();
-
-		/**
 		 * The meta object literal for the '<em><b>Scenario</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference END_PRODUCT__SCENARIO = eINSTANCE.getEndProduct_Scenario();
+
+		/**
+		 * The meta object literal for the '<em><b>Scenario As Selected</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference END_PRODUCT__SCENARIO_AS_SELECTED = eINSTANCE.getEndProduct_ScenarioAsSelected();
 
 		/**
 		 * The meta object literal for the '<em><b>Refresh Sorting Plans</b></em>' operation.

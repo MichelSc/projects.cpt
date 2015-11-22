@@ -23,6 +23,8 @@
         upperBound="-1" eType="ecore:EClass ../../projects.cpt.datasetload/model/cptdatasetload.ecore#//SortingLevelRow"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="SelectedSortingPlans" upperBound="-1"
         eType="ecore:EClass ../../projects.cpt.datasetload/model/cptdatasetload.ecore#//SortingPlanRow"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SelectedEndProducts" upperBound="-1"
+        eType="#//EndProduct" eOpposite="#//EndProduct/ScenarioAsSelected"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SortingPlan" eSuperTypes="../../com.misc.common.moplaf.propagator/model/propagator.ecore#//ObjectWithPropagatorFunctionAdapter">
     <eOperations name="refreshInputs"/>
@@ -51,9 +53,10 @@
         changeable="false" volatile="true" transient="true" derived="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="SortingPlans" upperBound="-1"
         eType="#//SortingPlanEndProduct" containment="true" eOpposite="#//SortingPlanEndProduct/EndProduct"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="whichSortingPlans" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Scenario" eType="#//Scenario"
         eOpposite="#//Scenario/EndProducts"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ScenarioAsSelected" eType="#//Scenario"
+        eOpposite="#//Scenario/SelectedEndProducts"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SortingPlanProduct" eSuperTypes="../../com.misc.common.moplaf.propagator/model/propagator.ecore#//ObjectWithPropagatorFunctionAdapter">
     <eOperations name="refreshSelected"/>

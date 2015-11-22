@@ -244,6 +244,15 @@ public class cptspPackageImpl extends EPackageImpl implements cptspPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getScenario_SelectedEndProducts() {
+		return (EReference)scenarioEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EOperation getScenario__RefreshSelectedSortingPlans() {
 		return scenarioEClass.getEOperations().get(0);
 	}
@@ -433,8 +442,8 @@ public class cptspPackageImpl extends EPackageImpl implements cptspPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEndProduct_WhichSortingPlans() {
-		return (EAttribute)endProductEClass.getEStructuralFeatures().get(4);
+	public EReference getEndProduct_Scenario() {
+		return (EReference)endProductEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -442,7 +451,7 @@ public class cptspPackageImpl extends EPackageImpl implements cptspPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEndProduct_Scenario() {
+	public EReference getEndProduct_ScenarioAsSelected() {
 		return (EReference)endProductEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -791,6 +800,7 @@ public class cptspPackageImpl extends EPackageImpl implements cptspPackage {
 		createEAttribute(scenarioEClass, SCENARIO__NAME);
 		createEReference(scenarioEClass, SCENARIO__SORTING_LEVELS_WITH_DESTINATION);
 		createEReference(scenarioEClass, SCENARIO__SELECTED_SORTING_PLANS);
+		createEReference(scenarioEClass, SCENARIO__SELECTED_END_PRODUCTS);
 		createEOperation(scenarioEClass, SCENARIO___REFRESH_SELECTED_SORTING_PLANS);
 		createEOperation(scenarioEClass, SCENARIO___REFRESH);
 		createEOperation(scenarioEClass, SCENARIO___REFRESH_SORTING_PLAN_PRODUCT);
@@ -814,8 +824,8 @@ public class cptspPackageImpl extends EPackageImpl implements cptspPackage {
 		createEReference(endProductEClass, END_PRODUCT__SORTING_PLAN_PRODUCT);
 		createEAttribute(endProductEClass, END_PRODUCT__DESCRIPTION);
 		createEReference(endProductEClass, END_PRODUCT__SORTING_PLANS);
-		createEAttribute(endProductEClass, END_PRODUCT__WHICH_SORTING_PLANS);
 		createEReference(endProductEClass, END_PRODUCT__SCENARIO);
+		createEReference(endProductEClass, END_PRODUCT__SCENARIO_AS_SELECTED);
 		createEOperation(endProductEClass, END_PRODUCT___REFRESH_SORTING_PLANS);
 
 		sortingPlanProductEClass = createEClass(SORTING_PLAN_PRODUCT);
@@ -908,6 +918,7 @@ public class cptspPackageImpl extends EPackageImpl implements cptspPackage {
 		initEAttribute(getScenario_Name(), ecorePackage.getEString(), "Name", null, 0, 1, Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getScenario_SortingLevelsWithDestination(), theCptDatasetLoadPackage.getSortingLevelRow(), null, "SortingLevelsWithDestination", null, 0, -1, Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getScenario_SelectedSortingPlans(), theCptDatasetLoadPackage.getSortingPlanRow(), null, "SelectedSortingPlans", null, 0, -1, Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getScenario_SelectedEndProducts(), this.getEndProduct(), this.getEndProduct_ScenarioAsSelected(), "SelectedEndProducts", null, 0, -1, Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getScenario__RefreshSelectedSortingPlans(), null, "refreshSelectedSortingPlans", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -939,8 +950,8 @@ public class cptspPackageImpl extends EPackageImpl implements cptspPackage {
 		initEReference(getEndProduct_SortingPlanProduct(), this.getSortingPlanProduct(), this.getSortingPlanProduct_EndProduct(), "SortingPlanProduct", null, 1, 1, EndProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEndProduct_Description(), ecorePackage.getEString(), "Description", null, 0, 1, EndProduct.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getEndProduct_SortingPlans(), this.getSortingPlanEndProduct(), this.getSortingPlanEndProduct_EndProduct(), "SortingPlans", null, 0, -1, EndProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEndProduct_WhichSortingPlans(), ecorePackage.getEBoolean(), "whichSortingPlans", null, 0, 1, EndProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEndProduct_Scenario(), this.getScenario(), this.getScenario_EndProducts(), "Scenario", null, 0, 1, EndProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEndProduct_ScenarioAsSelected(), this.getScenario(), this.getScenario_SelectedEndProducts(), "ScenarioAsSelected", null, 0, 1, EndProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getEndProduct__RefreshSortingPlans(), null, "refreshSortingPlans", 0, 1, IS_UNIQUE, IS_ORDERED);
 

@@ -5,9 +5,7 @@ import com.misc.common.moplaf.propagator.PropagatorFunctionAdapter;
 import com.misc.common.moplaf.propagator.Util;
 import com.misc.projects.SortingPlans.Scenario;
 import com.misc.projects.SortingPlans.SortingPlanInput;
-import com.misc.projects.SortingPlans.SortingPlanOutput;
 import com.misc.projects.SortingPlans.cptspPackage;
-import com.misc.projects.SortingPlans.calc.PropagatorCalcSortingPlanRefreshSelected.DependencySortingPlanOutput;
 
 public class PropagatorCalcSortingPlanInputRefreshSelected extends PropagatorFunctionAdapter {
 

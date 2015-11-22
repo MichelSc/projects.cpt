@@ -19,8 +19,6 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.PriorityQueue;
-
-import org.eclipse.emf.common.CommonPlugin;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.BasicEList;
@@ -45,8 +43,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.misc.projects.SortingPlans.impl.EndProductImpl#getSortingPlanProduct <em>Sorting Plan Product</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.impl.EndProductImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.impl.EndProductImpl#getSortingPlans <em>Sorting Plans</em>}</li>
- *   <li>{@link com.misc.projects.SortingPlans.impl.EndProductImpl#isWhichSortingPlans <em>Which Sorting Plans</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.impl.EndProductImpl#getScenario <em>Scenario</em>}</li>
+ *   <li>{@link com.misc.projects.SortingPlans.impl.EndProductImpl#getScenarioAsSelected <em>Scenario As Selected</em>}</li>
  * </ul>
  *
  * @generated
@@ -93,24 +91,14 @@ public class EndProductImpl extends MinimalEObjectImpl.Container implements EndP
 	protected EList<SortingPlanEndProduct> sortingPlans;
 
 	/**
-	 * The default value of the '{@link #isWhichSortingPlans() <em>Which Sorting Plans</em>}' attribute.
+	 * The cached value of the '{@link #getScenarioAsSelected() <em>Scenario As Selected</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isWhichSortingPlans()
+	 * @see #getScenarioAsSelected()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean WHICH_SORTING_PLANS_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isWhichSortingPlans() <em>Which Sorting Plans</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isWhichSortingPlans()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean whichSortingPlans = WHICH_SORTING_PLANS_EDEFAULT;
+	protected Scenario scenarioAsSelected;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -255,27 +243,6 @@ public class EndProductImpl extends MinimalEObjectImpl.Container implements EndP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isWhichSortingPlans() {
-		return whichSortingPlans;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setWhichSortingPlans(boolean newWhichSortingPlans) {
-		boolean oldWhichSortingPlans = whichSortingPlans;
-		whichSortingPlans = newWhichSortingPlans;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, cptspPackage.END_PRODUCT__WHICH_SORTING_PLANS, oldWhichSortingPlans, whichSortingPlans));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Scenario getScenario() {
 		if (eContainerFeatureID() != cptspPackage.END_PRODUCT__SCENARIO) return null;
 		return (Scenario)eInternalContainer();
@@ -312,7 +279,67 @@ public class EndProductImpl extends MinimalEObjectImpl.Container implements EndP
 			eNotify(new ENotificationImpl(this, Notification.SET, cptspPackage.END_PRODUCT__SCENARIO, newScenario, newScenario));
 	}
 
-	 private class AlgorithmSortingPlan implements Comparable<AlgorithmSortingPlan>{
+	 /**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Scenario getScenarioAsSelected() {
+		if (scenarioAsSelected != null && scenarioAsSelected.eIsProxy()) {
+			InternalEObject oldScenarioAsSelected = (InternalEObject)scenarioAsSelected;
+			scenarioAsSelected = (Scenario)eResolveProxy(oldScenarioAsSelected);
+			if (scenarioAsSelected != oldScenarioAsSelected) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, cptspPackage.END_PRODUCT__SCENARIO_AS_SELECTED, oldScenarioAsSelected, scenarioAsSelected));
+			}
+		}
+		return scenarioAsSelected;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Scenario basicGetScenarioAsSelected() {
+		return scenarioAsSelected;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetScenarioAsSelected(Scenario newScenarioAsSelected, NotificationChain msgs) {
+		Scenario oldScenarioAsSelected = scenarioAsSelected;
+		scenarioAsSelected = newScenarioAsSelected;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, cptspPackage.END_PRODUCT__SCENARIO_AS_SELECTED, oldScenarioAsSelected, newScenarioAsSelected);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setScenarioAsSelected(Scenario newScenarioAsSelected) {
+		if (newScenarioAsSelected != scenarioAsSelected) {
+			NotificationChain msgs = null;
+			if (scenarioAsSelected != null)
+				msgs = ((InternalEObject)scenarioAsSelected).eInverseRemove(this, cptspPackage.SCENARIO__SELECTED_END_PRODUCTS, Scenario.class, msgs);
+			if (newScenarioAsSelected != null)
+				msgs = ((InternalEObject)newScenarioAsSelected).eInverseAdd(this, cptspPackage.SCENARIO__SELECTED_END_PRODUCTS, Scenario.class, msgs);
+			msgs = basicSetScenarioAsSelected(newScenarioAsSelected, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, cptspPackage.END_PRODUCT__SCENARIO_AS_SELECTED, newScenarioAsSelected, newScenarioAsSelected));
+	}
+
+		private class AlgorithmSortingPlan implements Comparable<AlgorithmSortingPlan>{
 		 public SortingPlanOutput sortingPlanOut;
 		 public int distanceSorting;
 		 
@@ -367,12 +394,12 @@ public class EndProductImpl extends MinimalEObjectImpl.Container implements EndP
 	 * <!-- end-user-doc -->
 	 */
 	public void refreshSortingPlans() {
-		CommonPlugin.INSTANCE.log("EndProduct "+ this.getDescription()+" begin refresh Sortingplans");
+		//CommonPlugin.INSTANCE.log("EndProduct "+ this.getDescription()+" begin refresh Sortingplans");
 
 		// calculate the to be
 		AlgorithmResult result = new AlgorithmResult();
 		AlgorithmQueue  queue  = new AlgorithmQueue(); 
-		if ( this.isWhichSortingPlans() 
+		if (   this.getScenarioAsSelected()!=null 
 			&& this.eContainer!=null
 			&& this.getSortingPlanProduct()!=null){
 			SortingPlanProduct thispp = this.getSortingPlanProduct();
@@ -421,7 +448,7 @@ public class EndProductImpl extends MinimalEObjectImpl.Container implements EndP
 			spep.setOutput(null);
 			spep.setEndProduct(null);  // owning
 		}
-		CommonPlugin.INSTANCE.log("EndProduct "+ this.getDescription()+" end refresh Sortingplans");
+		//CommonPlugin.INSTANCE.log("EndProduct "+ this.getDescription()+" end refresh Sortingplans");
 	}
 
 	/**
@@ -443,6 +470,10 @@ public class EndProductImpl extends MinimalEObjectImpl.Container implements EndP
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetScenario((Scenario)otherEnd, msgs);
+			case cptspPackage.END_PRODUCT__SCENARIO_AS_SELECTED:
+				if (scenarioAsSelected != null)
+					msgs = ((InternalEObject)scenarioAsSelected).eInverseRemove(this, cptspPackage.SCENARIO__SELECTED_END_PRODUCTS, Scenario.class, msgs);
+				return basicSetScenarioAsSelected((Scenario)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -461,6 +492,8 @@ public class EndProductImpl extends MinimalEObjectImpl.Container implements EndP
 				return ((InternalEList<?>)getSortingPlans()).basicRemove(otherEnd, msgs);
 			case cptspPackage.END_PRODUCT__SCENARIO:
 				return basicSetScenario(null, msgs);
+			case cptspPackage.END_PRODUCT__SCENARIO_AS_SELECTED:
+				return basicSetScenarioAsSelected(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -497,10 +530,11 @@ public class EndProductImpl extends MinimalEObjectImpl.Container implements EndP
 				return getDescription();
 			case cptspPackage.END_PRODUCT__SORTING_PLANS:
 				return getSortingPlans();
-			case cptspPackage.END_PRODUCT__WHICH_SORTING_PLANS:
-				return isWhichSortingPlans();
 			case cptspPackage.END_PRODUCT__SCENARIO:
 				return getScenario();
+			case cptspPackage.END_PRODUCT__SCENARIO_AS_SELECTED:
+				if (resolve) return getScenarioAsSelected();
+				return basicGetScenarioAsSelected();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -524,11 +558,11 @@ public class EndProductImpl extends MinimalEObjectImpl.Container implements EndP
 				getSortingPlans().clear();
 				getSortingPlans().addAll((Collection<? extends SortingPlanEndProduct>)newValue);
 				return;
-			case cptspPackage.END_PRODUCT__WHICH_SORTING_PLANS:
-				setWhichSortingPlans((Boolean)newValue);
-				return;
 			case cptspPackage.END_PRODUCT__SCENARIO:
 				setScenario((Scenario)newValue);
+				return;
+			case cptspPackage.END_PRODUCT__SCENARIO_AS_SELECTED:
+				setScenarioAsSelected((Scenario)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -551,11 +585,11 @@ public class EndProductImpl extends MinimalEObjectImpl.Container implements EndP
 			case cptspPackage.END_PRODUCT__SORTING_PLANS:
 				getSortingPlans().clear();
 				return;
-			case cptspPackage.END_PRODUCT__WHICH_SORTING_PLANS:
-				setWhichSortingPlans(WHICH_SORTING_PLANS_EDEFAULT);
-				return;
 			case cptspPackage.END_PRODUCT__SCENARIO:
 				setScenario((Scenario)null);
+				return;
+			case cptspPackage.END_PRODUCT__SCENARIO_AS_SELECTED:
+				setScenarioAsSelected((Scenario)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -577,10 +611,10 @@ public class EndProductImpl extends MinimalEObjectImpl.Container implements EndP
 				return DESCRIPTION_EDEFAULT == null ? getDescription() != null : !DESCRIPTION_EDEFAULT.equals(getDescription());
 			case cptspPackage.END_PRODUCT__SORTING_PLANS:
 				return sortingPlans != null && !sortingPlans.isEmpty();
-			case cptspPackage.END_PRODUCT__WHICH_SORTING_PLANS:
-				return whichSortingPlans != WHICH_SORTING_PLANS_EDEFAULT;
 			case cptspPackage.END_PRODUCT__SCENARIO:
 				return getScenario() != null;
+			case cptspPackage.END_PRODUCT__SCENARIO_AS_SELECTED:
+				return scenarioAsSelected != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -601,22 +635,6 @@ public class EndProductImpl extends MinimalEObjectImpl.Container implements EndP
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (whichSortingPlans: ");
-		result.append(whichSortingPlans);
-		result.append(')');
-		return result.toString();
 	}
 
 	/**

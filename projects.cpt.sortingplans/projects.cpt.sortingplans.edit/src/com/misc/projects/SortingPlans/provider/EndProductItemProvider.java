@@ -64,7 +64,7 @@ public class EndProductItemProvider
 			addSortingPlanProductPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
 			addSortingPlansPropertyDescriptor(object);
-			addWhichSortingPlansPropertyDescriptor(object);
+			addScenarioAsSelectedPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -158,23 +158,23 @@ public class EndProductItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Which Sorting Plans feature.
+	 * This adds a property descriptor for the Scenario As Selected feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addWhichSortingPlansPropertyDescriptor(Object object) {
+	protected void addScenarioAsSelectedPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_EndProduct_whichSortingPlans_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EndProduct_whichSortingPlans_feature", "_UI_EndProduct_type"),
-				 cptspPackage.Literals.END_PRODUCT__WHICH_SORTING_PLANS,
+				 getString("_UI_EndProduct_ScenarioAsSelected_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EndProduct_ScenarioAsSelected_feature", "_UI_EndProduct_type"),
+				 cptspPackage.Literals.END_PRODUCT__SCENARIO_AS_SELECTED,
 				 true,
 				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 true,
+				 null,
 				 null,
 				 null));
 	}
@@ -219,7 +219,6 @@ public class EndProductItemProvider
 		switch (notification.getFeatureID(EndProduct.class)) {
 			case cptspPackage.END_PRODUCT__SORTING_PLAN_PRODUCT:
 			case cptspPackage.END_PRODUCT__DESCRIPTION:
-			case cptspPackage.END_PRODUCT__WHICH_SORTING_PLANS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

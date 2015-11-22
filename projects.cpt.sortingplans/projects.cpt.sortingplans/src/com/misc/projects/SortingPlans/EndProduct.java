@@ -19,8 +19,8 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link com.misc.projects.SortingPlans.EndProduct#getSortingPlanProduct <em>Sorting Plan Product</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.EndProduct#getDescription <em>Description</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.EndProduct#getSortingPlans <em>Sorting Plans</em>}</li>
- *   <li>{@link com.misc.projects.SortingPlans.EndProduct#isWhichSortingPlans <em>Which Sorting Plans</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.EndProduct#getScenario <em>Scenario</em>}</li>
+ *   <li>{@link com.misc.projects.SortingPlans.EndProduct#getScenarioAsSelected <em>Scenario As Selected</em>}</li>
  * </ul>
  *
  * @see com.misc.projects.SortingPlans.cptspPackage#getEndProduct()
@@ -116,32 +116,6 @@ public interface EndProduct extends ObjectWithPropagatorFunctionAdapter {
 	EList<SortingPlanEndProduct> getSortingPlans();
 
 	/**
-	 * Returns the value of the '<em><b>Which Sorting Plans</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Which Sorting Plans</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Which Sorting Plans</em>' attribute.
-	 * @see #setWhichSortingPlans(boolean)
-	 * @see com.misc.projects.SortingPlans.cptspPackage#getEndProduct_WhichSortingPlans()
-	 * @model
-	 * @generated
-	 */
-	boolean isWhichSortingPlans();
-
-	/**
-	 * Sets the value of the '{@link com.misc.projects.SortingPlans.EndProduct#isWhichSortingPlans <em>Which Sorting Plans</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Which Sorting Plans</em>' attribute.
-	 * @see #isWhichSortingPlans()
-	 * @generated
-	 */
-	void setWhichSortingPlans(boolean value);
-
-	/**
 	 * Returns the value of the '<em><b>Scenario</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link com.misc.projects.SortingPlans.Scenario#getEndProducts <em>End Products</em>}'.
 	 * <!-- begin-user-doc -->
@@ -168,6 +142,34 @@ public interface EndProduct extends ObjectWithPropagatorFunctionAdapter {
 	 * @generated
 	 */
 	void setScenario(Scenario value);
+
+	/**
+	 * Returns the value of the '<em><b>Scenario As Selected</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link com.misc.projects.SortingPlans.Scenario#getSelectedEndProducts <em>Selected End Products</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Scenario As Selected</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Scenario As Selected</em>' reference.
+	 * @see #setScenarioAsSelected(Scenario)
+	 * @see com.misc.projects.SortingPlans.cptspPackage#getEndProduct_ScenarioAsSelected()
+	 * @see com.misc.projects.SortingPlans.Scenario#getSelectedEndProducts
+	 * @model opposite="SelectedEndProducts"
+	 * @generated
+	 */
+	Scenario getScenarioAsSelected();
+
+	/**
+	 * Sets the value of the '{@link com.misc.projects.SortingPlans.EndProduct#getScenarioAsSelected <em>Scenario As Selected</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Scenario As Selected</em>' reference.
+	 * @see #getScenarioAsSelected()
+	 * @generated
+	 */
+	void setScenarioAsSelected(Scenario value);
 
 	/**
 	 * <!-- begin-user-doc -->

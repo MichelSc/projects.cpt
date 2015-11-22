@@ -67,6 +67,7 @@ public class ScenarioItemProvider
 			addNamePropertyDescriptor(object);
 			addSortingLevelsWithDestinationPropertyDescriptor(object);
 			addSelectedSortingPlansPropertyDescriptor(object);
+			addSelectedEndProductsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -129,6 +130,28 @@ public class ScenarioItemProvider
 				 getString("_UI_Scenario_SelectedSortingPlans_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Scenario_SelectedSortingPlans_feature", "_UI_Scenario_type"),
 				 cptspPackage.Literals.SCENARIO__SELECTED_SORTING_PLANS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Selected End Products feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSelectedEndProductsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Scenario_SelectedEndProducts_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Scenario_SelectedEndProducts_feature", "_UI_Scenario_type"),
+				 cptspPackage.Literals.SCENARIO__SELECTED_END_PRODUCTS,
 				 true,
 				 false,
 				 true,

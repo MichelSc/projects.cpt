@@ -23,6 +23,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link com.misc.projects.SortingPlans.Scenario#getName <em>Name</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.Scenario#getSortingLevelsWithDestination <em>Sorting Levels With Destination</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.Scenario#getSelectedSortingPlans <em>Selected Sorting Plans</em>}</li>
+ *   <li>{@link com.misc.projects.SortingPlans.Scenario#getSelectedEndProducts <em>Selected End Products</em>}</li>
  * </ul>
  *
  * @see com.misc.projects.SortingPlans.cptspPackage#getScenario()
@@ -139,6 +140,24 @@ public interface Scenario extends ObjectWithPropagatorFunctionAdapter, ObjectWit
 	 * @generated
 	 */
 	EList<SortingPlanRow> getSelectedSortingPlans();
+
+	/**
+	 * Returns the value of the '<em><b>Selected End Products</b></em>' reference list.
+	 * The list contents are of type {@link com.misc.projects.SortingPlans.EndProduct}.
+	 * It is bidirectional and its opposite is '{@link com.misc.projects.SortingPlans.EndProduct#getScenarioAsSelected <em>Scenario As Selected</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Selected End Products</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Selected End Products</em>' reference list.
+	 * @see com.misc.projects.SortingPlans.cptspPackage#getScenario_SelectedEndProducts()
+	 * @see com.misc.projects.SortingPlans.EndProduct#getScenarioAsSelected
+	 * @model opposite="ScenarioAsSelected"
+	 * @generated
+	 */
+	EList<EndProduct> getSelectedEndProducts();
 
 	/**
 	 * <!-- begin-user-doc -->

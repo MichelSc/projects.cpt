@@ -9,8 +9,6 @@ import com.misc.projects.SortingPlans.SortingPlanInput;
 import com.misc.projects.SortingPlans.SortingPlanProduct;
 import com.misc.projects.SortingPlans.cptspPackage;
 import com.misc.projects.SortingPlans.calc.PropagatorCalcSortingPlanInputRefreshSelected;
-import com.misc.projects.SortingPlans.calc.PropagatorCalcSortingPlanOutputRefreshSelected;
-
 import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;

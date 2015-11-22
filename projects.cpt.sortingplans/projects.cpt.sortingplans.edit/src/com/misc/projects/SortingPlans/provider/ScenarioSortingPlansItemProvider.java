@@ -3,7 +3,6 @@ package com.misc.projects.SortingPlans.provider;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import com.misc.projects.SortingPlans.Scenario;
