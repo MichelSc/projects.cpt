@@ -418,6 +418,7 @@ public class EndProductImpl extends MinimalEObjectImpl.Container implements EndP
 		// clean up
 		for ( SortingPlanEndProduct spep : spepToDelete){
 			spep.setSortingPlan(null);  
+			spep.setOutput(null);
 			spep.setEndProduct(null);  // owning
 		}
 		CommonPlugin.INSTANCE.log("EndProduct "+ this.getDescription()+" end refresh Sortingplans");
