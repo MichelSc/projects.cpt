@@ -40,10 +40,10 @@
       <metamodel href="../../projects.cpt.sortingplans/model/sortingplans.ecore#/"/>
       <defaultLayer name="Default">
         <nodeMappings name="projects.cpt.sortingplans.diagram.sortingplan.selected" label="Node SortingPlan for diagram SortingPlans selected" preconditionExpression="[self.selected/]" semanticCandidatesExpression="feature:SortingPlans" domainClass="SortingPlans.SortingPlan">
-          <style xsi:type="style:DotDescription" labelExpression="feature:Description" resizeKind="NSEW">
+          <style xsi:type="style:SquareDescription" labelExpression="feature:Description" resizeKind="NSEW">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
           </style>
         </nodeMappings>
         <nodeMappings name="projects.cpt.sortingplans.diagram.product.selected" label="Node Product for diagram SortingPlans selected" preconditionExpression="[self.selected/]" domainClass="SortingPlans.SortingPlanProduct">
