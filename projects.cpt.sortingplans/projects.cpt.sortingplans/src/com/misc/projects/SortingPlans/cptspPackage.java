@@ -760,13 +760,22 @@ public interface cptspPackage extends EPackage {
 	int SORTING_PLAN_OUTPUT__SELECTED = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>Selected Not Shortest</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_OUTPUT__SELECTED_NOT_SHORTEST = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 6;
+
+	/**
 	 * The number of structural features of the '<em>Sorting Plan Output</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_OUTPUT_FEATURE_COUNT = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 6;
+	int SORTING_PLAN_OUTPUT_FEATURE_COUNT = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 7;
 
 	/**
 	 * The operation id for the '<em>Add Propagator Function Adapter</em>' operation.
@@ -787,13 +796,22 @@ public interface cptspPackage extends EPackage {
 	int SORTING_PLAN_OUTPUT___REFRESH_SELECTED = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_OPERATION_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Refresh Selected Not Shortest</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_OUTPUT___REFRESH_SELECTED_NOT_SHORTEST = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_OPERATION_COUNT + 1;
+
+	/**
 	 * The number of operations of the '<em>Sorting Plan Output</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_OUTPUT_OPERATION_COUNT = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_OPERATION_COUNT + 1;
+	int SORTING_PLAN_OUTPUT_OPERATION_COUNT = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_OPERATION_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Input Product</b></em>' reference.
@@ -1521,6 +1539,17 @@ public interface cptspPackage extends EPackage {
 	EAttribute getSortingPlanOutput_Selected();
 
 	/**
+	 * Returns the meta object for the attribute '{@link com.misc.projects.SortingPlans.SortingPlanOutput#isSelectedNotShortest <em>Selected Not Shortest</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Selected Not Shortest</em>'.
+	 * @see com.misc.projects.SortingPlans.SortingPlanOutput#isSelectedNotShortest()
+	 * @see #getSortingPlanOutput()
+	 * @generated
+	 */
+	EAttribute getSortingPlanOutput_SelectedNotShortest();
+
+	/**
 	 * Returns the meta object for the '{@link com.misc.projects.SortingPlans.SortingPlanOutput#refreshSelected() <em>Refresh Selected</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1529,6 +1558,16 @@ public interface cptspPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getSortingPlanOutput__RefreshSelected();
+
+	/**
+	 * Returns the meta object for the '{@link com.misc.projects.SortingPlans.SortingPlanOutput#refreshSelectedNotShortest() <em>Refresh Selected Not Shortest</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Refresh Selected Not Shortest</em>' operation.
+	 * @see com.misc.projects.SortingPlans.SortingPlanOutput#refreshSelectedNotShortest()
+	 * @generated
+	 */
+	EOperation getSortingPlanOutput__RefreshSelectedNotShortest();
 
 	/**
 	 * Returns the meta object for class '{@link com.misc.projects.SortingPlans.SortingPlanInput <em>Sorting Plan Input</em>}'.
@@ -2123,12 +2162,28 @@ public interface cptspPackage extends EPackage {
 		EAttribute SORTING_PLAN_OUTPUT__SELECTED = eINSTANCE.getSortingPlanOutput_Selected();
 
 		/**
+		 * The meta object literal for the '<em><b>Selected Not Shortest</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SORTING_PLAN_OUTPUT__SELECTED_NOT_SHORTEST = eINSTANCE.getSortingPlanOutput_SelectedNotShortest();
+
+		/**
 		 * The meta object literal for the '<em><b>Refresh Selected</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EOperation SORTING_PLAN_OUTPUT___REFRESH_SELECTED = eINSTANCE.getSortingPlanOutput__RefreshSelected();
+
+		/**
+		 * The meta object literal for the '<em><b>Refresh Selected Not Shortest</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation SORTING_PLAN_OUTPUT___REFRESH_SELECTED_NOT_SHORTEST = eINSTANCE.getSortingPlanOutput__RefreshSelectedNotShortest();
 
 		/**
 		 * The meta object literal for the '{@link com.misc.projects.SortingPlans.impl.SortingPlanInputImpl <em>Sorting Plan Input</em>}' class.

@@ -694,8 +694,26 @@ public class cptspPackageImpl extends EPackageImpl implements cptspPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getSortingPlanOutput_SelectedNotShortest() {
+		return (EAttribute)sortingPlanOutputEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EOperation getSortingPlanOutput__RefreshSelected() {
 		return sortingPlanOutputEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getSortingPlanOutput__RefreshSelectedNotShortest() {
+		return sortingPlanOutputEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -855,7 +873,9 @@ public class cptspPackageImpl extends EPackageImpl implements cptspPackage {
 		createEReference(sortingPlanOutputEClass, SORTING_PLAN_OUTPUT__SORTING_PLAN_END_PRODUCT);
 		createEReference(sortingPlanOutputEClass, SORTING_PLAN_OUTPUT__SORTING_PLAN);
 		createEAttribute(sortingPlanOutputEClass, SORTING_PLAN_OUTPUT__SELECTED);
+		createEAttribute(sortingPlanOutputEClass, SORTING_PLAN_OUTPUT__SELECTED_NOT_SHORTEST);
 		createEOperation(sortingPlanOutputEClass, SORTING_PLAN_OUTPUT___REFRESH_SELECTED);
+		createEOperation(sortingPlanOutputEClass, SORTING_PLAN_OUTPUT___REFRESH_SELECTED_NOT_SHORTEST);
 
 		sortingPlanInputEClass = createEClass(SORTING_PLAN_INPUT);
 		createEReference(sortingPlanInputEClass, SORTING_PLAN_INPUT__INPUT_PRODUCT);
@@ -983,8 +1003,11 @@ public class cptspPackageImpl extends EPackageImpl implements cptspPackage {
 		initEReference(getSortingPlanOutput_SortingPlanEndProduct(), this.getSortingPlanEndProduct(), this.getSortingPlanEndProduct_Output(), "SortingPlanEndProduct", null, 0, -1, SortingPlanOutput.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSortingPlanOutput_SortingPlan(), this.getSortingPlan(), this.getSortingPlan_Outputs(), "SortingPlan", null, 0, 1, SortingPlanOutput.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSortingPlanOutput_Selected(), ecorePackage.getEBoolean(), "selected", null, 0, 1, SortingPlanOutput.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSortingPlanOutput_SelectedNotShortest(), ecorePackage.getEBoolean(), "selectedNotShortest", null, 0, 1, SortingPlanOutput.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getSortingPlanOutput__RefreshSelected(), null, "refreshSelected", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getSortingPlanOutput__RefreshSelectedNotShortest(), null, "refreshSelectedNotShortest", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(sortingPlanInputEClass, SortingPlanInput.class, "SortingPlanInput", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSortingPlanInput_InputProduct(), this.getSortingPlanProduct(), this.getSortingPlanProduct_SortingPlansAccepting(), "InputProduct", null, 1, 1, SortingPlanInput.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

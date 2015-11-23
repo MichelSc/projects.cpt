@@ -71,6 +71,8 @@ import org.eclipse.ui.IEditorSite;
 import org.eclipse.ui.IPartListener;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PartInitException;
+import org.eclipse.ui.dialogs.FilteredTree;
+import org.eclipse.ui.dialogs.PatternFilter;
 import org.eclipse.ui.dialogs.SaveAsDialog;
 import org.eclipse.ui.ide.IGotoMarker;
 import org.eclipse.ui.part.FileEditorInput;
@@ -1020,6 +1022,14 @@ public class cptspEditor
 						public Viewer createViewer(Composite composite) {
 							Tree tree = new Tree(composite, SWT.MULTI);
 							TreeViewer newTreeViewer = new TreeViewer(tree);
+							
+//							PatternFilter filter = new PatternFilter();
+//							FilteredTree tree = new FilteredTree(composite, 
+//									SWT.MULTI | SWT.H_SCROLL| SWT.V_SCROLL, 
+//									filter, 
+//									true);
+//							//TreeViewer newTreeViewer = new TreeViewer(tree);
+//							TreeViewer newTreeViewer = tree.getViewer();
 							return newTreeViewer;
 						}
 						@Override

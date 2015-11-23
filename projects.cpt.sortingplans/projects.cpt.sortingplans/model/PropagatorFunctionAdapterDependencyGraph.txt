@@ -17,6 +17,8 @@ Note: to describe the dependency graph
   PropagatorLayerSortingPlanInputRefreshSelected   // calculate selected
     PropagatorCalcSortingPlanProductRefreshSelected// calculate selected
   PropagatorLayerSortingPlanProductRefreshSelected // calculate selected
+    PropagatorCalcSortingPlanOutputRefreshSelectedNotShortest// calculate selected not shortest
+  PropagatorLayerSortingPlanOutputRefreshSelectedNotShortest // calculate selected not shortest
 PropagatorScopeScenario
 
   

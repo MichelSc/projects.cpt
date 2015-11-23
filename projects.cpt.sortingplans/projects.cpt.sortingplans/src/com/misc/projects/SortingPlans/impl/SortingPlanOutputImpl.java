@@ -10,6 +10,7 @@ import com.misc.projects.SortingPlans.SortingPlanOutput;
 import com.misc.projects.SortingPlans.SortingPlanProduct;
 import com.misc.projects.SortingPlans.cptspPackage;
 import com.misc.projects.SortingPlans.calc.PropagatorCalcSortingPlanOutputRefreshSelected;
+import com.misc.projects.SortingPlans.calc.PropagatorCalcSortingPlanOutputRefreshSelectedNotShortest;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
@@ -38,6 +39,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.misc.projects.SortingPlans.impl.SortingPlanOutputImpl#getSortingPlanEndProduct <em>Sorting Plan End Product</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.impl.SortingPlanOutputImpl#getSortingPlan <em>Sorting Plan</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.impl.SortingPlanOutputImpl#isSelected <em>Selected</em>}</li>
+ *   <li>{@link com.misc.projects.SortingPlans.impl.SortingPlanOutputImpl#isSelectedNotShortest <em>Selected Not Shortest</em>}</li>
  * </ul>
  *
  * @generated
@@ -104,6 +106,26 @@ public class SortingPlanOutputImpl extends MinimalEObjectImpl.Container implemen
 	 * @ordered
 	 */
 	protected boolean selected = SELECTED_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isSelectedNotShortest() <em>Selected Not Shortest</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSelectedNotShortest()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean SELECTED_NOT_SHORTEST_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isSelectedNotShortest() <em>Selected Not Shortest</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSelectedNotShortest()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean selectedNotShortest = SELECTED_NOT_SHORTEST_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -312,6 +334,27 @@ public class SortingPlanOutputImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSelectedNotShortest() {
+		return selectedNotShortest;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSelectedNotShortest(boolean newSelectedNotShortest) {
+		boolean oldSelectedNotShortest = selectedNotShortest;
+		selectedNotShortest = newSelectedNotShortest;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, cptspPackage.SORTING_PLAN_OUTPUT__SELECTED_NOT_SHORTEST, oldSelectedNotShortest, selectedNotShortest));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 */
 	public void refreshSelected() {
 		boolean selected = this.getSortingPlanEndProduct().size()>0;
@@ -322,8 +365,19 @@ public class SortingPlanOutputImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 */
+	public void refreshSelectedNotShortest() {
+		SortingPlanProduct outputProduct = this.getOutputProduct();
+		boolean selected = !this.isSelected() && outputProduct.isSelected();
+		this.setSelectedNotShortest(selected);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 */
 	public void addPropagatorFunctionAdapter() {
 		Util.adapt(this, PropagatorCalcSortingPlanOutputRefreshSelected.class);
+		Util.adapt(this, PropagatorCalcSortingPlanOutputRefreshSelectedNotShortest.class);
 	}
 
 	/**
@@ -403,6 +457,8 @@ public class SortingPlanOutputImpl extends MinimalEObjectImpl.Container implemen
 				return getSortingPlan();
 			case cptspPackage.SORTING_PLAN_OUTPUT__SELECTED:
 				return isSelected();
+			case cptspPackage.SORTING_PLAN_OUTPUT__SELECTED_NOT_SHORTEST:
+				return isSelectedNotShortest();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -432,6 +488,9 @@ public class SortingPlanOutputImpl extends MinimalEObjectImpl.Container implemen
 			case cptspPackage.SORTING_PLAN_OUTPUT__SELECTED:
 				setSelected((Boolean)newValue);
 				return;
+			case cptspPackage.SORTING_PLAN_OUTPUT__SELECTED_NOT_SHORTEST:
+				setSelectedNotShortest((Boolean)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -459,6 +518,9 @@ public class SortingPlanOutputImpl extends MinimalEObjectImpl.Container implemen
 			case cptspPackage.SORTING_PLAN_OUTPUT__SELECTED:
 				setSelected(SELECTED_EDEFAULT);
 				return;
+			case cptspPackage.SORTING_PLAN_OUTPUT__SELECTED_NOT_SHORTEST:
+				setSelectedNotShortest(SELECTED_NOT_SHORTEST_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -483,6 +545,8 @@ public class SortingPlanOutputImpl extends MinimalEObjectImpl.Container implemen
 				return getSortingPlan() != null;
 			case cptspPackage.SORTING_PLAN_OUTPUT__SELECTED:
 				return selected != SELECTED_EDEFAULT;
+			case cptspPackage.SORTING_PLAN_OUTPUT__SELECTED_NOT_SHORTEST:
+				return selectedNotShortest != SELECTED_NOT_SHORTEST_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -497,6 +561,9 @@ public class SortingPlanOutputImpl extends MinimalEObjectImpl.Container implemen
 		switch (operationID) {
 			case cptspPackage.SORTING_PLAN_OUTPUT___REFRESH_SELECTED:
 				refreshSelected();
+				return null;
+			case cptspPackage.SORTING_PLAN_OUTPUT___REFRESH_SELECTED_NOT_SHORTEST:
+				refreshSelectedNotShortest();
 				return null;
 			case cptspPackage.SORTING_PLAN_OUTPUT___ADD_PROPAGATOR_FUNCTION_ADAPTER:
 				addPropagatorFunctionAdapter();
@@ -517,6 +584,8 @@ public class SortingPlanOutputImpl extends MinimalEObjectImpl.Container implemen
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (selected: ");
 		result.append(selected);
+		result.append(", selectedNotShortest: ");
+		result.append(selectedNotShortest);
 		result.append(')');
 		return result.toString();
 	}

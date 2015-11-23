@@ -62,6 +62,7 @@ public class SortingPlanOutputItemProvider
 			addDescriptionPropertyDescriptor(object);
 			addSortingPlanEndProductPropertyDescriptor(object);
 			addSelectedPropertyDescriptor(object);
+			addSelectedNotShortestPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -177,6 +178,28 @@ public class SortingPlanOutputItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Selected Not Shortest feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSelectedNotShortestPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_SortingPlanOutput_selectedNotShortest_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SortingPlanOutput_selectedNotShortest_feature", "_UI_SortingPlanOutput_type"),
+				 cptspPackage.Literals.SORTING_PLAN_OUTPUT__SELECTED_NOT_SHORTEST,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -258,6 +281,7 @@ public class SortingPlanOutputItemProvider
 		switch (notification.getFeatureID(SortingPlanOutput.class)) {
 			case cptspPackage.SORTING_PLAN_OUTPUT__DESCRIPTION:
 			case cptspPackage.SORTING_PLAN_OUTPUT__SELECTED:
+			case cptspPackage.SORTING_PLAN_OUTPUT__SELECTED_NOT_SHORTEST:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case cptspPackage.SORTING_PLAN_OUTPUT__SORTING_PLAN_END_PRODUCT:
