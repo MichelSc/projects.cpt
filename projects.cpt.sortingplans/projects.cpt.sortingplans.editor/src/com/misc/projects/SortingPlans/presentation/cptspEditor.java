@@ -1002,7 +1002,6 @@ public class cptspEditor
 	 * This is the method used by the framework to install your own controls.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	@Override
 	public void createPages() {
@@ -1028,8 +1027,8 @@ public class cptspEditor
 //									SWT.MULTI | SWT.H_SCROLL| SWT.V_SCROLL, 
 //									filter, 
 //									true);
-//							//TreeViewer newTreeViewer = new TreeViewer(tree);
 //							TreeViewer newTreeViewer = tree.getViewer();
+
 							return newTreeViewer;
 						}
 						@Override

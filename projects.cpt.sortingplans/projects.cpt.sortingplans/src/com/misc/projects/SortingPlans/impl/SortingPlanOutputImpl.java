@@ -367,7 +367,10 @@ public class SortingPlanOutputImpl extends MinimalEObjectImpl.Container implemen
 	 */
 	public void refreshSelectedNotShortest() {
 		SortingPlanProduct outputProduct = this.getOutputProduct();
-		boolean selected = !this.isSelected() && outputProduct.isSelected();
+		boolean selected = false;
+		if ( outputProduct!=null ){
+			selected = !this.isSelected() && outputProduct.isSelected();
+		}
 		this.setSelectedNotShortest(selected);
 	}
 

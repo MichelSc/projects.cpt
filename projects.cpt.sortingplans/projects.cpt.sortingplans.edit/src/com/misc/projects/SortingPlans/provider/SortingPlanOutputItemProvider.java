@@ -61,6 +61,7 @@ public class SortingPlanOutputItemProvider
 			addOutputProductPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
 			addSortingPlanEndProductPropertyDescriptor(object);
+			addSortingPlanPropertyDescriptor(object);
 			addSelectedPropertyDescriptor(object);
 			addSelectedNotShortestPropertyDescriptor(object);
 		}
@@ -81,7 +82,7 @@ public class SortingPlanOutputItemProvider
 				 getString("_UI_SortingPlanOutput_FPDSortingPlanOutput_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_SortingPlanOutput_FPDSortingPlanOutput_feature", "_UI_SortingPlanOutput_type"),
 				 cptspPackage.Literals.SORTING_PLAN_OUTPUT__FPD_SORTING_PLAN_OUTPUT,
-				 true,
+				 false,
 				 false,
 				 true,
 				 null,
@@ -103,7 +104,7 @@ public class SortingPlanOutputItemProvider
 				 getString("_UI_SortingPlanOutput_OutputProduct_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_SortingPlanOutput_OutputProduct_feature", "_UI_SortingPlanOutput_type"),
 				 cptspPackage.Literals.SORTING_PLAN_OUTPUT__OUTPUT_PRODUCT,
-				 true,
+				 false,
 				 false,
 				 true,
 				 null,
@@ -150,6 +151,28 @@ public class SortingPlanOutputItemProvider
 				 true,
 				 false,
 				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Sorting Plan feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSortingPlanPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_SortingPlanOutput_SortingPlan_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SortingPlanOutput_SortingPlan_feature", "_UI_SortingPlanOutput_type"),
+				 cptspPackage.Literals.SORTING_PLAN_OUTPUT__SORTING_PLAN,
+				 false,
+				 false,
+				 false,
 				 null,
 				 null,
 				 null));
@@ -211,7 +234,9 @@ public class SortingPlanOutputItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(cptspPackage.Literals.SORTING_PLAN_OUTPUT__OUTPUT_PRODUCT);
 			childrenFeatures.add(cptspPackage.Literals.SORTING_PLAN_OUTPUT__SORTING_PLAN_END_PRODUCT);
+			childrenFeatures.add(cptspPackage.Literals.SORTING_PLAN_OUTPUT__SORTING_PLAN);
 		}
 		return childrenFeatures;
 	}

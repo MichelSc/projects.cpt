@@ -14,6 +14,7 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -63,6 +64,7 @@ public class SortingPlanInputItemProvider
 			addInputProductPropertyDescriptor(object);
 			addFPDSortingPlanInputPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
+			addSortingPlanPropertyDescriptor(object);
 			addSelectedPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -82,7 +84,7 @@ public class SortingPlanInputItemProvider
 				 getString("_UI_SortingPlanInput_InputProduct_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_SortingPlanInput_InputProduct_feature", "_UI_SortingPlanInput_type"),
 				 cptspPackage.Literals.SORTING_PLAN_INPUT__INPUT_PRODUCT,
-				 true,
+				 false,
 				 false,
 				 true,
 				 null,
@@ -135,6 +137,28 @@ public class SortingPlanInputItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Sorting Plan feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSortingPlanPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_SortingPlanInput_SortingPlan_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SortingPlanInput_SortingPlan_feature", "_UI_SortingPlanInput_type"),
+				 cptspPackage.Literals.SORTING_PLAN_INPUT__SORTING_PLAN,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Selected feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -154,6 +178,37 @@ public class SortingPlanInputItemProvider
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
+	}
+
+	/**
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(cptspPackage.Literals.SORTING_PLAN_INPUT__INPUT_PRODUCT);
+			childrenFeatures.add(cptspPackage.Literals.SORTING_PLAN_INPUT__SORTING_PLAN);
+		}
+		return childrenFeatures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
 	}
 
 	/**
@@ -194,10 +249,12 @@ public class SortingPlanInputItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(SortingPlanInput.class)) {
-			case cptspPackage.SORTING_PLAN_INPUT__INPUT_PRODUCT:
 			case cptspPackage.SORTING_PLAN_INPUT__DESCRIPTION:
 			case cptspPackage.SORTING_PLAN_INPUT__SELECTED:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+			case cptspPackage.SORTING_PLAN_INPUT__INPUT_PRODUCT:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
 		super.notifyChanged(notification);
