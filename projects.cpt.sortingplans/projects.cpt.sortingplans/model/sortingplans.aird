@@ -250,7 +250,7 @@
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MSZo41OZEeSng6M56tRlvg" y="10"/>
             </children>
             <children xmi:type="notation:Node" xmi:id="_MSaP8FOZEeSng6M56tRlvg" type="6003">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MSaP8VOZEeSng6M56tRlvg" y="10"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MSaP8VOZEeSng6M56tRlvg" x="-17" y="4"/>
             </children>
             <styles xmi:type="notation:ConnectorStyle" xmi:id="_MSZB0VOZEeSng6M56tRlvg" jumpLinkStatus="Above"/>
             <styles xmi:type="notation:FontStyle" xmi:id="_MSZB0lOZEeSng6M56tRlvg" fontName="Sans Serif" fontHeight="8"/>

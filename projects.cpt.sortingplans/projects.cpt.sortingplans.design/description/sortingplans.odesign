@@ -46,7 +46,7 @@
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="projects.cpt.sortingplans.diagram.product.selected" label="Node Product for diagram SortingPlans selected" preconditionExpression="[self.selected/]" domainClass="SortingPlans.SortingPlanProduct">
+        <nodeMappings name="projects.cpt.sortingplans.diagram.product.selected" label="Node Product for diagram SortingPlans selected" preconditionExpression="[self.selected/]" semanticCandidatesExpression="feature:SortingPlanProducts" domainClass="SortingPlans.SortingPlanProduct">
           <style xsi:type="style:DotDescription" labelExpression="feature:Description" resizeKind="NSEW">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='orange']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_orange']"/>
