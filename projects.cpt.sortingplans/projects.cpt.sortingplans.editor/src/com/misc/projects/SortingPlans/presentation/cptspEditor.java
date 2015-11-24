@@ -998,10 +998,17 @@ public class cptspEditor
 		}
 	}
 
+//	PatternFilter filter = new PatternFilter();
+//	FilteredTree filteredTree = new FilteredTree(composite, 
+//			SWT.MULTI | SWT.H_SCROLL| SWT.V_SCROLL, 
+//			filter, 
+//			true);
+	
 	/**
 	 * This is the method used by the framework to install your own controls.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
 	 */
 	@Override
 	public void createPages() {
@@ -1021,14 +1028,6 @@ public class cptspEditor
 						public Viewer createViewer(Composite composite) {
 							Tree tree = new Tree(composite, SWT.MULTI);
 							TreeViewer newTreeViewer = new TreeViewer(tree);
-							
-//							PatternFilter filter = new PatternFilter();
-//							FilteredTree tree = new FilteredTree(composite, 
-//									SWT.MULTI | SWT.H_SCROLL| SWT.V_SCROLL, 
-//									filter, 
-//									true);
-//							TreeViewer newTreeViewer = tree.getViewer();
-
 							return newTreeViewer;
 						}
 						@Override
