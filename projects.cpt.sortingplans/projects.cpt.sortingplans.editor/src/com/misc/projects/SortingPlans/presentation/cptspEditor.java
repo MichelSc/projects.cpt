@@ -51,14 +51,18 @@ import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CTabFolder;
+import org.eclipse.swt.custom.ViewForm;
 import org.eclipse.swt.dnd.DND;
 import org.eclipse.swt.dnd.FileTransfer;
 import org.eclipse.swt.dnd.Transfer;
 import org.eclipse.swt.events.ControlAdapter;
 import org.eclipse.swt.events.ControlEvent;
+import org.eclipse.swt.events.DisposeEvent;
+import org.eclipse.swt.events.DisposeListener;
 import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
@@ -242,6 +246,13 @@ public class cptspEditor
 	 * @generated
 	 */
 	protected TreeViewer treeViewerWithColumns;
+
+	/**
+	 * This shows how a tree view for testing
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 */
+	protected TreeViewer treeViewerTest;
 
 	/**
 	 * This keeps track of the active viewer pane, in the book.
@@ -998,23 +1009,97 @@ public class cptspEditor
 		}
 	}
 
-//	PatternFilter filter = new PatternFilter();
-//	FilteredTree filteredTree = new FilteredTree(composite, 
-//			SWT.MULTI | SWT.H_SCROLL| SWT.V_SCROLL, 
-//			filter, 
-//			true);
 	
 	/**
 	 * This is the method used by the framework to install your own controls.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	@Override
 	public void createPages() {
 		// Creates the model from the editor input
 		//
 		createModel();
+
+		{
+			ViewerPane viewerPane =
+				new ViewerPane(getSite().getPage(), cptspEditor.this) {
+					private FilteredTree filteredTree;
+				
+					@Override
+					public void createControl(Composite parent) {
+					    if (getControl() == null)
+					    {
+					      container = parent;
+
+					      // Create view form.    
+					      //control = new ViewForm(parent, getStyle());
+					      control = new ViewForm(parent, SWT.NONE);
+					      control.addDisposeListener
+					        (new DisposeListener()
+					         {
+					           public void widgetDisposed(DisposeEvent event)
+					           {
+					             dispose();
+					           }
+					         });
+					      control.marginWidth = 0;
+					      control.marginHeight = 0;
+
+					      // Create a title bar.
+					      createTitleBar();
+
+					      viewer = createViewer(control);
+					      control.setContent(this.filteredTree);
+
+					      //control.setTabList(new Control [] { viewer.getControl() });
+					      
+					      // When the pane or any child gains focus, notify the workbench.
+					      control.addListener(SWT.Activate, this);
+					      hookFocus(control);
+					      //hookFocus(viewer.getControl());
+					    }
+					} // method create controls
+					@Override
+					public Viewer createViewer(Composite composite) {
+//						Tree tree = new Tree(composite, SWT.MULTI);
+//						TreeViewer newTreeViewer = new TreeViewer(tree);
+						PatternFilter filter = new PatternFilter();
+						this.filteredTree = new FilteredTree(composite,SWT.MULTI | SWT.H_SCROLL| SWT.V_SCROLL,filter,true);
+						TreeViewer newTreeViewer = filteredTree.getViewer();
+						return newTreeViewer;
+					} // method create viewer
+					@Override
+					public void requestActivation() {
+						super.requestActivation();
+						setCurrentViewerPane(this);
+					}  // method request activation
+				}; // class viewer pane
+				
+			// most of the work starts from here	
+			viewerPane.createControl(getContainer());
+
+			this.treeViewerTest = (TreeViewer)viewerPane.getViewer();
+			this.treeViewerTest.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
+
+			this.treeViewerTest.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
+			this.treeViewerTest.setInput(editingDomain.getResourceSet());
+			this.treeViewerTest.setSelection(new StructuredSelection(editingDomain.getResourceSet().getResources().get(0)), true);
+			
+			// set the Object whose text must be shown initially
+			// afterward, this will be changed by the HandleOutline thing
+			viewerPane.setTitle(editingDomain.getResourceSet());
+
+			new AdapterFactoryTreeEditor(this.treeViewerTest.getTree(), adapterFactory);
+
+			// set the context menu in the Viewer primary control
+			createContextMenuFor(this.treeViewerTest);
+			
+			// this is the ViewForm
+			// this creates the CTabItem in the container, probably a CTabFolder
+			int pageIndex = addPage(viewerPane.getControl()); 
+			setPageText(pageIndex, "Tab Name Michel Test");
+		}
 
 		// Only creates the other pages if there is something that can be edited
 		//
