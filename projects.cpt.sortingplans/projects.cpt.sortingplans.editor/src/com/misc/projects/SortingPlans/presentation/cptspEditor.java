@@ -127,7 +127,6 @@ import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 import com.misc.projects.SortingPlans.EndProduct;
 import com.misc.projects.SortingPlans.Scenario;
 import com.misc.projects.SortingPlans.SortingPlanEndProduct;
-import com.misc.projects.SortingPlans.SortingPlanInput;
 import com.misc.projects.SortingPlans.SortingPlanOutput;
 import com.misc.projects.SortingPlans.provider.cptspItemProviderAdapterFactory;
 import com.misc.common.moplaf.DatasetLoadOra.provider.DatasetLoadOraItemProviderAdapterFactory;
@@ -252,7 +251,7 @@ public class cptspEditor
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 */
-	protected TreeViewer treeViewerTest;
+	protected TreeViewer searchViewer;
 
 	/**
 	 * This keeps track of the active viewer pane, in the book.
@@ -1062,18 +1061,7 @@ public class cptspEditor
 					} // method create controls
 					@Override
 					public Viewer createViewer(Composite composite) {
-//						Tree tree = new Tree(composite, SWT.MULTI);
-//						TreeViewer newTreeViewer = new TreeViewer(tree);
-						PatternFilter filter = new PatternFilter(){
-// put in comment, have another idea
-//							@Override
-//							protected boolean isParentMatch(Viewer viewer, Object element) {
-//								if ( element instanceof SortingPlanOutput) { return false; }
-//								if ( element instanceof SortingPlanInput ) { return false; }
-//								return super.isParentMatch(viewer, element);
-//							}
-
-						};
+						PatternFilter filter = new PatternFilter();
 						this.filteredTree = new FilteredTree(composite,SWT.MULTI | SWT.H_SCROLL| SWT.V_SCROLL,filter,true);
 						TreeViewer newTreeViewer = filteredTree.getViewer();
 						return newTreeViewer;
@@ -1088,26 +1076,26 @@ public class cptspEditor
 			// most of the work starts from here	
 			viewerPane.createControl(getContainer());
 
-			this.treeViewerTest = (TreeViewer)viewerPane.getViewer();
-			this.treeViewerTest.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
+			this.searchViewer = (TreeViewer)viewerPane.getViewer();
+			this.searchViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
 
-			this.treeViewerTest.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
-			this.treeViewerTest.setInput(editingDomain.getResourceSet());
-			this.treeViewerTest.setSelection(new StructuredSelection(editingDomain.getResourceSet().getResources().get(0)), true);
+			this.searchViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
+			this.searchViewer.setInput(editingDomain.getResourceSet());
+			this.searchViewer.setSelection(new StructuredSelection(editingDomain.getResourceSet().getResources().get(0)), true);
 			
 			// set the Object whose text must be shown initially
 			// afterward, this will be changed by the HandleOutline thing
 			viewerPane.setTitle(editingDomain.getResourceSet());
 
-			new AdapterFactoryTreeEditor(this.treeViewerTest.getTree(), adapterFactory);
+			new AdapterFactoryTreeEditor(this.searchViewer.getTree(), adapterFactory);
 
 			// set the context menu in the Viewer primary control
-			createContextMenuFor(this.treeViewerTest);
+			createContextMenuFor(this.searchViewer);
 			
 			// this is the ViewForm
 			// this creates the CTabItem in the container, probably a CTabFolder
 			int pageIndex = addPage(viewerPane.getControl()); 
-			setPageText(pageIndex, "Tab Name Michel Test");
+			setPageText(pageIndex, "Search");
 		}
 
 		// Only creates the other pages if there is something that can be edited
@@ -1537,6 +1525,14 @@ public class cptspEditor
 					//
 					selectionViewer.setSelection(new StructuredSelection(selectionList));
 				}  // selection viewer
+				else if (currentViewerPane.getViewer() == this.searchViewer) {
+					ArrayList<Object> selectionList = new ArrayList<Object>();
+					selectionList.add(selectedElement);
+					while (selectedElements.hasNext()) {
+						selectionList.add(selectedElements.next());
+					}
+					selectionViewer.setSelection(new StructuredSelection(selectionList));
+				}  // search viewer
 				else if ( currentViewerPane.getViewer()== listViewer){
 					BasicEList<SortingPlanOutput> outputs = new BasicEList<SortingPlanOutput>();
 					if ( selectedElement instanceof EndProduct ){

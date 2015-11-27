@@ -28,8 +28,8 @@
     <genClasses provider="Stateful" ecoreClass="sortingplans.ecore#//SortingPlan">
       <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference sortingplans.ecore#//SortingPlan/Outputs"/>
       <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference sortingplans.ecore#//SortingPlan/EndProducts"/>
-      <genFeatures property="Readonly" notify="false" children="true" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference sortingplans.ecore#//SortingPlan/FPDSortingPlan"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference sortingplans.ecore#//SortingPlan/FPDSortingPlan"/>
       <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference sortingplans.ecore#//SortingPlan/Inputs"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference sortingplans.ecore#//SortingPlan/Scenario"/>
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute sortingplans.ecore#//SortingPlan/Description"/>
