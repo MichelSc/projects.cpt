@@ -442,7 +442,6 @@ public class cptspEditor
 				}
 			}
 		};
-
 	/**
 	 * This listens for workspace changes.
 	 * <!-- begin-user-doc -->
@@ -520,7 +519,6 @@ public class cptspEditor
 				}
 			}
 		};
-
 	/**
 	 * Handles activation of the editor or it's associated views.
 	 * <!-- begin-user-doc -->
@@ -1019,8 +1017,40 @@ public class cptspEditor
 		// Creates the model from the editor input
 		//
 		createModel();
+		// Only creates the other pages if there is something that can be edited
+		//
+		if (!getEditingDomain().getResourceSet().getResources().isEmpty()) {
+			this.createPageSelection();
+			this.createPageSearch();
+			this.createPageParent();
+			this.createPageList();
+			this.createPageTree();
+			this.createPageTable();
+			this.createPageTreeWithColumns();
+			}
+		
+		getContainer().addControlListener
+			(new ControlAdapter() {
+				boolean guard = false;
+				@Override
+				public void controlResized(ControlEvent event) {
+					if (!guard) {
+						guard = true;
+						hideTabs();
+						guard = false;
+					}
+				}
+			 });
 
-		{
+		getSite().getShell().getDisplay().asyncExec
+			(new Runnable() {
+				 public void run() {
+					 updateProblemIndication();
+				 }
+			 });
+	}
+
+	private void createPageSearch()	{
 			ViewerPane viewerPane =
 				new ViewerPane(getSite().getPage(), cptspEditor.this) {
 					private FilteredTree filteredTree;
@@ -1096,14 +1126,13 @@ public class cptspEditor
 			// this creates the CTabItem in the container, probably a CTabFolder
 			int pageIndex = addPage(viewerPane.getControl()); 
 			setPageText(pageIndex, "Search");
-		}
-
-		// Only creates the other pages if there is something that can be edited
+	}
+	
+	
+	private void createPageSelection(){
+		// Create a page for the selection tree view.
 		//
-		if (!getEditingDomain().getResourceSet().getResources().isEmpty()) {
-			// Create a page for the selection tree view.
-			//
-			{
+
 				ViewerPane viewerPane =
 					new ViewerPane(getSite().getPage(), cptspEditor.this) {
 						@Override
@@ -1133,11 +1162,11 @@ public class cptspEditor
 				createContextMenuFor(selectionViewer);
 				int pageIndex = addPage(viewerPane.getControl());
 				setPageText(pageIndex, getString("_UI_SelectionPage_label"));
-			}
-
-			// Create a page for the parent tree view.
-			//
-			{
+	}
+	
+	private void createPageParent(){
+				// Create a page for the parent tree view.
+				//
 				ViewerPane viewerPane =
 					new ViewerPane(getSite().getPage(), cptspEditor.this) {
 						@Override
@@ -1162,11 +1191,11 @@ public class cptspEditor
 				createContextMenuFor(parentViewer);
 				int pageIndex = addPage(viewerPane.getControl());
 				setPageText(pageIndex, getString("_UI_ParentPage_label"));
-			}
-
+	}
+			
+	private void createPageList(){
 			// This is the page for the list viewer
 			//
-			{
 				ViewerPane viewerPane =
 					new ViewerPane(getSite().getPage(), cptspEditor.this) {
 						@Override
@@ -1187,11 +1216,11 @@ public class cptspEditor
 				createContextMenuFor(listViewer);
 				int pageIndex = addPage(viewerPane.getControl());
 				setPageText(pageIndex, getString("_UI_ListPage_label"));
-			}
 
+	}
+
+	private void createPageTree(){
 			// This is the page for the tree viewer
-			//
-			{
 				ViewerPane viewerPane =
 					new ViewerPane(getSite().getPage(), cptspEditor.this) {
 						@Override
@@ -1214,11 +1243,12 @@ public class cptspEditor
 				createContextMenuFor(treeViewer);
 				int pageIndex = addPage(viewerPane.getControl());
 				setPageText(pageIndex, getString("_UI_TreePage_label"));
-			}
+	}
+			
+	private void createPageTable(){
 
 			// This is the page for the table viewer.
 			//
-			{
 				ViewerPane viewerPane =
 					new ViewerPane(getSite().getPage(), cptspEditor.this) {
 						@Override
@@ -1257,11 +1287,12 @@ public class cptspEditor
 				createContextMenuFor(tableViewer);
 				int pageIndex = addPage(viewerPane.getControl());
 				setPageText(pageIndex, getString("_UI_TablePage_label"));
-			}
+	}
+			
+	private void createPageTreeWithColumns(){
 
 			// This is the page for the table tree viewer.
 			//
-			{
 				ViewerPane viewerPane =
 					new ViewerPane(getSite().getPage(), cptspEditor.this) {
 						@Override
@@ -1300,38 +1331,6 @@ public class cptspEditor
 				createContextMenuFor(treeViewerWithColumns);
 				int pageIndex = addPage(viewerPane.getControl());
 				setPageText(pageIndex, getString("_UI_TreeWithColumnsPage_label"));
-			}
-
-			getSite().getShell().getDisplay().asyncExec
-				(new Runnable() {
-					 public void run() {
-						 setActivePage(0);
-					 }
-				 });
-		}
-
-		// Ensures that this editor will only display the page's tab
-		// area if there are more than one page
-		//
-		getContainer().addControlListener
-			(new ControlAdapter() {
-				boolean guard = false;
-				@Override
-				public void controlResized(ControlEvent event) {
-					if (!guard) {
-						guard = true;
-						hideTabs();
-						guard = false;
-					}
-				}
-			 });
-
-		getSite().getShell().getDisplay().asyncExec
-			(new Runnable() {
-				 public void run() {
-					 updateProblemIndication();
-				 }
-			 });
 	}
 
 	/**
