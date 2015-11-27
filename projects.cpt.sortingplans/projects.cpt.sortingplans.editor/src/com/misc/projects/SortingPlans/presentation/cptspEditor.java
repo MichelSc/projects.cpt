@@ -1066,7 +1066,7 @@ public class cptspEditor
 //						Tree tree = new Tree(composite, SWT.MULTI);
 //						TreeViewer newTreeViewer = new TreeViewer(tree);
 						PatternFilter filter = new PatternFilter(){
-
+// put in comment, have another idea
 //							@Override
 //							protected boolean isParentMatch(Viewer viewer, Object element) {
 //								if ( element instanceof SortingPlanOutput) { return false; }
