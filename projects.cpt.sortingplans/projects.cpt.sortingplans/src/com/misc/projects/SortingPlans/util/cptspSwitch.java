@@ -101,12 +101,6 @@ public class cptspSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case cptspPackage.SORTING_PLAN_END_PRODUCT: {
-				SortingPlanEndProduct sortingPlanEndProduct = (SortingPlanEndProduct)theEObject;
-				T result = caseSortingPlanEndProduct(sortingPlanEndProduct);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case cptspPackage.SORTING_PLAN_OUTPUT: {
 				SortingPlanOutput sortingPlanOutput = (SortingPlanOutput)theEObject;
 				T result = caseSortingPlanOutput(sortingPlanOutput);
@@ -118,6 +112,30 @@ public class cptspSwitch<T> extends Switch<T> {
 				SortingPlanInput sortingPlanInput = (SortingPlanInput)theEObject;
 				T result = caseSortingPlanInput(sortingPlanInput);
 				if (result == null) result = caseObjectWithPropagatorFunctionAdapter(sortingPlanInput);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case cptspPackage.END_PRODUCT_SORTING_PLAN: {
+				EndProductSortingPlan endProductSortingPlan = (EndProductSortingPlan)theEObject;
+				T result = caseEndProductSortingPlan(endProductSortingPlan);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case cptspPackage.END_PRODUCT_SORTING_PLAN_INPUT: {
+				EndProductSortingPlanInput endProductSortingPlanInput = (EndProductSortingPlanInput)theEObject;
+				T result = caseEndProductSortingPlanInput(endProductSortingPlanInput);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case cptspPackage.END_PRODUCT_SORTING_PLAN_OUTPUT: {
+				EndProductSortingPlanOutput endProductSortingPlanOutput = (EndProductSortingPlanOutput)theEObject;
+				T result = caseEndProductSortingPlanOutput(endProductSortingPlanOutput);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case cptspPackage.END_PRODUCT_IN_PRODUCT: {
+				EndProductInProduct endProductInProduct = (EndProductInProduct)theEObject;
+				T result = caseEndProductInProduct(endProductInProduct);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -201,21 +219,6 @@ public class cptspSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Sorting Plan End Product</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Sorting Plan End Product</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseSortingPlanEndProduct(SortingPlanEndProduct object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Sorting Plan Output</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -242,6 +245,66 @@ public class cptspSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSortingPlanInput(SortingPlanInput object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>End Product Sorting Plan</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>End Product Sorting Plan</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEndProductSortingPlan(EndProductSortingPlan object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>End Product Sorting Plan Input</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>End Product Sorting Plan Input</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEndProductSortingPlanInput(EndProductSortingPlanInput object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>End Product Sorting Plan Output</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>End Product Sorting Plan Output</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEndProductSortingPlanOutput(EndProductSortingPlanOutput object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>End Product In Product</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>End Product In Product</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEndProductInProduct(EndProductInProduct object) {
 		return null;
 	}
 

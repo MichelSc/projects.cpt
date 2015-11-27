@@ -1,0 +1,397 @@
+/**
+ */
+package com.misc.projects.SortingPlans.impl;
+
+import com.misc.projects.SortingPlans.EndProduct;
+import com.misc.projects.SortingPlans.EndProductSortingPlan;
+import com.misc.projects.SortingPlans.EndProductSortingPlanInput;
+import com.misc.projects.SortingPlans.EndProductSortingPlanOutput;
+import com.misc.projects.SortingPlans.SortingPlan;
+import com.misc.projects.SortingPlans.cptspPackage;
+
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.util.InternalEList;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>End Product Sorting Plan</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link com.misc.projects.SortingPlans.impl.EndProductSortingPlanImpl#getEndProduct <em>End Product</em>}</li>
+ *   <li>{@link com.misc.projects.SortingPlans.impl.EndProductSortingPlanImpl#getSortingPlan <em>Sorting Plan</em>}</li>
+ *   <li>{@link com.misc.projects.SortingPlans.impl.EndProductSortingPlanImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link com.misc.projects.SortingPlans.impl.EndProductSortingPlanImpl#getOutputs <em>Outputs</em>}</li>
+ *   <li>{@link com.misc.projects.SortingPlans.impl.EndProductSortingPlanImpl#getInputs <em>Inputs</em>}</li>
+ * </ul>
+ *
+ * @generated
+ */
+public class EndProductSortingPlanImpl extends MinimalEObjectImpl.Container implements EndProductSortingPlan {
+	/**
+	 * The cached value of the '{@link #getSortingPlan() <em>Sorting Plan</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSortingPlan()
+	 * @generated
+	 * @ordered
+	 */
+	protected SortingPlan sortingPlan;
+
+	/**
+	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDescription()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String DESCRIPTION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getOutputs() <em>Outputs</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOutputs()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<EndProductSortingPlanOutput> outputs;
+
+	/**
+	 * The cached value of the '{@link #getInputs() <em>Inputs</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInputs()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<EndProductSortingPlanInput> inputs;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EndProductSortingPlanImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return cptspPackage.Literals.END_PRODUCT_SORTING_PLAN;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EndProduct getEndProduct() {
+		if (eContainerFeatureID() != cptspPackage.END_PRODUCT_SORTING_PLAN__END_PRODUCT) return null;
+		return (EndProduct)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetEndProduct(EndProduct newEndProduct, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newEndProduct, cptspPackage.END_PRODUCT_SORTING_PLAN__END_PRODUCT, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEndProduct(EndProduct newEndProduct) {
+		if (newEndProduct != eInternalContainer() || (eContainerFeatureID() != cptspPackage.END_PRODUCT_SORTING_PLAN__END_PRODUCT && newEndProduct != null)) {
+			if (EcoreUtil.isAncestor(this, newEndProduct))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newEndProduct != null)
+				msgs = ((InternalEObject)newEndProduct).eInverseAdd(this, cptspPackage.END_PRODUCT__SORTING_PLANS, EndProduct.class, msgs);
+			msgs = basicSetEndProduct(newEndProduct, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, cptspPackage.END_PRODUCT_SORTING_PLAN__END_PRODUCT, newEndProduct, newEndProduct));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SortingPlan getSortingPlan() {
+		if (sortingPlan != null && sortingPlan.eIsProxy()) {
+			InternalEObject oldSortingPlan = (InternalEObject)sortingPlan;
+			sortingPlan = (SortingPlan)eResolveProxy(oldSortingPlan);
+			if (sortingPlan != oldSortingPlan) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, cptspPackage.END_PRODUCT_SORTING_PLAN__SORTING_PLAN, oldSortingPlan, sortingPlan));
+			}
+		}
+		return sortingPlan;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SortingPlan basicGetSortingPlan() {
+		return sortingPlan;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetSortingPlan(SortingPlan newSortingPlan, NotificationChain msgs) {
+		SortingPlan oldSortingPlan = sortingPlan;
+		sortingPlan = newSortingPlan;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, cptspPackage.END_PRODUCT_SORTING_PLAN__SORTING_PLAN, oldSortingPlan, newSortingPlan);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSortingPlan(SortingPlan newSortingPlan) {
+		if (newSortingPlan != sortingPlan) {
+			NotificationChain msgs = null;
+			if (sortingPlan != null)
+				msgs = ((InternalEObject)sortingPlan).eInverseRemove(this, cptspPackage.SORTING_PLAN__END_PRODUCTS, SortingPlan.class, msgs);
+			if (newSortingPlan != null)
+				msgs = ((InternalEObject)newSortingPlan).eInverseAdd(this, cptspPackage.SORTING_PLAN__END_PRODUCTS, SortingPlan.class, msgs);
+			msgs = basicSetSortingPlan(newSortingPlan, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, cptspPackage.END_PRODUCT_SORTING_PLAN__SORTING_PLAN, newSortingPlan, newSortingPlan));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getDescription() {
+		// TODO: implement this method to return the 'Description' attribute
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<EndProductSortingPlanOutput> getOutputs() {
+		if (outputs == null) {
+			outputs = new EObjectContainmentWithInverseEList<EndProductSortingPlanOutput>(EndProductSortingPlanOutput.class, this, cptspPackage.END_PRODUCT_SORTING_PLAN__OUTPUTS, cptspPackage.END_PRODUCT_SORTING_PLAN_OUTPUT__SORTING_PLAN);
+		}
+		return outputs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<EndProductSortingPlanInput> getInputs() {
+		if (inputs == null) {
+			inputs = new EObjectContainmentWithInverseEList<EndProductSortingPlanInput>(EndProductSortingPlanInput.class, this, cptspPackage.END_PRODUCT_SORTING_PLAN__INPUTS, cptspPackage.END_PRODUCT_SORTING_PLAN_INPUT__SORTING_PLAN);
+		}
+		return inputs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case cptspPackage.END_PRODUCT_SORTING_PLAN__END_PRODUCT:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetEndProduct((EndProduct)otherEnd, msgs);
+			case cptspPackage.END_PRODUCT_SORTING_PLAN__SORTING_PLAN:
+				if (sortingPlan != null)
+					msgs = ((InternalEObject)sortingPlan).eInverseRemove(this, cptspPackage.SORTING_PLAN__END_PRODUCTS, SortingPlan.class, msgs);
+				return basicSetSortingPlan((SortingPlan)otherEnd, msgs);
+			case cptspPackage.END_PRODUCT_SORTING_PLAN__OUTPUTS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOutputs()).basicAdd(otherEnd, msgs);
+			case cptspPackage.END_PRODUCT_SORTING_PLAN__INPUTS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getInputs()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case cptspPackage.END_PRODUCT_SORTING_PLAN__END_PRODUCT:
+				return basicSetEndProduct(null, msgs);
+			case cptspPackage.END_PRODUCT_SORTING_PLAN__SORTING_PLAN:
+				return basicSetSortingPlan(null, msgs);
+			case cptspPackage.END_PRODUCT_SORTING_PLAN__OUTPUTS:
+				return ((InternalEList<?>)getOutputs()).basicRemove(otherEnd, msgs);
+			case cptspPackage.END_PRODUCT_SORTING_PLAN__INPUTS:
+				return ((InternalEList<?>)getInputs()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case cptspPackage.END_PRODUCT_SORTING_PLAN__END_PRODUCT:
+				return eInternalContainer().eInverseRemove(this, cptspPackage.END_PRODUCT__SORTING_PLANS, EndProduct.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case cptspPackage.END_PRODUCT_SORTING_PLAN__END_PRODUCT:
+				return getEndProduct();
+			case cptspPackage.END_PRODUCT_SORTING_PLAN__SORTING_PLAN:
+				if (resolve) return getSortingPlan();
+				return basicGetSortingPlan();
+			case cptspPackage.END_PRODUCT_SORTING_PLAN__DESCRIPTION:
+				return getDescription();
+			case cptspPackage.END_PRODUCT_SORTING_PLAN__OUTPUTS:
+				return getOutputs();
+			case cptspPackage.END_PRODUCT_SORTING_PLAN__INPUTS:
+				return getInputs();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case cptspPackage.END_PRODUCT_SORTING_PLAN__END_PRODUCT:
+				setEndProduct((EndProduct)newValue);
+				return;
+			case cptspPackage.END_PRODUCT_SORTING_PLAN__SORTING_PLAN:
+				setSortingPlan((SortingPlan)newValue);
+				return;
+			case cptspPackage.END_PRODUCT_SORTING_PLAN__OUTPUTS:
+				getOutputs().clear();
+				getOutputs().addAll((Collection<? extends EndProductSortingPlanOutput>)newValue);
+				return;
+			case cptspPackage.END_PRODUCT_SORTING_PLAN__INPUTS:
+				getInputs().clear();
+				getInputs().addAll((Collection<? extends EndProductSortingPlanInput>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case cptspPackage.END_PRODUCT_SORTING_PLAN__END_PRODUCT:
+				setEndProduct((EndProduct)null);
+				return;
+			case cptspPackage.END_PRODUCT_SORTING_PLAN__SORTING_PLAN:
+				setSortingPlan((SortingPlan)null);
+				return;
+			case cptspPackage.END_PRODUCT_SORTING_PLAN__OUTPUTS:
+				getOutputs().clear();
+				return;
+			case cptspPackage.END_PRODUCT_SORTING_PLAN__INPUTS:
+				getInputs().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case cptspPackage.END_PRODUCT_SORTING_PLAN__END_PRODUCT:
+				return getEndProduct() != null;
+			case cptspPackage.END_PRODUCT_SORTING_PLAN__SORTING_PLAN:
+				return sortingPlan != null;
+			case cptspPackage.END_PRODUCT_SORTING_PLAN__DESCRIPTION:
+				return DESCRIPTION_EDEFAULT == null ? getDescription() != null : !DESCRIPTION_EDEFAULT.equals(getDescription());
+			case cptspPackage.END_PRODUCT_SORTING_PLAN__OUTPUTS:
+				return outputs != null && !outputs.isEmpty();
+			case cptspPackage.END_PRODUCT_SORTING_PLAN__INPUTS:
+				return inputs != null && !inputs.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
+
+} //EndProductSortingPlanImpl

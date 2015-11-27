@@ -5,8 +5,6 @@ package com.misc.projects.SortingPlans;
 import com.misc.common.moplaf.propagator.ObjectWithPropagatorFunctionAdapter;
 import com.misc.projects.CptDatasetLoad.SortingPlanOutputRow;
 
-import org.eclipse.emf.common.util.EList;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Sorting Plan Output</b></em>'.
@@ -19,10 +17,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link com.misc.projects.SortingPlans.SortingPlanOutput#getFPDSortingPlanOutput <em>FPD Sorting Plan Output</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.SortingPlanOutput#getOutputProduct <em>Output Product</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.SortingPlanOutput#getDescription <em>Description</em>}</li>
- *   <li>{@link com.misc.projects.SortingPlans.SortingPlanOutput#getSortingPlanEndProduct <em>Sorting Plan End Product</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.SortingPlanOutput#getSortingPlan <em>Sorting Plan</em>}</li>
- *   <li>{@link com.misc.projects.SortingPlans.SortingPlanOutput#isSelected <em>Selected</em>}</li>
- *   <li>{@link com.misc.projects.SortingPlans.SortingPlanOutput#isSelectedNotShortest <em>Selected Not Shortest</em>}</li>
  * </ul>
  *
  * @see com.misc.projects.SortingPlans.cptspPackage#getSortingPlanOutput()
@@ -100,24 +95,6 @@ public interface SortingPlanOutput extends ObjectWithPropagatorFunctionAdapter {
 	String getDescription();
 
 	/**
-	 * Returns the value of the '<em><b>Sorting Plan End Product</b></em>' reference list.
-	 * The list contents are of type {@link com.misc.projects.SortingPlans.SortingPlanEndProduct}.
-	 * It is bidirectional and its opposite is '{@link com.misc.projects.SortingPlans.SortingPlanEndProduct#getOutput <em>Output</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Sorting Plan End Product</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Sorting Plan End Product</em>' reference list.
-	 * @see com.misc.projects.SortingPlans.cptspPackage#getSortingPlanOutput_SortingPlanEndProduct()
-	 * @see com.misc.projects.SortingPlans.SortingPlanEndProduct#getOutput
-	 * @model opposite="Output"
-	 * @generated
-	 */
-	EList<SortingPlanEndProduct> getSortingPlanEndProduct();
-
-	/**
 	 * Returns the value of the '<em><b>Sorting Plan</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link com.misc.projects.SortingPlans.SortingPlan#getOutputs <em>Outputs</em>}'.
 	 * <!-- begin-user-doc -->
@@ -130,7 +107,7 @@ public interface SortingPlanOutput extends ObjectWithPropagatorFunctionAdapter {
 	 * @see #setSortingPlan(SortingPlan)
 	 * @see com.misc.projects.SortingPlans.cptspPackage#getSortingPlanOutput_SortingPlan()
 	 * @see com.misc.projects.SortingPlans.SortingPlan#getOutputs
-	 * @model opposite="Outputs" transient="false"
+	 * @model opposite="Outputs" required="true" transient="false"
 	 * @generated
 	 */
 	SortingPlan getSortingPlan();
@@ -144,73 +121,5 @@ public interface SortingPlanOutput extends ObjectWithPropagatorFunctionAdapter {
 	 * @generated
 	 */
 	void setSortingPlan(SortingPlan value);
-
-	/**
-	 * Returns the value of the '<em><b>Selected</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Selected</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Selected</em>' attribute.
-	 * @see #setSelected(boolean)
-	 * @see com.misc.projects.SortingPlans.cptspPackage#getSortingPlanOutput_Selected()
-	 * @model
-	 * @generated
-	 */
-	boolean isSelected();
-
-	/**
-	 * Sets the value of the '{@link com.misc.projects.SortingPlans.SortingPlanOutput#isSelected <em>Selected</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Selected</em>' attribute.
-	 * @see #isSelected()
-	 * @generated
-	 */
-	void setSelected(boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Selected Not Shortest</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Selected Not Shortest</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Selected Not Shortest</em>' attribute.
-	 * @see #setSelectedNotShortest(boolean)
-	 * @see com.misc.projects.SortingPlans.cptspPackage#getSortingPlanOutput_SelectedNotShortest()
-	 * @model
-	 * @generated
-	 */
-	boolean isSelectedNotShortest();
-
-	/**
-	 * Sets the value of the '{@link com.misc.projects.SortingPlans.SortingPlanOutput#isSelectedNotShortest <em>Selected Not Shortest</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Selected Not Shortest</em>' attribute.
-	 * @see #isSelectedNotShortest()
-	 * @generated
-	 */
-	void setSelectedNotShortest(boolean value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	void refreshSelected();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	void refreshSelectedNotShortest();
 
 } // SortingPlanOutput

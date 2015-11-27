@@ -62,7 +62,6 @@ public class SortingPlanInputItemProvider
 			addFPDSortingPlanInputPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
 			addSortingPlanPropertyDescriptor(object);
-			addSelectedPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -156,28 +155,6 @@ public class SortingPlanInputItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Selected feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSelectedPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SortingPlanInput_selected_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SortingPlanInput_selected_feature", "_UI_SortingPlanInput_type"),
-				 cptspPackage.Literals.SORTING_PLAN_INPUT__SELECTED,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This returns SortingPlanInput.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -217,7 +194,6 @@ public class SortingPlanInputItemProvider
 		switch (notification.getFeatureID(SortingPlanInput.class)) {
 			case cptspPackage.SORTING_PLAN_INPUT__INPUT_PRODUCT:
 			case cptspPackage.SORTING_PLAN_INPUT__DESCRIPTION:
-			case cptspPackage.SORTING_PLAN_INPUT__SELECTED:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

@@ -3,7 +3,8 @@
 package com.misc.projects.SortingPlans.provider;
 
 
-import com.misc.projects.SortingPlans.SortingPlanEndProduct;
+import com.misc.projects.SortingPlans.EndProductSortingPlan;
+import com.misc.projects.SortingPlans.cptspFactory;
 import com.misc.projects.SortingPlans.cptspPackage;
 
 import java.util.Collection;
@@ -13,6 +14,9 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+
+import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -25,12 +29,12 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link com.misc.projects.SortingPlans.SortingPlanEndProduct} object.
+ * This is the item provider adapter for a {@link com.misc.projects.SortingPlans.EndProductSortingPlan} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class SortingPlanEndProductItemProvider 
+public class EndProductSortingPlanItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -44,7 +48,7 @@ public class SortingPlanEndProductItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SortingPlanEndProductItemProvider(AdapterFactory adapterFactory) {
+	public EndProductSortingPlanItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -59,51 +63,27 @@ public class SortingPlanEndProductItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addOutputPropertyDescriptor(object);
-			addEndProductPropertyDescriptor(object);
+			addSortingPlanPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
-			addSortingDistancePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Output feature.
+	 * This adds a property descriptor for the Sorting Plan feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addOutputPropertyDescriptor(Object object) {
+	protected void addSortingPlanPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_SortingPlanEndProduct_Output_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SortingPlanEndProduct_Output_feature", "_UI_SortingPlanEndProduct_type"),
-				 cptspPackage.Literals.SORTING_PLAN_END_PRODUCT__OUTPUT,
-				 false,
-				 false,
+				 getString("_UI_EndProductSortingPlan_SortingPlan_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EndProductSortingPlan_SortingPlan_feature", "_UI_EndProductSortingPlan_type"),
+				 cptspPackage.Literals.END_PRODUCT_SORTING_PLAN__SORTING_PLAN,
 				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the End Product feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addEndProductPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SortingPlanEndProduct_EndProduct_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SortingPlanEndProduct_EndProduct_feature", "_UI_SortingPlanEndProduct_type"),
-				 cptspPackage.Literals.SORTING_PLAN_END_PRODUCT__END_PRODUCT,
-				 false,
 				 false,
 				 true,
 				 null,
@@ -122,9 +102,9 @@ public class SortingPlanEndProductItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_SortingPlanEndProduct_Description_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SortingPlanEndProduct_Description_feature", "_UI_SortingPlanEndProduct_type"),
-				 cptspPackage.Literals.SORTING_PLAN_END_PRODUCT__DESCRIPTION,
+				 getString("_UI_EndProductSortingPlan_Description_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EndProductSortingPlan_Description_feature", "_UI_EndProductSortingPlan_type"),
+				 cptspPackage.Literals.END_PRODUCT_SORTING_PLAN__DESCRIPTION,
 				 false,
 				 false,
 				 false,
@@ -134,36 +114,45 @@ public class SortingPlanEndProductItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Sorting Distance feature.
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSortingDistancePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SortingPlanEndProduct_SortingDistance_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SortingPlanEndProduct_SortingDistance_feature", "_UI_SortingPlanEndProduct_type"),
-				 cptspPackage.Literals.SORTING_PLAN_END_PRODUCT__SORTING_DISTANCE,
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(cptspPackage.Literals.END_PRODUCT_SORTING_PLAN__OUTPUTS);
+			childrenFeatures.add(cptspPackage.Literals.END_PRODUCT_SORTING_PLAN__INPUTS);
+		}
+		return childrenFeatures;
 	}
 
 	/**
-	 * This returns SortingPlanEndProduct.gif.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
+	}
+
+	/**
+	 * This returns EndProductSortingPlan.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/SortingPlanEndProduct"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/EndProductSortingPlan"));
 	}
 
 	/**
@@ -174,10 +163,10 @@ public class SortingPlanEndProductItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((SortingPlanEndProduct)object).getDescription();
+		String label = ((EndProductSortingPlan)object).getDescription();
 		return label == null || label.length() == 0 ?
-			getString("_UI_SortingPlanEndProduct_type") :
-			getString("_UI_SortingPlanEndProduct_type") + " " + label;
+			getString("_UI_EndProductSortingPlan_type") :
+			getString("_UI_EndProductSortingPlan_type") + " " + label;
 	}
 	
 
@@ -192,13 +181,13 @@ public class SortingPlanEndProductItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(SortingPlanEndProduct.class)) {
-			case cptspPackage.SORTING_PLAN_END_PRODUCT__OUTPUT:
-			case cptspPackage.SORTING_PLAN_END_PRODUCT__END_PRODUCT:
-			case cptspPackage.SORTING_PLAN_END_PRODUCT__SORTING_PLAN:
-			case cptspPackage.SORTING_PLAN_END_PRODUCT__DESCRIPTION:
-			case cptspPackage.SORTING_PLAN_END_PRODUCT__SORTING_DISTANCE:
+		switch (notification.getFeatureID(EndProductSortingPlan.class)) {
+			case cptspPackage.END_PRODUCT_SORTING_PLAN__DESCRIPTION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+			case cptspPackage.END_PRODUCT_SORTING_PLAN__OUTPUTS:
+			case cptspPackage.END_PRODUCT_SORTING_PLAN__INPUTS:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
 		super.notifyChanged(notification);
@@ -214,6 +203,16 @@ public class SortingPlanEndProductItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(cptspPackage.Literals.END_PRODUCT_SORTING_PLAN__OUTPUTS,
+				 cptspFactory.eINSTANCE.createEndProductSortingPlanOutput()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(cptspPackage.Literals.END_PRODUCT_SORTING_PLAN__INPUTS,
+				 cptspFactory.eINSTANCE.createEndProductSortingPlanInput()));
 	}
 
 	/**

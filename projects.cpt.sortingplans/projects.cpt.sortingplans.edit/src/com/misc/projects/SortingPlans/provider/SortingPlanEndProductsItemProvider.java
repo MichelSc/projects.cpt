@@ -8,7 +8,6 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import com.misc.projects.SortingPlans.SortingPlan;
-import com.misc.projects.SortingPlans.cptspFactory;
 import com.misc.projects.SortingPlans.cptspPackage;
 
 public class SortingPlanEndProductsItemProvider extends
@@ -55,17 +54,4 @@ public class SortingPlanEndProductsItemProvider extends
 		super.notifyChanged(notification);
 	}
 	
-	
-
-
-	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(cptspPackage.Literals.SORTING_PLAN__END_PRODUCTS,
-				 cptspFactory.eINSTANCE.createSortingPlanEndProduct()));
-
 	}
-}

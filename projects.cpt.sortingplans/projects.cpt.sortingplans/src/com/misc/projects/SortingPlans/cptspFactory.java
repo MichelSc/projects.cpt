@@ -67,15 +67,6 @@ public interface cptspFactory extends EFactory {
 	SortingPlanProduct createSortingPlanProduct();
 
 	/**
-	 * Returns a new object of class '<em>Sorting Plan End Product</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Sorting Plan End Product</em>'.
-	 * @generated
-	 */
-	SortingPlanEndProduct createSortingPlanEndProduct();
-
-	/**
 	 * Returns a new object of class '<em>Sorting Plan Output</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -92,6 +83,42 @@ public interface cptspFactory extends EFactory {
 	 * @generated
 	 */
 	SortingPlanInput createSortingPlanInput();
+
+	/**
+	 * Returns a new object of class '<em>End Product Sorting Plan</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>End Product Sorting Plan</em>'.
+	 * @generated
+	 */
+	EndProductSortingPlan createEndProductSortingPlan();
+
+	/**
+	 * Returns a new object of class '<em>End Product Sorting Plan Input</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>End Product Sorting Plan Input</em>'.
+	 * @generated
+	 */
+	EndProductSortingPlanInput createEndProductSortingPlanInput();
+
+	/**
+	 * Returns a new object of class '<em>End Product Sorting Plan Output</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>End Product Sorting Plan Output</em>'.
+	 * @generated
+	 */
+	EndProductSortingPlanOutput createEndProductSortingPlanOutput();
+
+	/**
+	 * Returns a new object of class '<em>End Product In Product</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>End Product In Product</em>'.
+	 * @generated
+	 */
+	EndProductInProduct createEndProductInProduct();
 
 	/**
 	 * Returns the package supported by this factory.

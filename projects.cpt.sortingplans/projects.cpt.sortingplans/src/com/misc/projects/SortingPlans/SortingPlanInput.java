@@ -18,7 +18,6 @@ import com.misc.projects.CptDatasetLoad.SortingPlanInputRow;
  *   <li>{@link com.misc.projects.SortingPlans.SortingPlanInput#getFPDSortingPlanInput <em>FPD Sorting Plan Input</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.SortingPlanInput#getDescription <em>Description</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.SortingPlanInput#getSortingPlan <em>Sorting Plan</em>}</li>
- *   <li>{@link com.misc.projects.SortingPlans.SortingPlanInput#isSelected <em>Selected</em>}</li>
  * </ul>
  *
  * @see com.misc.projects.SortingPlans.cptspPackage#getSortingPlanInput()
@@ -108,7 +107,7 @@ public interface SortingPlanInput extends ObjectWithPropagatorFunctionAdapter {
 	 * @see #setSortingPlan(SortingPlan)
 	 * @see com.misc.projects.SortingPlans.cptspPackage#getSortingPlanInput_SortingPlan()
 	 * @see com.misc.projects.SortingPlans.SortingPlan#getInputs
-	 * @model opposite="Inputs" transient="false"
+	 * @model opposite="Inputs" required="true" transient="false"
 	 * @generated
 	 */
 	SortingPlan getSortingPlan();
@@ -122,39 +121,5 @@ public interface SortingPlanInput extends ObjectWithPropagatorFunctionAdapter {
 	 * @generated
 	 */
 	void setSortingPlan(SortingPlan value);
-
-	/**
-	 * Returns the value of the '<em><b>Selected</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Selected</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Selected</em>' attribute.
-	 * @see #setSelected(boolean)
-	 * @see com.misc.projects.SortingPlans.cptspPackage#getSortingPlanInput_Selected()
-	 * @model
-	 * @generated
-	 */
-	boolean isSelected();
-
-	/**
-	 * Sets the value of the '{@link com.misc.projects.SortingPlans.SortingPlanInput#isSelected <em>Selected</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Selected</em>' attribute.
-	 * @see #isSelected()
-	 * @generated
-	 */
-	void setSelected(boolean value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	void refreshSelected();
 
 } // SortingPlanInput

@@ -173,29 +173,6 @@ public class cptspItemProviderAdapterFactory extends cptspAdapterFactory impleme
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link com.misc.projects.SortingPlans.SortingPlanEndProduct} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected SortingPlanEndProductItemProvider sortingPlanEndProductItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link com.misc.projects.SortingPlans.SortingPlanEndProduct}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createSortingPlanEndProductAdapter() {
-		if (sortingPlanEndProductItemProvider == null) {
-			sortingPlanEndProductItemProvider = new SortingPlanEndProductItemProvider(this);
-		}
-
-		return sortingPlanEndProductItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link com.misc.projects.SortingPlans.SortingPlanOutput} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -239,6 +216,98 @@ public class cptspItemProviderAdapterFactory extends cptspAdapterFactory impleme
 		}
 
 		return sortingPlanInputItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link com.misc.projects.SortingPlans.EndProductSortingPlan} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EndProductSortingPlanItemProvider endProductSortingPlanItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link com.misc.projects.SortingPlans.EndProductSortingPlan}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEndProductSortingPlanAdapter() {
+		if (endProductSortingPlanItemProvider == null) {
+			endProductSortingPlanItemProvider = new EndProductSortingPlanItemProvider(this);
+		}
+
+		return endProductSortingPlanItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link com.misc.projects.SortingPlans.EndProductSortingPlanInput} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EndProductSortingPlanInputItemProvider endProductSortingPlanInputItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link com.misc.projects.SortingPlans.EndProductSortingPlanInput}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEndProductSortingPlanInputAdapter() {
+		if (endProductSortingPlanInputItemProvider == null) {
+			endProductSortingPlanInputItemProvider = new EndProductSortingPlanInputItemProvider(this);
+		}
+
+		return endProductSortingPlanInputItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link com.misc.projects.SortingPlans.EndProductSortingPlanOutput} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EndProductSortingPlanOutputItemProvider endProductSortingPlanOutputItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link com.misc.projects.SortingPlans.EndProductSortingPlanOutput}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEndProductSortingPlanOutputAdapter() {
+		if (endProductSortingPlanOutputItemProvider == null) {
+			endProductSortingPlanOutputItemProvider = new EndProductSortingPlanOutputItemProvider(this);
+		}
+
+		return endProductSortingPlanOutputItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link com.misc.projects.SortingPlans.EndProductInProduct} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EndProductInProductItemProvider endProductInProductItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link com.misc.projects.SortingPlans.EndProductInProduct}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEndProductInProductAdapter() {
+		if (endProductInProductItemProvider == null) {
+			endProductInProductItemProvider = new EndProductInProductItemProvider(this);
+		}
+
+		return endProductInProductItemProvider;
 	}
 
 	/**

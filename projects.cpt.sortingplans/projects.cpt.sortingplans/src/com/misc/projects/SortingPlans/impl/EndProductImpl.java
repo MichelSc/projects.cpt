@@ -6,9 +6,10 @@ package com.misc.projects.SortingPlans.impl;
 import com.misc.common.moplaf.propagator.Util;
 import com.misc.projects.CptDatasetLoad.SortingLevelRow;
 import com.misc.projects.SortingPlans.EndProduct;
+import com.misc.projects.SortingPlans.EndProductInProduct;
+import com.misc.projects.SortingPlans.EndProductSortingPlan;
 import com.misc.projects.SortingPlans.Scenario;
 import com.misc.projects.SortingPlans.SortingPlan;
-import com.misc.projects.SortingPlans.SortingPlanEndProduct;
 import com.misc.projects.SortingPlans.SortingPlanInput;
 import com.misc.projects.SortingPlans.SortingPlanOutput;
 import com.misc.projects.SortingPlans.SortingPlanProduct;
@@ -45,6 +46,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.misc.projects.SortingPlans.impl.EndProductImpl#getSortingPlans <em>Sorting Plans</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.impl.EndProductImpl#getScenario <em>Scenario</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.impl.EndProductImpl#getScenarioAsSelected <em>Scenario As Selected</em>}</li>
+ *   <li>{@link com.misc.projects.SortingPlans.impl.EndProductImpl#getProductsContaining <em>Products Containing</em>}</li>
  * </ul>
  *
  * @generated
@@ -88,7 +90,7 @@ public class EndProductImpl extends MinimalEObjectImpl.Container implements EndP
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<SortingPlanEndProduct> sortingPlans;
+	protected EList<EndProductSortingPlan> sortingPlans;
 
 	/**
 	 * The cached value of the '{@link #getScenarioAsSelected() <em>Scenario As Selected</em>}' reference.
@@ -99,6 +101,16 @@ public class EndProductImpl extends MinimalEObjectImpl.Container implements EndP
 	 * @ordered
 	 */
 	protected Scenario scenarioAsSelected;
+
+	/**
+	 * The cached value of the '{@link #getProductsContaining() <em>Products Containing</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductsContaining()
+	 * @generated
+	 * @ordered
+	 */
+	protected EndProductInProduct productsContaining;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -231,9 +243,9 @@ public class EndProductImpl extends MinimalEObjectImpl.Container implements EndP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<SortingPlanEndProduct> getSortingPlans() {
+	public EList<EndProductSortingPlan> getSortingPlans() {
 		if (sortingPlans == null) {
-			sortingPlans = new EObjectContainmentWithInverseEList<SortingPlanEndProduct>(SortingPlanEndProduct.class, this, cptspPackage.END_PRODUCT__SORTING_PLANS, cptspPackage.SORTING_PLAN_END_PRODUCT__END_PRODUCT);
+			sortingPlans = new EObjectContainmentWithInverseEList<EndProductSortingPlan>(EndProductSortingPlan.class, this, cptspPackage.END_PRODUCT__SORTING_PLANS, cptspPackage.END_PRODUCT_SORTING_PLAN__END_PRODUCT);
 		}
 		return sortingPlans;
 	}
@@ -339,6 +351,49 @@ public class EndProductImpl extends MinimalEObjectImpl.Container implements EndP
 			eNotify(new ENotificationImpl(this, Notification.SET, cptspPackage.END_PRODUCT__SCENARIO_AS_SELECTED, newScenarioAsSelected, newScenarioAsSelected));
 	}
 
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EndProductInProduct getProductsContaining() {
+		return productsContaining;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetProductsContaining(EndProductInProduct newProductsContaining, NotificationChain msgs) {
+		EndProductInProduct oldProductsContaining = productsContaining;
+		productsContaining = newProductsContaining;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, cptspPackage.END_PRODUCT__PRODUCTS_CONTAINING, oldProductsContaining, newProductsContaining);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setProductsContaining(EndProductInProduct newProductsContaining) {
+		if (newProductsContaining != productsContaining) {
+			NotificationChain msgs = null;
+			if (productsContaining != null)
+				msgs = ((InternalEObject)productsContaining).eInverseRemove(this, cptspPackage.END_PRODUCT_IN_PRODUCT__END_PRODUCTS_CONTAINED, EndProductInProduct.class, msgs);
+			if (newProductsContaining != null)
+				msgs = ((InternalEObject)newProductsContaining).eInverseAdd(this, cptspPackage.END_PRODUCT_IN_PRODUCT__END_PRODUCTS_CONTAINED, EndProductInProduct.class, msgs);
+			msgs = basicSetProductsContaining(newProductsContaining, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, cptspPackage.END_PRODUCT__PRODUCTS_CONTAINING, newProductsContaining, newProductsContaining));
+	}
+
 		private class AlgorithmSortingPlan implements Comparable<AlgorithmSortingPlan>{
 		 public SortingPlanOutput sortingPlanOut;
 		 public int distanceSorting;
@@ -415,6 +470,8 @@ public class EndProductImpl extends MinimalEObjectImpl.Container implements EndP
 			AlgorithmSortingPlan candidate = queue.remove();
 			this.algorithmUpdate(queue, result, candidate.sortingPlanOut, candidate.distanceSorting);
 		}
+		
+		/*
 		//traverse the asis
 		BasicEList<SortingPlanEndProduct> spepToDelete = new BasicEList<SortingPlanEndProduct>();
 		// remove
@@ -448,6 +505,7 @@ public class EndProductImpl extends MinimalEObjectImpl.Container implements EndP
 			spep.setOutput(null);
 			spep.setEndProduct(null);  // owning
 		}
+		*/
 		//CommonPlugin.INSTANCE.log("EndProduct "+ this.getDescription()+" end refresh Sortingplans");
 	}
 
@@ -474,6 +532,10 @@ public class EndProductImpl extends MinimalEObjectImpl.Container implements EndP
 				if (scenarioAsSelected != null)
 					msgs = ((InternalEObject)scenarioAsSelected).eInverseRemove(this, cptspPackage.SCENARIO__SELECTED_END_PRODUCTS, Scenario.class, msgs);
 				return basicSetScenarioAsSelected((Scenario)otherEnd, msgs);
+			case cptspPackage.END_PRODUCT__PRODUCTS_CONTAINING:
+				if (productsContaining != null)
+					msgs = ((InternalEObject)productsContaining).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - cptspPackage.END_PRODUCT__PRODUCTS_CONTAINING, null, msgs);
+				return basicSetProductsContaining((EndProductInProduct)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -494,6 +556,8 @@ public class EndProductImpl extends MinimalEObjectImpl.Container implements EndP
 				return basicSetScenario(null, msgs);
 			case cptspPackage.END_PRODUCT__SCENARIO_AS_SELECTED:
 				return basicSetScenarioAsSelected(null, msgs);
+			case cptspPackage.END_PRODUCT__PRODUCTS_CONTAINING:
+				return basicSetProductsContaining(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -535,6 +599,8 @@ public class EndProductImpl extends MinimalEObjectImpl.Container implements EndP
 			case cptspPackage.END_PRODUCT__SCENARIO_AS_SELECTED:
 				if (resolve) return getScenarioAsSelected();
 				return basicGetScenarioAsSelected();
+			case cptspPackage.END_PRODUCT__PRODUCTS_CONTAINING:
+				return getProductsContaining();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -556,13 +622,16 @@ public class EndProductImpl extends MinimalEObjectImpl.Container implements EndP
 				return;
 			case cptspPackage.END_PRODUCT__SORTING_PLANS:
 				getSortingPlans().clear();
-				getSortingPlans().addAll((Collection<? extends SortingPlanEndProduct>)newValue);
+				getSortingPlans().addAll((Collection<? extends EndProductSortingPlan>)newValue);
 				return;
 			case cptspPackage.END_PRODUCT__SCENARIO:
 				setScenario((Scenario)newValue);
 				return;
 			case cptspPackage.END_PRODUCT__SCENARIO_AS_SELECTED:
 				setScenarioAsSelected((Scenario)newValue);
+				return;
+			case cptspPackage.END_PRODUCT__PRODUCTS_CONTAINING:
+				setProductsContaining((EndProductInProduct)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -591,6 +660,9 @@ public class EndProductImpl extends MinimalEObjectImpl.Container implements EndP
 			case cptspPackage.END_PRODUCT__SCENARIO_AS_SELECTED:
 				setScenarioAsSelected((Scenario)null);
 				return;
+			case cptspPackage.END_PRODUCT__PRODUCTS_CONTAINING:
+				setProductsContaining((EndProductInProduct)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -615,6 +687,8 @@ public class EndProductImpl extends MinimalEObjectImpl.Container implements EndP
 				return getScenario() != null;
 			case cptspPackage.END_PRODUCT__SCENARIO_AS_SELECTED:
 				return scenarioAsSelected != null;
+			case cptspPackage.END_PRODUCT__PRODUCTS_CONTAINING:
+				return productsContaining != null;
 		}
 		return super.eIsSet(featureID);
 	}

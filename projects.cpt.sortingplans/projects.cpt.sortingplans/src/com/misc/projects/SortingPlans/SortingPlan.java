@@ -160,17 +160,9 @@ public interface SortingPlan extends ObjectWithPropagatorFunctionAdapter {
 	void refresh();
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	void refreshSelected();
-
-	/**
 	 * Returns the value of the '<em><b>End Products</b></em>' reference list.
-	 * The list contents are of type {@link com.misc.projects.SortingPlans.SortingPlanEndProduct}.
-	 * It is bidirectional and its opposite is '{@link com.misc.projects.SortingPlans.SortingPlanEndProduct#getSortingPlan <em>Sorting Plan</em>}'.
+	 * The list contents are of type {@link com.misc.projects.SortingPlans.EndProductSortingPlan}.
+	 * It is bidirectional and its opposite is '{@link com.misc.projects.SortingPlans.EndProductSortingPlan#getSortingPlan <em>Sorting Plan</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>End Products</em>' containment reference list isn't clear,
@@ -179,11 +171,11 @@ public interface SortingPlan extends ObjectWithPropagatorFunctionAdapter {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>End Products</em>' reference list.
 	 * @see com.misc.projects.SortingPlans.cptspPackage#getSortingPlan_EndProducts()
-	 * @see com.misc.projects.SortingPlans.SortingPlanEndProduct#getSortingPlan
+	 * @see com.misc.projects.SortingPlans.EndProductSortingPlan#getSortingPlan
 	 * @model opposite="SortingPlan"
 	 * @generated
 	 */
-	EList<SortingPlanEndProduct> getEndProducts();
+	EList<EndProductSortingPlan> getEndProducts();
 
 	/**
 	 * Returns the value of the '<em><b>FPD Sorting Plan</b></em>' reference.

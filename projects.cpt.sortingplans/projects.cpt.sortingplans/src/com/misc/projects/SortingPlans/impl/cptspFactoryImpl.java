@@ -61,9 +61,12 @@ public class cptspFactoryImpl extends EFactoryImpl implements cptspFactory {
 			case cptspPackage.SORTING_PLAN: return createSortingPlan();
 			case cptspPackage.END_PRODUCT: return createEndProduct();
 			case cptspPackage.SORTING_PLAN_PRODUCT: return createSortingPlanProduct();
-			case cptspPackage.SORTING_PLAN_END_PRODUCT: return createSortingPlanEndProduct();
 			case cptspPackage.SORTING_PLAN_OUTPUT: return createSortingPlanOutput();
 			case cptspPackage.SORTING_PLAN_INPUT: return createSortingPlanInput();
+			case cptspPackage.END_PRODUCT_SORTING_PLAN: return createEndProductSortingPlan();
+			case cptspPackage.END_PRODUCT_SORTING_PLAN_INPUT: return createEndProductSortingPlanInput();
+			case cptspPackage.END_PRODUCT_SORTING_PLAN_OUTPUT: return createEndProductSortingPlanOutput();
+			case cptspPackage.END_PRODUCT_IN_PRODUCT: return createEndProductInProduct();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -124,16 +127,6 @@ public class cptspFactoryImpl extends EFactoryImpl implements cptspFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SortingPlanEndProduct createSortingPlanEndProduct() {
-		SortingPlanEndProductImpl sortingPlanEndProduct = new SortingPlanEndProductImpl();
-		return sortingPlanEndProduct;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public SortingPlanOutput createSortingPlanOutput() {
 		SortingPlanOutputImpl sortingPlanOutput = new SortingPlanOutputImpl();
 		return sortingPlanOutput;
@@ -147,6 +140,46 @@ public class cptspFactoryImpl extends EFactoryImpl implements cptspFactory {
 	public SortingPlanInput createSortingPlanInput() {
 		SortingPlanInputImpl sortingPlanInput = new SortingPlanInputImpl();
 		return sortingPlanInput;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EndProductSortingPlan createEndProductSortingPlan() {
+		EndProductSortingPlanImpl endProductSortingPlan = new EndProductSortingPlanImpl();
+		return endProductSortingPlan;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EndProductSortingPlanInput createEndProductSortingPlanInput() {
+		EndProductSortingPlanInputImpl endProductSortingPlanInput = new EndProductSortingPlanInputImpl();
+		return endProductSortingPlanInput;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EndProductSortingPlanOutput createEndProductSortingPlanOutput() {
+		EndProductSortingPlanOutputImpl endProductSortingPlanOutput = new EndProductSortingPlanOutputImpl();
+		return endProductSortingPlanOutput;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EndProductInProduct createEndProductInProduct() {
+		EndProductInProductImpl endProductInProduct = new EndProductInProductImpl();
+		return endProductInProduct;
 	}
 
 	/**

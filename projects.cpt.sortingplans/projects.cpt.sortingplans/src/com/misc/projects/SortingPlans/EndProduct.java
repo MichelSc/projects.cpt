@@ -21,6 +21,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link com.misc.projects.SortingPlans.EndProduct#getSortingPlans <em>Sorting Plans</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.EndProduct#getScenario <em>Scenario</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.EndProduct#getScenarioAsSelected <em>Scenario As Selected</em>}</li>
+ *   <li>{@link com.misc.projects.SortingPlans.EndProduct#getProductsContaining <em>Products Containing</em>}</li>
  * </ul>
  *
  * @see com.misc.projects.SortingPlans.cptspPackage#getEndProduct()
@@ -99,8 +100,8 @@ public interface EndProduct extends ObjectWithPropagatorFunctionAdapter {
 
 	/**
 	 * Returns the value of the '<em><b>Sorting Plans</b></em>' containment reference list.
-	 * The list contents are of type {@link com.misc.projects.SortingPlans.SortingPlanEndProduct}.
-	 * It is bidirectional and its opposite is '{@link com.misc.projects.SortingPlans.SortingPlanEndProduct#getEndProduct <em>End Product</em>}'.
+	 * The list contents are of type {@link com.misc.projects.SortingPlans.EndProductSortingPlan}.
+	 * It is bidirectional and its opposite is '{@link com.misc.projects.SortingPlans.EndProductSortingPlan#getEndProduct <em>End Product</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Sorting Plans</em>' reference isn't clear,
@@ -109,11 +110,11 @@ public interface EndProduct extends ObjectWithPropagatorFunctionAdapter {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sorting Plans</em>' containment reference list.
 	 * @see com.misc.projects.SortingPlans.cptspPackage#getEndProduct_SortingPlans()
-	 * @see com.misc.projects.SortingPlans.SortingPlanEndProduct#getEndProduct
+	 * @see com.misc.projects.SortingPlans.EndProductSortingPlan#getEndProduct
 	 * @model opposite="EndProduct" containment="true"
 	 * @generated
 	 */
-	EList<SortingPlanEndProduct> getSortingPlans();
+	EList<EndProductSortingPlan> getSortingPlans();
 
 	/**
 	 * Returns the value of the '<em><b>Scenario</b></em>' container reference.
@@ -170,6 +171,34 @@ public interface EndProduct extends ObjectWithPropagatorFunctionAdapter {
 	 * @generated
 	 */
 	void setScenarioAsSelected(Scenario value);
+
+	/**
+	 * Returns the value of the '<em><b>Products Containing</b></em>' containment reference.
+	 * It is bidirectional and its opposite is '{@link com.misc.projects.SortingPlans.EndProductInProduct#getEndProductsContained <em>End Products Contained</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Products Containing</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Products Containing</em>' containment reference.
+	 * @see #setProductsContaining(EndProductInProduct)
+	 * @see com.misc.projects.SortingPlans.cptspPackage#getEndProduct_ProductsContaining()
+	 * @see com.misc.projects.SortingPlans.EndProductInProduct#getEndProductsContained
+	 * @model opposite="EndProductsContained" containment="true"
+	 * @generated
+	 */
+	EndProductInProduct getProductsContaining();
+
+	/**
+	 * Sets the value of the '{@link com.misc.projects.SortingPlans.EndProduct#getProductsContaining <em>Products Containing</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Products Containing</em>' containment reference.
+	 * @see #getProductsContaining()
+	 * @generated
+	 */
+	void setProductsContaining(EndProductInProduct value);
 
 	/**
 	 * <!-- begin-user-doc -->

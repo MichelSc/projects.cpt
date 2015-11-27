@@ -19,6 +19,12 @@ import junit.textui.TestRunner;
  *   <li>{@link com.misc.projects.SortingPlans.SortingPlanOutput#getDescription() <em>Description</em>}</li>
  * </ul>
  * </p>
+ * <p>
+ * The following operations are tested:
+ * <ul>
+ *   <li>{@link com.misc.common.moplaf.propagator.ObjectWithPropagatorFunctionAdapter#addPropagatorFunctionAdapter() <em>Add Propagator Function Adapter</em>}</li>
+ * </ul>
+ * </p>
  * @generated
  */
 public class SortingPlanOutputTest extends TestCase {
@@ -101,6 +107,19 @@ public class SortingPlanOutputTest extends TestCase {
 	 */
 	public void testGetDescription() {
 		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link com.misc.common.moplaf.propagator.ObjectWithPropagatorFunctionAdapter#addPropagatorFunctionAdapter() <em>Add Propagator Function Adapter</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.misc.common.moplaf.propagator.ObjectWithPropagatorFunctionAdapter#addPropagatorFunctionAdapter()
+	 * @generated
+	 */
+	public void testAddPropagatorFunctionAdapter() {
+		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}

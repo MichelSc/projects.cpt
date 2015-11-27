@@ -6,15 +6,14 @@ import com.misc.common.moplaf.propagator.Util;
 import com.misc.projects.CptDatasetLoad.SortingPlanInputRow;
 import com.misc.projects.CptDatasetLoad.SortingPlanOutputRow;
 import com.misc.projects.CptDatasetLoad.SortingPlanRow;
+import com.misc.projects.SortingPlans.EndProductSortingPlan;
 import com.misc.projects.SortingPlans.Scenario;
 import com.misc.projects.SortingPlans.SortingPlan;
-import com.misc.projects.SortingPlans.SortingPlanEndProduct;
 import com.misc.projects.SortingPlans.SortingPlanInput;
 import com.misc.projects.SortingPlans.SortingPlanOutput;
 import com.misc.projects.SortingPlans.cptspFactory;
 import com.misc.projects.SortingPlans.cptspPackage;
 import com.misc.projects.SortingPlans.calc.PropagatorCalcSortingPlanRefresh;
-import com.misc.projects.SortingPlans.calc.PropagatorCalcSortingPlanRefreshSelected;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
@@ -70,7 +69,7 @@ public class SortingPlanImpl extends MinimalEObjectImpl.Container implements Sor
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<SortingPlanEndProduct> endProducts;
+	protected EList<EndProductSortingPlan> endProducts;
 
 	/**
 	 * The cached value of the '{@link #getFPDSortingPlan() <em>FPD Sorting Plan</em>}' reference.
@@ -312,22 +311,8 @@ public class SortingPlanImpl extends MinimalEObjectImpl.Container implements Sor
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 */
-	public void refreshSelected() {
-		boolean selected = false;
-		for ( SortingPlanOutput spout : this.getOutputs()){
-			if ( selected ) { break; }
-			selected = spout.isSelected();
-		}
-		this.setSelected(selected);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 */
 	public void addPropagatorFunctionAdapter() {
 		Util.adapt(this, PropagatorCalcSortingPlanRefresh.class);
-		Util.adapt(this, PropagatorCalcSortingPlanRefreshSelected.class);
 	}
 
 	/**
@@ -358,9 +343,9 @@ public class SortingPlanImpl extends MinimalEObjectImpl.Container implements Sor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<SortingPlanEndProduct> getEndProducts() {
+	public EList<EndProductSortingPlan> getEndProducts() {
 		if (endProducts == null) {
-			endProducts = new EObjectWithInverseResolvingEList<SortingPlanEndProduct>(SortingPlanEndProduct.class, this, cptspPackage.SORTING_PLAN__END_PRODUCTS, cptspPackage.SORTING_PLAN_END_PRODUCT__SORTING_PLAN);
+			endProducts = new EObjectWithInverseResolvingEList<EndProductSortingPlan>(EndProductSortingPlan.class, this, cptspPackage.SORTING_PLAN__END_PRODUCTS, cptspPackage.END_PRODUCT_SORTING_PLAN__SORTING_PLAN);
 		}
 		return endProducts;
 	}
@@ -479,7 +464,7 @@ public class SortingPlanImpl extends MinimalEObjectImpl.Container implements Sor
 				return;
 			case cptspPackage.SORTING_PLAN__END_PRODUCTS:
 				getEndProducts().clear();
-				getEndProducts().addAll((Collection<? extends SortingPlanEndProduct>)newValue);
+				getEndProducts().addAll((Collection<? extends EndProductSortingPlan>)newValue);
 				return;
 			case cptspPackage.SORTING_PLAN__FPD_SORTING_PLAN:
 				setFPDSortingPlan((SortingPlanRow)newValue);
@@ -570,9 +555,6 @@ public class SortingPlanImpl extends MinimalEObjectImpl.Container implements Sor
 				return null;
 			case cptspPackage.SORTING_PLAN___REFRESH:
 				refresh();
-				return null;
-			case cptspPackage.SORTING_PLAN___REFRESH_SELECTED:
-				refreshSelected();
 				return null;
 			case cptspPackage.SORTING_PLAN___ADD_PROPAGATOR_FUNCTION_ADAPTER:
 				addPropagatorFunctionAdapter();

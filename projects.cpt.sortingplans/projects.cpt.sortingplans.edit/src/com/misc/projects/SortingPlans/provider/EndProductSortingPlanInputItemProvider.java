@@ -3,16 +3,17 @@
 package com.misc.projects.SortingPlans.provider;
 
 
-import com.misc.common.moplaf.emf.edit.ui.provider.IItemRelativesProvider;
-import com.misc.projects.SortingPlans.SortingPlanOutput;
+import com.misc.projects.SortingPlans.EndProductSortingPlanInput;
 import com.misc.projects.SortingPlans.cptspPackage;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -25,34 +26,26 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link com.misc.projects.SortingPlans.SortingPlanOutput} object.
+ * This is the item provider adapter for a {@link com.misc.projects.SortingPlans.EndProductSortingPlanInput} object.
  * <!-- begin-user-doc -->
- * @implements IItemRelativesProvider
  * <!-- end-user-doc -->
  * @generated
  */
-public class SortingPlanOutputItemProvider 
+public class EndProductSortingPlanInputItemProvider 
 	extends ItemProviderAdapter
 	implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, IItemRelativesProvider {
-	
-	/* (non-Javadoc)
-	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#isAdapterForType(java.lang.Object)
-	 */
-	@Override
-	public boolean isAdapterForType(Object type) {
-		if ( super.isAdapterForType(type) ){ return true; }
-		if ( type == IItemRelativesProvider.class) { return true; }
-		return false;
-	}
-
+		IEditingDomainItemProvider,
+		IStructuredItemContentProvider,
+		ITreeItemContentProvider,
+		IItemLabelProvider,
+		IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SortingPlanOutputItemProvider(AdapterFactory adapterFactory) {
+	public EndProductSortingPlanInputItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -67,29 +60,28 @@ public class SortingPlanOutputItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addFPDSortingPlanOutputPropertyDescriptor(object);
-			addOutputProductPropertyDescriptor(object);
+			addInputProductPropertyDescriptor(object);
+			addSortingPlanInputPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
-			addSortingPlanPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the FPD Sorting Plan Output feature.
+	 * This adds a property descriptor for the Input Product feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addFPDSortingPlanOutputPropertyDescriptor(Object object) {
+	protected void addInputProductPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_SortingPlanOutput_FPDSortingPlanOutput_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SortingPlanOutput_FPDSortingPlanOutput_feature", "_UI_SortingPlanOutput_type"),
-				 cptspPackage.Literals.SORTING_PLAN_OUTPUT__FPD_SORTING_PLAN_OUTPUT,
-				 false,
+				 getString("_UI_EndProductSortingPlanInput_InputProduct_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EndProductSortingPlanInput_InputProduct_feature", "_UI_EndProductSortingPlanInput_type"),
+				 cptspPackage.Literals.END_PRODUCT_SORTING_PLAN_INPUT__INPUT_PRODUCT,
+				 true,
 				 false,
 				 true,
 				 null,
@@ -98,20 +90,20 @@ public class SortingPlanOutputItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Output Product feature.
+	 * This adds a property descriptor for the Sorting Plan Input feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addOutputProductPropertyDescriptor(Object object) {
+	protected void addSortingPlanInputPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_SortingPlanOutput_OutputProduct_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SortingPlanOutput_OutputProduct_feature", "_UI_SortingPlanOutput_type"),
-				 cptspPackage.Literals.SORTING_PLAN_OUTPUT__OUTPUT_PRODUCT,
-				 false,
+				 getString("_UI_EndProductSortingPlanInput_SortingPlanInput_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EndProductSortingPlanInput_SortingPlanInput_feature", "_UI_EndProductSortingPlanInput_type"),
+				 cptspPackage.Literals.END_PRODUCT_SORTING_PLAN_INPUT__SORTING_PLAN_INPUT,
+				 true,
 				 false,
 				 true,
 				 null,
@@ -130,9 +122,9 @@ public class SortingPlanOutputItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_SortingPlanOutput_Description_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SortingPlanOutput_Description_feature", "_UI_SortingPlanOutput_type"),
-				 cptspPackage.Literals.SORTING_PLAN_OUTPUT__DESCRIPTION,
+				 getString("_UI_EndProductSortingPlanInput_Description_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EndProductSortingPlanInput_Description_feature", "_UI_EndProductSortingPlanInput_type"),
+				 cptspPackage.Literals.END_PRODUCT_SORTING_PLAN_INPUT__DESCRIPTION,
 				 false,
 				 false,
 				 false,
@@ -142,36 +134,14 @@ public class SortingPlanOutputItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Sorting Plan feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSortingPlanPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SortingPlanOutput_SortingPlan_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SortingPlanOutput_SortingPlan_feature", "_UI_SortingPlanOutput_type"),
-				 cptspPackage.Literals.SORTING_PLAN_OUTPUT__SORTING_PLAN,
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This returns SortingPlanOutput.gif.
+	 * This returns EndProductSortingPlanInput.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/SortingPlanOutput"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/EndProductSortingPlanInput"));
 	}
 
 	/**
@@ -182,25 +152,13 @@ public class SortingPlanOutputItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((SortingPlanOutput)object).getDescription();
+		String label = ((EndProductSortingPlanInput)object).getDescription();
 		return label == null || label.length() == 0 ?
-			getString("_UI_SortingPlanOutput_type") :
-			getString("_UI_SortingPlanOutput_type") + " " + label;
+			getString("_UI_EndProductSortingPlanInput_type") :
+			getString("_UI_EndProductSortingPlanInput_type") + " " + label;
 	}
 	
-	
-	/* (non-Javadoc)
-	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#getParent(java.lang.Object)
-	@Override
-	public Object getParent(Object object) {
-		Object sortingPlan = super.getParent(object);
-		SortingPlanItemProvider sortingPlanItemProvider = (SortingPlanItemProvider)adapterFactory.adapt(sortingPlan,  
-				                                                                                        IEditingDomainItemProvider.class);
-		return sortingPlanItemProvider != null ? sortingPlanItemProvider.getOutputs() : null;
-				                                                                                        
-	}
-	 */
-	
+
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
@@ -212,8 +170,8 @@ public class SortingPlanOutputItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(SortingPlanOutput.class)) {
-			case cptspPackage.SORTING_PLAN_OUTPUT__DESCRIPTION:
+		switch (notification.getFeatureID(EndProductSortingPlanInput.class)) {
+			case cptspPackage.END_PRODUCT_SORTING_PLAN_INPUT__DESCRIPTION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
@@ -241,15 +199,6 @@ public class SortingPlanOutputItemProvider
 	@Override
 	public ResourceLocator getResourceLocator() {
 		return SortingplansEditPlugin.INSTANCE;
-	}
-
-	@Override
-	public Collection<?> getRelatives(Object object) {
-		SortingPlanOutput output = (SortingPlanOutput)object;
-		ArrayList<Object> relatives = new ArrayList<Object>();
-		relatives.add(output.getSortingPlan());
-		relatives.add(output.getOutputProduct());
-		return relatives;
 	}
 
 }

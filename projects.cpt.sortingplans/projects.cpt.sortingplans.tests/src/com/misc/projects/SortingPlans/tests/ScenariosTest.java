@@ -13,13 +13,6 @@ import junit.textui.TestRunner;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Scenarios</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * The following operations are tested:
- * <ul>
- *   <li>{@link com.misc.projects.SortingPlans.Scenarios#refreshSortingPlanProducts() <em>Refresh Sorting Plan Products</em>}</li>
- *   <li>{@link com.misc.projects.SortingPlans.Scenarios#refreshEndProducts() <em>Refresh End Products</em>}</li>
- * </ul>
- * </p>
  * @generated
  */
 public class ScenariosTest extends TestCase {
@@ -91,32 +84,6 @@ public class ScenariosTest extends TestCase {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
-	}
-
-	/**
-	 * Tests the '{@link com.misc.projects.SortingPlans.Scenarios#refreshSortingPlanProducts() <em>Refresh Sorting Plan Products</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see com.misc.projects.SortingPlans.Scenarios#refreshSortingPlanProducts()
-	 * @generated
-	 */
-	public void testRefreshSortingPlanProducts() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link com.misc.projects.SortingPlans.Scenarios#refreshEndProducts() <em>Refresh End Products</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see com.misc.projects.SortingPlans.Scenarios#refreshEndProducts()
-	 * @generated
-	 */
-	public void testRefreshEndProducts() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
 	}
 
 } //ScenariosTest

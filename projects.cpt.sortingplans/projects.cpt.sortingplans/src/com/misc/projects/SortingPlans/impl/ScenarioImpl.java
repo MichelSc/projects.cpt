@@ -23,11 +23,6 @@ import com.misc.projects.SortingPlans.calc.PropagatorCalcScenarioRefreshEndProdu
 import com.misc.projects.SortingPlans.calc.PropagatorCalcScenarioRefreshSelectedSortingPlan;
 import com.misc.projects.SortingPlans.calc.PropagatorCalcScenarioRefreshSortingPlanProducts;
 import com.misc.projects.SortingPlans.calc.PropagatorLayerEndProductRefreshSortingPlans;
-import com.misc.projects.SortingPlans.calc.PropagatorLayerSortingPlanInputRefreshSelected;
-import com.misc.projects.SortingPlans.calc.PropagatorLayerSortingPlanOutputRefreshSelected;
-import com.misc.projects.SortingPlans.calc.PropagatorLayerSortingPlanOutputRefreshSelectedNotShortest;
-import com.misc.projects.SortingPlans.calc.PropagatorLayerSortingPlanProductRefreshSelected;
-import com.misc.projects.SortingPlans.calc.PropagatorLayerSortingPlanRefreshSelected;
 import com.misc.projects.SortingPlans.calc.PropagatorLayerSortingPlansRefresh;
 import com.misc.projects.SortingPlans.calc.PropagatorScopeScenario;
 
@@ -508,13 +503,6 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 		Util.adapt(this, PropagatorCalcScenarioRefreshEndProducts.class);
 		Util.adapt(this, PropagatorLayerEndProductRefreshSortingPlans.class);
 		
-		Util.adapt(this, PropagatorLayerSortingPlanOutputRefreshSelected.class);
-		Util.adapt(this, PropagatorLayerSortingPlanRefreshSelected.class);
-		Util.adapt(this, PropagatorLayerSortingPlanInputRefreshSelected.class);
-		Util.adapt(this, PropagatorLayerSortingPlanProductRefreshSelected.class);
-		Util.adapt(this, PropagatorLayerSortingPlanOutputRefreshSelectedNotShortest.class);
-		
-
 		Util.adapt(this, PropagatorScopeScenario.class);
 	}
 

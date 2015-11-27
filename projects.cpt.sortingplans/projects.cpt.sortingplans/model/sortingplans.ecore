@@ -30,11 +30,10 @@
     <eOperations name="refreshInputs"/>
     <eOperations name="refreshOutputs"/>
     <eOperations name="refresh"/>
-    <eOperations name="refreshSelected"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Outputs" upperBound="-1"
         eType="#//SortingPlanOutput" containment="true" eOpposite="#//SortingPlanOutput/SortingPlan"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="EndProducts" upperBound="-1"
-        eType="#//SortingPlanEndProduct" eOpposite="#//SortingPlanEndProduct/SortingPlan"/>
+        eType="#//EndProductSortingPlan" eOpposite="#//EndProductSortingPlan/SortingPlan"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="FPDSortingPlan" eType="ecore:EClass ../../projects.cpt.datasetload/model/cptdatasetload.ecore#//SortingPlanRow"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Inputs" upperBound="-1"
         eType="#//SortingPlanInput" containment="true" eOpposite="#//SortingPlanInput/SortingPlan"/>
@@ -52,14 +51,15 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         changeable="false" volatile="true" transient="true" derived="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="SortingPlans" upperBound="-1"
-        eType="#//SortingPlanEndProduct" containment="true" eOpposite="#//SortingPlanEndProduct/EndProduct"/>
+        eType="#//EndProductSortingPlan" containment="true" eOpposite="#//EndProductSortingPlan/EndProduct"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Scenario" eType="#//Scenario"
         eOpposite="#//Scenario/EndProducts"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ScenarioAsSelected" eType="#//Scenario"
         eOpposite="#//Scenario/SelectedEndProducts"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ProductsContaining" eType="#//EndProductInProduct"
+        containment="true" eOpposite="#//EndProductInProduct/EndProductsContained"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SortingPlanProduct" eSuperTypes="../../com.misc.common.moplaf.propagator/model/propagator.ecore#//ObjectWithPropagatorFunctionAdapter">
-    <eOperations name="refreshSelected"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="FPDSortingLevel" eType="ecore:EClass ../../projects.cpt.datasetload/model/cptdatasetload.ecore#//SortingLevelRow"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="SortingPlansProducing"
         upperBound="-1" eType="#//SortingPlanOutput" eOpposite="#//SortingPlanOutput/OutputProduct"/>
@@ -73,44 +73,67 @@
         changeable="false" volatile="true" transient="true" derived="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="EndProduct" eType="#//EndProduct"
         eOpposite="#//EndProduct/SortingPlanProduct"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="selected" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SortingPlanEndProduct">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Output" lowerBound="1"
-        eType="#//SortingPlanOutput" eOpposite="#//SortingPlanOutput/SortingPlanEndProduct"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SortingPlanOutput" eSuperTypes="../../com.misc.common.moplaf.propagator/model/propagator.ecore#//ObjectWithPropagatorFunctionAdapter">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="FPDSortingPlanOutput" eType="ecore:EClass ../../projects.cpt.datasetload/model/cptdatasetload.ecore#//SortingPlanOutputRow"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="OutputProduct" lowerBound="1"
+        eType="#//SortingPlanProduct" eOpposite="#//SortingPlanProduct/SortingPlansProducing"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SortingPlan" lowerBound="1"
+        eType="#//SortingPlan" eOpposite="#//SortingPlan/Outputs"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SortingPlanInput" eSuperTypes="../../com.misc.common.moplaf.propagator/model/propagator.ecore#//ObjectWithPropagatorFunctionAdapter">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="InputProduct" lowerBound="1"
+        eType="#//SortingPlanProduct" eOpposite="#//SortingPlanProduct/SortingPlansAccepting"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="FPDSortingPlanInput" eType="ecore:EClass ../../projects.cpt.datasetload/model/cptdatasetload.ecore#//SortingPlanInputRow"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SortingPlan" lowerBound="1"
+        eType="#//SortingPlan" eOpposite="#//SortingPlan/Inputs"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EndProductSortingPlan">
     <eStructuralFeatures xsi:type="ecore:EReference" name="EndProduct" lowerBound="1"
         eType="#//EndProduct" eOpposite="#//EndProduct/SortingPlans"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="SortingPlan" lowerBound="1"
         eType="#//SortingPlan" eOpposite="#//SortingPlan/EndProducts"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         changeable="false" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Outputs" upperBound="-1"
+        eType="#//EndProductSortingPlanOutput" containment="true" eOpposite="#//EndProductSortingPlanOutput/SortingPlan"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Inputs" upperBound="-1"
+        eType="#//EndProductSortingPlanInput" containment="true" eOpposite="#//EndProductSortingPlanInput/SortingPlan"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EndProductSortingPlanInput">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SortingPlan" lowerBound="1"
+        eType="#//EndProductSortingPlan" eOpposite="#//EndProductSortingPlan/Inputs"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="InputProduct" lowerBound="1"
+        eType="#//EndProductInProduct" eOpposite="#//EndProductInProduct/SortingPlansAccepting"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SortingPlanInput" eType="#//SortingPlanInput"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" volatile="true" transient="true" derived="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EndProductSortingPlanOutput">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SortingPlan" lowerBound="1"
+        eType="#//EndProductSortingPlan" eOpposite="#//EndProductSortingPlan/Outputs"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="OutputProduct" lowerBound="1"
+        eType="#//EndProductInProduct" eOpposite="#//EndProductInProduct/SortingPlansProducing"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SortingPlanOutput" eType="#//SortingPlanOutput"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Selected" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" volatile="true" transient="true" derived="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EndProductInProduct">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="EndProductsContained" eType="#//EndProduct"
+        eOpposite="#//EndProduct/ProductsContaining"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SortingPlansProducing"
+        upperBound="-1" eType="#//EndProductSortingPlanOutput" eOpposite="#//EndProductSortingPlanOutput/OutputProduct"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SortingPlansAccepting"
+        upperBound="-1" eType="#//EndProductSortingPlanInput" eOpposite="#//EndProductSortingPlanInput/InputProduct"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Product" eType="#//SortingPlanProduct"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="SortingDistance" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
         defaultValueLiteral="0"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SortingPlanOutput" eSuperTypes="../../com.misc.common.moplaf.propagator/model/propagator.ecore#//ObjectWithPropagatorFunctionAdapter">
-    <eOperations name="refreshSelected"/>
-    <eOperations name="refreshSelectedNotShortest"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="FPDSortingPlanOutput" eType="ecore:EClass ../../projects.cpt.datasetload/model/cptdatasetload.ecore#//SortingPlanOutputRow"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="OutputProduct" lowerBound="1"
-        eType="#//SortingPlanProduct" eOpposite="#//SortingPlanProduct/SortingPlansProducing"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         changeable="false" volatile="true" transient="true" derived="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="SortingPlanEndProduct"
-        upperBound="-1" eType="#//SortingPlanEndProduct" eOpposite="#//SortingPlanEndProduct/Output"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="SortingPlan" eType="#//SortingPlan"
-        eOpposite="#//SortingPlan/Outputs"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="selected" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="selectedNotShortest" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SortingPlanInput" eSuperTypes="../../com.misc.common.moplaf.propagator/model/propagator.ecore#//ObjectWithPropagatorFunctionAdapter">
-    <eOperations name="refreshSelected"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="InputProduct" lowerBound="1"
-        eType="#//SortingPlanProduct" eOpposite="#//SortingPlanProduct/SortingPlansAccepting"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="FPDSortingPlanInput" eType="ecore:EClass ../../projects.cpt.datasetload/model/cptdatasetload.ecore#//SortingPlanInputRow"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        changeable="false" volatile="true" transient="true" derived="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="SortingPlan" eType="#//SortingPlan"
-        eOpposite="#//SortingPlan/Inputs"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="selected" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
 </ecore:EPackage>

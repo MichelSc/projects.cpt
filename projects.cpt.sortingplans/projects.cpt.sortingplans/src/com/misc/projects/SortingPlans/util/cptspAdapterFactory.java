@@ -87,16 +87,28 @@ public class cptspAdapterFactory extends AdapterFactoryImpl {
 				return createSortingPlanProductAdapter();
 			}
 			@Override
-			public Adapter caseSortingPlanEndProduct(SortingPlanEndProduct object) {
-				return createSortingPlanEndProductAdapter();
-			}
-			@Override
 			public Adapter caseSortingPlanOutput(SortingPlanOutput object) {
 				return createSortingPlanOutputAdapter();
 			}
 			@Override
 			public Adapter caseSortingPlanInput(SortingPlanInput object) {
 				return createSortingPlanInputAdapter();
+			}
+			@Override
+			public Adapter caseEndProductSortingPlan(EndProductSortingPlan object) {
+				return createEndProductSortingPlanAdapter();
+			}
+			@Override
+			public Adapter caseEndProductSortingPlanInput(EndProductSortingPlanInput object) {
+				return createEndProductSortingPlanInputAdapter();
+			}
+			@Override
+			public Adapter caseEndProductSortingPlanOutput(EndProductSortingPlanOutput object) {
+				return createEndProductSortingPlanOutputAdapter();
+			}
+			@Override
+			public Adapter caseEndProductInProduct(EndProductInProduct object) {
+				return createEndProductInProductAdapter();
 			}
 			@Override
 			public Adapter caseObjectWithPropagatorFunctionAdapter(ObjectWithPropagatorFunctionAdapter object) {
@@ -197,20 +209,6 @@ public class cptspAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link com.misc.projects.SortingPlans.SortingPlanEndProduct <em>Sorting Plan End Product</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see com.misc.projects.SortingPlans.SortingPlanEndProduct
-	 * @generated
-	 */
-	public Adapter createSortingPlanEndProductAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link com.misc.projects.SortingPlans.SortingPlanOutput <em>Sorting Plan Output</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -235,6 +233,62 @@ public class cptspAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSortingPlanInputAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.misc.projects.SortingPlans.EndProductSortingPlan <em>End Product Sorting Plan</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.misc.projects.SortingPlans.EndProductSortingPlan
+	 * @generated
+	 */
+	public Adapter createEndProductSortingPlanAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.misc.projects.SortingPlans.EndProductSortingPlanInput <em>End Product Sorting Plan Input</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.misc.projects.SortingPlans.EndProductSortingPlanInput
+	 * @generated
+	 */
+	public Adapter createEndProductSortingPlanInputAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.misc.projects.SortingPlans.EndProductSortingPlanOutput <em>End Product Sorting Plan Output</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.misc.projects.SortingPlans.EndProductSortingPlanOutput
+	 * @generated
+	 */
+	public Adapter createEndProductSortingPlanOutputAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.misc.projects.SortingPlans.EndProductInProduct <em>End Product In Product</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.misc.projects.SortingPlans.EndProductInProduct
+	 * @generated
+	 */
+	public Adapter createEndProductInProductAdapter() {
 		return null;
 	}
 

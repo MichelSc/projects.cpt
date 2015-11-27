@@ -31,14 +31,16 @@ public class cptspTests extends TestSuite {
 	 */
 	public static Test suite() {
 		TestSuite suite = new cptspTests("SortingPlans Tests");
-		suite.addTestSuite(ScenariosTest.class);
 		suite.addTestSuite(ScenarioTest.class);
 		suite.addTestSuite(SortingPlanTest.class);
 		suite.addTestSuite(EndProductTest.class);
 		suite.addTestSuite(SortingPlanProductTest.class);
-		suite.addTestSuite(SortingPlanEndProductTest.class);
 		suite.addTestSuite(SortingPlanOutputTest.class);
 		suite.addTestSuite(SortingPlanInputTest.class);
+		suite.addTestSuite(EndProductSortingPlanTest.class);
+		suite.addTestSuite(EndProductSortingPlanInputTest.class);
+		suite.addTestSuite(EndProductSortingPlanOutputTest.class);
+		suite.addTestSuite(EndProductInProductTest.class);
 		return suite;
 	}
 

@@ -125,8 +125,9 @@ import org.eclipse.emf.edit.ui.util.EditUIMarkerHelper;
 import org.eclipse.emf.edit.ui.util.EditUIUtil;
 import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 import com.misc.projects.SortingPlans.EndProduct;
+import com.misc.projects.SortingPlans.EndProductSortingPlan;
+import com.misc.projects.SortingPlans.EndProductSortingPlanOutput;
 import com.misc.projects.SortingPlans.Scenario;
-import com.misc.projects.SortingPlans.SortingPlanEndProduct;
 import com.misc.projects.SortingPlans.SortingPlanOutput;
 import com.misc.projects.SortingPlans.provider.cptspItemProviderAdapterFactory;
 import com.misc.common.moplaf.DatasetLoadOra.provider.DatasetLoadOraItemProviderAdapterFactory;
@@ -1535,9 +1536,13 @@ public class cptspEditor
 				else if ( currentViewerPane.getViewer()== listViewer){
 					BasicEList<SortingPlanOutput> outputs = new BasicEList<SortingPlanOutput>();
 					if ( selectedElement instanceof EndProduct ){
-						for ( SortingPlanEndProduct spep : ((EndProduct)selectedElement).getSortingPlans()){
-							SortingPlanOutput spo = spep.getOutput();
-							outputs.add(spo);
+						for ( EndProductSortingPlan spep : ((EndProduct)selectedElement).getSortingPlans()){
+							for ( EndProductSortingPlanOutput spout : spep.getOutputs()){
+								if ( spout.isSelected() ){
+									SortingPlanOutput spo = spout.getSortingPlanOutput();
+									outputs.add(spo);
+								}
+							}
 						}
 					}
 					ItemProvider listRoot = new ItemProvider("SortingPlans", // text 	
