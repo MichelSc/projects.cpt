@@ -3,9 +3,11 @@
 package com.misc.projects.SortingPlans.provider;
 
 
+import com.misc.common.moplaf.emf.edit.ui.provider.IItemRelativesProvider;
 import com.misc.projects.SortingPlans.SortingPlanInput;
 import com.misc.projects.SortingPlans.cptspPackage;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -243,6 +245,15 @@ public class SortingPlanInputItemProvider
 	@Override
 	public ResourceLocator getResourceLocator() {
 		return SortingplansEditPlugin.INSTANCE;
+	}
+
+	@Override
+	public Collection<?> getRelatives(Object object) {
+		SortingPlanInput input = (SortingPlanInput)object;
+		ArrayList<Object> relatives = new ArrayList<Object>();
+		relatives.add(input.getSortingPlan());
+		relatives.add(input.getInputProduct());
+		return relatives;
 	}
 
 }
