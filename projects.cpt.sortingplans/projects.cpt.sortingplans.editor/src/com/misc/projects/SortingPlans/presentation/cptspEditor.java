@@ -128,6 +128,7 @@ import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 import com.misc.projects.SortingPlans.EndProduct;
 import com.misc.projects.SortingPlans.Scenario;
 import com.misc.projects.SortingPlans.SortingPlanEndProduct;
+import com.misc.projects.SortingPlans.SortingPlanInput;
 import com.misc.projects.SortingPlans.SortingPlanOutput;
 import com.misc.projects.SortingPlans.provider.cptspItemProviderAdapterFactory;
 import com.misc.common.moplaf.DatasetLoadOra.provider.DatasetLoadOraItemProviderAdapterFactory;
@@ -1064,7 +1065,16 @@ public class cptspEditor
 					public Viewer createViewer(Composite composite) {
 //						Tree tree = new Tree(composite, SWT.MULTI);
 //						TreeViewer newTreeViewer = new TreeViewer(tree);
-						PatternFilter filter = new PatternFilter();
+						PatternFilter filter = new PatternFilter(){
+
+//							@Override
+//							protected boolean isParentMatch(Viewer viewer, Object element) {
+//								if ( element instanceof SortingPlanOutput) { return false; }
+//								if ( element instanceof SortingPlanInput ) { return false; }
+//								return super.isParentMatch(viewer, element);
+//							}
+
+						};
 						this.filteredTree = new FilteredTree(composite,SWT.MULTI | SWT.H_SCROLL| SWT.V_SCROLL,filter,true);
 						TreeViewer newTreeViewer = filteredTree.getViewer();
 						return newTreeViewer;
