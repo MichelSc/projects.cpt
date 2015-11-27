@@ -2,6 +2,7 @@
  */
 package com.misc.projects.SortingPlans.provider;
 
+import com.misc.common.moplaf.emf.edit.ui.provider.IItemRelativesProvider;
 import com.misc.projects.SortingPlans.util.cptspAdapterFactory;
 
 import java.util.ArrayList;
@@ -70,7 +71,6 @@ public class cptspItemProviderAdapterFactory extends cptspAdapterFactory impleme
 	 * This constructs an instance.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public cptspItemProviderAdapterFactory() {
 		supportedTypes.add(IEditingDomainItemProvider.class);
@@ -78,7 +78,8 @@ public class cptspItemProviderAdapterFactory extends cptspAdapterFactory impleme
 		supportedTypes.add(ITreeItemContentProvider.class);
 		supportedTypes.add(IItemLabelProvider.class);
 		supportedTypes.add(IItemPropertySource.class);
-	}
+		supportedTypes.add(IItemRelativesProvider.class);
+		}
 
 	/**
 	 * This keeps track of the one adapter used for all {@link com.misc.projects.SortingPlans.Scenarios} instances.

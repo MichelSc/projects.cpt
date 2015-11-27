@@ -115,7 +115,15 @@ public class cptspActionBarContributor
 		 * <!-- end-user-doc -->
 		 */
 		protected SelectInOutlineAction selectInOutlineAction = new SelectInOutlineAction();
-			
+
+		/**
+		 * This selects the relatives of the selected object
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 */
+		protected GoToRelativeAction goToRelativeAction = new GoToRelativeAction();
+
+		
 		
 
 	/**
@@ -295,6 +303,7 @@ public class cptspActionBarContributor
 		}
 
 		this.selectInOutlineAction.selectionChanged(activeEditorPart, selection);
+		this.goToRelativeAction.selectionChanged(activeEditorPart, selection);
 	}
 
 	/**
@@ -405,6 +414,7 @@ public class cptspActionBarContributor
 		menuManager.insertBefore("edit", submenuManager);
 
 		submenuManager.add(this.selectInOutlineAction);
+		submenuManager.add(this.goToRelativeAction);
 	}
 
 	/**

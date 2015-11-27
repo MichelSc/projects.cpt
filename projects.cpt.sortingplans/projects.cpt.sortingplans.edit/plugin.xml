@@ -7,7 +7,6 @@
 <plugin>
 
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
-      <!-- @generated sortingplans -->
       <factory
             uri="http://com.misc.projects.cpt.sortingplans"
             class="com.misc.projects.SortingPlans.provider.cptspItemProviderAdapterFactory"
@@ -16,7 +15,9 @@
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
                org.eclipse.emf.edit.provider.ITreeItemContentProvider
                org.eclipse.emf.edit.provider.IItemLabelProvider
-               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+               org.eclipse.emf.edit.provider.IItemPropertySource
+               com.misc.common.moplaf.emf.edit.ui.provider.IItemRelativesProvider"
+               />
    </extension>
 
   <!-- EEF extensions -->

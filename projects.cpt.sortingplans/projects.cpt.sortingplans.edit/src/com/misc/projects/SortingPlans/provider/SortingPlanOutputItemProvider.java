@@ -3,8 +3,11 @@
 package com.misc.projects.SortingPlans.provider;
 
 
+import com.misc.common.moplaf.emf.edit.ui.provider.IItemRelativesProvider;
 import com.misc.projects.SortingPlans.SortingPlanOutput;
 import com.misc.projects.SortingPlans.cptspPackage;
+
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -24,17 +27,25 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 /**
  * This is the item provider adapter for a {@link com.misc.projects.SortingPlans.SortingPlanOutput} object.
  * <!-- begin-user-doc -->
+ * @implements IItemRelativesProvider
  * <!-- end-user-doc -->
  * @generated
  */
 public class SortingPlanOutputItemProvider 
 	extends ItemProviderAdapter
 	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+		IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, IItemRelativesProvider {
+	
+	/* (non-Javadoc)
+	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#isAdapterForType(java.lang.Object)
+	 */
+	@Override
+	public boolean isAdapterForType(Object type) {
+		if ( super.isAdapterForType(type) ){ return true; }
+		if ( type == IItemRelativesProvider.class) { return true; }
+		return false;
+	}
+
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -302,6 +313,15 @@ public class SortingPlanOutputItemProvider
 	@Override
 	public ResourceLocator getResourceLocator() {
 		return SortingplansEditPlugin.INSTANCE;
+	}
+
+	@Override
+	public Collection<?> getRelatives(Object object) {
+		SortingPlanOutput output = (SortingPlanOutput)object;
+		ArrayList<Object> relatives = new ArrayList<Object>();
+		relatives.add(output.getSortingPlan());
+		relatives.add(output.getOutputProduct());
+		return relatives;
 	}
 
 }
