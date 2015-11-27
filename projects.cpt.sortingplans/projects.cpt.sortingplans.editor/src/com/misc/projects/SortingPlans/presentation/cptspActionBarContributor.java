@@ -39,6 +39,7 @@ import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.PartInitException;
 
+
 /**
  * This is the action bar contributor for the cptsp model editor.
  * <!-- begin-user-doc -->
@@ -107,6 +108,15 @@ public class cptspActionBarContributor
 				}
 			}
 		};
+		
+		/**
+		 * This selects in the outline view
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 */
+		protected SelectInOutlineAction selectInOutlineAction = new SelectInOutlineAction();
+			
+		
 
 	/**
 	 * This will contain one {@link org.eclipse.emf.edit.ui.action.CreateChildAction} corresponding to each descriptor
@@ -244,7 +254,6 @@ public class cptspActionBarContributor
 	 * that can be added to the selected object and updating the menus accordingly.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public void selectionChanged(SelectionChangedEvent event) {
 		// Remove any menu items for old selection.
@@ -284,6 +293,8 @@ public class cptspActionBarContributor
 			populateManager(createSiblingMenuManager, createSiblingActions, null);
 			createSiblingMenuManager.update(true);
 		}
+
+		this.selectInOutlineAction.selectionChanged(activeEditorPart, selection);
 	}
 
 	/**
@@ -376,7 +387,6 @@ public class cptspActionBarContributor
 	 * This populates the pop-up menu before it appears.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	@Override
 	public void menuAboutToShow(IMenuManager menuManager) {
@@ -390,6 +400,11 @@ public class cptspActionBarContributor
 		submenuManager = new MenuManager(SortingplansEditorPlugin.INSTANCE.getString("_UI_CreateSibling_menu_item"));
 		populateManager(submenuManager, createSiblingActions, null);
 		menuManager.insertBefore("edit", submenuManager);
+
+		submenuManager = new MenuManager("CPT");
+		menuManager.insertBefore("edit", submenuManager);
+
+		submenuManager.add(this.selectInOutlineAction);
 	}
 
 	/**

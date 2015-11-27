@@ -74,25 +74,23 @@
     <genClasses ecoreClass="sortingplans.ecore#//SortingPlanOutput">
       <genFeatures property="Readonly" notify="false" createChild="false" propertySortChoices="true"
           ecoreFeature="ecore:EReference sortingplans.ecore#//SortingPlanOutput/FPDSortingPlanOutput"/>
-      <genFeatures property="Readonly" notify="false" children="true" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference sortingplans.ecore#//SortingPlanOutput/OutputProduct"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference sortingplans.ecore#//SortingPlanOutput/OutputProduct"/>
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute sortingplans.ecore#//SortingPlanOutput/Description"/>
-      <genFeatures children="true" createChild="false" propertySortChoices="true"
+      <genFeatures property="Readonly" createChild="false" propertySortChoices="true"
           ecoreFeature="ecore:EReference sortingplans.ecore#//SortingPlanOutput/SortingPlanEndProduct"/>
-      <genFeatures property="Readonly" notify="false" children="true" createChild="false"
-          ecoreFeature="ecore:EReference sortingplans.ecore#//SortingPlanOutput/SortingPlan"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference sortingplans.ecore#//SortingPlanOutput/SortingPlan"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sortingplans.ecore#//SortingPlanOutput/selected"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sortingplans.ecore#//SortingPlanOutput/selectedNotShortest"/>
       <genOperations ecoreOperation="sortingplans.ecore#//SortingPlanOutput/refreshSelected"/>
       <genOperations ecoreOperation="sortingplans.ecore#//SortingPlanOutput/refreshSelectedNotShortest"/>
     </genClasses>
     <genClasses ecoreClass="sortingplans.ecore#//SortingPlanInput">
-      <genFeatures property="Readonly" children="true" createChild="false" propertySortChoices="true"
+      <genFeatures property="Readonly" createChild="false" propertySortChoices="true"
           ecoreFeature="ecore:EReference sortingplans.ecore#//SortingPlanInput/InputProduct"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sortingplans.ecore#//SortingPlanInput/FPDSortingPlanInput"/>
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute sortingplans.ecore#//SortingPlanInput/Description"/>
-      <genFeatures property="Readonly" notify="false" children="true" createChild="false"
-          ecoreFeature="ecore:EReference sortingplans.ecore#//SortingPlanInput/SortingPlan"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference sortingplans.ecore#//SortingPlanInput/SortingPlan"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sortingplans.ecore#//SortingPlanInput/selected"/>
       <genOperations ecoreOperation="sortingplans.ecore#//SortingPlanInput/refreshSelected"/>
     </genClasses>
