@@ -441,13 +441,22 @@ public interface cptspPackage extends EPackage {
 	int END_PRODUCT__PRODUCTS_CONTAINING = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 6;
 
 	/**
+	 * The feature id for the '<em><b>Selected</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int END_PRODUCT__SELECTED = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 7;
+
+	/**
 	 * The number of structural features of the '<em>End Product</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int END_PRODUCT_FEATURE_COUNT = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 7;
+	int END_PRODUCT_FEATURE_COUNT = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 8;
 
 	/**
 	 * The operation id for the '<em>Add Propagator Function Adapter</em>' operation.
@@ -1407,6 +1416,17 @@ public interface cptspPackage extends EPackage {
 	EReference getEndProduct_ProductsContaining();
 
 	/**
+	 * Returns the meta object for the attribute '{@link com.misc.projects.SortingPlans.EndProduct#isSelected <em>Selected</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Selected</em>'.
+	 * @see com.misc.projects.SortingPlans.EndProduct#isSelected()
+	 * @see #getEndProduct()
+	 * @generated
+	 */
+	EAttribute getEndProduct_Selected();
+
+	/**
 	 * Returns the meta object for the '{@link com.misc.projects.SortingPlans.EndProduct#refreshSortingPlans() <em>Refresh Sorting Plans</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2206,6 +2226,14 @@ public interface cptspPackage extends EPackage {
 		 * @generated
 		 */
 		EReference END_PRODUCT__PRODUCTS_CONTAINING = eINSTANCE.getEndProduct_ProductsContaining();
+
+		/**
+		 * The meta object literal for the '<em><b>Selected</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute END_PRODUCT__SELECTED = eINSTANCE.getEndProduct_Selected();
 
 		/**
 		 * The meta object literal for the '<em><b>Refresh Sorting Plans</b></em>' operation.

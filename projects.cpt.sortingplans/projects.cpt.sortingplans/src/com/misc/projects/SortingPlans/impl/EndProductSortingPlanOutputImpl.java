@@ -5,7 +5,6 @@ package com.misc.projects.SortingPlans.impl;
 import com.misc.projects.SortingPlans.EndProductInProduct;
 import com.misc.projects.SortingPlans.EndProductSortingPlan;
 import com.misc.projects.SortingPlans.EndProductSortingPlanOutput;
-import com.misc.projects.SortingPlans.SortingPlanInput;
 import com.misc.projects.SortingPlans.SortingPlanOutput;
 import com.misc.projects.SortingPlans.cptspPackage;
 

@@ -64,6 +64,7 @@ public class EndProductItemProvider
 			addFPDSortingLevelPropertyDescriptor(object);
 			addSortingPlanProductPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
+			addSelectedPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -130,6 +131,28 @@ public class EndProductItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Selected feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSelectedPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EndProduct_Selected_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EndProduct_Selected_feature", "_UI_EndProduct_type"),
+				 cptspPackage.Literals.END_PRODUCT__SELECTED,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -205,6 +228,7 @@ public class EndProductItemProvider
 		switch (notification.getFeatureID(EndProduct.class)) {
 			case cptspPackage.END_PRODUCT__SORTING_PLAN_PRODUCT:
 			case cptspPackage.END_PRODUCT__DESCRIPTION:
+			case cptspPackage.END_PRODUCT__SELECTED:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case cptspPackage.END_PRODUCT__PRODUCTS_CONTAINING:

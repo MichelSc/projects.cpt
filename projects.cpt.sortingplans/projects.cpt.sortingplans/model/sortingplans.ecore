@@ -58,6 +58,8 @@
         eOpposite="#//Scenario/SelectedEndProducts"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ProductsContaining" upperBound="-1"
         eType="#//EndProductInProduct" containment="true" eOpposite="#//EndProductInProduct/EndProductsContained"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Selected" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        changeable="false" volatile="true" transient="true" derived="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SortingPlanProduct" eSuperTypes="../../com.misc.common.moplaf.propagator/model/propagator.ecore#//ObjectWithPropagatorFunctionAdapter">
     <eStructuralFeatures xsi:type="ecore:EReference" name="FPDSortingLevel" eType="ecore:EClass ../../projects.cpt.datasetload/model/cptdatasetload.ecore#//SortingLevelRow"/>

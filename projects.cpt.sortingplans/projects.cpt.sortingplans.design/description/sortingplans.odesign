@@ -79,5 +79,48 @@
         </edgeMappings>
       </defaultLayer>
     </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="projects.cpt.sortingplans.diagram.endproduct" label="Diagram for selected EndProduct" domainClass="SortingPlans.EndProduct" preconditionExpression="[self.Selected/]">
+      <metamodel href="../../projects.cpt.sortingplans/model/sortingplans.ecore#/"/>
+      <defaultLayer name="Default">
+        <nodeMappings name="projects.cpt.sortingplans.diagram.endproduct.product" label="Node Product for diagram EndProduct" semanticCandidatesExpression="feature:ProductsContaining" domainClass="SortingPlans.EndProductInProduct">
+          <style xsi:type="style:SquareDescription" labelExpression="feature:Description" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="projects.cpt.sortingplans.diagram.endproduct.sortingplan" label="Node SortingPlan for diagram EndProduct" semanticCandidatesExpression="feature:SortingPlans" domainClass="SortingPlans.EndProductSortingPlan">
+          <style xsi:type="style:DotDescription" labelExpression="feature:Description" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='orange']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_orange']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='orange']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="projects.cpt.sortingplans.diagram.endproduct.sortingplaninput" label="SortingPlanInput for diagram EndProduct" sourceMapping="//@ownedViewpoints[name='projects.cpt.sortingplans.viewpointy']/@ownedRepresentations[name='projects.cpt.sortingplans.diagram.endproduct']/@defaultLayer/@nodeMappings[name='projects.cpt.sortingplans.diagram.endproduct.product']" targetMapping="//@ownedViewpoints[name='projects.cpt.sortingplans.viewpointy']/@ownedRepresentations[name='projects.cpt.sortingplans.diagram.endproduct']/@defaultLayer/@nodeMappings[name='projects.cpt.sortingplans.diagram.endproduct.sortingplan']" targetFinderExpression="feature:SortingPlan" sourceFinderExpression="feature:InputProduct" domainClass="SortingPlans.EndProductSortingPlanInput" useDomainElement="true">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="projects.cpt.sortingplans.diagram.endproduct.sortingplanoutput.selected" label="selected SortingPlanOutput for diagram EndProduct" preconditionExpression="[self.SeSelected/]" sourceMapping="//@ownedViewpoints[name='projects.cpt.sortingplans.viewpointy']/@ownedRepresentations[name='projects.cpt.sortingplans.diagram.endproduct']/@defaultLayer/@nodeMappings[name='projects.cpt.sortingplans.diagram.endproduct.sortingplan']" targetMapping="//@ownedViewpoints[name='projects.cpt.sortingplans.viewpointy']/@ownedRepresentations[name='projects.cpt.sortingplans.diagram.endproduct']/@defaultLayer/@nodeMappings[name='projects.cpt.sortingplans.diagram.endproduct.product']" targetFinderExpression="feature:OutputProduct" sourceFinderExpression="feature:SortingPlan" domainClass="SortingPlans.EndProductSortingPlanOutput" useDomainElement="true">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="projects.cpt.sortingplans.diagram.endproduct.sortingplanoutput.selectedNot" label="not selectedSortingPlanOutput for diagram EndProduct" preconditionExpression="[not self.SeSelected/]" sourceMapping="//@ownedViewpoints[name='projects.cpt.sortingplans.viewpointy']/@ownedRepresentations[name='projects.cpt.sortingplans.diagram.endproduct']/@defaultLayer/@nodeMappings[name='projects.cpt.sortingplans.diagram.endproduct.sortingplan']" targetMapping="//@ownedViewpoints[name='projects.cpt.sortingplans.viewpointy']/@ownedRepresentations[name='projects.cpt.sortingplans.diagram.endproduct']/@defaultLayer/@nodeMappings[name='projects.cpt.sortingplans.diagram.endproduct.product']" targetFinderExpression="feature:OutputProduct" sourceFinderExpression="feature:SortingPlan" domainClass="SortingPlans.EndProductSortingPlanOutput" useDomainElement="true">
+          <style lineStyle="dot" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+      </defaultLayer>
+    </ownedRepresentations>
   </ownedViewpoints>
 </description:Group>

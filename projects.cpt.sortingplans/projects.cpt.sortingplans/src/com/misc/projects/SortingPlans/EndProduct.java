@@ -22,6 +22,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link com.misc.projects.SortingPlans.EndProduct#getScenario <em>Scenario</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.EndProduct#getScenarioAsSelected <em>Scenario As Selected</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.EndProduct#getProductsContaining <em>Products Containing</em>}</li>
+ *   <li>{@link com.misc.projects.SortingPlans.EndProduct#isSelected <em>Selected</em>}</li>
  * </ul>
  *
  * @see com.misc.projects.SortingPlans.cptspPackage#getEndProduct()
@@ -189,6 +190,21 @@ public interface EndProduct extends ObjectWithPropagatorFunctionAdapter {
 	 * @generated
 	 */
 	EList<EndProductInProduct> getProductsContaining();
+
+	/**
+	 * Returns the value of the '<em><b>Selected</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Selected</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Selected</em>' attribute.
+	 * @see com.misc.projects.SortingPlans.cptspPackage#getEndProduct_Selected()
+	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @generated
+	 */
+	boolean isSelected();
 
 	/**
 	 * <!-- begin-user-doc -->

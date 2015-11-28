@@ -51,6 +51,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.misc.projects.SortingPlans.impl.EndProductImpl#getScenario <em>Scenario</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.impl.EndProductImpl#getScenarioAsSelected <em>Scenario As Selected</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.impl.EndProductImpl#getProductsContaining <em>Products Containing</em>}</li>
+ *   <li>{@link com.misc.projects.SortingPlans.impl.EndProductImpl#isSelected <em>Selected</em>}</li>
  * </ul>
  *
  * @generated
@@ -115,6 +116,16 @@ public class EndProductImpl extends MinimalEObjectImpl.Container implements EndP
 	 * @ordered
 	 */
 	protected EList<EndProductInProduct> productsContaining;
+
+	/**
+	 * The default value of the '{@link #isSelected() <em>Selected</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSelected()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean SELECTED_EDEFAULT = false;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -366,6 +377,15 @@ public class EndProductImpl extends MinimalEObjectImpl.Container implements EndP
 			productsContaining = new EObjectContainmentWithInverseEList<EndProductInProduct>(EndProductInProduct.class, this, cptspPackage.END_PRODUCT__PRODUCTS_CONTAINING, cptspPackage.END_PRODUCT_IN_PRODUCT__END_PRODUCTS_CONTAINED);
 		}
 		return productsContaining;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 */
+	public boolean isSelected() {
+		boolean selected = this.getScenarioAsSelected()!=null;
+		return selected;
 	}
 
 	private class AlgorithmSortingPlan implements Comparable<AlgorithmSortingPlan>{
@@ -697,6 +717,8 @@ public class EndProductImpl extends MinimalEObjectImpl.Container implements EndP
 				return basicGetScenarioAsSelected();
 			case cptspPackage.END_PRODUCT__PRODUCTS_CONTAINING:
 				return getProductsContaining();
+			case cptspPackage.END_PRODUCT__SELECTED:
+				return isSelected();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -786,6 +808,8 @@ public class EndProductImpl extends MinimalEObjectImpl.Container implements EndP
 				return scenarioAsSelected != null;
 			case cptspPackage.END_PRODUCT__PRODUCTS_CONTAINING:
 				return productsContaining != null && !productsContaining.isEmpty();
+			case cptspPackage.END_PRODUCT__SELECTED:
+				return isSelected() != SELECTED_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}

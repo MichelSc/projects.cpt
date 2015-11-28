@@ -484,6 +484,15 @@ public class cptspPackageImpl extends EPackageImpl implements cptspPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getEndProduct_Selected() {
+		return (EAttribute)endProductEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EOperation getEndProduct__RefreshSortingPlans() {
 		return endProductEClass.getEOperations().get(0);
 	}
@@ -958,6 +967,7 @@ public class cptspPackageImpl extends EPackageImpl implements cptspPackage {
 		createEReference(endProductEClass, END_PRODUCT__SCENARIO);
 		createEReference(endProductEClass, END_PRODUCT__SCENARIO_AS_SELECTED);
 		createEReference(endProductEClass, END_PRODUCT__PRODUCTS_CONTAINING);
+		createEAttribute(endProductEClass, END_PRODUCT__SELECTED);
 		createEOperation(endProductEClass, END_PRODUCT___REFRESH_SORTING_PLANS);
 
 		sortingPlanProductEClass = createEClass(SORTING_PLAN_PRODUCT);
@@ -1098,6 +1108,7 @@ public class cptspPackageImpl extends EPackageImpl implements cptspPackage {
 		initEReference(getEndProduct_Scenario(), this.getScenario(), this.getScenario_EndProducts(), "Scenario", null, 1, 1, EndProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEndProduct_ScenarioAsSelected(), this.getScenario(), this.getScenario_SelectedEndProducts(), "ScenarioAsSelected", null, 0, 1, EndProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEndProduct_ProductsContaining(), this.getEndProductInProduct(), this.getEndProductInProduct_EndProductsContained(), "ProductsContaining", null, 0, -1, EndProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEndProduct_Selected(), ecorePackage.getEBoolean(), "Selected", null, 0, 1, EndProduct.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getEndProduct__RefreshSortingPlans(), null, "refreshSortingPlans", 0, 1, IS_UNIQUE, IS_ORDERED);
 
