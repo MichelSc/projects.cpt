@@ -227,12 +227,11 @@ public class EndProductSortingPlanInputImpl extends MinimalEObjectImpl.Container
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public String getDescription() {
-		// TODO: implement this method to return the 'Description' attribute
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		SortingPlanInput input = this.getSortingPlanInput();
+		String description = input.getDescription();
+		return description;
 	}
 
 	/**

@@ -8,6 +8,8 @@ import com.misc.projects.CptDatasetLoad.SortingLevelRow;
 import com.misc.projects.SortingPlans.EndProduct;
 import com.misc.projects.SortingPlans.EndProductInProduct;
 import com.misc.projects.SortingPlans.EndProductSortingPlan;
+import com.misc.projects.SortingPlans.EndProductSortingPlanInput;
+import com.misc.projects.SortingPlans.EndProductSortingPlanOutput;
 import com.misc.projects.SortingPlans.Scenario;
 import com.misc.projects.SortingPlans.SortingPlan;
 import com.misc.projects.SortingPlans.SortingPlanInput;
@@ -19,10 +21,12 @@ import com.misc.projects.SortingPlans.calc.PropagatorCalcEndProductRefreshSortin
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.Map.Entry;
 import java.util.PriorityQueue;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -103,14 +107,14 @@ public class EndProductImpl extends MinimalEObjectImpl.Container implements EndP
 	protected Scenario scenarioAsSelected;
 
 	/**
-	 * The cached value of the '{@link #getProductsContaining() <em>Products Containing</em>}' containment reference.
+	 * The cached value of the '{@link #getProductsContaining() <em>Products Containing</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getProductsContaining()
 	 * @generated
 	 * @ordered
 	 */
-	protected EndProductInProduct productsContaining;
+	protected EList<EndProductInProduct> productsContaining;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -351,50 +355,20 @@ public class EndProductImpl extends MinimalEObjectImpl.Container implements EndP
 			eNotify(new ENotificationImpl(this, Notification.SET, cptspPackage.END_PRODUCT__SCENARIO_AS_SELECTED, newScenarioAsSelected, newScenarioAsSelected));
 	}
 
-		/**
+	
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EndProductInProduct getProductsContaining() {
+	public EList<EndProductInProduct> getProductsContaining() {
+		if (productsContaining == null) {
+			productsContaining = new EObjectContainmentWithInverseEList<EndProductInProduct>(EndProductInProduct.class, this, cptspPackage.END_PRODUCT__PRODUCTS_CONTAINING, cptspPackage.END_PRODUCT_IN_PRODUCT__END_PRODUCTS_CONTAINED);
+		}
 		return productsContaining;
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetProductsContaining(EndProductInProduct newProductsContaining, NotificationChain msgs) {
-		EndProductInProduct oldProductsContaining = productsContaining;
-		productsContaining = newProductsContaining;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, cptspPackage.END_PRODUCT__PRODUCTS_CONTAINING, oldProductsContaining, newProductsContaining);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setProductsContaining(EndProductInProduct newProductsContaining) {
-		if (newProductsContaining != productsContaining) {
-			NotificationChain msgs = null;
-			if (productsContaining != null)
-				msgs = ((InternalEObject)productsContaining).eInverseRemove(this, cptspPackage.END_PRODUCT_IN_PRODUCT__END_PRODUCTS_CONTAINED, EndProductInProduct.class, msgs);
-			if (newProductsContaining != null)
-				msgs = ((InternalEObject)newProductsContaining).eInverseAdd(this, cptspPackage.END_PRODUCT_IN_PRODUCT__END_PRODUCTS_CONTAINED, EndProductInProduct.class, msgs);
-			msgs = basicSetProductsContaining(newProductsContaining, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, cptspPackage.END_PRODUCT__PRODUCTS_CONTAINING, newProductsContaining, newProductsContaining));
-	}
-
-		private class AlgorithmSortingPlan implements Comparable<AlgorithmSortingPlan>{
+	private class AlgorithmSortingPlan implements Comparable<AlgorithmSortingPlan>{
 		 public SortingPlanOutput sortingPlanOut;
 		 public int distanceSorting;
 		 
@@ -444,7 +418,7 @@ public class EndProductImpl extends MinimalEObjectImpl.Container implements EndP
 		 }
 	 }
 
-	/**
+	 /**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 */
@@ -452,60 +426,184 @@ public class EndProductImpl extends MinimalEObjectImpl.Container implements EndP
 		//CommonPlugin.INSTANCE.log("EndProduct "+ this.getDescription()+" begin refresh Sortingplans");
 
 		// calculate the to be
+		HashSet<SortingPlanProduct> psToBe = new HashSet<SortingPlanProduct>();
 		AlgorithmResult result = new AlgorithmResult();
 		AlgorithmQueue  queue  = new AlgorithmQueue(); 
 		if (   this.getScenarioAsSelected()!=null 
 			&& this.eContainer!=null
 			&& this.getSortingPlanProduct()!=null){
+
+			// ok we make something
+			// this is the dijkstra
 			SortingPlanProduct thispp = this.getSortingPlanProduct();
 			for ( SortingPlanOutput spout : thispp.getSortingPlansProducing()){
 				// insert the spout
 				SortingPlan sp = spout.getSortingPlan();
-				AlgorithmSortingPlan algsp = new AlgorithmSortingPlan(spout, 0);
+				AlgorithmSortingPlan algsp = new AlgorithmSortingPlan(spout, 1);
 				result.put(sp, algsp);
 				queue.add(algsp);
 			}
-		}
-		while ( !queue.isEmpty()){
-			AlgorithmSortingPlan candidate = queue.remove();
-			this.algorithmUpdate(queue, result, candidate.sortingPlanOut, candidate.distanceSorting);
-		}
+			while ( !queue.isEmpty()){
+				AlgorithmSortingPlan candidate = queue.remove();
+				this.algorithmUpdate(queue, result, candidate.sortingPlanOut, candidate.distanceSorting);
+			}
+	
+			// products to be 
+			psToBe.add(this.getSortingPlanProduct());
+			for( SortingPlan sortingPlan : result.keySet()){
+				for ( SortingPlanInput spi : sortingPlan.getInputs()){
+					psToBe.add(spi.getInputProduct());
+				}
+			}
+		}  // if we do something
+
+		// sorting plans to be 
+		HashSet<SortingPlan> spsToBe = new HashSet<SortingPlan>(result.keySet());
 		
-		/*
-		//traverse the asis
-		BasicEList<SortingPlanEndProduct> spepToDelete = new BasicEList<SortingPlanEndProduct>();
-		// remove
-		for ( SortingPlanEndProduct spepAsIs: this.getSortingPlans()){
-			SortingPlan sp = spepAsIs.getSortingPlan();
-			AlgorithmSortingPlan tobe = result.get(sp);
-			if ( tobe==null){
-				// remove spepAsIs
-				spepToDelete.add(spepAsIs);
+		// we have all the spouts shortest
+		// the sp's are all the sp containing the spout
+		// the spin's are all the spin's of the sp's
+		// the p's are all the spin's
+		// the spout not shortest are the spout in the sp's, going to some p in the p's
+		
+		// compare the asis and the tobe
+		// compare the products
+		LinkedList<EndProductInProduct>  psToDel  = new LinkedList<EndProductInProduct>(); 
+		HashMap<SortingPlanProduct, EndProductInProduct> psAsIs = new HashMap<SortingPlanProduct, EndProductInProduct>();
+		for (EndProductInProduct pAsIs : this.getProductsContaining()){
+			SortingPlanProduct product = pAsIs.getProduct();
+			if ( psToBe.contains(product)){
+				psAsIs.put(product, pAsIs);
+				psToBe.remove(product);
 			} else {
-				// update
-				spepAsIs.setSortingDistance(tobe.distanceSorting);
-				spepAsIs.setOutput(tobe.sortingPlanOut);
-				result.remove(tobe);
+				psToDel.add(pAsIs);
 			}
 		}
-		for (  AlgorithmSortingPlan spepToBe : result.values()	){
-			SortingPlanOutput spout = spepToBe.sortingPlanOut;
-			SortingPlan sp = spout.getSortingPlan();
-			// create 
-			SortingPlanEndProduct newspep = cptspFactory.eINSTANCE.createSortingPlanEndProduct();
-			newspep.setSortingPlan(sp);   // not owning
-			newspep.setOutput(spout);
-			newspep.setSortingDistance(spepToBe.distanceSorting);
-			newspep.setEndProduct(this);  // owning
+		// create the product
+		for ( SortingPlanProduct pToCreate : psToBe){
+			EndProductInProduct newProduct = cptspFactory.eINSTANCE.createEndProductInProduct();
+			psAsIs.put(pToCreate, newProduct);
+			newProduct.setProduct(pToCreate); // ancestor
+			this.getProductsContaining().add(newProduct); // owning
 		}
 
-		// clean up
-		for ( SortingPlanEndProduct spep : spepToDelete){
-			spep.setSortingPlan(null);  
-			spep.setOutput(null);
-			spep.setEndProduct(null);  // owning
+		// compare the sorting plans
+		LinkedList<EndProductSortingPlan> spsToDel = new LinkedList<EndProductSortingPlan>(); 
+		LinkedList<EndProductSortingPlanInput> spinsToDel = new LinkedList<EndProductSortingPlanInput>(); 
+		LinkedList<EndProductSortingPlanOutput> spoutsToDel = new LinkedList<EndProductSortingPlanOutput>(); 
+		HashMap<SortingPlan, EndProductSortingPlan> spsAsIs = new HashMap<SortingPlan, EndProductSortingPlan>();
+		for (EndProductSortingPlan spAsIs: this.getSortingPlans()){
+			SortingPlan sortingPlan = spAsIs.getSortingPlan();
+			if ( result.containsKey(sortingPlan)) {
+				spsAsIs.put(sortingPlan, spAsIs);
+				spsToBe.remove(sortingPlan);
+			} else {
+				spsToDel.add(spAsIs);
+				for ( EndProductSortingPlanInput spinToDel : spAsIs.getInputs()){
+					spinsToDel.add(spinToDel);
+				}
+				for ( EndProductSortingPlanOutput spoutToDel : spAsIs.getOutputs()){
+					spoutsToDel.add(spoutToDel);
+				}
+			}
 		}
-		*/
+		// create the sorting plans
+		for ( SortingPlan sortingPlanToCreate: spsToBe){
+			EndProductSortingPlan newSortingPlan = cptspFactory.eINSTANCE.createEndProductSortingPlan();
+			spsAsIs.put(sortingPlanToCreate, newSortingPlan);
+			newSortingPlan.setSortingPlan(sortingPlanToCreate); // ancestor
+			this.getSortingPlans().add(newSortingPlan); // owning
+		}
+		
+		// update the sorting plans
+		for ( Entry<SortingPlan, EndProductSortingPlan> mapEntry : spsAsIs.entrySet() ){
+			SortingPlan sp = mapEntry.getKey();
+			EndProductSortingPlan epsp = mapEntry.getValue();
+			AlgorithmSortingPlan spResult = result.get(sp);
+			int distance = spResult.distanceSorting;
+			SortingPlanOutput shortestOutput = spResult.sortingPlanOut;
+			EndProductSortingPlanOutput selectedSortingPlanOutput = null;
+			// children outputs
+			{
+				// calculate to be
+				HashSet<SortingPlanOutput> spoutsToBe = new HashSet<SortingPlanOutput>();
+				spoutsToBe.add(shortestOutput);
+				for ( SortingPlanOutput output : sp.getOutputs() ){
+					if ( psAsIs.containsKey(output.getOutputProduct()) ){
+						spoutsToBe.add(output);
+					}
+				}
+				// compare with as is 
+				for ( EndProductSortingPlanOutput spoutAsIs : epsp.getOutputs()){
+					if ( spoutsToBe.contains(spoutAsIs.getSortingPlanOutput())){
+						spoutsToBe.remove(spoutAsIs);
+						if ( shortestOutput == spoutAsIs.getSortingPlanOutput()){
+							selectedSortingPlanOutput = spoutAsIs;
+						}
+					} else {
+						spoutsToDel.add(spoutAsIs);
+					}
+				}
+				// create 
+				for ( SortingPlanOutput spoutToCreate : spoutsToBe){
+					EndProductSortingPlan esp = spsAsIs.get(spoutToCreate.getSortingPlan());
+					EndProductInProduct   ep  = psAsIs.get(spoutToCreate.getOutputProduct());
+					EndProductSortingPlanOutput newspout = cptspFactory.eINSTANCE.createEndProductSortingPlanOutput();
+					newspout.setSortingPlanOutput(spoutToCreate);  // ancestor
+					newspout.setOutputProduct(ep); // other side
+					newspout.setSortingPlan(esp); // owner
+					if ( shortestOutput == spoutToCreate){
+						selectedSortingPlanOutput = newspout;
+					}
+				}
+			}
+			// children inputs
+			{
+				// calculate to be
+				HashSet<SortingPlanInput> spinsToBe = new HashSet<SortingPlanInput>(sp.getInputs());
+				// compare with as is 
+				for ( EndProductSortingPlanInput spinAsIs : epsp.getInputs()){
+					if ( spinsToBe.contains(spinAsIs)){
+						spinsToBe.remove(spinAsIs);
+					} else {
+						spinsToDel.add(spinAsIs);
+					}
+				}
+				// create 
+				for ( SortingPlanInput spinToCreate : spinsToBe){
+					EndProductSortingPlan esp = spsAsIs.get(spinToCreate.getSortingPlan());
+					EndProductInProduct   ep  = psAsIs.get(spinToCreate.getInputProduct());
+					EndProductSortingPlanInput newspin = cptspFactory.eINSTANCE.createEndProductSortingPlanInput();
+					newspin.setSortingPlanInput(spinToCreate);  // ancestor
+					newspin.setInputProduct(ep); // other side
+					newspin.setSortingPlan(esp); // owner
+				} 
+			}
+			// attributes and references
+			epsp.setSortingDistance(distance);
+			epsp.setSelectedOutput(selectedSortingPlanOutput);
+		}
+		
+		// remove
+		for ( EndProductSortingPlanInput spin : spinsToDel){
+			spin.setInputProduct(null);  // other side
+			spin.setSortingPlanInput(null); // ancestor
+			spin.setSortingPlan(null); // owner
+		}
+		for ( EndProductSortingPlanOutput spout: spoutsToDel){
+			spout.setOutputProduct(null);  // other side
+			spout.setSortingPlanOutput(null); // ancestor
+			spout.setSortingPlan(null); // owner
+		}
+		for ( EndProductSortingPlan sp: spsToDel){
+			sp.setSortingPlan(null); // ancestor
+			sp.setEndProduct(null);  // owner = this
+		}
+		for ( EndProductInProduct p: psToDel){
+			p.setProduct(null); // ancestor
+			p.setEndProductsContained(null);  // owner = this
+		}
+		
 		//CommonPlugin.INSTANCE.log("EndProduct "+ this.getDescription()+" end refresh Sortingplans");
 	}
 
@@ -533,9 +631,7 @@ public class EndProductImpl extends MinimalEObjectImpl.Container implements EndP
 					msgs = ((InternalEObject)scenarioAsSelected).eInverseRemove(this, cptspPackage.SCENARIO__SELECTED_END_PRODUCTS, Scenario.class, msgs);
 				return basicSetScenarioAsSelected((Scenario)otherEnd, msgs);
 			case cptspPackage.END_PRODUCT__PRODUCTS_CONTAINING:
-				if (productsContaining != null)
-					msgs = ((InternalEObject)productsContaining).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - cptspPackage.END_PRODUCT__PRODUCTS_CONTAINING, null, msgs);
-				return basicSetProductsContaining((EndProductInProduct)otherEnd, msgs);
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getProductsContaining()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -557,7 +653,7 @@ public class EndProductImpl extends MinimalEObjectImpl.Container implements EndP
 			case cptspPackage.END_PRODUCT__SCENARIO_AS_SELECTED:
 				return basicSetScenarioAsSelected(null, msgs);
 			case cptspPackage.END_PRODUCT__PRODUCTS_CONTAINING:
-				return basicSetProductsContaining(null, msgs);
+				return ((InternalEList<?>)getProductsContaining()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -631,7 +727,8 @@ public class EndProductImpl extends MinimalEObjectImpl.Container implements EndP
 				setScenarioAsSelected((Scenario)newValue);
 				return;
 			case cptspPackage.END_PRODUCT__PRODUCTS_CONTAINING:
-				setProductsContaining((EndProductInProduct)newValue);
+				getProductsContaining().clear();
+				getProductsContaining().addAll((Collection<? extends EndProductInProduct>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -661,7 +758,7 @@ public class EndProductImpl extends MinimalEObjectImpl.Container implements EndP
 				setScenarioAsSelected((Scenario)null);
 				return;
 			case cptspPackage.END_PRODUCT__PRODUCTS_CONTAINING:
-				setProductsContaining((EndProductInProduct)null);
+				getProductsContaining().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -688,7 +785,7 @@ public class EndProductImpl extends MinimalEObjectImpl.Container implements EndP
 			case cptspPackage.END_PRODUCT__SCENARIO_AS_SELECTED:
 				return scenarioAsSelected != null;
 			case cptspPackage.END_PRODUCT__PRODUCTS_CONTAINING:
-				return productsContaining != null;
+				return productsContaining != null && !productsContaining.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

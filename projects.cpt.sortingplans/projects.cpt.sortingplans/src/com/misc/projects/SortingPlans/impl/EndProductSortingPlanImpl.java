@@ -39,6 +39,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.misc.projects.SortingPlans.impl.EndProductSortingPlanImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.impl.EndProductSortingPlanImpl#getOutputs <em>Outputs</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.impl.EndProductSortingPlanImpl#getInputs <em>Inputs</em>}</li>
+ *   <li>{@link com.misc.projects.SortingPlans.impl.EndProductSortingPlanImpl#getSelectedOutput <em>Selected Output</em>}</li>
+ *   <li>{@link com.misc.projects.SortingPlans.impl.EndProductSortingPlanImpl#getSortingDistance <em>Sorting Distance</em>}</li>
  * </ul>
  *
  * @generated
@@ -83,6 +85,36 @@ public class EndProductSortingPlanImpl extends MinimalEObjectImpl.Container impl
 	 * @ordered
 	 */
 	protected EList<EndProductSortingPlanInput> inputs;
+
+	/**
+	 * The cached value of the '{@link #getSelectedOutput() <em>Selected Output</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSelectedOutput()
+	 * @generated
+	 * @ordered
+	 */
+	protected EndProductSortingPlanOutput selectedOutput;
+
+	/**
+	 * The default value of the '{@link #getSortingDistance() <em>Sorting Distance</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSortingDistance()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int SORTING_DISTANCE_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getSortingDistance() <em>Sorting Distance</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSortingDistance()
+	 * @generated
+	 * @ordered
+	 */
+	protected int sortingDistance = SORTING_DISTANCE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -207,12 +239,11 @@ public class EndProductSortingPlanImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public String getDescription() {
-		// TODO: implement this method to return the 'Description' attribute
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		SortingPlan sortingPlan = this.getSortingPlan();
+		String description = sortingPlan.getDescription();
+		return description;
 	}
 
 	/**
@@ -237,6 +268,65 @@ public class EndProductSortingPlanImpl extends MinimalEObjectImpl.Container impl
 			inputs = new EObjectContainmentWithInverseEList<EndProductSortingPlanInput>(EndProductSortingPlanInput.class, this, cptspPackage.END_PRODUCT_SORTING_PLAN__INPUTS, cptspPackage.END_PRODUCT_SORTING_PLAN_INPUT__SORTING_PLAN);
 		}
 		return inputs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EndProductSortingPlanOutput getSelectedOutput() {
+		if (selectedOutput != null && selectedOutput.eIsProxy()) {
+			InternalEObject oldSelectedOutput = (InternalEObject)selectedOutput;
+			selectedOutput = (EndProductSortingPlanOutput)eResolveProxy(oldSelectedOutput);
+			if (selectedOutput != oldSelectedOutput) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, cptspPackage.END_PRODUCT_SORTING_PLAN__SELECTED_OUTPUT, oldSelectedOutput, selectedOutput));
+			}
+		}
+		return selectedOutput;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EndProductSortingPlanOutput basicGetSelectedOutput() {
+		return selectedOutput;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSelectedOutput(EndProductSortingPlanOutput newSelectedOutput) {
+		EndProductSortingPlanOutput oldSelectedOutput = selectedOutput;
+		selectedOutput = newSelectedOutput;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, cptspPackage.END_PRODUCT_SORTING_PLAN__SELECTED_OUTPUT, oldSelectedOutput, selectedOutput));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getSortingDistance() {
+		return sortingDistance;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSortingDistance(int newSortingDistance) {
+		int oldSortingDistance = sortingDistance;
+		sortingDistance = newSortingDistance;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, cptspPackage.END_PRODUCT_SORTING_PLAN__SORTING_DISTANCE, oldSortingDistance, sortingDistance));
 	}
 
 	/**
@@ -317,6 +407,11 @@ public class EndProductSortingPlanImpl extends MinimalEObjectImpl.Container impl
 				return getOutputs();
 			case cptspPackage.END_PRODUCT_SORTING_PLAN__INPUTS:
 				return getInputs();
+			case cptspPackage.END_PRODUCT_SORTING_PLAN__SELECTED_OUTPUT:
+				if (resolve) return getSelectedOutput();
+				return basicGetSelectedOutput();
+			case cptspPackage.END_PRODUCT_SORTING_PLAN__SORTING_DISTANCE:
+				return getSortingDistance();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -344,6 +439,12 @@ public class EndProductSortingPlanImpl extends MinimalEObjectImpl.Container impl
 				getInputs().clear();
 				getInputs().addAll((Collection<? extends EndProductSortingPlanInput>)newValue);
 				return;
+			case cptspPackage.END_PRODUCT_SORTING_PLAN__SELECTED_OUTPUT:
+				setSelectedOutput((EndProductSortingPlanOutput)newValue);
+				return;
+			case cptspPackage.END_PRODUCT_SORTING_PLAN__SORTING_DISTANCE:
+				setSortingDistance((Integer)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -368,6 +469,12 @@ public class EndProductSortingPlanImpl extends MinimalEObjectImpl.Container impl
 			case cptspPackage.END_PRODUCT_SORTING_PLAN__INPUTS:
 				getInputs().clear();
 				return;
+			case cptspPackage.END_PRODUCT_SORTING_PLAN__SELECTED_OUTPUT:
+				setSelectedOutput((EndProductSortingPlanOutput)null);
+				return;
+			case cptspPackage.END_PRODUCT_SORTING_PLAN__SORTING_DISTANCE:
+				setSortingDistance(SORTING_DISTANCE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -390,8 +497,28 @@ public class EndProductSortingPlanImpl extends MinimalEObjectImpl.Container impl
 				return outputs != null && !outputs.isEmpty();
 			case cptspPackage.END_PRODUCT_SORTING_PLAN__INPUTS:
 				return inputs != null && !inputs.isEmpty();
+			case cptspPackage.END_PRODUCT_SORTING_PLAN__SELECTED_OUTPUT:
+				return selectedOutput != null;
+			case cptspPackage.END_PRODUCT_SORTING_PLAN__SORTING_DISTANCE:
+				return sortingDistance != SORTING_DISTANCE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (SortingDistance: ");
+		result.append(sortingDistance);
+		result.append(')');
+		return result.toString();
 	}
 
 } //EndProductSortingPlanImpl

@@ -19,7 +19,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.misc.projects.SortingPlans.EndProductInProduct#getSortingPlansProducing <em>Sorting Plans Producing</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.EndProductInProduct#getSortingPlansAccepting <em>Sorting Plans Accepting</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.EndProductInProduct#getProduct <em>Product</em>}</li>
- *   <li>{@link com.misc.projects.SortingPlans.EndProductInProduct#getSortingDistance <em>Sorting Distance</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.EndProductInProduct#getDescription <em>Description</em>}</li>
  * </ul>
  *
@@ -117,33 +116,6 @@ public interface EndProductInProduct extends EObject {
 	 * @generated
 	 */
 	void setProduct(SortingPlanProduct value);
-
-	/**
-	 * Returns the value of the '<em><b>Sorting Distance</b></em>' attribute.
-	 * The default value is <code>"0"</code>.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Sorting Distance</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Sorting Distance</em>' attribute.
-	 * @see #setSortingDistance(int)
-	 * @see com.misc.projects.SortingPlans.cptspPackage#getEndProductInProduct_SortingDistance()
-	 * @model default="0"
-	 * @generated
-	 */
-	int getSortingDistance();
-
-	/**
-	 * Sets the value of the '{@link com.misc.projects.SortingPlans.EndProductInProduct#getSortingDistance <em>Sorting Distance</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Sorting Distance</em>' attribute.
-	 * @see #getSortingDistance()
-	 * @generated
-	 */
-	void setSortingDistance(int value);
 
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.

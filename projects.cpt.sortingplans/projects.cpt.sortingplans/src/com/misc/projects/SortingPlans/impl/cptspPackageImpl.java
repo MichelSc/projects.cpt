@@ -727,6 +727,24 @@ public class cptspPackageImpl extends EPackageImpl implements cptspPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getEndProductSortingPlan_SelectedOutput() {
+		return (EReference)endProductSortingPlanEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEndProductSortingPlan_SortingDistance() {
+		return (EAttribute)endProductSortingPlanEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getEndProductSortingPlanInput() {
 		return endProductSortingPlanInputEClass;
 	}
@@ -871,17 +889,8 @@ public class cptspPackageImpl extends EPackageImpl implements cptspPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEndProductInProduct_SortingDistance() {
-		return (EAttribute)endProductInProductEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getEndProductInProduct_Description() {
-		return (EAttribute)endProductInProductEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)endProductInProductEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -980,6 +989,8 @@ public class cptspPackageImpl extends EPackageImpl implements cptspPackage {
 		createEAttribute(endProductSortingPlanEClass, END_PRODUCT_SORTING_PLAN__DESCRIPTION);
 		createEReference(endProductSortingPlanEClass, END_PRODUCT_SORTING_PLAN__OUTPUTS);
 		createEReference(endProductSortingPlanEClass, END_PRODUCT_SORTING_PLAN__INPUTS);
+		createEReference(endProductSortingPlanEClass, END_PRODUCT_SORTING_PLAN__SELECTED_OUTPUT);
+		createEAttribute(endProductSortingPlanEClass, END_PRODUCT_SORTING_PLAN__SORTING_DISTANCE);
 
 		endProductSortingPlanInputEClass = createEClass(END_PRODUCT_SORTING_PLAN_INPUT);
 		createEReference(endProductSortingPlanInputEClass, END_PRODUCT_SORTING_PLAN_INPUT__SORTING_PLAN);
@@ -999,7 +1010,6 @@ public class cptspPackageImpl extends EPackageImpl implements cptspPackage {
 		createEReference(endProductInProductEClass, END_PRODUCT_IN_PRODUCT__SORTING_PLANS_PRODUCING);
 		createEReference(endProductInProductEClass, END_PRODUCT_IN_PRODUCT__SORTING_PLANS_ACCEPTING);
 		createEReference(endProductInProductEClass, END_PRODUCT_IN_PRODUCT__PRODUCT);
-		createEAttribute(endProductInProductEClass, END_PRODUCT_IN_PRODUCT__SORTING_DISTANCE);
 		createEAttribute(endProductInProductEClass, END_PRODUCT_IN_PRODUCT__DESCRIPTION);
 	}
 
@@ -1085,9 +1095,9 @@ public class cptspPackageImpl extends EPackageImpl implements cptspPackage {
 		initEReference(getEndProduct_SortingPlanProduct(), this.getSortingPlanProduct(), this.getSortingPlanProduct_EndProduct(), "SortingPlanProduct", null, 1, 1, EndProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEndProduct_Description(), ecorePackage.getEString(), "Description", null, 0, 1, EndProduct.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getEndProduct_SortingPlans(), this.getEndProductSortingPlan(), this.getEndProductSortingPlan_EndProduct(), "SortingPlans", null, 0, -1, EndProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEndProduct_Scenario(), this.getScenario(), this.getScenario_EndProducts(), "Scenario", null, 0, 1, EndProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEndProduct_Scenario(), this.getScenario(), this.getScenario_EndProducts(), "Scenario", null, 1, 1, EndProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEndProduct_ScenarioAsSelected(), this.getScenario(), this.getScenario_SelectedEndProducts(), "ScenarioAsSelected", null, 0, 1, EndProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEndProduct_ProductsContaining(), this.getEndProductInProduct(), this.getEndProductInProduct_EndProductsContained(), "ProductsContaining", null, 0, 1, EndProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEndProduct_ProductsContaining(), this.getEndProductInProduct(), this.getEndProductInProduct_EndProductsContained(), "ProductsContaining", null, 0, -1, EndProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getEndProduct__RefreshSortingPlans(), null, "refreshSortingPlans", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -1120,6 +1130,8 @@ public class cptspPackageImpl extends EPackageImpl implements cptspPackage {
 		initEAttribute(getEndProductSortingPlan_Description(), ecorePackage.getEString(), "Description", null, 0, 1, EndProductSortingPlan.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getEndProductSortingPlan_Outputs(), this.getEndProductSortingPlanOutput(), this.getEndProductSortingPlanOutput_SortingPlan(), "Outputs", null, 0, -1, EndProductSortingPlan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEndProductSortingPlan_Inputs(), this.getEndProductSortingPlanInput(), this.getEndProductSortingPlanInput_SortingPlan(), "Inputs", null, 0, -1, EndProductSortingPlan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEndProductSortingPlan_SelectedOutput(), this.getEndProductSortingPlanOutput(), null, "SelectedOutput", null, 1, 1, EndProductSortingPlan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEndProductSortingPlan_SortingDistance(), ecorePackage.getEInt(), "SortingDistance", "0", 0, 1, EndProductSortingPlan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(endProductSortingPlanInputEClass, EndProductSortingPlanInput.class, "EndProductSortingPlanInput", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEndProductSortingPlanInput_SortingPlan(), this.getEndProductSortingPlan(), this.getEndProductSortingPlan_Inputs(), "SortingPlan", null, 1, 1, EndProductSortingPlanInput.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1131,7 +1143,7 @@ public class cptspPackageImpl extends EPackageImpl implements cptspPackage {
 		initEReference(getEndProductSortingPlanOutput_SortingPlan(), this.getEndProductSortingPlan(), this.getEndProductSortingPlan_Outputs(), "SortingPlan", null, 1, 1, EndProductSortingPlanOutput.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEndProductSortingPlanOutput_OutputProduct(), this.getEndProductInProduct(), this.getEndProductInProduct_SortingPlansProducing(), "OutputProduct", null, 1, 1, EndProductSortingPlanOutput.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEndProductSortingPlanOutput_SortingPlanOutput(), this.getSortingPlanOutput(), null, "SortingPlanOutput", null, 0, 1, EndProductSortingPlanOutput.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEndProductSortingPlanOutput_Selected(), ecorePackage.getEBoolean(), "Selected", null, 0, 1, EndProductSortingPlanOutput.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEndProductSortingPlanOutput_Selected(), ecorePackage.getEBoolean(), "Selected", null, 0, 1, EndProductSortingPlanOutput.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEndProductSortingPlanOutput_Description(), ecorePackage.getEString(), "Description", null, 0, 1, EndProductSortingPlanOutput.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(endProductInProductEClass, EndProductInProduct.class, "EndProductInProduct", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1139,7 +1151,6 @@ public class cptspPackageImpl extends EPackageImpl implements cptspPackage {
 		initEReference(getEndProductInProduct_SortingPlansProducing(), this.getEndProductSortingPlanOutput(), this.getEndProductSortingPlanOutput_OutputProduct(), "SortingPlansProducing", null, 0, -1, EndProductInProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEndProductInProduct_SortingPlansAccepting(), this.getEndProductSortingPlanInput(), this.getEndProductSortingPlanInput_InputProduct(), "SortingPlansAccepting", null, 0, -1, EndProductInProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEndProductInProduct_Product(), this.getSortingPlanProduct(), null, "Product", null, 0, 1, EndProductInProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEndProductInProduct_SortingDistance(), ecorePackage.getEInt(), "SortingDistance", "0", 0, 1, EndProductInProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEndProductInProduct_Description(), ecorePackage.getEString(), "Description", null, 0, 1, EndProductInProduct.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		// Create resource

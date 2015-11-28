@@ -116,22 +116,11 @@ public interface EndProductSortingPlanOutput extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Selected</em>' attribute.
-	 * @see #setSelected(boolean)
 	 * @see com.misc.projects.SortingPlans.cptspPackage#getEndProductSortingPlanOutput_Selected()
-	 * @model
+	 * @model transient="true" changeable="false" volatile="true" derived="true"
 	 * @generated
 	 */
 	boolean isSelected();
-
-	/**
-	 * Sets the value of the '{@link com.misc.projects.SortingPlans.EndProductSortingPlanOutput#isSelected <em>Selected</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Selected</em>' attribute.
-	 * @see #isSelected()
-	 * @generated
-	 */
-	void setSelected(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.

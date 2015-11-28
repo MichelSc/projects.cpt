@@ -432,7 +432,7 @@ public interface cptspPackage extends EPackage {
 	int END_PRODUCT__SCENARIO_AS_SELECTED = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Products Containing</b></em>' containment reference.
+	 * The feature id for the '<em><b>Products Containing</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -797,13 +797,31 @@ public interface cptspPackage extends EPackage {
 	int END_PRODUCT_SORTING_PLAN__INPUTS = 4;
 
 	/**
+	 * The feature id for the '<em><b>Selected Output</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int END_PRODUCT_SORTING_PLAN__SELECTED_OUTPUT = 5;
+
+	/**
+	 * The feature id for the '<em><b>Sorting Distance</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int END_PRODUCT_SORTING_PLAN__SORTING_DISTANCE = 6;
+
+	/**
 	 * The number of structural features of the '<em>End Product Sorting Plan</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int END_PRODUCT_SORTING_PLAN_FEATURE_COUNT = 5;
+	int END_PRODUCT_SORTING_PLAN_FEATURE_COUNT = 7;
 
 	/**
 	 * The number of operations of the '<em>End Product Sorting Plan</em>' class.
@@ -998,22 +1016,13 @@ public interface cptspPackage extends EPackage {
 	int END_PRODUCT_IN_PRODUCT__PRODUCT = 3;
 
 	/**
-	 * The feature id for the '<em><b>Sorting Distance</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int END_PRODUCT_IN_PRODUCT__SORTING_DISTANCE = 4;
-
-	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int END_PRODUCT_IN_PRODUCT__DESCRIPTION = 5;
+	int END_PRODUCT_IN_PRODUCT__DESCRIPTION = 4;
 
 	/**
 	 * The number of structural features of the '<em>End Product In Product</em>' class.
@@ -1022,7 +1031,7 @@ public interface cptspPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int END_PRODUCT_IN_PRODUCT_FEATURE_COUNT = 6;
+	int END_PRODUCT_IN_PRODUCT_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>End Product In Product</em>' class.
@@ -1387,10 +1396,10 @@ public interface cptspPackage extends EPackage {
 	EReference getEndProduct_ScenarioAsSelected();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link com.misc.projects.SortingPlans.EndProduct#getProductsContaining <em>Products Containing</em>}'.
+	 * Returns the meta object for the containment reference list '{@link com.misc.projects.SortingPlans.EndProduct#getProductsContaining <em>Products Containing</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Products Containing</em>'.
+	 * @return the meta object for the containment reference list '<em>Products Containing</em>'.
 	 * @see com.misc.projects.SortingPlans.EndProduct#getProductsContaining()
 	 * @see #getEndProduct()
 	 * @generated
@@ -1690,6 +1699,28 @@ public interface cptspPackage extends EPackage {
 	EReference getEndProductSortingPlan_Inputs();
 
 	/**
+	 * Returns the meta object for the reference '{@link com.misc.projects.SortingPlans.EndProductSortingPlan#getSelectedOutput <em>Selected Output</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Selected Output</em>'.
+	 * @see com.misc.projects.SortingPlans.EndProductSortingPlan#getSelectedOutput()
+	 * @see #getEndProductSortingPlan()
+	 * @generated
+	 */
+	EReference getEndProductSortingPlan_SelectedOutput();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.misc.projects.SortingPlans.EndProductSortingPlan#getSortingDistance <em>Sorting Distance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Sorting Distance</em>'.
+	 * @see com.misc.projects.SortingPlans.EndProductSortingPlan#getSortingDistance()
+	 * @see #getEndProductSortingPlan()
+	 * @generated
+	 */
+	EAttribute getEndProductSortingPlan_SortingDistance();
+
+	/**
 	 * Returns the meta object for class '{@link com.misc.projects.SortingPlans.EndProductSortingPlanInput <em>End Product Sorting Plan Input</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1861,17 +1892,6 @@ public interface cptspPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getEndProductInProduct_Product();
-
-	/**
-	 * Returns the meta object for the attribute '{@link com.misc.projects.SortingPlans.EndProductInProduct#getSortingDistance <em>Sorting Distance</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Sorting Distance</em>'.
-	 * @see com.misc.projects.SortingPlans.EndProductInProduct#getSortingDistance()
-	 * @see #getEndProductInProduct()
-	 * @generated
-	 */
-	EAttribute getEndProductInProduct_SortingDistance();
 
 	/**
 	 * Returns the meta object for the attribute '{@link com.misc.projects.SortingPlans.EndProductInProduct#getDescription <em>Description</em>}'.
@@ -2180,7 +2200,7 @@ public interface cptspPackage extends EPackage {
 		EReference END_PRODUCT__SCENARIO_AS_SELECTED = eINSTANCE.getEndProduct_ScenarioAsSelected();
 
 		/**
-		 * The meta object literal for the '<em><b>Products Containing</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Products Containing</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2412,6 +2432,22 @@ public interface cptspPackage extends EPackage {
 		EReference END_PRODUCT_SORTING_PLAN__INPUTS = eINSTANCE.getEndProductSortingPlan_Inputs();
 
 		/**
+		 * The meta object literal for the '<em><b>Selected Output</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference END_PRODUCT_SORTING_PLAN__SELECTED_OUTPUT = eINSTANCE.getEndProductSortingPlan_SelectedOutput();
+
+		/**
+		 * The meta object literal for the '<em><b>Sorting Distance</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute END_PRODUCT_SORTING_PLAN__SORTING_DISTANCE = eINSTANCE.getEndProductSortingPlan_SortingDistance();
+
+		/**
 		 * The meta object literal for the '{@link com.misc.projects.SortingPlans.impl.EndProductSortingPlanInputImpl <em>End Product Sorting Plan Input</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2544,14 +2580,6 @@ public interface cptspPackage extends EPackage {
 		 * @generated
 		 */
 		EReference END_PRODUCT_IN_PRODUCT__PRODUCT = eINSTANCE.getEndProductInProduct_Product();
-
-		/**
-		 * The meta object literal for the '<em><b>Sorting Distance</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute END_PRODUCT_IN_PRODUCT__SORTING_DISTANCE = eINSTANCE.getEndProductInProduct_SortingDistance();
 
 		/**
 		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.

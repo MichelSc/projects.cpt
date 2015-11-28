@@ -60,11 +60,34 @@ public class EndProductSortingPlanInputItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addSortingPlanPropertyDescriptor(object);
 			addInputProductPropertyDescriptor(object);
 			addSortingPlanInputPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Sorting Plan feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSortingPlanPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EndProductSortingPlanInput_SortingPlan_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EndProductSortingPlanInput_SortingPlan_feature", "_UI_EndProductSortingPlanInput_type"),
+				 cptspPackage.Literals.END_PRODUCT_SORTING_PLAN_INPUT__SORTING_PLAN,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -81,7 +104,7 @@ public class EndProductSortingPlanInputItemProvider
 				 getString("_UI_EndProductSortingPlanInput_InputProduct_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EndProductSortingPlanInput_InputProduct_feature", "_UI_EndProductSortingPlanInput_type"),
 				 cptspPackage.Literals.END_PRODUCT_SORTING_PLAN_INPUT__INPUT_PRODUCT,
-				 true,
+				 false,
 				 false,
 				 true,
 				 null,
@@ -103,7 +126,7 @@ public class EndProductSortingPlanInputItemProvider
 				 getString("_UI_EndProductSortingPlanInput_SortingPlanInput_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EndProductSortingPlanInput_SortingPlanInput_feature", "_UI_EndProductSortingPlanInput_type"),
 				 cptspPackage.Literals.END_PRODUCT_SORTING_PLAN_INPUT__SORTING_PLAN_INPUT,
-				 true,
+				 false,
 				 false,
 				 true,
 				 null,

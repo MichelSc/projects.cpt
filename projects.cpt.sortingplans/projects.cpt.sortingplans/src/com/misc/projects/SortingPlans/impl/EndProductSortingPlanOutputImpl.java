@@ -5,6 +5,7 @@ package com.misc.projects.SortingPlans.impl;
 import com.misc.projects.SortingPlans.EndProductInProduct;
 import com.misc.projects.SortingPlans.EndProductSortingPlan;
 import com.misc.projects.SortingPlans.EndProductSortingPlanOutput;
+import com.misc.projects.SortingPlans.SortingPlanInput;
 import com.misc.projects.SortingPlans.SortingPlanOutput;
 import com.misc.projects.SortingPlans.cptspPackage;
 
@@ -66,16 +67,6 @@ public class EndProductSortingPlanOutputImpl extends MinimalEObjectImpl.Containe
 	 * @ordered
 	 */
 	protected static final boolean SELECTED_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isSelected() <em>Selected</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isSelected()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean selected = SELECTED_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
@@ -248,33 +239,21 @@ public class EndProductSortingPlanOutputImpl extends MinimalEObjectImpl.Containe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public boolean isSelected() {
-		return selected;
+		EndProductSortingPlan sp = this.getSortingPlan();
+		boolean isSelected = this==sp.getSelectedOutput();
+		return isSelected;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSelected(boolean newSelected) {
-		boolean oldSelected = selected;
-		selected = newSelected;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, cptspPackage.END_PRODUCT_SORTING_PLAN_OUTPUT__SELECTED, oldSelected, selected));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public String getDescription() {
-		// TODO: implement this method to return the 'Description' attribute
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		SortingPlanOutput output = this.getSortingPlanOutput();
+		String description = output.getDescription();
+		return description;
 	}
 
 	/**
@@ -368,9 +347,6 @@ public class EndProductSortingPlanOutputImpl extends MinimalEObjectImpl.Containe
 			case cptspPackage.END_PRODUCT_SORTING_PLAN_OUTPUT__SORTING_PLAN_OUTPUT:
 				setSortingPlanOutput((SortingPlanOutput)newValue);
 				return;
-			case cptspPackage.END_PRODUCT_SORTING_PLAN_OUTPUT__SELECTED:
-				setSelected((Boolean)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -392,9 +368,6 @@ public class EndProductSortingPlanOutputImpl extends MinimalEObjectImpl.Containe
 			case cptspPackage.END_PRODUCT_SORTING_PLAN_OUTPUT__SORTING_PLAN_OUTPUT:
 				setSortingPlanOutput((SortingPlanOutput)null);
 				return;
-			case cptspPackage.END_PRODUCT_SORTING_PLAN_OUTPUT__SELECTED:
-				setSelected(SELECTED_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -414,27 +387,11 @@ public class EndProductSortingPlanOutputImpl extends MinimalEObjectImpl.Containe
 			case cptspPackage.END_PRODUCT_SORTING_PLAN_OUTPUT__SORTING_PLAN_OUTPUT:
 				return sortingPlanOutput != null;
 			case cptspPackage.END_PRODUCT_SORTING_PLAN_OUTPUT__SELECTED:
-				return selected != SELECTED_EDEFAULT;
+				return isSelected() != SELECTED_EDEFAULT;
 			case cptspPackage.END_PRODUCT_SORTING_PLAN_OUTPUT__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? getDescription() != null : !DESCRIPTION_EDEFAULT.equals(getDescription());
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (Selected: ");
-		result.append(selected);
-		result.append(')');
-		return result.toString();
 	}
 
 } //EndProductSortingPlanOutputImpl

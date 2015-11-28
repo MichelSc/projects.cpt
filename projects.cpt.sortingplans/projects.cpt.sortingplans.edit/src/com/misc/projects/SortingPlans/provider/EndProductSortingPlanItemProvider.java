@@ -4,7 +4,6 @@ package com.misc.projects.SortingPlans.provider;
 
 
 import com.misc.projects.SortingPlans.EndProductSortingPlan;
-import com.misc.projects.SortingPlans.cptspFactory;
 import com.misc.projects.SortingPlans.cptspPackage;
 
 import java.util.Collection;
@@ -63,10 +62,35 @@ public class EndProductSortingPlanItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addEndProductPropertyDescriptor(object);
 			addSortingPlanPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
+			addSelectedOutputPropertyDescriptor(object);
+			addSortingDistancePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the End Product feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEndProductPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EndProductSortingPlan_EndProduct_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EndProductSortingPlan_EndProduct_feature", "_UI_EndProductSortingPlan_type"),
+				 cptspPackage.Literals.END_PRODUCT_SORTING_PLAN__END_PRODUCT,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -83,7 +107,7 @@ public class EndProductSortingPlanItemProvider
 				 getString("_UI_EndProductSortingPlan_SortingPlan_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EndProductSortingPlan_SortingPlan_feature", "_UI_EndProductSortingPlan_type"),
 				 cptspPackage.Literals.END_PRODUCT_SORTING_PLAN__SORTING_PLAN,
-				 true,
+				 false,
 				 false,
 				 true,
 				 null,
@@ -109,6 +133,50 @@ public class EndProductSortingPlanItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Selected Output feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSelectedOutputPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EndProductSortingPlan_SelectedOutput_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EndProductSortingPlan_SelectedOutput_feature", "_UI_EndProductSortingPlan_type"),
+				 cptspPackage.Literals.END_PRODUCT_SORTING_PLAN__SELECTED_OUTPUT,
+				 false,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Sorting Distance feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSortingDistancePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EndProductSortingPlan_SortingDistance_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EndProductSortingPlan_SortingDistance_feature", "_UI_EndProductSortingPlan_type"),
+				 cptspPackage.Literals.END_PRODUCT_SORTING_PLAN__SORTING_DISTANCE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -183,6 +251,7 @@ public class EndProductSortingPlanItemProvider
 
 		switch (notification.getFeatureID(EndProductSortingPlan.class)) {
 			case cptspPackage.END_PRODUCT_SORTING_PLAN__DESCRIPTION:
+			case cptspPackage.END_PRODUCT_SORTING_PLAN__SORTING_DISTANCE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case cptspPackage.END_PRODUCT_SORTING_PLAN__OUTPUTS:
@@ -203,16 +272,6 @@ public class EndProductSortingPlanItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(cptspPackage.Literals.END_PRODUCT_SORTING_PLAN__OUTPUTS,
-				 cptspFactory.eINSTANCE.createEndProductSortingPlanOutput()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(cptspPackage.Literals.END_PRODUCT_SORTING_PLAN__INPUTS,
-				 cptspFactory.eINSTANCE.createEndProductSortingPlanInput()));
 	}
 
 	/**

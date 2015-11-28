@@ -38,7 +38,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.misc.projects.SortingPlans.impl.EndProductInProductImpl#getSortingPlansProducing <em>Sorting Plans Producing</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.impl.EndProductInProductImpl#getSortingPlansAccepting <em>Sorting Plans Accepting</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.impl.EndProductInProductImpl#getProduct <em>Product</em>}</li>
- *   <li>{@link com.misc.projects.SortingPlans.impl.EndProductInProductImpl#getSortingDistance <em>Sorting Distance</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.impl.EndProductInProductImpl#getDescription <em>Description</em>}</li>
  * </ul>
  *
@@ -74,26 +73,6 @@ public class EndProductInProductImpl extends MinimalEObjectImpl.Container implem
 	 * @ordered
 	 */
 	protected SortingPlanProduct product;
-
-	/**
-	 * The default value of the '{@link #getSortingDistance() <em>Sorting Distance</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSortingDistance()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int SORTING_DISTANCE_EDEFAULT = 0;
-
-	/**
-	 * The cached value of the '{@link #getSortingDistance() <em>Sorting Distance</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSortingDistance()
-	 * @generated
-	 * @ordered
-	 */
-	protected int sortingDistance = SORTING_DISTANCE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
@@ -230,33 +209,11 @@ public class EndProductInProductImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public int getSortingDistance() {
-		return sortingDistance;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSortingDistance(int newSortingDistance) {
-		int oldSortingDistance = sortingDistance;
-		sortingDistance = newSortingDistance;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, cptspPackage.END_PRODUCT_IN_PRODUCT__SORTING_DISTANCE, oldSortingDistance, sortingDistance));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public String getDescription() {
-		// TODO: implement this method to return the 'Description' attribute
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		SortingPlanProduct product = this.getProduct();
+		String description = product.getDescription();
+		return description;
 	}
 
 	/**
@@ -329,8 +286,6 @@ public class EndProductInProductImpl extends MinimalEObjectImpl.Container implem
 			case cptspPackage.END_PRODUCT_IN_PRODUCT__PRODUCT:
 				if (resolve) return getProduct();
 				return basicGetProduct();
-			case cptspPackage.END_PRODUCT_IN_PRODUCT__SORTING_DISTANCE:
-				return getSortingDistance();
 			case cptspPackage.END_PRODUCT_IN_PRODUCT__DESCRIPTION:
 				return getDescription();
 		}
@@ -360,9 +315,6 @@ public class EndProductInProductImpl extends MinimalEObjectImpl.Container implem
 			case cptspPackage.END_PRODUCT_IN_PRODUCT__PRODUCT:
 				setProduct((SortingPlanProduct)newValue);
 				return;
-			case cptspPackage.END_PRODUCT_IN_PRODUCT__SORTING_DISTANCE:
-				setSortingDistance((Integer)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -387,9 +339,6 @@ public class EndProductInProductImpl extends MinimalEObjectImpl.Container implem
 			case cptspPackage.END_PRODUCT_IN_PRODUCT__PRODUCT:
 				setProduct((SortingPlanProduct)null);
 				return;
-			case cptspPackage.END_PRODUCT_IN_PRODUCT__SORTING_DISTANCE:
-				setSortingDistance(SORTING_DISTANCE_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -410,28 +359,10 @@ public class EndProductInProductImpl extends MinimalEObjectImpl.Container implem
 				return sortingPlansAccepting != null && !sortingPlansAccepting.isEmpty();
 			case cptspPackage.END_PRODUCT_IN_PRODUCT__PRODUCT:
 				return product != null;
-			case cptspPackage.END_PRODUCT_IN_PRODUCT__SORTING_DISTANCE:
-				return sortingDistance != SORTING_DISTANCE_EDEFAULT;
 			case cptspPackage.END_PRODUCT_IN_PRODUCT__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? getDescription() != null : !DESCRIPTION_EDEFAULT.equals(getDescription());
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (SortingDistance: ");
-		result.append(sortingDistance);
-		result.append(')');
-		return result.toString();
 	}
 
 } //EndProductInProductImpl

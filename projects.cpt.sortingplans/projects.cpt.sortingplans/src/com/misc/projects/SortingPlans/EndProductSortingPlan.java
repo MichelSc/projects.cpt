@@ -20,6 +20,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.misc.projects.SortingPlans.EndProductSortingPlan#getDescription <em>Description</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.EndProductSortingPlan#getOutputs <em>Outputs</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.EndProductSortingPlan#getInputs <em>Inputs</em>}</li>
+ *   <li>{@link com.misc.projects.SortingPlans.EndProductSortingPlan#getSelectedOutput <em>Selected Output</em>}</li>
+ *   <li>{@link com.misc.projects.SortingPlans.EndProductSortingPlan#getSortingDistance <em>Sorting Distance</em>}</li>
  * </ul>
  *
  * @see com.misc.projects.SortingPlans.cptspPackage#getEndProductSortingPlan()
@@ -133,5 +135,58 @@ public interface EndProductSortingPlan extends EObject {
 	 * @generated
 	 */
 	EList<EndProductSortingPlanInput> getInputs();
+
+	/**
+	 * Returns the value of the '<em><b>Selected Output</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Selected Output</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Selected Output</em>' reference.
+	 * @see #setSelectedOutput(EndProductSortingPlanOutput)
+	 * @see com.misc.projects.SortingPlans.cptspPackage#getEndProductSortingPlan_SelectedOutput()
+	 * @model required="true"
+	 * @generated
+	 */
+	EndProductSortingPlanOutput getSelectedOutput();
+
+	/**
+	 * Sets the value of the '{@link com.misc.projects.SortingPlans.EndProductSortingPlan#getSelectedOutput <em>Selected Output</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Selected Output</em>' reference.
+	 * @see #getSelectedOutput()
+	 * @generated
+	 */
+	void setSelectedOutput(EndProductSortingPlanOutput value);
+
+	/**
+	 * Returns the value of the '<em><b>Sorting Distance</b></em>' attribute.
+	 * The default value is <code>"0"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Sorting Distance</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Sorting Distance</em>' attribute.
+	 * @see #setSortingDistance(int)
+	 * @see com.misc.projects.SortingPlans.cptspPackage#getEndProductSortingPlan_SortingDistance()
+	 * @model default="0"
+	 * @generated
+	 */
+	int getSortingDistance();
+
+	/**
+	 * Sets the value of the '{@link com.misc.projects.SortingPlans.EndProductSortingPlan#getSortingDistance <em>Sorting Distance</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Sorting Distance</em>' attribute.
+	 * @see #getSortingDistance()
+	 * @generated
+	 */
+	void setSortingDistance(int value);
 
 } // EndProductSortingPlan

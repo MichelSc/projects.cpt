@@ -4,7 +4,6 @@ package com.misc.projects.SortingPlans.provider;
 
 
 import com.misc.projects.SortingPlans.EndProduct;
-import com.misc.projects.SortingPlans.cptspFactory;
 import com.misc.projects.SortingPlans.cptspPackage;
 
 import java.util.Collection;
@@ -65,8 +64,6 @@ public class EndProductItemProvider
 			addFPDSortingLevelPropertyDescriptor(object);
 			addSortingPlanProductPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
-			addSortingPlansPropertyDescriptor(object);
-			addScenarioAsSelectedPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -85,7 +82,7 @@ public class EndProductItemProvider
 				 getString("_UI_EndProduct_FPDSortingLevel_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EndProduct_FPDSortingLevel_feature", "_UI_EndProduct_type"),
 				 cptspPackage.Literals.END_PRODUCT__FPD_SORTING_LEVEL,
-				 true,
+				 false,
 				 false,
 				 true,
 				 null,
@@ -138,50 +135,6 @@ public class EndProductItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Sorting Plans feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSortingPlansPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_EndProduct_SortingPlans_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EndProduct_SortingPlans_feature", "_UI_EndProduct_type"),
-				 cptspPackage.Literals.END_PRODUCT__SORTING_PLANS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Scenario As Selected feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addScenarioAsSelectedPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_EndProduct_ScenarioAsSelected_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EndProduct_ScenarioAsSelected_feature", "_UI_EndProduct_type"),
-				 cptspPackage.Literals.END_PRODUCT__SCENARIO_AS_SELECTED,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -193,6 +146,7 @@ public class EndProductItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(cptspPackage.Literals.END_PRODUCT__SORTING_PLANS);
 			childrenFeatures.add(cptspPackage.Literals.END_PRODUCT__PRODUCTS_CONTAINING);
 		}
 		return childrenFeatures;
@@ -270,11 +224,6 @@ public class EndProductItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(cptspPackage.Literals.END_PRODUCT__PRODUCTS_CONTAINING,
-				 cptspFactory.eINSTANCE.createEndProductInProduct()));
 	}
 
 	/**

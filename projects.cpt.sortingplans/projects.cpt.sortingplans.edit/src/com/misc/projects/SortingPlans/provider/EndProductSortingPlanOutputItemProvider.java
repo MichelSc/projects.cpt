@@ -60,12 +60,35 @@ public class EndProductSortingPlanOutputItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addSortingPlanPropertyDescriptor(object);
 			addOutputProductPropertyDescriptor(object);
 			addSortingPlanOutputPropertyDescriptor(object);
 			addSelectedPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Sorting Plan feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSortingPlanPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EndProductSortingPlanOutput_SortingPlan_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EndProductSortingPlanOutput_SortingPlan_feature", "_UI_EndProductSortingPlanOutput_type"),
+				 cptspPackage.Literals.END_PRODUCT_SORTING_PLAN_OUTPUT__SORTING_PLAN,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -82,7 +105,7 @@ public class EndProductSortingPlanOutputItemProvider
 				 getString("_UI_EndProductSortingPlanOutput_OutputProduct_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EndProductSortingPlanOutput_OutputProduct_feature", "_UI_EndProductSortingPlanOutput_type"),
 				 cptspPackage.Literals.END_PRODUCT_SORTING_PLAN_OUTPUT__OUTPUT_PRODUCT,
-				 true,
+				 false,
 				 false,
 				 true,
 				 null,
@@ -104,7 +127,7 @@ public class EndProductSortingPlanOutputItemProvider
 				 getString("_UI_EndProductSortingPlanOutput_SortingPlanOutput_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EndProductSortingPlanOutput_SortingPlanOutput_feature", "_UI_EndProductSortingPlanOutput_type"),
 				 cptspPackage.Literals.END_PRODUCT_SORTING_PLAN_OUTPUT__SORTING_PLAN_OUTPUT,
-				 true,
+				 false,
 				 false,
 				 true,
 				 null,
@@ -126,7 +149,7 @@ public class EndProductSortingPlanOutputItemProvider
 				 getString("_UI_EndProductSortingPlanOutput_Selected_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EndProductSortingPlanOutput_Selected_feature", "_UI_EndProductSortingPlanOutput_type"),
 				 cptspPackage.Literals.END_PRODUCT_SORTING_PLAN_OUTPUT__SELECTED,
-				 true,
+				 false,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
@@ -175,8 +198,10 @@ public class EndProductSortingPlanOutputItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		EndProductSortingPlanOutput endProductSortingPlanOutput = (EndProductSortingPlanOutput)object;
-		return getString("_UI_EndProductSortingPlanOutput_type") + " " + endProductSortingPlanOutput.isSelected();
+		String label = ((EndProductSortingPlanOutput)object).getDescription();
+		return label == null || label.length() == 0 ?
+			getString("_UI_EndProductSortingPlanOutput_type") :
+			getString("_UI_EndProductSortingPlanOutput_type") + " " + label;
 	}
 	
 

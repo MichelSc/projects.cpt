@@ -2,7 +2,6 @@
  */
 package com.misc.projects.SortingPlans.impl;
 
-import com.misc.common.moplaf.propagator.Util;
 import com.misc.projects.CptDatasetLoad.SortingLevelRow;
 import com.misc.projects.SortingPlans.EndProduct;
 import com.misc.projects.SortingPlans.SortingPlanInput;
