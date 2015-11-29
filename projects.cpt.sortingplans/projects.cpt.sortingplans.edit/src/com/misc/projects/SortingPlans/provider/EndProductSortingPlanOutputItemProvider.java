@@ -183,11 +183,10 @@ public class EndProductSortingPlanOutputItemProvider
 	 * This returns EndProductSortingPlanOutput.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/EndProductSortingPlanOutput"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/cpt_spo.png"));
 	}
 
 	/**

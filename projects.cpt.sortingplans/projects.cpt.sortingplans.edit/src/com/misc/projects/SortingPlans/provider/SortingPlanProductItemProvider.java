@@ -272,11 +272,10 @@ public class SortingPlanProductItemProvider
 	 * This returns SortingPlanProduct.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/SortingPlanProduct"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/cpt_p.png"));
 	}
 
 	/**

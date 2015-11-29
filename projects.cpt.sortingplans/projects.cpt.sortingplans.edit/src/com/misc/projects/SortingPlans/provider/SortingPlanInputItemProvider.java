@@ -158,11 +158,10 @@ public class SortingPlanInputItemProvider
 	 * This returns SortingPlanInput.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/SortingPlanInput"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/cpt_spi.png"));
 	}
 
 	/**

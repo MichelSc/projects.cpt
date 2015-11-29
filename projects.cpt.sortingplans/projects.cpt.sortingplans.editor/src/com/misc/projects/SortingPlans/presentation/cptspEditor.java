@@ -897,6 +897,11 @@ public class cptspEditor
 			if (currentViewer != null) {
 				currentViewer.removeSelectionChangedListener(selectionChangedListener);
 			}
+			
+			// change the selection if we come from the search viewer
+			if ( currentViewer == this.searchViewer && viewer!=null) {
+				viewer.setSelection(currentViewer.getSelection());
+			}
 
 			// Start listening to the new one.
 			//
