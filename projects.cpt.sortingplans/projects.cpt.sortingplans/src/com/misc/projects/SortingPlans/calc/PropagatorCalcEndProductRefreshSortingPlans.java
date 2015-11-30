@@ -27,8 +27,9 @@ public class PropagatorCalcEndProductRefreshSortingPlans extends PropagatorFunct
 	@Override
 	protected void addListeners() {
 		super.addListeners();
-		this.addNavigationFeatureListener(cptspPackage.Literals.END_PRODUCT__SCENARIO, DependencyScenario.class);
-		this.addFeatureListener(cptspPackage.Literals.END_PRODUCT__SCENARIO_AS_SELECTED);
+//		this.addNavigationFeatureListener(cptspPackage.Literals.END_PRODUCT__SCENARIO, DependencyScenario.class);
+//		this.addFeatureListener(cptspPackage.Literals.END_PRODUCT__SCENARIO_AS_SELECTED);
+		this.addNavigationFeatureListener(cptspPackage.Literals.END_PRODUCT__SCENARIO_AS_SELECTED, DependencyScenario.class);
 	}
 
 	static public class DependencyScenario extends PropagatorDependencyAdapter{
