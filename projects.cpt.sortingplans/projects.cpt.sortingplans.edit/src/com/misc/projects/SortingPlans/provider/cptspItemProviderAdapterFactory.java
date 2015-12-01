@@ -105,14 +105,6 @@ public class cptspItemProviderAdapterFactory extends cptspAdapterFactory impleme
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link com.misc.projects.SortingPlans.Scenario} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ScenarioItemProvider scenarioItemProvider;
-
-	/**
 	 * This creates an adapter for a {@link com.misc.projects.SortingPlans.Scenario}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -120,11 +112,7 @@ public class cptspItemProviderAdapterFactory extends cptspAdapterFactory impleme
 	 */
 	@Override
 	public Adapter createScenarioAdapter() {
-		if (scenarioItemProvider == null) {
-			scenarioItemProvider = new ScenarioItemProvider(this);
-		}
-
-		return scenarioItemProvider;
+		return new ScenarioItemProvider(this);
 	}
 
 	/**

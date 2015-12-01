@@ -12,7 +12,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sortingplans.ecore#//Scenarios/Scenarios"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sortingplans.ecore#//Scenarios/Name"/>
     </genClasses>
-    <genClasses ecoreClass="sortingplans.ecore#//Scenario">
+    <genClasses provider="Stateful" ecoreClass="sortingplans.ecore#//Scenario">
       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference sortingplans.ecore#//Scenario/SortingPlans"/>
       <genFeatures property="None" createChild="false" propertyCategory="" ecoreFeature="ecore:EReference sortingplans.ecore#//Scenario/EndProducts"/>
       <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference sortingplans.ecore#//Scenario/SortingPlanProducts"/>
@@ -49,6 +49,7 @@
       <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
           ecoreFeature="ecore:EReference sortingplans.ecore#//EndProduct/ScenarioAsSelected"/>
       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference sortingplans.ecore#//EndProduct/ProductsContaining"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute sortingplans.ecore#//EndProduct/Selected"/>
       <genOperations ecoreOperation="sortingplans.ecore#//EndProduct/refreshSortingPlans"/>
     </genClasses>
     <genClasses provider="Stateful" ecoreClass="sortingplans.ecore#//SortingPlanProduct"
