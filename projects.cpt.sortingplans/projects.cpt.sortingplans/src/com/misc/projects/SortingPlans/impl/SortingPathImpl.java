@@ -192,12 +192,11 @@ public class SortingPathImpl extends MinimalEObjectImpl.Container implements Sor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public String getDescription() {
-		// TODO: implement this method to return the 'Description' attribute
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		SortingPlanOutput output = this.getOutputLastSegment();
+		String description = output != null ? output.getDescription() : "null";
+		return description;
 	}
 
 	/**
