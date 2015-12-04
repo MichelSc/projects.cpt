@@ -124,6 +124,12 @@ public class cptspActionBarContributor
 		protected GoToRelativeAction goToRelativeAction = new GoToRelativeAction();
 
 		
+		/**
+		 * This calls test method
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 */
+		protected TestAction testAction = new TestAction();
 		
 
 	/**
@@ -304,6 +310,7 @@ public class cptspActionBarContributor
 
 		this.selectInOutlineAction.selectionChanged(activeEditorPart, selection);
 		this.goToRelativeAction.selectionChanged(activeEditorPart, selection);
+		this.testAction.selectionChanged(activeEditorPart, selection);
 	}
 
 	/**
@@ -415,6 +422,7 @@ public class cptspActionBarContributor
 
 		submenuManager.add(this.selectInOutlineAction);
 		submenuManager.add(this.goToRelativeAction);
+		submenuManager.add(this.testAction);
 	}
 
 	/**

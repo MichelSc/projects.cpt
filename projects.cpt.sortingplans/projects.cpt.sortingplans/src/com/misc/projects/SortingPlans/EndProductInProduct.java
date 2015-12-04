@@ -93,6 +93,7 @@ public interface EndProductInProduct extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Product</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link com.misc.projects.SortingPlans.SortingPlanProduct#getEndProducts <em>End Products</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product</em>' reference isn't clear,
@@ -102,7 +103,8 @@ public interface EndProductInProduct extends EObject {
 	 * @return the value of the '<em>Product</em>' reference.
 	 * @see #setProduct(SortingPlanProduct)
 	 * @see com.misc.projects.SortingPlans.cptspPackage#getEndProductInProduct_Product()
-	 * @model
+	 * @see com.misc.projects.SortingPlans.SortingPlanProduct#getEndProducts
+	 * @model opposite="EndProducts"
 	 * @generated
 	 */
 	SortingPlanProduct getProduct();

@@ -121,6 +121,15 @@ public interface cptspFactory extends EFactory {
 	EndProductInProduct createEndProductInProduct();
 
 	/**
+	 * Returns a new object of class '<em>Sorting Path</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Sorting Path</em>'.
+	 * @generated
+	 */
+	SortingPath createSortingPath();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

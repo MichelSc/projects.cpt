@@ -3,6 +3,7 @@
 package com.misc.projects.SortingPlans.provider;
 
 
+import com.misc.common.moplaf.emf.edit.command.TestCommand;
 import com.misc.projects.CptDatasetLoad.SortingPlanRow;
 import com.misc.projects.SortingPlans.Scenario;
 import com.misc.projects.SortingPlans.cptspPackage;
@@ -68,6 +69,7 @@ public class ScenarioItemProvider
 			addSortingLevelsWithDestinationPropertyDescriptor(object);
 			addSelectedSortingPlansPropertyDescriptor(object);
 			addSelectedEndProductsPropertyDescriptor(object);
+			addPrimaryProductsSelectedPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -152,6 +154,28 @@ public class ScenarioItemProvider
 				 getString("_UI_Scenario_SelectedEndProducts_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Scenario_SelectedEndProducts_feature", "_UI_Scenario_type"),
 				 cptspPackage.Literals.SCENARIO__SELECTED_END_PRODUCTS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Primary Products Selected feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPrimaryProductsSelectedPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Scenario_PrimaryProductsSelected_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Scenario_PrimaryProductsSelected_feature", "_UI_Scenario_type"),
+				 cptspPackage.Literals.SCENARIO__PRIMARY_PRODUCTS_SELECTED,
 				 true,
 				 false,
 				 true,
@@ -353,5 +377,25 @@ public class ScenarioItemProvider
 		}
 		return command;
 	} // method createDragAndDropCommand
+
+	public class ScenarioTestCommand extends TestCommand{
+		private Scenario scenario;
+		
+		// constructor
+		public ScenarioTestCommand(Scenario aScenario)	{
+			super();
+			this.scenario = aScenario;
+			String tmp = "Test the scenario";
+			String label = "label:"+tmp;
+			String description = "desc:"+tmp;
+			this.setDescription(description);
+			this.setLabel(label);
+		}
+
+		@Override
+		public void execute() {
+			this.scenario.test();
+		}
+	} // class DataSourceConnectCommand
 
 }

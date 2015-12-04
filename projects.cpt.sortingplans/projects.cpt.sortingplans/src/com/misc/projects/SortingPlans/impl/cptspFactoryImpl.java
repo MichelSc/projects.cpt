@@ -67,6 +67,7 @@ public class cptspFactoryImpl extends EFactoryImpl implements cptspFactory {
 			case cptspPackage.END_PRODUCT_SORTING_PLAN_INPUT: return createEndProductSortingPlanInput();
 			case cptspPackage.END_PRODUCT_SORTING_PLAN_OUTPUT: return createEndProductSortingPlanOutput();
 			case cptspPackage.END_PRODUCT_IN_PRODUCT: return createEndProductInProduct();
+			case cptspPackage.SORTING_PATH: return createSortingPath();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -180,6 +181,16 @@ public class cptspFactoryImpl extends EFactoryImpl implements cptspFactory {
 	public EndProductInProduct createEndProductInProduct() {
 		EndProductInProductImpl endProductInProduct = new EndProductInProductImpl();
 		return endProductInProduct;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SortingPath createSortingPath() {
+		SortingPathImpl sortingPath = new SortingPathImpl();
+		return sortingPath;
 	}
 
 	/**

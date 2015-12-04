@@ -299,6 +299,29 @@ public class cptspItemProviderAdapterFactory extends cptspAdapterFactory impleme
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link com.misc.projects.SortingPlans.SortingPath} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SortingPathItemProvider sortingPathItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link com.misc.projects.SortingPlans.SortingPath}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSortingPathAdapter() {
+		if (sortingPathItemProvider == null) {
+			sortingPathItemProvider = new SortingPathItemProvider(this);
+		}
+
+		return sortingPathItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

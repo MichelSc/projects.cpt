@@ -26,6 +26,8 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link com.misc.projects.SortingPlans.SortingPlanProduct#getDestinationSk <em>Destination Sk</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.SortingPlanProduct#getDescription <em>Description</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.SortingPlanProduct#getEndProduct <em>End Product</em>}</li>
+ *   <li>{@link com.misc.projects.SortingPlans.SortingPlanProduct#getSortingPaths <em>Sorting Paths</em>}</li>
+ *   <li>{@link com.misc.projects.SortingPlans.SortingPlanProduct#getEndProducts <em>End Products</em>}</li>
  * </ul>
  *
  * @see com.misc.projects.SortingPlans.cptspPackage#getSortingPlanProduct()
@@ -241,5 +243,39 @@ public interface SortingPlanProduct extends ObjectWithPropagatorFunctionAdapter 
 	 * @generated
 	 */
 	void setEndProduct(EndProduct value);
+
+	/**
+	 * Returns the value of the '<em><b>Sorting Paths</b></em>' containment reference list.
+	 * The list contents are of type {@link com.misc.projects.SortingPlans.SortingPath}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Sorting Paths</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Sorting Paths</em>' containment reference list.
+	 * @see com.misc.projects.SortingPlans.cptspPackage#getSortingPlanProduct_SortingPaths()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<SortingPath> getSortingPaths();
+
+	/**
+	 * Returns the value of the '<em><b>End Products</b></em>' reference list.
+	 * The list contents are of type {@link com.misc.projects.SortingPlans.EndProductInProduct}.
+	 * It is bidirectional and its opposite is '{@link com.misc.projects.SortingPlans.EndProductInProduct#getProduct <em>Product</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>End Products</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>End Products</em>' reference list.
+	 * @see com.misc.projects.SortingPlans.cptspPackage#getSortingPlanProduct_EndProducts()
+	 * @see com.misc.projects.SortingPlans.EndProductInProduct#getProduct
+	 * @model opposite="Product"
+	 * @generated
+	 */
+	EList<EndProductInProduct> getEndProducts();
 
 } // SortingPlanProduct

@@ -178,13 +178,22 @@ public interface cptspPackage extends EPackage {
 	int SCENARIO__SELECTED_END_PRODUCTS = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 6;
 
 	/**
+	 * The feature id for the '<em><b>Primary Products Selected</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCENARIO__PRIMARY_PRODUCTS_SELECTED = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 7;
+
+	/**
 	 * The number of structural features of the '<em>Scenario</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCENARIO_FEATURE_COUNT = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 7;
+	int SCENARIO_FEATURE_COUNT = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 8;
 
 	/**
 	 * The operation id for the '<em>Add Propagator Function Adapter</em>' operation.
@@ -232,13 +241,31 @@ public interface cptspPackage extends EPackage {
 	int SCENARIO___REFRESH_END_PRODUCTS = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_OPERATION_COUNT + 4;
 
 	/**
+	 * The operation id for the '<em>Refresh Sorting Paths</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCENARIO___REFRESH_SORTING_PATHS = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_OPERATION_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>Test</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCENARIO___TEST = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_OPERATION_COUNT + 6;
+
+	/**
 	 * The number of operations of the '<em>Scenario</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCENARIO_OPERATION_COUNT = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_OPERATION_COUNT + 5;
+	int SCENARIO_OPERATION_COUNT = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_OPERATION_COUNT + 7;
 
 	/**
 	 * The meta object id for the '{@link com.misc.projects.SortingPlans.impl.SortingPlanImpl <em>Sorting Plan</em>}' class.
@@ -577,13 +604,31 @@ public interface cptspPackage extends EPackage {
 	int SORTING_PLAN_PRODUCT__END_PRODUCT = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 8;
 
 	/**
+	 * The feature id for the '<em><b>Sorting Paths</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_PRODUCT__SORTING_PATHS = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 9;
+
+	/**
+	 * The feature id for the '<em><b>End Products</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_PRODUCT__END_PRODUCTS = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 10;
+
+	/**
 	 * The number of structural features of the '<em>Sorting Plan Product</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_PRODUCT_FEATURE_COUNT = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 9;
+	int SORTING_PLAN_PRODUCT_FEATURE_COUNT = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 11;
 
 	/**
 	 * The operation id for the '<em>Add Propagator Function Adapter</em>' operation.
@@ -1053,6 +1098,71 @@ public interface cptspPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link com.misc.projects.SortingPlans.impl.SortingPathImpl <em>Sorting Path</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.misc.projects.SortingPlans.impl.SortingPathImpl
+	 * @see com.misc.projects.SortingPlans.impl.cptspPackageImpl#getSortingPath()
+	 * @generated
+	 */
+	int SORTING_PATH = 11;
+
+	/**
+	 * The feature id for the '<em><b>Output Last Segment</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PATH__OUTPUT_LAST_SEGMENT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Before Last Segment</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PATH__BEFORE_LAST_SEGMENT = 1;
+
+	/**
+	 * The feature id for the '<em><b>Sorted End Products</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PATH__SORTED_END_PRODUCTS = 2;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PATH__DESCRIPTION = 3;
+
+	/**
+	 * The number of structural features of the '<em>Sorting Path</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PATH_FEATURE_COUNT = 4;
+
+	/**
+	 * The number of operations of the '<em>Sorting Path</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PATH_OPERATION_COUNT = 0;
+
+
+	/**
 	 * Returns the meta object for class '{@link com.misc.projects.SortingPlans.Scenarios <em>Scenarios</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1172,6 +1282,17 @@ public interface cptspPackage extends EPackage {
 	EReference getScenario_SelectedEndProducts();
 
 	/**
+	 * Returns the meta object for the reference list '{@link com.misc.projects.SortingPlans.Scenario#getPrimaryProductsSelected <em>Primary Products Selected</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Primary Products Selected</em>'.
+	 * @see com.misc.projects.SortingPlans.Scenario#getPrimaryProductsSelected()
+	 * @see #getScenario()
+	 * @generated
+	 */
+	EReference getScenario_PrimaryProductsSelected();
+
+	/**
 	 * Returns the meta object for the '{@link com.misc.projects.SortingPlans.Scenario#refreshSelectedSortingPlans() <em>Refresh Selected Sorting Plans</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1210,6 +1331,26 @@ public interface cptspPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getScenario__RefreshEndProducts();
+
+	/**
+	 * Returns the meta object for the '{@link com.misc.projects.SortingPlans.Scenario#refreshSortingPaths() <em>Refresh Sorting Paths</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Refresh Sorting Paths</em>' operation.
+	 * @see com.misc.projects.SortingPlans.Scenario#refreshSortingPaths()
+	 * @generated
+	 */
+	EOperation getScenario__RefreshSortingPaths();
+
+	/**
+	 * Returns the meta object for the '{@link com.misc.projects.SortingPlans.Scenario#test() <em>Test</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Test</em>' operation.
+	 * @see com.misc.projects.SortingPlans.Scenario#test()
+	 * @generated
+	 */
+	EOperation getScenario__Test();
 
 	/**
 	 * Returns the meta object for class '{@link com.misc.projects.SortingPlans.SortingPlan <em>Sorting Plan</em>}'.
@@ -1544,6 +1685,28 @@ public interface cptspPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSortingPlanProduct_EndProduct();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link com.misc.projects.SortingPlans.SortingPlanProduct#getSortingPaths <em>Sorting Paths</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Sorting Paths</em>'.
+	 * @see com.misc.projects.SortingPlans.SortingPlanProduct#getSortingPaths()
+	 * @see #getSortingPlanProduct()
+	 * @generated
+	 */
+	EReference getSortingPlanProduct_SortingPaths();
+
+	/**
+	 * Returns the meta object for the reference list '{@link com.misc.projects.SortingPlans.SortingPlanProduct#getEndProducts <em>End Products</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>End Products</em>'.
+	 * @see com.misc.projects.SortingPlans.SortingPlanProduct#getEndProducts()
+	 * @see #getSortingPlanProduct()
+	 * @generated
+	 */
+	EReference getSortingPlanProduct_EndProducts();
 
 	/**
 	 * Returns the meta object for class '{@link com.misc.projects.SortingPlans.SortingPlanOutput <em>Sorting Plan Output</em>}'.
@@ -1925,6 +2088,60 @@ public interface cptspPackage extends EPackage {
 	EAttribute getEndProductInProduct_Description();
 
 	/**
+	 * Returns the meta object for class '{@link com.misc.projects.SortingPlans.SortingPath <em>Sorting Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Sorting Path</em>'.
+	 * @see com.misc.projects.SortingPlans.SortingPath
+	 * @generated
+	 */
+	EClass getSortingPath();
+
+	/**
+	 * Returns the meta object for the reference '{@link com.misc.projects.SortingPlans.SortingPath#getOutputLastSegment <em>Output Last Segment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Output Last Segment</em>'.
+	 * @see com.misc.projects.SortingPlans.SortingPath#getOutputLastSegment()
+	 * @see #getSortingPath()
+	 * @generated
+	 */
+	EReference getSortingPath_OutputLastSegment();
+
+	/**
+	 * Returns the meta object for the reference '{@link com.misc.projects.SortingPlans.SortingPath#getBeforeLastSegment <em>Before Last Segment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Before Last Segment</em>'.
+	 * @see com.misc.projects.SortingPlans.SortingPath#getBeforeLastSegment()
+	 * @see #getSortingPath()
+	 * @generated
+	 */
+	EReference getSortingPath_BeforeLastSegment();
+
+	/**
+	 * Returns the meta object for the reference list '{@link com.misc.projects.SortingPlans.SortingPath#getSortedEndProducts <em>Sorted End Products</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Sorted End Products</em>'.
+	 * @see com.misc.projects.SortingPlans.SortingPath#getSortedEndProducts()
+	 * @see #getSortingPath()
+	 * @generated
+	 */
+	EReference getSortingPath_SortedEndProducts();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.misc.projects.SortingPlans.SortingPath#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see com.misc.projects.SortingPlans.SortingPath#getDescription()
+	 * @see #getSortingPath()
+	 * @generated
+	 */
+	EAttribute getSortingPath_Description();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2040,6 +2257,14 @@ public interface cptspPackage extends EPackage {
 		EReference SCENARIO__SELECTED_END_PRODUCTS = eINSTANCE.getScenario_SelectedEndProducts();
 
 		/**
+		 * The meta object literal for the '<em><b>Primary Products Selected</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SCENARIO__PRIMARY_PRODUCTS_SELECTED = eINSTANCE.getScenario_PrimaryProductsSelected();
+
+		/**
 		 * The meta object literal for the '<em><b>Refresh Selected Sorting Plans</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2070,6 +2295,22 @@ public interface cptspPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation SCENARIO___REFRESH_END_PRODUCTS = eINSTANCE.getScenario__RefreshEndProducts();
+
+		/**
+		 * The meta object literal for the '<em><b>Refresh Sorting Paths</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation SCENARIO___REFRESH_SORTING_PATHS = eINSTANCE.getScenario__RefreshSortingPaths();
+
+		/**
+		 * The meta object literal for the '<em><b>Test</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation SCENARIO___TEST = eINSTANCE.getScenario__Test();
 
 		/**
 		 * The meta object literal for the '{@link com.misc.projects.SortingPlans.impl.SortingPlanImpl <em>Sorting Plan</em>}' class.
@@ -2324,6 +2565,22 @@ public interface cptspPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SORTING_PLAN_PRODUCT__END_PRODUCT = eINSTANCE.getSortingPlanProduct_EndProduct();
+
+		/**
+		 * The meta object literal for the '<em><b>Sorting Paths</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SORTING_PLAN_PRODUCT__SORTING_PATHS = eINSTANCE.getSortingPlanProduct_SortingPaths();
+
+		/**
+		 * The meta object literal for the '<em><b>End Products</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SORTING_PLAN_PRODUCT__END_PRODUCTS = eINSTANCE.getSortingPlanProduct_EndProducts();
 
 		/**
 		 * The meta object literal for the '{@link com.misc.projects.SortingPlans.impl.SortingPlanOutputImpl <em>Sorting Plan Output</em>}' class.
@@ -2616,6 +2873,48 @@ public interface cptspPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute END_PRODUCT_IN_PRODUCT__DESCRIPTION = eINSTANCE.getEndProductInProduct_Description();
+
+		/**
+		 * The meta object literal for the '{@link com.misc.projects.SortingPlans.impl.SortingPathImpl <em>Sorting Path</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.misc.projects.SortingPlans.impl.SortingPathImpl
+		 * @see com.misc.projects.SortingPlans.impl.cptspPackageImpl#getSortingPath()
+		 * @generated
+		 */
+		EClass SORTING_PATH = eINSTANCE.getSortingPath();
+
+		/**
+		 * The meta object literal for the '<em><b>Output Last Segment</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SORTING_PATH__OUTPUT_LAST_SEGMENT = eINSTANCE.getSortingPath_OutputLastSegment();
+
+		/**
+		 * The meta object literal for the '<em><b>Before Last Segment</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SORTING_PATH__BEFORE_LAST_SEGMENT = eINSTANCE.getSortingPath_BeforeLastSegment();
+
+		/**
+		 * The meta object literal for the '<em><b>Sorted End Products</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SORTING_PATH__SORTED_END_PRODUCTS = eINSTANCE.getSortingPath_SortedEndProducts();
+
+		/**
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SORTING_PATH__DESCRIPTION = eINSTANCE.getSortingPath_Description();
 
 	}
 

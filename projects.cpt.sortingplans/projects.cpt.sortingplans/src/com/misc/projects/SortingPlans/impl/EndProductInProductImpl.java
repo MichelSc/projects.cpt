@@ -199,11 +199,33 @@ public class EndProductInProductImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setProduct(SortingPlanProduct newProduct) {
+	public NotificationChain basicSetProduct(SortingPlanProduct newProduct, NotificationChain msgs) {
 		SortingPlanProduct oldProduct = product;
 		product = newProduct;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, cptspPackage.END_PRODUCT_IN_PRODUCT__PRODUCT, oldProduct, product));
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, cptspPackage.END_PRODUCT_IN_PRODUCT__PRODUCT, oldProduct, newProduct);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setProduct(SortingPlanProduct newProduct) {
+		if (newProduct != product) {
+			NotificationChain msgs = null;
+			if (product != null)
+				msgs = ((InternalEObject)product).eInverseRemove(this, cptspPackage.SORTING_PLAN_PRODUCT__END_PRODUCTS, SortingPlanProduct.class, msgs);
+			if (newProduct != null)
+				msgs = ((InternalEObject)newProduct).eInverseAdd(this, cptspPackage.SORTING_PLAN_PRODUCT__END_PRODUCTS, SortingPlanProduct.class, msgs);
+			msgs = basicSetProduct(newProduct, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, cptspPackage.END_PRODUCT_IN_PRODUCT__PRODUCT, newProduct, newProduct));
 	}
 
 	/**
@@ -233,6 +255,10 @@ public class EndProductInProductImpl extends MinimalEObjectImpl.Container implem
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSortingPlansProducing()).basicAdd(otherEnd, msgs);
 			case cptspPackage.END_PRODUCT_IN_PRODUCT__SORTING_PLANS_ACCEPTING:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSortingPlansAccepting()).basicAdd(otherEnd, msgs);
+			case cptspPackage.END_PRODUCT_IN_PRODUCT__PRODUCT:
+				if (product != null)
+					msgs = ((InternalEObject)product).eInverseRemove(this, cptspPackage.SORTING_PLAN_PRODUCT__END_PRODUCTS, SortingPlanProduct.class, msgs);
+				return basicSetProduct((SortingPlanProduct)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -251,6 +277,8 @@ public class EndProductInProductImpl extends MinimalEObjectImpl.Container implem
 				return ((InternalEList<?>)getSortingPlansProducing()).basicRemove(otherEnd, msgs);
 			case cptspPackage.END_PRODUCT_IN_PRODUCT__SORTING_PLANS_ACCEPTING:
 				return ((InternalEList<?>)getSortingPlansAccepting()).basicRemove(otherEnd, msgs);
+			case cptspPackage.END_PRODUCT_IN_PRODUCT__PRODUCT:
+				return basicSetProduct(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}

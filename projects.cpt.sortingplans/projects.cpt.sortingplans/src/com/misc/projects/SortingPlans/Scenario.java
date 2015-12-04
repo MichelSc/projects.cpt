@@ -24,6 +24,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link com.misc.projects.SortingPlans.Scenario#getSortingLevelsWithDestination <em>Sorting Levels With Destination</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.Scenario#getSelectedSortingPlans <em>Selected Sorting Plans</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.Scenario#getSelectedEndProducts <em>Selected End Products</em>}</li>
+ *   <li>{@link com.misc.projects.SortingPlans.Scenario#getPrimaryProductsSelected <em>Primary Products Selected</em>}</li>
  * </ul>
  *
  * @see com.misc.projects.SortingPlans.cptspPackage#getScenario()
@@ -160,6 +161,22 @@ public interface Scenario extends ObjectWithPropagatorFunctionAdapter, ObjectWit
 	EList<EndProduct> getSelectedEndProducts();
 
 	/**
+	 * Returns the value of the '<em><b>Primary Products Selected</b></em>' reference list.
+	 * The list contents are of type {@link com.misc.projects.SortingPlans.SortingPlanProduct}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Primary Products Selected</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Primary Products Selected</em>' reference list.
+	 * @see com.misc.projects.SortingPlans.cptspPackage#getScenario_PrimaryProductsSelected()
+	 * @model
+	 * @generated
+	 */
+	EList<SortingPlanProduct> getPrimaryProductsSelected();
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model
@@ -190,5 +207,21 @@ public interface Scenario extends ObjectWithPropagatorFunctionAdapter, ObjectWit
 	 * @generated
 	 */
 	void refreshEndProducts();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void refreshSortingPaths();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void test();
 
 } // Scenario

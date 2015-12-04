@@ -18,5 +18,6 @@ Require-Bundle: org.eclipse.core.runtime,
  projects.cpt.datasetload.edit;visibility:=reexport,
  com.misc.common.moplaf.datasetload.emf.edit;visibility:=reexport,
  com.misc.common.moplaf.datasetload.ora.emf.edit;visibility:=reexport,
- com.misc.common.moplaf.propagator.edit;visibility:=reexport
+ com.misc.common.moplaf.propagator.edit;visibility:=reexport,
+ com.misc.common.moplaf.emf.edit
 Bundle-ActivationPolicy: lazy

@@ -12,7 +12,10 @@ import com.misc.projects.CptDatasetLoad.SortingPlanInputRow;
 import com.misc.projects.CptDatasetLoad.SortingPlanOutputRow;
 import com.misc.projects.CptDatasetLoad.SortingPlanRow;
 import com.misc.projects.SortingPlans.EndProduct;
+import com.misc.projects.SortingPlans.EndProductInProduct;
+import com.misc.projects.SortingPlans.EndProductSortingPlan;
 import com.misc.projects.SortingPlans.Scenario;
+import com.misc.projects.SortingPlans.SortingPath;
 import com.misc.projects.SortingPlans.SortingPlan;
 import com.misc.projects.SortingPlans.SortingPlanInput;
 import com.misc.projects.SortingPlans.SortingPlanOutput;
@@ -65,6 +68,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.misc.projects.SortingPlans.impl.ScenarioImpl#getSortingLevelsWithDestination <em>Sorting Levels With Destination</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.impl.ScenarioImpl#getSelectedSortingPlans <em>Selected Sorting Plans</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.impl.ScenarioImpl#getSelectedEndProducts <em>Selected End Products</em>}</li>
+ *   <li>{@link com.misc.projects.SortingPlans.impl.ScenarioImpl#getPrimaryProductsSelected <em>Primary Products Selected</em>}</li>
  * </ul>
  *
  * @generated
@@ -149,6 +153,16 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 	 * @ordered
 	 */
 	protected EList<EndProduct> selectedEndProducts;
+
+	/**
+	 * The cached value of the '{@link #getPrimaryProductsSelected() <em>Primary Products Selected</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPrimaryProductsSelected()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<SortingPlanProduct> primaryProductsSelected;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -260,6 +274,18 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 			selectedEndProducts = new EObjectWithInverseResolvingEList<EndProduct>(EndProduct.class, this, cptspPackage.SCENARIO__SELECTED_END_PRODUCTS, cptspPackage.END_PRODUCT__SCENARIO_AS_SELECTED);
 		}
 		return selectedEndProducts;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<SortingPlanProduct> getPrimaryProductsSelected() {
+		if (primaryProductsSelected == null) {
+			primaryProductsSelected = new EObjectResolvingEList<SortingPlanProduct>(SortingPlanProduct.class, this, cptspPackage.SCENARIO__PRIMARY_PRODUCTS_SELECTED);
+		}
+		return primaryProductsSelected;
 	}
 
 	/**
@@ -496,6 +522,97 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 */
+	public void refreshSortingPaths() {
+		HashSet<SortingPath> sortingPathsAsIs = new HashSet<SortingPath>();
+		for ( SortingPlanProduct p: this.getSortingPlanProducts()){
+			for ( SortingPath path : p.getSortingPaths()){
+				sortingPathsAsIs.add(path);
+			}
+		}
+		
+		// initialization
+		for ( SortingPlanProduct primaryProduct: this.getPrimaryProductsSelected()){
+			SetEndProducts endProducts = new SetEndProducts();
+			for ( EndProductInProduct ep : primaryProduct.getEndProducts()){
+				endProducts.add(ep.getEndProductsContained());
+			}
+			SortingPath path = this.getOrCreateSortingPath(primaryProduct, null, null);
+			this.sortingPathSetSortedProducts(path, endProducts);
+		}
+	}
+	
+	@SuppressWarnings("serial")
+	private class SetEndProducts extends HashSet<EndProduct>{
+		public SetEndProducts(Collection<EndProduct> aSet){
+			super(aSet);
+		}
+		public SetEndProducts(){
+			super();
+		}
+	}
+	
+	private void sortingPathSetSortedProducts(SortingPath aPath, SetEndProducts aSet){
+		SetEndProducts asis = new SetEndProducts(aPath.getSortedEndProducts());
+		asis.removeAll(aSet); // to remove 
+		aSet.removeAll(aPath.getSortedEndProducts());
+		
+		// apply the delta's
+		aPath.getSortedEndProducts().removeAll(asis);
+		aPath.getSortedEndProducts().addAll(aSet);
+	}
+	
+	private SortingPath getOrCreateSortingPath(SortingPlanProduct product,
+			                                   SortingPlanOutput output, 
+			                                   SortingPath input){
+		// get or create
+		// do the get
+		SortingPath path = null;
+		for ( SortingPath p : product.getSortingPaths()){
+			if ( p.getOutputLastSegment()!=output) { continue; }
+			if ( p.getBeforeLastSegment()!=input) { continue; }
+			path = p; 
+			break;
+		} // traverse the sorting paths
+		if ( path == null){
+			// do the create create
+        	path = cptspFactory.eINSTANCE.createSortingPath();
+        	path.setOutputLastSegment(output);
+        	path.setBeforeLastSegment(input);
+        	product.getSortingPaths().add(path);
+		}
+		return path;
+	}
+	
+	private SetEndProducts getSortedEndProducts(SortingPlanOutput output, SortingPath input){
+		// calulate the set of end products
+		SetEndProducts inputEndProducts = new SetEndProducts(input.getSortedEndProducts());
+		// end products for this output	
+		SetEndProducts outputEndProducts = new SetEndProducts();
+		SortingPlan sortingPlan = output.getSortingPlan();
+		for ( EndProductSortingPlan spep : sortingPlan.getEndProducts()){
+			if ( spep.getSelectedOutput().getSortingPlanOutput()==output){
+				outputEndProducts.add(spep.getEndProduct());
+			}
+		}
+		outputEndProducts.retainAll(inputEndProducts);
+
+		// calculate the delta's
+		return outputEndProducts;
+	}
+	
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 */
+	public void test() {
+		this.refreshSortingPaths();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 */
 	public void addPropagatorFunctionAdapter() {
 		Util.adapt(this, PropagatorCalcScenarioRefreshSelectedSortingPlan.class);
 		Util.adapt(this, PropagatorLayerSortingPlansRefresh.class);
@@ -568,6 +685,8 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 				return getSelectedSortingPlans();
 			case cptspPackage.SCENARIO__SELECTED_END_PRODUCTS:
 				return getSelectedEndProducts();
+			case cptspPackage.SCENARIO__PRIMARY_PRODUCTS_SELECTED:
+				return getPrimaryProductsSelected();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -608,6 +727,10 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 				getSelectedEndProducts().clear();
 				getSelectedEndProducts().addAll((Collection<? extends EndProduct>)newValue);
 				return;
+			case cptspPackage.SCENARIO__PRIMARY_PRODUCTS_SELECTED:
+				getPrimaryProductsSelected().clear();
+				getPrimaryProductsSelected().addAll((Collection<? extends SortingPlanProduct>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -641,6 +764,9 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 			case cptspPackage.SCENARIO__SELECTED_END_PRODUCTS:
 				getSelectedEndProducts().clear();
 				return;
+			case cptspPackage.SCENARIO__PRIMARY_PRODUCTS_SELECTED:
+				getPrimaryProductsSelected().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -667,6 +793,8 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 				return selectedSortingPlans != null && !selectedSortingPlans.isEmpty();
 			case cptspPackage.SCENARIO__SELECTED_END_PRODUCTS:
 				return selectedEndProducts != null && !selectedEndProducts.isEmpty();
+			case cptspPackage.SCENARIO__PRIMARY_PRODUCTS_SELECTED:
+				return primaryProductsSelected != null && !primaryProductsSelected.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -706,6 +834,12 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 				return null;
 			case cptspPackage.SCENARIO___REFRESH_END_PRODUCTS:
 				refreshEndProducts();
+				return null;
+			case cptspPackage.SCENARIO___REFRESH_SORTING_PATHS:
+				refreshSortingPaths();
+				return null;
+			case cptspPackage.SCENARIO___TEST:
+				test();
 				return null;
 			case cptspPackage.SCENARIO___ADD_PROPAGATOR_FUNCTION_ADAPTER:
 				addPropagatorFunctionAdapter();

@@ -111,6 +111,10 @@ public class cptspAdapterFactory extends AdapterFactoryImpl {
 				return createEndProductInProductAdapter();
 			}
 			@Override
+			public Adapter caseSortingPath(SortingPath object) {
+				return createSortingPathAdapter();
+			}
+			@Override
 			public Adapter caseObjectWithPropagatorFunctionAdapter(ObjectWithPropagatorFunctionAdapter object) {
 				return createObjectWithPropagatorFunctionAdapterAdapter();
 			}
@@ -289,6 +293,20 @@ public class cptspAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEndProductInProductAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.misc.projects.SortingPlans.SortingPath <em>Sorting Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.misc.projects.SortingPlans.SortingPath
+	 * @generated
+	 */
+	public Adapter createSortingPathAdapter() {
 		return null;
 	}
 
