@@ -80,7 +80,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="EndProduct" eType="#//EndProduct"
         eOpposite="#//EndProduct/SortingPlanProduct"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="SortingPaths" upperBound="-1"
-        eType="#//SortingPath" containment="true"/>
+        eType="#//SortingPath" containment="true" eOpposite="#//SortingPath/Product"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="EndProducts" upperBound="-1"
         eType="#//EndProductInProduct" eOpposite="#//EndProductInProduct/Product"/>
   </eClassifiers>
@@ -157,5 +157,7 @@
         eType="#//EndProduct"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         changeable="false" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Product" lowerBound="1"
+        eType="#//SortingPlanProduct" eOpposite="#//SortingPlanProduct/SortingPaths"/>
   </eClassifiers>
 </ecore:EPackage>

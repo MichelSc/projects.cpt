@@ -34,6 +34,7 @@ import java.math.BigDecimal;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedList;
 
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
@@ -517,30 +518,11 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 		this.getEndProducts().removeAll(epToRemove);
 	}
 
+	// ------------------------------------------------------------------------
+	// refresh sorting pahts logic
+	// ------------------------------------------------------------------------
 	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 */
-	public void refreshSortingPaths() {
-		HashSet<SortingPath> sortingPathsAsIs = new HashSet<SortingPath>();
-		for ( SortingPlanProduct p: this.getSortingPlanProducts()){
-			for ( SortingPath path : p.getSortingPaths()){
-				sortingPathsAsIs.add(path);
-			}
-		}
-		
-		// initialization
-		for ( SortingPlanProduct primaryProduct: this.getPrimaryProductsSelected()){
-			SetEndProducts endProducts = new SetEndProducts();
-			for ( EndProductInProduct ep : primaryProduct.getEndProducts()){
-				endProducts.add(ep.getEndProductsContained());
-			}
-			SortingPath path = this.getOrCreateSortingPath(primaryProduct, null, null);
-			this.sortingPathSetSortedProducts(path, endProducts);
-		}
-	}
-	
+	// nested classed ---------------------------------------------------------
 	@SuppressWarnings("serial")
 	private class SetEndProducts extends HashSet<EndProduct>{
 		public SetEndProducts(Collection<EndProduct> aSet){
@@ -551,19 +533,50 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 		}
 	}
 	
+	private class ToDo{
+		public ToDo(SortingPath path, SortingPlanOutput output){
+			this.path = path;
+			this.output = output;
+		}
+		public SortingPath path;
+		public SortingPlanOutput output;
+	}
+	
+	@SuppressWarnings("serial")
+	private class ToDos extends LinkedList<ToDo>{
+	};
+
+	@SuppressWarnings("serial")
+	private class SortingPaths extends HashSet<SortingPath>{
+	};
+
+	// sortingpath methods ----------------------------------------------------
 	private void sortingPathSetSortedProducts(SortingPath aPath, SetEndProducts aSet){
 		SetEndProducts asis = new SetEndProducts(aPath.getSortedEndProducts());
 		asis.removeAll(aSet); // to remove 
-		aSet.removeAll(aPath.getSortedEndProducts());
+		aSet.removeAll(aPath.getSortedEndProducts()); // to add
 		
 		// apply the delta's
 		aPath.getSortedEndProducts().removeAll(asis);
 		aPath.getSortedEndProducts().addAll(aSet);
 	}
 	
+	private void sortingPathPropagate(SortingPath aPath, ToDos toDos){
+		SortingPlanProduct inputProduct = aPath.getProduct();
+		for ( SortingPlanInput input : inputProduct.getSortingPlansAccepting()){
+			SortingPlan sortingPlan = input.getSortingPlan();
+			for ( SortingPlanOutput output : sortingPlan.getOutputs()){
+				ToDo newToDo = new ToDo(aPath, output);
+				toDos.add(newToDo);
+			}
+		}
+	}
+	
+	// object management ------------------------------------------------------
 	private SortingPath getOrCreateSortingPath(SortingPlanProduct product,
-			                                   SortingPlanOutput output, 
-			                                   SortingPath input){
+									           SortingPlanOutput output, 
+									           SortingPath input,
+									           SortingPaths toRemove){
 		// get or create
 		// do the get
 		SortingPath path = null;
@@ -571,18 +584,21 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 			if ( p.getOutputLastSegment()!=output) { continue; }
 			if ( p.getBeforeLastSegment()!=input) { continue; }
 			path = p; 
+			toRemove.remove(p);
 			break;
-		} // traverse the sorting paths
+			} 
+		// traverse the sorting paths
 		if ( path == null){
 			// do the create create
-        	path = cptspFactory.eINSTANCE.createSortingPath();
-        	path.setOutputLastSegment(output);
-        	path.setBeforeLastSegment(input);
-        	product.getSortingPaths().add(path);
+			path = cptspFactory.eINSTANCE.createSortingPath();
+			path.setOutputLastSegment(output);
+			path.setBeforeLastSegment(input);
+			product.getSortingPaths().add(path);
 		}
-		return path;
+	return path;
 	}
 	
+	// the algorithm ----------------------------------------------------------
 	private SetEndProducts getSortedEndProducts(SortingPlanOutput output, SortingPath input){
 		// calulate the set of end products
 		SetEndProducts inputEndProducts = new SetEndProducts(input.getSortedEndProducts());
@@ -600,6 +616,55 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 		return outputEndProducts;
 	}
 	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 */
+	public void refreshSortingPaths() {
+		SortingPaths toRemove = new SortingPaths();
+		for ( SortingPlanProduct p: this.getSortingPlanProducts()){
+			for ( SortingPath path : p.getSortingPaths()){
+				toRemove.add(path);
+			}
+		}
+		
+		ToDos toDos = new ToDos();
+		
+		// initialization
+		for ( SortingPlanProduct primaryProduct: this.getPrimaryProductsSelected()){
+			SetEndProducts endProducts = new SetEndProducts();
+			for ( EndProductInProduct ep : primaryProduct.getEndProducts()){
+				endProducts.add(ep.getEndProductsContained());
+			}
+			SortingPath path = this.getOrCreateSortingPath(primaryProduct, null, null, toRemove);
+			this.sortingPathSetSortedProducts(path, endProducts);
+			this.sortingPathPropagate(path, toDos);
+		}
+		
+		// iterate
+		while ( !toDos.isEmpty() ){
+			// do the toDo
+			ToDo toDo = toDos.remove();
+			SortingPlanOutput output = toDo.output;
+			SortingPath input = toDo.path;
+			SortingPlanProduct product = output.getOutputProduct();
+			SetEndProducts endProducts = this.getSortedEndProducts(output, input);
+			SortingPath newPath = this.getOrCreateSortingPath(product, output, input, toRemove);
+			this.sortingPathSetSortedProducts(newPath, endProducts);
+			if ( !endProducts.isEmpty()){  // this must block cycling
+				this.sortingPathPropagate(newPath, toDos);
+			}
+		}
+		
+		// clean up
+		for ( SortingPath pathToRemove : toRemove){
+			pathToRemove.setBeforeLastSegment(null);
+			pathToRemove.setOutputLastSegment(null);
+			pathToRemove.setProduct(null);  // owning
+		}
+	}
+	
+	// ------------------------------------------------------------------------
 
 	/**
 	 * <!-- begin-user-doc -->

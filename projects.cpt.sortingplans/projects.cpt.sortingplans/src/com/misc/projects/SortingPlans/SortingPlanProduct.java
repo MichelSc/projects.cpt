@@ -247,6 +247,7 @@ public interface SortingPlanProduct extends ObjectWithPropagatorFunctionAdapter 
 	/**
 	 * Returns the value of the '<em><b>Sorting Paths</b></em>' containment reference list.
 	 * The list contents are of type {@link com.misc.projects.SortingPlans.SortingPath}.
+	 * It is bidirectional and its opposite is '{@link com.misc.projects.SortingPlans.SortingPath#getProduct <em>Product</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Sorting Paths</em>' containment reference list isn't clear,
@@ -255,7 +256,8 @@ public interface SortingPlanProduct extends ObjectWithPropagatorFunctionAdapter 
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sorting Paths</em>' containment reference list.
 	 * @see com.misc.projects.SortingPlans.cptspPackage#getSortingPlanProduct_SortingPaths()
-	 * @model containment="true"
+	 * @see com.misc.projects.SortingPlans.SortingPath#getProduct
+	 * @model opposite="Product" containment="true"
 	 * @generated
 	 */
 	EList<SortingPath> getSortingPaths();

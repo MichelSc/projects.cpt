@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.misc.projects.SortingPlans.SortingPath#getBeforeLastSegment <em>Before Last Segment</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.SortingPath#getSortedEndProducts <em>Sorted End Products</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.SortingPath#getDescription <em>Description</em>}</li>
+ *   <li>{@link com.misc.projects.SortingPlans.SortingPath#getProduct <em>Product</em>}</li>
  * </ul>
  *
  * @see com.misc.projects.SortingPlans.cptspPackage#getSortingPath()
@@ -108,5 +109,33 @@ public interface SortingPath extends EObject {
 	 * @generated
 	 */
 	String getDescription();
+
+	/**
+	 * Returns the value of the '<em><b>Product</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link com.misc.projects.SortingPlans.SortingPlanProduct#getSortingPaths <em>Sorting Paths</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Product</em>' container reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Product</em>' container reference.
+	 * @see #setProduct(SortingPlanProduct)
+	 * @see com.misc.projects.SortingPlans.cptspPackage#getSortingPath_Product()
+	 * @see com.misc.projects.SortingPlans.SortingPlanProduct#getSortingPaths
+	 * @model opposite="SortingPaths" required="true" transient="false"
+	 * @generated
+	 */
+	SortingPlanProduct getProduct();
+
+	/**
+	 * Sets the value of the '{@link com.misc.projects.SortingPlans.SortingPath#getProduct <em>Product</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Product</em>' container reference.
+	 * @see #getProduct()
+	 * @generated
+	 */
+	void setProduct(SortingPlanProduct value);
 
 } // SortingPath

@@ -1144,13 +1144,22 @@ public interface cptspPackage extends EPackage {
 	int SORTING_PATH__DESCRIPTION = 3;
 
 	/**
+	 * The feature id for the '<em><b>Product</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PATH__PRODUCT = 4;
+
+	/**
 	 * The number of structural features of the '<em>Sorting Path</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PATH_FEATURE_COUNT = 4;
+	int SORTING_PATH_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Sorting Path</em>' class.
@@ -2142,6 +2151,17 @@ public interface cptspPackage extends EPackage {
 	EAttribute getSortingPath_Description();
 
 	/**
+	 * Returns the meta object for the container reference '{@link com.misc.projects.SortingPlans.SortingPath#getProduct <em>Product</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Product</em>'.
+	 * @see com.misc.projects.SortingPlans.SortingPath#getProduct()
+	 * @see #getSortingPath()
+	 * @generated
+	 */
+	EReference getSortingPath_Product();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2915,6 +2935,14 @@ public interface cptspPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SORTING_PATH__DESCRIPTION = eINSTANCE.getSortingPath_Description();
+
+		/**
+		 * The meta object literal for the '<em><b>Product</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SORTING_PATH__PRODUCT = eINSTANCE.getSortingPath_Product();
 
 	}
 

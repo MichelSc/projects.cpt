@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -447,7 +447,7 @@ public class SortingPlanProductImpl extends MinimalEObjectImpl.Container impleme
 	 */
 	public EList<SortingPath> getSortingPaths() {
 		if (sortingPaths == null) {
-			sortingPaths = new EObjectContainmentEList<SortingPath>(SortingPath.class, this, cptspPackage.SORTING_PLAN_PRODUCT__SORTING_PATHS);
+			sortingPaths = new EObjectContainmentWithInverseEList<SortingPath>(SortingPath.class, this, cptspPackage.SORTING_PLAN_PRODUCT__SORTING_PATHS, cptspPackage.SORTING_PATH__PRODUCT);
 		}
 		return sortingPaths;
 	}
@@ -488,6 +488,8 @@ public class SortingPlanProductImpl extends MinimalEObjectImpl.Container impleme
 				if (endProduct != null)
 					msgs = ((InternalEObject)endProduct).eInverseRemove(this, cptspPackage.END_PRODUCT__SORTING_PLAN_PRODUCT, EndProduct.class, msgs);
 				return basicSetEndProduct((EndProduct)otherEnd, msgs);
+			case cptspPackage.SORTING_PLAN_PRODUCT__SORTING_PATHS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSortingPaths()).basicAdd(otherEnd, msgs);
 			case cptspPackage.SORTING_PLAN_PRODUCT__END_PRODUCTS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getEndProducts()).basicAdd(otherEnd, msgs);
 		}

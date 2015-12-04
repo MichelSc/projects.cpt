@@ -5,12 +5,14 @@ package com.misc.projects.SortingPlans.impl;
 import com.misc.projects.SortingPlans.EndProduct;
 import com.misc.projects.SortingPlans.SortingPath;
 import com.misc.projects.SortingPlans.SortingPlanOutput;
+import com.misc.projects.SortingPlans.SortingPlanProduct;
 import com.misc.projects.SortingPlans.cptspPackage;
 
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -20,6 +22,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,6 +36,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link com.misc.projects.SortingPlans.impl.SortingPathImpl#getBeforeLastSegment <em>Before Last Segment</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.impl.SortingPathImpl#getSortedEndProducts <em>Sorted End Products</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.impl.SortingPathImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link com.misc.projects.SortingPlans.impl.SortingPathImpl#getProduct <em>Product</em>}</li>
  * </ul>
  *
  * @generated
@@ -201,6 +205,91 @@ public class SortingPathImpl extends MinimalEObjectImpl.Container implements Sor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public SortingPlanProduct getProduct() {
+		if (eContainerFeatureID() != cptspPackage.SORTING_PATH__PRODUCT) return null;
+		return (SortingPlanProduct)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetProduct(SortingPlanProduct newProduct, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newProduct, cptspPackage.SORTING_PATH__PRODUCT, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setProduct(SortingPlanProduct newProduct) {
+		if (newProduct != eInternalContainer() || (eContainerFeatureID() != cptspPackage.SORTING_PATH__PRODUCT && newProduct != null)) {
+			if (EcoreUtil.isAncestor(this, newProduct))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newProduct != null)
+				msgs = ((InternalEObject)newProduct).eInverseAdd(this, cptspPackage.SORTING_PLAN_PRODUCT__SORTING_PATHS, SortingPlanProduct.class, msgs);
+			msgs = basicSetProduct(newProduct, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, cptspPackage.SORTING_PATH__PRODUCT, newProduct, newProduct));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case cptspPackage.SORTING_PATH__PRODUCT:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetProduct((SortingPlanProduct)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case cptspPackage.SORTING_PATH__PRODUCT:
+				return basicSetProduct(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case cptspPackage.SORTING_PATH__PRODUCT:
+				return eInternalContainer().eInverseRemove(this, cptspPackage.SORTING_PLAN_PRODUCT__SORTING_PATHS, SortingPlanProduct.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -214,6 +303,8 @@ public class SortingPathImpl extends MinimalEObjectImpl.Container implements Sor
 				return getSortedEndProducts();
 			case cptspPackage.SORTING_PATH__DESCRIPTION:
 				return getDescription();
+			case cptspPackage.SORTING_PATH__PRODUCT:
+				return getProduct();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -237,6 +328,9 @@ public class SortingPathImpl extends MinimalEObjectImpl.Container implements Sor
 				getSortedEndProducts().clear();
 				getSortedEndProducts().addAll((Collection<? extends EndProduct>)newValue);
 				return;
+			case cptspPackage.SORTING_PATH__PRODUCT:
+				setProduct((SortingPlanProduct)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -258,6 +352,9 @@ public class SortingPathImpl extends MinimalEObjectImpl.Container implements Sor
 			case cptspPackage.SORTING_PATH__SORTED_END_PRODUCTS:
 				getSortedEndProducts().clear();
 				return;
+			case cptspPackage.SORTING_PATH__PRODUCT:
+				setProduct((SortingPlanProduct)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -278,6 +375,8 @@ public class SortingPathImpl extends MinimalEObjectImpl.Container implements Sor
 				return sortedEndProducts != null && !sortedEndProducts.isEmpty();
 			case cptspPackage.SORTING_PATH__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? getDescription() != null : !DESCRIPTION_EDEFAULT.equals(getDescription());
+			case cptspPackage.SORTING_PATH__PRODUCT:
+				return getProduct() != null;
 		}
 		return super.eIsSet(featureID);
 	}
