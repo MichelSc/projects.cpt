@@ -118,6 +118,8 @@
         eType="#//EndProductSortingPlanOutput"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="SortingDistance" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
         defaultValueLiteral="0"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Sorted" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        changeable="false" volatile="true" transient="true" derived="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EndProductSortingPlanInput">
     <eStructuralFeatures xsi:type="ecore:EReference" name="SortingPlan" lowerBound="1"
@@ -149,6 +151,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="Product" eType="#//SortingPlanProduct"
         eOpposite="#//SortingPlanProduct/EndProducts"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Sorted" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
         changeable="false" volatile="true" transient="true" derived="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SortingPath">

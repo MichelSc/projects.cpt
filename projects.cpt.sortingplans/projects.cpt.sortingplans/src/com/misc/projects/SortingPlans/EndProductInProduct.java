@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.misc.projects.SortingPlans.EndProductInProduct#getSortingPlansAccepting <em>Sorting Plans Accepting</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.EndProductInProduct#getProduct <em>Product</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.EndProductInProduct#getDescription <em>Description</em>}</li>
+ *   <li>{@link com.misc.projects.SortingPlans.EndProductInProduct#isSorted <em>Sorted</em>}</li>
  * </ul>
  *
  * @see com.misc.projects.SortingPlans.cptspPackage#getEndProductInProduct()
@@ -133,5 +134,20 @@ public interface EndProductInProduct extends EObject {
 	 * @generated
 	 */
 	String getDescription();
+
+	/**
+	 * Returns the value of the '<em><b>Sorted</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Sorted</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Sorted</em>' attribute.
+	 * @see com.misc.projects.SortingPlans.cptspPackage#getEndProductInProduct_Sorted()
+	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @generated
+	 */
+	boolean isSorted();
 
 } // EndProductInProduct

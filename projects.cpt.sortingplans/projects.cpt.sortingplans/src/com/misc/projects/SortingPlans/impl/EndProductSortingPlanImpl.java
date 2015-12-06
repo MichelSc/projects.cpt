@@ -41,6 +41,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.misc.projects.SortingPlans.impl.EndProductSortingPlanImpl#getInputs <em>Inputs</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.impl.EndProductSortingPlanImpl#getSelectedOutput <em>Selected Output</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.impl.EndProductSortingPlanImpl#getSortingDistance <em>Sorting Distance</em>}</li>
+ *   <li>{@link com.misc.projects.SortingPlans.impl.EndProductSortingPlanImpl#isSorted <em>Sorted</em>}</li>
  * </ul>
  *
  * @generated
@@ -115,6 +116,16 @@ public class EndProductSortingPlanImpl extends MinimalEObjectImpl.Container impl
 	 * @ordered
 	 */
 	protected int sortingDistance = SORTING_DISTANCE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isSorted() <em>Sorted</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSorted()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean SORTED_EDEFAULT = false;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -332,6 +343,19 @@ public class EndProductSortingPlanImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 */
+	public boolean isSorted() {
+		for (EndProductSortingPlanInput input : this.getInputs()){
+			if ( input.getInputProduct().isSorted()){
+				return true;
+			}
+		} // traverse the inputs
+		return false;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -412,6 +436,8 @@ public class EndProductSortingPlanImpl extends MinimalEObjectImpl.Container impl
 				return basicGetSelectedOutput();
 			case cptspPackage.END_PRODUCT_SORTING_PLAN__SORTING_DISTANCE:
 				return getSortingDistance();
+			case cptspPackage.END_PRODUCT_SORTING_PLAN__SORTED:
+				return isSorted();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -501,6 +527,8 @@ public class EndProductSortingPlanImpl extends MinimalEObjectImpl.Container impl
 				return selectedOutput != null;
 			case cptspPackage.END_PRODUCT_SORTING_PLAN__SORTING_DISTANCE:
 				return sortingDistance != SORTING_DISTANCE_EDEFAULT;
+			case cptspPackage.END_PRODUCT_SORTING_PLAN__SORTED:
+				return isSorted() != SORTED_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}

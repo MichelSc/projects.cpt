@@ -67,6 +67,7 @@ public class EndProductSortingPlanItemProvider
 			addDescriptionPropertyDescriptor(object);
 			addSelectedOutputPropertyDescriptor(object);
 			addSortingDistancePropertyDescriptor(object);
+			addSortedPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -182,6 +183,28 @@ public class EndProductSortingPlanItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Sorted feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSortedPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EndProductSortingPlan_Sorted_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EndProductSortingPlan_Sorted_feature", "_UI_EndProductSortingPlan_type"),
+				 cptspPackage.Literals.END_PRODUCT_SORTING_PLAN__SORTED,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -251,6 +274,7 @@ public class EndProductSortingPlanItemProvider
 		switch (notification.getFeatureID(EndProductSortingPlan.class)) {
 			case cptspPackage.END_PRODUCT_SORTING_PLAN__DESCRIPTION:
 			case cptspPackage.END_PRODUCT_SORTING_PLAN__SORTING_DISTANCE:
+			case cptspPackage.END_PRODUCT_SORTING_PLAN__SORTED:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case cptspPackage.END_PRODUCT_SORTING_PLAN__OUTPUTS:

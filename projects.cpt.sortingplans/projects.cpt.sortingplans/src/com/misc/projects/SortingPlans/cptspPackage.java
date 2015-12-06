@@ -878,13 +878,22 @@ public interface cptspPackage extends EPackage {
 	int END_PRODUCT_SORTING_PLAN__SORTING_DISTANCE = 6;
 
 	/**
+	 * The feature id for the '<em><b>Sorted</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int END_PRODUCT_SORTING_PLAN__SORTED = 7;
+
+	/**
 	 * The number of structural features of the '<em>End Product Sorting Plan</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int END_PRODUCT_SORTING_PLAN_FEATURE_COUNT = 7;
+	int END_PRODUCT_SORTING_PLAN_FEATURE_COUNT = 8;
 
 	/**
 	 * The number of operations of the '<em>End Product Sorting Plan</em>' class.
@@ -1088,13 +1097,22 @@ public interface cptspPackage extends EPackage {
 	int END_PRODUCT_IN_PRODUCT__DESCRIPTION = 4;
 
 	/**
+	 * The feature id for the '<em><b>Sorted</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int END_PRODUCT_IN_PRODUCT__SORTED = 5;
+
+	/**
 	 * The number of structural features of the '<em>End Product In Product</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int END_PRODUCT_IN_PRODUCT_FEATURE_COUNT = 5;
+	int END_PRODUCT_IN_PRODUCT_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>End Product In Product</em>' class.
@@ -1932,6 +1950,17 @@ public interface cptspPackage extends EPackage {
 	EAttribute getEndProductSortingPlan_SortingDistance();
 
 	/**
+	 * Returns the meta object for the attribute '{@link com.misc.projects.SortingPlans.EndProductSortingPlan#isSorted <em>Sorted</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Sorted</em>'.
+	 * @see com.misc.projects.SortingPlans.EndProductSortingPlan#isSorted()
+	 * @see #getEndProductSortingPlan()
+	 * @generated
+	 */
+	EAttribute getEndProductSortingPlan_Sorted();
+
+	/**
 	 * Returns the meta object for class '{@link com.misc.projects.SortingPlans.EndProductSortingPlanInput <em>End Product Sorting Plan Input</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2114,6 +2143,17 @@ public interface cptspPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getEndProductInProduct_Description();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.misc.projects.SortingPlans.EndProductInProduct#isSorted <em>Sorted</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Sorted</em>'.
+	 * @see com.misc.projects.SortingPlans.EndProductInProduct#isSorted()
+	 * @see #getEndProductInProduct()
+	 * @generated
+	 */
+	EAttribute getEndProductInProduct_Sorted();
 
 	/**
 	 * Returns the meta object for class '{@link com.misc.projects.SortingPlans.SortingPath <em>Sorting Path</em>}'.
@@ -2780,6 +2820,14 @@ public interface cptspPackage extends EPackage {
 		EAttribute END_PRODUCT_SORTING_PLAN__SORTING_DISTANCE = eINSTANCE.getEndProductSortingPlan_SortingDistance();
 
 		/**
+		 * The meta object literal for the '<em><b>Sorted</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute END_PRODUCT_SORTING_PLAN__SORTED = eINSTANCE.getEndProductSortingPlan_Sorted();
+
+		/**
 		 * The meta object literal for the '{@link com.misc.projects.SortingPlans.impl.EndProductSortingPlanInputImpl <em>End Product Sorting Plan Input</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2920,6 +2968,14 @@ public interface cptspPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute END_PRODUCT_IN_PRODUCT__DESCRIPTION = eINSTANCE.getEndProductInProduct_Description();
+
+		/**
+		 * The meta object literal for the '<em><b>Sorted</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute END_PRODUCT_IN_PRODUCT__SORTED = eINSTANCE.getEndProductInProduct_Sorted();
 
 		/**
 		 * The meta object literal for the '{@link com.misc.projects.SortingPlans.impl.SortingPathImpl <em>Sorting Path</em>}' class.

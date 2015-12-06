@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.misc.projects.SortingPlans.EndProductSortingPlan#getInputs <em>Inputs</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.EndProductSortingPlan#getSelectedOutput <em>Selected Output</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.EndProductSortingPlan#getSortingDistance <em>Sorting Distance</em>}</li>
+ *   <li>{@link com.misc.projects.SortingPlans.EndProductSortingPlan#isSorted <em>Sorted</em>}</li>
  * </ul>
  *
  * @see com.misc.projects.SortingPlans.cptspPackage#getEndProductSortingPlan()
@@ -188,5 +189,20 @@ public interface EndProductSortingPlan extends EObject {
 	 * @generated
 	 */
 	void setSortingDistance(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Sorted</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Sorted</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Sorted</em>' attribute.
+	 * @see com.misc.projects.SortingPlans.cptspPackage#getEndProductSortingPlan_Sorted()
+	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @generated
+	 */
+	boolean isSorted();
 
 } // EndProductSortingPlan

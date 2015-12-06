@@ -145,11 +145,10 @@ public class ScenarioItemProvider
 	 * This adds a property descriptor for the Selected End Products feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	protected void addSelectedEndProductsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
+		(new ItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_Scenario_SelectedEndProducts_feature"),
@@ -160,18 +159,23 @@ public class ScenarioItemProvider
 				 true,
 				 null,
 				 null,
-				 null));
+				 null){
+			@Override
+			public Collection<?> getChoiceOfValues(Object object) {
+				Scenario scenario = (Scenario) object;
+				return scenario.getEndProducts();
+			}
+		});
 	}
 
 	/**
 	 * This adds a property descriptor for the Primary Products Selected feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	protected void addPrimaryProductsSelectedPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
+			(new ItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_Scenario_PrimaryProductsSelected_feature"),
@@ -182,7 +186,13 @@ public class ScenarioItemProvider
 				 true,
 				 null,
 				 null,
-				 null));
+				 null){
+					@Override
+					public Collection<?> getChoiceOfValues(Object object) {
+						Scenario scenario = (Scenario) object;
+						return scenario.getSortingPlanProducts();
+					}
+			});
 	}
 
 	/**

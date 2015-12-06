@@ -6,6 +6,7 @@ import com.misc.projects.SortingPlans.EndProduct;
 import com.misc.projects.SortingPlans.EndProductInProduct;
 import com.misc.projects.SortingPlans.EndProductSortingPlanInput;
 import com.misc.projects.SortingPlans.EndProductSortingPlanOutput;
+import com.misc.projects.SortingPlans.SortingPath;
 import com.misc.projects.SortingPlans.SortingPlanProduct;
 import com.misc.projects.SortingPlans.cptspPackage;
 
@@ -39,6 +40,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.misc.projects.SortingPlans.impl.EndProductInProductImpl#getSortingPlansAccepting <em>Sorting Plans Accepting</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.impl.EndProductInProductImpl#getProduct <em>Product</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.impl.EndProductInProductImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link com.misc.projects.SortingPlans.impl.EndProductInProductImpl#isSorted <em>Sorted</em>}</li>
  * </ul>
  *
  * @generated
@@ -83,6 +85,16 @@ public class EndProductInProductImpl extends MinimalEObjectImpl.Container implem
 	 * @ordered
 	 */
 	protected static final String DESCRIPTION_EDEFAULT = null;
+
+	/**
+	 * The default value of the '{@link #isSorted() <em>Sorted</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSorted()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean SORTED_EDEFAULT = false;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -241,6 +253,21 @@ public class EndProductInProductImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 */
+	public boolean isSorted() {
+		EndProduct endProductContained = this.getEndProductsContained();
+		SortingPlanProduct productContaining = this.getProduct(); 
+		for ( SortingPath path : productContaining.getSortingPaths()){
+			if ( path.getSortedEndProducts().contains(endProductContained)){
+				return true;
+			}
+		} // traverse the paths
+		return false;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -316,6 +343,8 @@ public class EndProductInProductImpl extends MinimalEObjectImpl.Container implem
 				return basicGetProduct();
 			case cptspPackage.END_PRODUCT_IN_PRODUCT__DESCRIPTION:
 				return getDescription();
+			case cptspPackage.END_PRODUCT_IN_PRODUCT__SORTED:
+				return isSorted();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -389,6 +418,8 @@ public class EndProductInProductImpl extends MinimalEObjectImpl.Container implem
 				return product != null;
 			case cptspPackage.END_PRODUCT_IN_PRODUCT__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? getDescription() != null : !DESCRIPTION_EDEFAULT.equals(getDescription());
+			case cptspPackage.END_PRODUCT_IN_PRODUCT__SORTED:
+				return isSorted() != SORTED_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -64,6 +64,7 @@ public class EndProductInProductItemProvider
 			addEndProductsContainedPropertyDescriptor(object);
 			addProductPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
+			addSortedPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -130,6 +131,28 @@ public class EndProductInProductItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Sorted feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSortedPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EndProductInProduct_Sorted_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EndProductInProduct_Sorted_feature", "_UI_EndProductInProduct_type"),
+				 cptspPackage.Literals.END_PRODUCT_IN_PRODUCT__SORTED,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -203,6 +226,7 @@ public class EndProductInProductItemProvider
 
 		switch (notification.getFeatureID(EndProductInProduct.class)) {
 			case cptspPackage.END_PRODUCT_IN_PRODUCT__DESCRIPTION:
+			case cptspPackage.END_PRODUCT_IN_PRODUCT__SORTED:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
