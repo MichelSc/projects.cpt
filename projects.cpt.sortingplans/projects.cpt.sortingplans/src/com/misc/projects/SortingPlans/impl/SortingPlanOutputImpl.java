@@ -241,6 +241,17 @@ public class SortingPlanOutputImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void refeshSortedEndProducts() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 */
 	public void addPropagatorFunctionAdapter() {
 	}
@@ -389,6 +400,9 @@ public class SortingPlanOutputImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
+			case cptspPackage.SORTING_PLAN_OUTPUT___REFESH_SORTED_END_PRODUCTS:
+				refeshSortedEndProducts();
+				return null;
 			case cptspPackage.SORTING_PLAN_OUTPUT___ADD_PROPAGATOR_FUNCTION_ADAPTER:
 				addPropagatorFunctionAdapter();
 				return null;

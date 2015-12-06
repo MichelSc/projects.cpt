@@ -723,13 +723,22 @@ public interface cptspPackage extends EPackage {
 	int SORTING_PLAN_OUTPUT___ADD_PROPAGATOR_FUNCTION_ADAPTER = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER___ADD_PROPAGATOR_FUNCTION_ADAPTER;
 
 	/**
+	 * The operation id for the '<em>Refesh Sorted End Products</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_OUTPUT___REFESH_SORTED_END_PRODUCTS = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>Sorting Plan Output</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_OUTPUT_OPERATION_COUNT = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_OPERATION_COUNT + 0;
+	int SORTING_PLAN_OUTPUT_OPERATION_COUNT = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_OPERATION_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Input Product</b></em>' reference.
@@ -1772,6 +1781,16 @@ public interface cptspPackage extends EPackage {
 	EReference getSortingPlanOutput_SortingPlan();
 
 	/**
+	 * Returns the meta object for the '{@link com.misc.projects.SortingPlans.SortingPlanOutput#refeshSortedEndProducts() <em>Refesh Sorted End Products</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Refesh Sorted End Products</em>' operation.
+	 * @see com.misc.projects.SortingPlans.SortingPlanOutput#refeshSortedEndProducts()
+	 * @generated
+	 */
+	EOperation getSortingPlanOutput__RefeshSortedEndProducts();
+
+	/**
 	 * Returns the meta object for class '{@link com.misc.projects.SortingPlans.SortingPlanInput <em>Sorting Plan Input</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2643,6 +2662,14 @@ public interface cptspPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SORTING_PLAN_OUTPUT__SORTING_PLAN = eINSTANCE.getSortingPlanOutput_SortingPlan();
+
+		/**
+		 * The meta object literal for the '<em><b>Refesh Sorted End Products</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation SORTING_PLAN_OUTPUT___REFESH_SORTED_END_PRODUCTS = eINSTANCE.getSortingPlanOutput__RefeshSortedEndProducts();
 
 		/**
 		 * The meta object literal for the '{@link com.misc.projects.SortingPlans.impl.SortingPlanInputImpl <em>Sorting Plan Input</em>}' class.

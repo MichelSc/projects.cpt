@@ -621,13 +621,15 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 	 * <!-- end-user-doc -->
 	 */
 	public void refreshSortingPaths() {
-		SortingPaths toRemove = new SortingPaths();
+		 CommonPlugin.INSTANCE.log( "RefreshSortingPaths, scenario "+ this.getName());
+		 SortingPaths toRemove = new SortingPaths();
 		for ( SortingPlanProduct p: this.getSortingPlanProducts()){
 			for ( SortingPath path : p.getSortingPaths()){
 				toRemove.add(path);
 			}
 		}
 		
+		CommonPlugin.INSTANCE.log( "RefreshSortingPaths, asis "+ toRemove.size());
 		ToDos toDos = new ToDos();
 		
 		// initialization
@@ -641,6 +643,7 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 			this.sortingPathPropagate(path, toDos);
 		}
 		
+		CommonPlugin.INSTANCE.log( "RefreshSortingPaths, intialised ");
 		// iterate
 		while ( !toDos.isEmpty() ){
 			// do the toDo
@@ -656,12 +659,14 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 			}
 		}
 		
+		CommonPlugin.INSTANCE.log( "RefreshSortingPaths, done, to clean up "+ toRemove.size());
 		// clean up
 		for ( SortingPath pathToRemove : toRemove){
 			pathToRemove.setBeforeLastSegment(null);
 			pathToRemove.setOutputLastSegment(null);
 			pathToRemove.setProduct(null);  // owning
 		}
+		CommonPlugin.INSTANCE.log( "RefreshSortingPaths, done, to cleaned up ");
 	}
 	
 	// ------------------------------------------------------------------------

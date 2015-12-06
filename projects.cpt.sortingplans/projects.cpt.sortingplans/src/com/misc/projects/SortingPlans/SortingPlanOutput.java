@@ -122,4 +122,12 @@ public interface SortingPlanOutput extends ObjectWithPropagatorFunctionAdapter {
 	 */
 	void setSortingPlan(SortingPlan value);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void refeshSortedEndProducts();
+
 } // SortingPlanOutput
