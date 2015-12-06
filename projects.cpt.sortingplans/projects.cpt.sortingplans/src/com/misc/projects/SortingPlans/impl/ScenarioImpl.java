@@ -645,16 +645,23 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 		
 		CommonPlugin.INSTANCE.log( "RefreshSortingPaths, intialised ");
 		// iterate
+		int iteration = 0;
 		while ( !toDos.isEmpty() ){
 			// do the toDo
+			iteration++;
+			if ( iteration % 1000 == 0 ){
+				CommonPlugin.INSTANCE.log( "RefreshSortingPaths, iteration="+ iteration+", todos="+ toDos.size()+", ");
+			}
 			ToDo toDo = toDos.remove();
 			SortingPlanOutput output = toDo.output;
 			SortingPath input = toDo.path;
 			SortingPlanProduct product = output.getOutputProduct();
 			SetEndProducts endProducts = this.getSortedEndProducts(output, input);
 			SortingPath newPath = this.getOrCreateSortingPath(product, output, input, toRemove);
+			boolean emptyOutput = endProducts.isEmpty();
+			boolean fullOutput  = endProducts.size()==input.getSortedEndProducts().size();
 			this.sortingPathSetSortedProducts(newPath, endProducts);
-			if ( !endProducts.isEmpty()){  // this must block cycling
+			if ( !endProducts.isEmpty() && !fullOutput ){  // this must block cycling
 				this.sortingPathPropagate(newPath, toDos);
 			}
 		}
