@@ -67,6 +67,7 @@ public class ScenarioItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
+			addRemarksPropertyDescriptor(object);
 			addSortingLevelsWithDestinationPropertyDescriptor(object);
 			addSelectedSortingPlansPropertyDescriptor(object);
 			addSelectedEndProductsPropertyDescriptor(object);
@@ -91,6 +92,28 @@ public class ScenarioItemProvider
 				 cptspPackage.Literals.SCENARIO__NAME,
 				 true,
 				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Remarks feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRemarksPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Scenario_Remarks_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Scenario_Remarks_feature", "_UI_Scenario_type"),
+				 cptspPackage.Literals.SCENARIO__REMARKS,
+				 true,
+				 true,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
@@ -266,6 +289,7 @@ public class ScenarioItemProvider
 			case cptspPackage.SCENARIO__END_PRODUCTS:
 			case cptspPackage.SCENARIO__SORTING_PLAN_PRODUCTS:
 			case cptspPackage.SCENARIO__NAME:
+			case cptspPackage.SCENARIO__REMARKS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case cptspPackage.SCENARIO__SORTING_PLANS:

@@ -187,13 +187,22 @@ public interface cptspPackage extends EPackage {
 	int SCENARIO__PRIMARY_PRODUCTS_SELECTED = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 7;
 
 	/**
+	 * The feature id for the '<em><b>Remarks</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCENARIO__REMARKS = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 8;
+
+	/**
 	 * The number of structural features of the '<em>Scenario</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCENARIO_FEATURE_COUNT = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 8;
+	int SCENARIO_FEATURE_COUNT = PropagatorPackage.OBJECT_WITH_PROPAGATOR_FUNCTION_ADAPTER_FEATURE_COUNT + 9;
 
 	/**
 	 * The operation id for the '<em>Add Propagator Function Adapter</em>' operation.
@@ -1329,6 +1338,17 @@ public interface cptspPackage extends EPackage {
 	EReference getScenario_PrimaryProductsSelected();
 
 	/**
+	 * Returns the meta object for the attribute '{@link com.misc.projects.SortingPlans.Scenario#getRemarks <em>Remarks</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Remarks</em>'.
+	 * @see com.misc.projects.SortingPlans.Scenario#getRemarks()
+	 * @see #getScenario()
+	 * @generated
+	 */
+	EAttribute getScenario_Remarks();
+
+	/**
 	 * Returns the meta object for the '{@link com.misc.projects.SortingPlans.Scenario#refreshSelectedSortingPlans() <em>Refresh Selected Sorting Plans</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2342,6 +2362,14 @@ public interface cptspPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SCENARIO__PRIMARY_PRODUCTS_SELECTED = eINSTANCE.getScenario_PrimaryProductsSelected();
+
+		/**
+		 * The meta object literal for the '<em><b>Remarks</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SCENARIO__REMARKS = eINSTANCE.getScenario_Remarks();
 
 		/**
 		 * The meta object literal for the '<em><b>Refresh Selected Sorting Plans</b></em>' operation.

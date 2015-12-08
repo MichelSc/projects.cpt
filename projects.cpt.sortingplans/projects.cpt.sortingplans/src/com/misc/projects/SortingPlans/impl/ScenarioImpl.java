@@ -70,6 +70,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.misc.projects.SortingPlans.impl.ScenarioImpl#getSelectedSortingPlans <em>Selected Sorting Plans</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.impl.ScenarioImpl#getSelectedEndProducts <em>Selected End Products</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.impl.ScenarioImpl#getPrimaryProductsSelected <em>Primary Products Selected</em>}</li>
+ *   <li>{@link com.misc.projects.SortingPlans.impl.ScenarioImpl#getRemarks <em>Remarks</em>}</li>
  * </ul>
  *
  * @generated
@@ -164,6 +165,26 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 	 * @ordered
 	 */
 	protected EList<SortingPlanProduct> primaryProductsSelected;
+
+	/**
+	 * The default value of the '{@link #getRemarks() <em>Remarks</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRemarks()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String REMARKS_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getRemarks() <em>Remarks</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRemarks()
+	 * @generated
+	 * @ordered
+	 */
+	protected String remarks = REMARKS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -287,6 +308,27 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 			primaryProductsSelected = new EObjectResolvingEList<SortingPlanProduct>(SortingPlanProduct.class, this, cptspPackage.SCENARIO__PRIMARY_PRODUCTS_SELECTED);
 		}
 		return primaryProductsSelected;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getRemarks() {
+		return remarks;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRemarks(String newRemarks) {
+		String oldRemarks = remarks;
+		remarks = newRemarks;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, cptspPackage.SCENARIO__REMARKS, oldRemarks, remarks));
 	}
 
 	/**
@@ -764,6 +806,8 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 				return getSelectedEndProducts();
 			case cptspPackage.SCENARIO__PRIMARY_PRODUCTS_SELECTED:
 				return getPrimaryProductsSelected();
+			case cptspPackage.SCENARIO__REMARKS:
+				return getRemarks();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -808,6 +852,9 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 				getPrimaryProductsSelected().clear();
 				getPrimaryProductsSelected().addAll((Collection<? extends SortingPlanProduct>)newValue);
 				return;
+			case cptspPackage.SCENARIO__REMARKS:
+				setRemarks((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -844,6 +891,9 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 			case cptspPackage.SCENARIO__PRIMARY_PRODUCTS_SELECTED:
 				getPrimaryProductsSelected().clear();
 				return;
+			case cptspPackage.SCENARIO__REMARKS:
+				setRemarks(REMARKS_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -872,6 +922,8 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 				return selectedEndProducts != null && !selectedEndProducts.isEmpty();
 			case cptspPackage.SCENARIO__PRIMARY_PRODUCTS_SELECTED:
 				return primaryProductsSelected != null && !primaryProductsSelected.isEmpty();
+			case cptspPackage.SCENARIO__REMARKS:
+				return REMARKS_EDEFAULT == null ? remarks != null : !REMARKS_EDEFAULT.equals(remarks);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -937,6 +989,8 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (Name: ");
 		result.append(name);
+		result.append(", Remarks: ");
+		result.append(remarks);
 		result.append(')');
 		return result.toString();
 	}

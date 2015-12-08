@@ -14,9 +14,10 @@
     </genClasses>
     <genClasses provider="Stateful" ecoreClass="sortingplans.ecore#//Scenario">
       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference sortingplans.ecore#//Scenario/SortingPlans"/>
-      <genFeatures property="None" createChild="false" propertyCategory="" ecoreFeature="ecore:EReference sortingplans.ecore#//Scenario/EndProducts"/>
+      <genFeatures property="Readonly" createChild="false" propertyCategory="" ecoreFeature="ecore:EReference sortingplans.ecore#//Scenario/EndProducts"/>
       <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference sortingplans.ecore#//Scenario/SortingPlanProducts"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sortingplans.ecore#//Scenario/Name"/>
+      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute sortingplans.ecore#//Scenario/Remarks"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sortingplans.ecore#//Scenario/SortingLevelsWithDestination"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sortingplans.ecore#//Scenario/SelectedSortingPlans"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sortingplans.ecore#//Scenario/SelectedEndProducts"/>
@@ -76,6 +77,7 @@
           ecoreFeature="ecore:EReference sortingplans.ecore#//SortingPlanOutput/OutputProduct"/>
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute sortingplans.ecore#//SortingPlanOutput/Description"/>
       <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference sortingplans.ecore#//SortingPlanOutput/SortingPlan"/>
+      <genOperations ecoreOperation="sortingplans.ecore#//SortingPlanOutput/refeshSortedEndProducts"/>
     </genClasses>
     <genClasses ecoreClass="sortingplans.ecore#//SortingPlanInput">
       <genFeatures property="Readonly" createChild="false" propertySortChoices="true"
@@ -94,6 +96,7 @@
       <genFeatures property="Readonly" notify="false" createChild="false" propertySortChoices="true"
           ecoreFeature="ecore:EReference sortingplans.ecore#//EndProductSortingPlan/SelectedOutput"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sortingplans.ecore#//EndProductSortingPlan/SortingDistance"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute sortingplans.ecore#//EndProductSortingPlan/Sorted"/>
     </genClasses>
     <genClasses ecoreClass="sortingplans.ecore#//EndProductSortingPlanInput">
       <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference sortingplans.ecore#//EndProductSortingPlanInput/SortingPlan"/>
@@ -121,6 +124,7 @@
       <genFeatures property="Readonly" notify="false" createChild="false" propertySortChoices="true"
           ecoreFeature="ecore:EReference sortingplans.ecore#//EndProductInProduct/Product"/>
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute sortingplans.ecore#//EndProductInProduct/Description"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute sortingplans.ecore#//EndProductInProduct/Sorted"/>
     </genClasses>
     <genClasses provider="Stateful" ecoreClass="sortingplans.ecore#//SortingPath">
       <genFeatures property="Readonly" notify="false" createChild="false" propertySortChoices="true"

@@ -294,6 +294,15 @@ public class cptspPackageImpl extends EPackageImpl implements cptspPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getScenario_Remarks() {
+		return (EAttribute)scenarioEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EOperation getScenario__RefreshSelectedSortingPlans() {
 		return scenarioEClass.getEOperations().get(0);
 	}
@@ -1077,6 +1086,7 @@ public class cptspPackageImpl extends EPackageImpl implements cptspPackage {
 		createEReference(scenarioEClass, SCENARIO__SELECTED_SORTING_PLANS);
 		createEReference(scenarioEClass, SCENARIO__SELECTED_END_PRODUCTS);
 		createEReference(scenarioEClass, SCENARIO__PRIMARY_PRODUCTS_SELECTED);
+		createEAttribute(scenarioEClass, SCENARIO__REMARKS);
 		createEOperation(scenarioEClass, SCENARIO___REFRESH_SELECTED_SORTING_PLANS);
 		createEOperation(scenarioEClass, SCENARIO___REFRESH);
 		createEOperation(scenarioEClass, SCENARIO___REFRESH_SORTING_PLAN_PRODUCT);
@@ -1226,6 +1236,7 @@ public class cptspPackageImpl extends EPackageImpl implements cptspPackage {
 		initEReference(getScenario_SelectedSortingPlans(), theCptDatasetLoadPackage.getSortingPlanRow(), null, "SelectedSortingPlans", null, 0, -1, Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getScenario_SelectedEndProducts(), this.getEndProduct(), this.getEndProduct_ScenarioAsSelected(), "SelectedEndProducts", null, 0, -1, Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getScenario_PrimaryProductsSelected(), this.getSortingPlanProduct(), null, "PrimaryProductsSelected", null, 0, -1, Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getScenario_Remarks(), ecorePackage.getEString(), "Remarks", null, 0, 1, Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getScenario__RefreshSelectedSortingPlans(), null, "refreshSelectedSortingPlans", 0, 1, IS_UNIQUE, IS_ORDERED);
 

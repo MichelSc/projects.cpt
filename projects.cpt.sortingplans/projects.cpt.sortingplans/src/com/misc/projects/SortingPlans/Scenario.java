@@ -25,6 +25,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link com.misc.projects.SortingPlans.Scenario#getSelectedSortingPlans <em>Selected Sorting Plans</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.Scenario#getSelectedEndProducts <em>Selected End Products</em>}</li>
  *   <li>{@link com.misc.projects.SortingPlans.Scenario#getPrimaryProductsSelected <em>Primary Products Selected</em>}</li>
+ *   <li>{@link com.misc.projects.SortingPlans.Scenario#getRemarks <em>Remarks</em>}</li>
  * </ul>
  *
  * @see com.misc.projects.SortingPlans.cptspPackage#getScenario()
@@ -175,6 +176,32 @@ public interface Scenario extends ObjectWithPropagatorFunctionAdapter, ObjectWit
 	 * @generated
 	 */
 	EList<SortingPlanProduct> getPrimaryProductsSelected();
+
+	/**
+	 * Returns the value of the '<em><b>Remarks</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Remarks</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Remarks</em>' attribute.
+	 * @see #setRemarks(String)
+	 * @see com.misc.projects.SortingPlans.cptspPackage#getScenario_Remarks()
+	 * @model
+	 * @generated
+	 */
+	String getRemarks();
+
+	/**
+	 * Sets the value of the '{@link com.misc.projects.SortingPlans.Scenario#getRemarks <em>Remarks</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Remarks</em>' attribute.
+	 * @see #getRemarks()
+	 * @generated
+	 */
+	void setRemarks(String value);
 
 	/**
 	 * <!-- begin-user-doc -->
