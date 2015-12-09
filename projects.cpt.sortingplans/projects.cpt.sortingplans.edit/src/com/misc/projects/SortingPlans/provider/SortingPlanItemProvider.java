@@ -10,13 +10,9 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -224,7 +220,6 @@ public class SortingPlanItemProvider
 		Object scenario = super.getParent(object);
 		ScenarioItemProvider scenarioIP = (ScenarioItemProvider)adapterFactory.adapt(scenario, IEditingDomainItemProvider.class);
 		return scenarioIP==null ? null : scenarioIP.getSortingPlans();
-		
 	}
 
 	/**
@@ -249,29 +244,5 @@ public class SortingPlanItemProvider
 	public ResourceLocator getResourceLocator() {
 		return SortingplansEditPlugin.INSTANCE;
 	}
-
-	/* (non-Javadoc)
-	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#createRemoveCommand(org.eclipse.emf.edit.domain.EditingDomain, org.eclipse.emf.ecore.EObject, org.eclipse.emf.ecore.EStructuralFeature, java.util.Collection)
-	 */
-	@Override
-	protected Command createRemoveCommand(EditingDomain domain, EObject owner,
-			EStructuralFeature feature, Collection<?> collection) {
-		// TODO Auto-generated method stub
-		return super.createRemoveCommand(domain, owner, feature, collection);
-	}
-
-	/* (non-Javadoc)
-	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#getParent(java.lang.Object)
-	@Override
-	public Object getParent(Object object) {
-		Object scenario = super.getParent(object);
-		ScenarioItemProvider scenarioItemProvider = (ScenarioItemProvider)adapterFactory.adapt(scenario, IEditingDomainItemProvider.class);
-		return scenarioItemProvider!=null ? scenarioItemProvider.getSortingPlans() : null;
-	}
-	 */
-	
-	
-
-	
 
 }
