@@ -1067,7 +1067,6 @@ public class cptspEditor
 					      container = parent;
 
 					      // Create view form.    
-					      //control = new ViewForm(parent, getStyle());
 					      control = new ViewForm(parent, SWT.NONE);
 					      control.addDisposeListener
 					        (new DisposeListener()
@@ -1080,18 +1079,18 @@ public class cptspEditor
 					      control.marginWidth = 0;
 					      control.marginHeight = 0;
 
-					      // Create a title bar.
+					      // create the title bar
 					      createTitleBar();
 
+					      // creata the viewer
 					      viewer = createViewer(control);
 					      control.setContent(this.filteredTree);
 
 					      //control.setTabList(new Control [] { viewer.getControl() });
 					      
 					      // When the pane or any child gains focus, notify the workbench.
-					      control.addListener(SWT.Activate, this);
+					      control.addListener(SWT.Activate, this); // this is the viewer pane
 					      hookFocus(control);
-					      //hookFocus(viewer.getControl());
 					    }
 					} // method create controls
 					@Override
@@ -1136,206 +1135,202 @@ public class cptspEditor
 	
 	private void createPageSelection(){
 		// Create a page for the selection tree view.
-		//
+		ViewerPane viewerPane =
+			new ViewerPane(getSite().getPage(), cptspEditor.this) {
+				@Override
+				public Viewer createViewer(Composite composite) {
+					Tree tree = new Tree(composite, SWT.MULTI);
+					TreeViewer newTreeViewer = new TreeViewer(tree);
+					return newTreeViewer;
+				}
+				@Override
+				public void requestActivation() {
+					super.requestActivation();
+					setCurrentViewerPane(this);
+				}
+			};
+		viewerPane.createControl(getContainer());
 
-				ViewerPane viewerPane =
-					new ViewerPane(getSite().getPage(), cptspEditor.this) {
-						@Override
-						public Viewer createViewer(Composite composite) {
-							Tree tree = new Tree(composite, SWT.MULTI);
-							TreeViewer newTreeViewer = new TreeViewer(tree);
-							return newTreeViewer;
-						}
-						@Override
-						public void requestActivation() {
-							super.requestActivation();
-							setCurrentViewerPane(this);
-						}
-					};
-				viewerPane.createControl(getContainer());
+		selectionViewer = (TreeViewer)viewerPane.getViewer();
+		selectionViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
 
-				selectionViewer = (TreeViewer)viewerPane.getViewer();
-				selectionViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
+		selectionViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
+		selectionViewer.setInput(editingDomain.getResourceSet());
+		selectionViewer.setSelection(new StructuredSelection(editingDomain.getResourceSet().getResources().get(0)), true);
+		viewerPane.setTitle(editingDomain.getResourceSet());
 
-				selectionViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
-				selectionViewer.setInput(editingDomain.getResourceSet());
-				selectionViewer.setSelection(new StructuredSelection(editingDomain.getResourceSet().getResources().get(0)), true);
-				viewerPane.setTitle(editingDomain.getResourceSet());
+		new AdapterFactoryTreeEditor(selectionViewer.getTree(), adapterFactory);
 
-				new AdapterFactoryTreeEditor(selectionViewer.getTree(), adapterFactory);
-
-				createContextMenuFor(selectionViewer);
-				int pageIndex = addPage(viewerPane.getControl());
-				setPageText(pageIndex, getString("_UI_SelectionPage_label"));
+		createContextMenuFor(selectionViewer);
+		int pageIndex = addPage(viewerPane.getControl());
+		setPageText(pageIndex, getString("_UI_SelectionPage_label"));
 	}
 	
 	private void createPageParent(){
-				// Create a page for the parent tree view.
-				//
-				ViewerPane viewerPane =
-					new ViewerPane(getSite().getPage(), cptspEditor.this) {
-						@Override
-						public Viewer createViewer(Composite composite) {
-							Tree tree = new Tree(composite, SWT.MULTI);
-							TreeViewer newTreeViewer = new TreeViewer(tree);
-							return newTreeViewer;
-						}
-						@Override
-						public void requestActivation() {
-							super.requestActivation();
-							setCurrentViewerPane(this);
-						}
-					};
-				viewerPane.createControl(getContainer());
+		// Create a page for the parent tree view.
+		//
+		ViewerPane viewerPane =
+			new ViewerPane(getSite().getPage(), cptspEditor.this) {
+				@Override
+				public Viewer createViewer(Composite composite) {
+					Tree tree = new Tree(composite, SWT.MULTI);
+					TreeViewer newTreeViewer = new TreeViewer(tree);
+					return newTreeViewer;
+				}
+				@Override
+				public void requestActivation() {
+					super.requestActivation();
+					setCurrentViewerPane(this);
+				}
+			};
+		viewerPane.createControl(getContainer());
 
-				parentViewer = (TreeViewer)viewerPane.getViewer();
-				parentViewer.setAutoExpandLevel(30);
-				parentViewer.setContentProvider(new ReverseAdapterFactoryContentProvider(adapterFactory));
-				parentViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
+		parentViewer = (TreeViewer)viewerPane.getViewer();
+		parentViewer.setAutoExpandLevel(30);
+		parentViewer.setContentProvider(new ReverseAdapterFactoryContentProvider(adapterFactory));
+		parentViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
 
-				createContextMenuFor(parentViewer);
-				int pageIndex = addPage(viewerPane.getControl());
-				setPageText(pageIndex, getString("_UI_ParentPage_label"));
+		createContextMenuFor(parentViewer);
+		int pageIndex = addPage(viewerPane.getControl());
+		setPageText(pageIndex, getString("_UI_ParentPage_label"));
 	}
 			
 	private void createPageList(){
-			// This is the page for the list viewer
-			//
-				ViewerPane viewerPane =
-					new ViewerPane(getSite().getPage(), cptspEditor.this) {
-						@Override
-						public Viewer createViewer(Composite composite) {
-							return new ListViewer(composite);
-						}
-						@Override
-						public void requestActivation() {
-							super.requestActivation();
-							setCurrentViewerPane(this);
-						}
-					};
-				viewerPane.createControl(getContainer());
-				listViewer = (ListViewer)viewerPane.getViewer();
-				listViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
-				listViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
+		// This is the page for the list viewer
+		//
+		ViewerPane viewerPane =
+			new ViewerPane(getSite().getPage(), cptspEditor.this) {
+				@Override
+				public Viewer createViewer(Composite composite) {
+					return new ListViewer(composite);
+				}
+				@Override
+				public void requestActivation() {
+					super.requestActivation();
+					setCurrentViewerPane(this);
+				}
+			};
+		viewerPane.createControl(getContainer());
+		listViewer = (ListViewer)viewerPane.getViewer();
+		listViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
+		listViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
 
-				createContextMenuFor(listViewer);
-				int pageIndex = addPage(viewerPane.getControl());
-				setPageText(pageIndex, getString("_UI_ListPage_label"));
+		createContextMenuFor(listViewer);
+		int pageIndex = addPage(viewerPane.getControl());
+		setPageText(pageIndex, getString("_UI_ListPage_label"));
 
 	}
 
 	private void createPageTree(){
-			// This is the page for the tree viewer
-				ViewerPane viewerPane =
-					new ViewerPane(getSite().getPage(), cptspEditor.this) {
-						@Override
-						public Viewer createViewer(Composite composite) {
-							return new TreeViewer(composite);
-						}
-						@Override
-						public void requestActivation() {
-							super.requestActivation();
-							setCurrentViewerPane(this);
-						}
-					};
-				viewerPane.createControl(getContainer());
-				treeViewer = (TreeViewer)viewerPane.getViewer();
-				treeViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
-				treeViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
+		// This is the page for the tree viewer
+		ViewerPane viewerPane =
+			new ViewerPane(getSite().getPage(), cptspEditor.this) {
+				@Override
+				public Viewer createViewer(Composite composite) {
+					return new TreeViewer(composite);
+				}
+				@Override
+				public void requestActivation() {
+					super.requestActivation();
+					setCurrentViewerPane(this);
+				}
+			};
+		viewerPane.createControl(getContainer());
+		treeViewer = (TreeViewer)viewerPane.getViewer();
+		treeViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
+		treeViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
 
-				new AdapterFactoryTreeEditor(treeViewer.getTree(), adapterFactory);
+		new AdapterFactoryTreeEditor(treeViewer.getTree(), adapterFactory);
 
-				createContextMenuFor(treeViewer);
-				int pageIndex = addPage(viewerPane.getControl());
-				setPageText(pageIndex, getString("_UI_TreePage_label"));
+		createContextMenuFor(treeViewer);
+		int pageIndex = addPage(viewerPane.getControl());
+		setPageText(pageIndex, getString("_UI_TreePage_label"));
 	}
 			
 	private void createPageTable(){
+		// This is the page for the table viewer.
+		//
+		ViewerPane viewerPane =
+			new ViewerPane(getSite().getPage(), cptspEditor.this) {
+				@Override
+				public Viewer createViewer(Composite composite) {
+					return new TableViewer(composite);
+				}
+				@Override
+				public void requestActivation() {
+					super.requestActivation();
+					setCurrentViewerPane(this);
+				}
+			};
+		viewerPane.createControl(getContainer());
+		tableViewer = (TableViewer)viewerPane.getViewer();
 
-			// This is the page for the table viewer.
-			//
-				ViewerPane viewerPane =
-					new ViewerPane(getSite().getPage(), cptspEditor.this) {
-						@Override
-						public Viewer createViewer(Composite composite) {
-							return new TableViewer(composite);
-						}
-						@Override
-						public void requestActivation() {
-							super.requestActivation();
-							setCurrentViewerPane(this);
-						}
-					};
-				viewerPane.createControl(getContainer());
-				tableViewer = (TableViewer)viewerPane.getViewer();
+		Table table = tableViewer.getTable();
+		TableLayout layout = new TableLayout();
+		table.setLayout(layout);
+		table.setHeaderVisible(true);
+		table.setLinesVisible(true);
 
-				Table table = tableViewer.getTable();
-				TableLayout layout = new TableLayout();
-				table.setLayout(layout);
-				table.setHeaderVisible(true);
-				table.setLinesVisible(true);
+		TableColumn objectColumn = new TableColumn(table, SWT.NONE);
+		layout.addColumnData(new ColumnWeightData(3, 100, true));
+		objectColumn.setText(getString("_UI_ObjectColumn_label"));
+		objectColumn.setResizable(true);
 
-				TableColumn objectColumn = new TableColumn(table, SWT.NONE);
-				layout.addColumnData(new ColumnWeightData(3, 100, true));
-				objectColumn.setText(getString("_UI_ObjectColumn_label"));
-				objectColumn.setResizable(true);
+		TableColumn selfColumn = new TableColumn(table, SWT.NONE);
+		layout.addColumnData(new ColumnWeightData(2, 100, true));
+		selfColumn.setText(getString("_UI_SelfColumn_label"));
+		selfColumn.setResizable(true);
 
-				TableColumn selfColumn = new TableColumn(table, SWT.NONE);
-				layout.addColumnData(new ColumnWeightData(2, 100, true));
-				selfColumn.setText(getString("_UI_SelfColumn_label"));
-				selfColumn.setResizable(true);
+		tableViewer.setColumnProperties(new String [] {"a", "b"});
+		tableViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
+		tableViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
 
-				tableViewer.setColumnProperties(new String [] {"a", "b"});
-				tableViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
-				tableViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
-
-				createContextMenuFor(tableViewer);
-				int pageIndex = addPage(viewerPane.getControl());
-				setPageText(pageIndex, getString("_UI_TablePage_label"));
+		createContextMenuFor(tableViewer);
+		int pageIndex = addPage(viewerPane.getControl());
+		setPageText(pageIndex, getString("_UI_TablePage_label"));
 	}
 			
 	private void createPageTreeWithColumns(){
+		// This is the page for the table tree viewer.
+		//
+		ViewerPane viewerPane =
+			new ViewerPane(getSite().getPage(), cptspEditor.this) {
+				@Override
+				public Viewer createViewer(Composite composite) {
+					return new TreeViewer(composite);
+				}
+				@Override
+				public void requestActivation() {
+					super.requestActivation();
+					setCurrentViewerPane(this);
+				}
+			};
+		viewerPane.createControl(getContainer());
 
-			// This is the page for the table tree viewer.
-			//
-				ViewerPane viewerPane =
-					new ViewerPane(getSite().getPage(), cptspEditor.this) {
-						@Override
-						public Viewer createViewer(Composite composite) {
-							return new TreeViewer(composite);
-						}
-						@Override
-						public void requestActivation() {
-							super.requestActivation();
-							setCurrentViewerPane(this);
-						}
-					};
-				viewerPane.createControl(getContainer());
+		treeViewerWithColumns = (TreeViewer)viewerPane.getViewer();
 
-				treeViewerWithColumns = (TreeViewer)viewerPane.getViewer();
+		Tree tree = treeViewerWithColumns.getTree();
+		tree.setLayoutData(new FillLayout());
+		tree.setHeaderVisible(true);
+		tree.setLinesVisible(true);
 
-				Tree tree = treeViewerWithColumns.getTree();
-				tree.setLayoutData(new FillLayout());
-				tree.setHeaderVisible(true);
-				tree.setLinesVisible(true);
+		TreeColumn objectColumn = new TreeColumn(tree, SWT.NONE);
+		objectColumn.setText(getString("_UI_ObjectColumn_label"));
+		objectColumn.setResizable(true);
+		objectColumn.setWidth(250);
 
-				TreeColumn objectColumn = new TreeColumn(tree, SWT.NONE);
-				objectColumn.setText(getString("_UI_ObjectColumn_label"));
-				objectColumn.setResizable(true);
-				objectColumn.setWidth(250);
+		TreeColumn selfColumn = new TreeColumn(tree, SWT.NONE);
+		selfColumn.setText(getString("_UI_SelfColumn_label"));
+		selfColumn.setResizable(true);
+		selfColumn.setWidth(200);
 
-				TreeColumn selfColumn = new TreeColumn(tree, SWT.NONE);
-				selfColumn.setText(getString("_UI_SelfColumn_label"));
-				selfColumn.setResizable(true);
-				selfColumn.setWidth(200);
+		treeViewerWithColumns.setColumnProperties(new String [] {"a", "b"});
+		treeViewerWithColumns.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
+		treeViewerWithColumns.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
 
-				treeViewerWithColumns.setColumnProperties(new String [] {"a", "b"});
-				treeViewerWithColumns.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
-				treeViewerWithColumns.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
-
-				createContextMenuFor(treeViewerWithColumns);
-				int pageIndex = addPage(viewerPane.getControl());
-				setPageText(pageIndex, getString("_UI_TreeWithColumnsPage_label"));
+		createContextMenuFor(treeViewerWithColumns);
+		int pageIndex = addPage(viewerPane.getControl());
+		setPageText(pageIndex, getString("_UI_TreeWithColumnsPage_label"));
 	}
 
 	/**

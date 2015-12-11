@@ -4142,16 +4142,6 @@
             <element xsi:nil="true"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2UyPwZp2EeWV-9S3rI7tiQ" x="795" y="-57"/>
           </children>
-          <children xmi:type="notation:Shape" xmi:id="_-loroJp2EeWV-9S3rI7tiQ" type="Text" fontName="Segoe UI" description="sortingpath.InputLastSegment.InputProduct= sortingpath.BeforeLastSegment.owner">
-            <children xmi:type="notation:BasicDecorationNode" xmi:id="_-lp5wJp2EeWV-9S3rI7tiQ" type="DiagramName">
-              <element xsi:nil="true"/>
-            </children>
-            <children xmi:type="notation:BasicDecorationNode" xmi:id="_-lqg0Jp2EeWV-9S3rI7tiQ" type="Description">
-              <element xsi:nil="true"/>
-            </children>
-            <element xsi:nil="true"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-loroZp2EeWV-9S3rI7tiQ" x="795" y="-30"/>
-          </children>
           <children xmi:type="notation:Node" xmi:id="_6aCGgJp5EeWV-9S3rI7tiQ" type="2003" element="_6ZqTEJp5EeWV-9S3rI7tiQ">
             <children xmi:type="notation:Node" xmi:id="_6aCGg5p5EeWV-9S3rI7tiQ" type="5007"/>
             <children xmi:type="notation:Node" xmi:id="_6aCGhJp5EeWV-9S3rI7tiQ" type="7004">
@@ -4369,7 +4359,7 @@
             </children>
             <styles xmi:type="notation:ConnectorStyle" xmi:id="_fsNRoZp8EeWV-9S3rI7tiQ"/>
             <styles xmi:type="notation:FontStyle" xmi:id="_fsNRopp8EeWV-9S3rI7tiQ" fontColor="7490599" fontName="Segoe UI" fontHeight="8"/>
-            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_fsNRo5p8EeWV-9S3rI7tiQ" points="[86, 66, -287, -217]$[297, 226, -76, -57]"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_fsNRo5p8EeWV-9S3rI7tiQ" points="[89, 90, -284, -176]$[186, 187, -187, -79]$[255, 216, -118, -50]"/>
             <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_fsNRqpp8EeWV-9S3rI7tiQ" id="(0.471563981042654,0.4797687861271676)"/>
             <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_fsNRq5p8EeWV-9S3rI7tiQ" id="(0.5,0.5)"/>
           </edges>
