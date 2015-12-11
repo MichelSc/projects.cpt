@@ -361,6 +361,16 @@ public class SortingPlanProductItemProvider
 		superchildren.addAll(children);
 		return superchildren;
 	}
+	
+	/* (non-Javadoc)
+	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#getParent(java.lang.Object)
+	 */
+	@Override
+	public Object getParent(Object object) {
+		Object scenario = super.getParent(object);
+		ScenarioItemProvider scenarioIP = (ScenarioItemProvider)adapterFactory.adapt(scenario, IEditingDomainItemProvider.class);
+		return scenarioIP==null ? null : scenarioIP.getSortingPlanProducts();
+	}
 
 	/**
 	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children

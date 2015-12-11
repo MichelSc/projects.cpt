@@ -175,6 +175,17 @@ public class EndProductItemProvider
 		return childrenFeatures;
 	}
 
+	/* (non-Javadoc)
+	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#getParent(java.lang.Object)
+	 */
+	@Override
+	public Object getParent(Object object) {
+		Object scenario = super.getParent(object);
+		ScenarioItemProvider scenarioIP = (ScenarioItemProvider)adapterFactory.adapt(scenario, IEditingDomainItemProvider.class);
+		return scenarioIP==null ? null : scenarioIP.getEndProducts();
+	}
+
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

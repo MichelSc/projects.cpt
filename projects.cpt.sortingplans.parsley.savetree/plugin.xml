@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+	<extension
+	      point="org.eclipse.ui.views">
+	    <view
+	          category="org.eclipse.emf.parsley"
+	          class="projects.cpt.sortingplans.parsley.savetree.SavetreeExecutableExtensionFactory:projects.cpt.sortingplans.parsley.savetree.SavetreeSaveableTableView"
+	          id="projects.cpt.sortingplans.parsley.savetree"
+	          name="SortingPlansTreeSave"
+	          restorable="true">
+	    </view>
+	</extension>
+</plugin>

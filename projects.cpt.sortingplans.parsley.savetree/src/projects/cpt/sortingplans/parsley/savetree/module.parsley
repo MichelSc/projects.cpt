@@ -1,0 +1,35 @@
+import com.misc.projects.SortingPlans.cptspPackage
+import org.eclipse.emf.common.util.URI
+import projects.cpt.sortingplans.parsley.savetree.SavetreeSaveableTableView
+
+/* projects.cpt.sortingplans.parsley.savetree Emf Parsley Dsl Module file */
+module projects.cpt.sortingplans.parsley.savetree {
+	
+	parts {
+		viewpart projects.cpt.sortingplans.parsley.savetree {
+			viewname "SortingPlansTreeSave"
+			viewclass SavetreeSaveableTableView
+		}
+	}
+	
+	configurator {
+		eClass {
+			SavetreeSaveableTableView -> {
+				return cptspPackage.eINSTANCE.sortingPlan;
+			}
+		}
+		resourceURI {
+			SavetreeSaveableTableView -> {
+				return URI.createFileURI( "C:\\Users\\MiSc\\workspace_rt\\TestCPT2Diagram\\TestGx2.cptsp");
+			}
+		}
+	}
+	
+	resourceManager {
+		initializeResource {
+			// Optional: initialize an empty Resource
+			// 'it' is of type Resource
+			// e.g., it.getContents += myFactory.createMyClass
+		}
+	}
+}

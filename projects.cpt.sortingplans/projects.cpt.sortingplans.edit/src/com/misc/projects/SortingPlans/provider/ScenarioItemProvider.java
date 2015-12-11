@@ -324,6 +324,16 @@ public class ScenarioItemProvider
 	
 	
 	protected List<Object> children = null;
+	
+	private void initChildren(){
+		if ( this.children==null){
+			children = new ArrayList<Object>();
+			Scenario scenario = (Scenario)this.target;
+			this.children.add(new ScenarioSortingPlansItemProvider(adapterFactory, scenario));
+			this.children.add(new ScenarioSortingPlanProductsItemProvider(adapterFactory, scenario));
+			this.children.add(new ScenarioEndProductsItemProvider(adapterFactory, scenario));
+		}
+	}
 
 	/* (non-Javadoc)
 	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#getChildren(java.lang.Object)
@@ -331,22 +341,24 @@ public class ScenarioItemProvider
 	@Override
 	public Collection<?> getChildren(Object object) {
 		//Collection<Object> superchildren = (Collection<Object>) super.getChildren(object);
-		if ( children == null){
-			Scenario scenario = (Scenario) object;
-			children = new ArrayList<Object>();
-			children.add(new ScenarioSortingPlansItemProvider(adapterFactory, scenario));
-			children.add(new ScenarioSortingPlanProductsItemProvider(adapterFactory, scenario));
-			children.add(new ScenarioEndProductsItemProvider(adapterFactory, scenario));
-		}
+		this.initChildren();
 		//superchildren.addAll(children);
 		//return superchildren;
 		return this.children;
 	}
 	
 	public Object getSortingPlans(){
+		this.initChildren();
 		return this.children.get(0);
 	}
 
+	public Object getSortingPlanProducts(){
+		return this.children.get(1);
+	}
+
+	public Object getEndProducts(){
+		return this.children.get(2);
+	}
 	
 	public class AddSortingPlan extends AbstractCommand {
 		
