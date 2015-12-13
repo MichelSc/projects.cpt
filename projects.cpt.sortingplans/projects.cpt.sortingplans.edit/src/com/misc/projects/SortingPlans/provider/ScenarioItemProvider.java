@@ -353,10 +353,12 @@ public class ScenarioItemProvider
 	}
 
 	public Object getSortingPlanProducts(){
+		this.initChildren();
 		return this.children.get(1);
 	}
 
 	public Object getEndProducts(){
+		this.initChildren();
 		return this.children.get(2);
 	}
 	

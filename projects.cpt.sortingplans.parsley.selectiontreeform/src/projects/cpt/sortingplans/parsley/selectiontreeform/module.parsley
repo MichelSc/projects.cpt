@@ -1,0 +1,59 @@
+import projects.cpt.sortingplans.parsley.selectiontreeform.SelectiontreeformOnSelectionTreeFormView
+import com.misc.projects.SortingPlans.SortingPlan
+import com.misc.projects.SortingPlans.SortingPlanProduct
+import com.misc.projects.SortingPlans.Scenario
+import com.misc.projects.SortingPlans.SortingPlanInput
+import com.misc.projects.SortingPlans.SortingPlanOutput
+
+
+/* projects.cpt.sortingplans.parsley.selectiontreeform Emf Parsley Dsl Module file */
+module projects.cpt.sortingplans.parsley.selectiontreeform {
+	
+	parts {
+		viewpart projects.cpt.sortingplans.parsley.selectiontreeform {
+			viewname "Selectiontreeform"
+			viewclass SelectiontreeformOnSelectionTreeFormView
+		}
+	}
+	
+	menuBuilder{menus {SortingPlan ->  
+		          #[
+					submenu("Edit",
+						#[
+						  actionCopy,
+						  actionCut,
+						  separator,
+						  actionPaste
+					     ]),
+   					submenu("CPT",
+						#[
+							
+					     ])
+       		     ]
+		}
+	}
+	
+	featuresProvider {
+        features {
+            SortingPlan -> description
+            SortingPlanProduct -> description
+            Scenario -> name, primaryProductsSelected
+            }
+        }
+        
+	featureCaptionProvider {
+	    text {
+	        SortingPlan:description -> "des:"
+	        Scenario:name -> "scen:"
+	    }
+	}
+	
+	labelProvider {
+	    text {
+	        SortingPlan sp -> { 'sorting plan ' + sp.description+ '"' }
+	        SortingPlanProduct spp  -> { 'product ' + spp.description+ '"' }
+	        SortingPlanInput spi -> { 'input ' + spi.description+ '"' }
+	        SortingPlanOutput spo  -> { 'output ' + spo.description+ '"' }
+	    }
+	}
+}

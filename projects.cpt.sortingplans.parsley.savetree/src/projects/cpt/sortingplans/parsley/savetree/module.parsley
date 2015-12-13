@@ -1,6 +1,7 @@
 import com.misc.projects.SortingPlans.cptspPackage
 import org.eclipse.emf.common.util.URI
 import projects.cpt.sortingplans.parsley.savetree.SavetreeSaveableTableView
+import com.misc.projects.SortingPlans.SortingPlan
 
 /* projects.cpt.sortingplans.parsley.savetree Emf Parsley Dsl Module file */
 module projects.cpt.sortingplans.parsley.savetree {
@@ -11,7 +12,11 @@ module projects.cpt.sortingplans.parsley.savetree {
 			viewclass SavetreeSaveableTableView
 		}
 	}
-	
+	featuresProvider{
+		features{
+			SortingPlan ->description, selected, scenario 
+		}
+	}
 	configurator {
 		eClass {
 			SavetreeSaveableTableView -> {
@@ -20,7 +25,7 @@ module projects.cpt.sortingplans.parsley.savetree {
 		}
 		resourceURI {
 			SavetreeSaveableTableView -> {
-				return URI.createFileURI( "C:\\Users\\MiSc\\workspace_rt\\TestCPT2Diagram\\TestGx2.cptsp");
+				return URI.createPlatformResourceURI( "/TestCPT3/DebugSortingPaths.cptsp", true);
 			}
 		}
 	}
