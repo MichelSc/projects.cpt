@@ -703,7 +703,7 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 			boolean emptyOutput = endProducts.isEmpty();
 			boolean fullOutput  = endProducts.size()==input.getSortedEndProducts().size();
 			this.sortingPathSetSortedProducts(newPath, endProducts);
-			if ( !endProducts.isEmpty() && !fullOutput ){  // this must block cycling
+			if ( !emptyOutput && !fullOutput ){  // this must block cycling
 				this.sortingPathPropagate(newPath, toDos);
 			}
 		}
