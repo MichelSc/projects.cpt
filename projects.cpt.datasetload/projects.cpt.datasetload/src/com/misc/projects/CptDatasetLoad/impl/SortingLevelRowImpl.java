@@ -2,7 +2,7 @@
  */
 package com.misc.projects.CptDatasetLoad.impl;
 
-import com.misc.common.moplaf.datasetload.impl.TableRowImpl;
+import com.misc.common.moplaf.dbsynch.impl.TableRowImpl;
 import com.misc.projects.CptDatasetLoad.CptDatasetLoadPackage;
 import com.misc.projects.CptDatasetLoad.SortingLevelRow;
 import java.math.BigDecimal;
@@ -16,12 +16,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.CptDatasetLoad.impl.SortingLevelRowImpl#getSortingLevelSk <em>Sorting Level Sk</em>}</li>
  *   <li>{@link com.misc.projects.CptDatasetLoad.impl.SortingLevelRowImpl#getSortingLevelName <em>Sorting Level Name</em>}</li>
  *   <li>{@link com.misc.projects.CptDatasetLoad.impl.SortingLevelRowImpl#getDescription <em>Description</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

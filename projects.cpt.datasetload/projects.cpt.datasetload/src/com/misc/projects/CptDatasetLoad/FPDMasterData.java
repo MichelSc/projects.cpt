@@ -10,10 +10,10 @@ package com.misc.projects.CptDatasetLoad;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.CptDatasetLoad.FPDMasterData#getSortingLevelTable <em>Sorting Level Table</em>}</li>
  * </ul>
- * </p>
  *
  * @see com.misc.projects.CptDatasetLoad.CptDatasetLoadPackage#getFPDMasterData()
  * @model

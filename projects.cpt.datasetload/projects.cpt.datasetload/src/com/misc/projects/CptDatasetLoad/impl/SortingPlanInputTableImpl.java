@@ -2,24 +2,25 @@
  */
 package com.misc.projects.CptDatasetLoad.impl;
 
-import com.misc.common.moplaf.datasetload.TableRow;
-import com.misc.common.moplaf.datasetload.impl.TableRowKeyImpl;
+import java.lang.reflect.InvocationTargetException;
+import java.math.BigDecimal;
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
+import com.misc.common.moplaf.dbsynch.EnumColumnType;
+import com.misc.common.moplaf.dbsynch.TableRow;
+import com.misc.common.moplaf.dbsynch.impl.TableRowKeyImpl;
 import com.misc.projects.CptDatasetLoad.CptDatasetLoadFactory;
 import com.misc.projects.CptDatasetLoad.CptDatasetLoadPackage;
 import com.misc.projects.CptDatasetLoad.SortingPlanInputRow;
 import com.misc.projects.CptDatasetLoad.SortingPlanInputTable;
 import com.misc.projects.CptDatasetLoad.SortingPlanOutputRow;
-import java.lang.reflect.InvocationTargetException;
-import java.math.BigDecimal;
-import java.util.Collection;
-import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.BasicEList;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,10 +28,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.CptDatasetLoad.impl.SortingPlanInputTableImpl#getSortingPlanInputRow <em>Sorting Plan Input Row</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -182,62 +183,24 @@ public class SortingPlanInputTableImpl extends FPDSortingPlanTableImpl implement
 	 * @see com.misc.common.moplaf.datasetload.impl.TableImpl#NewRow()
 	 */
 	@Override
-	public TableRow newRow() {
+	public TableRow constructRow() {
 		SortingPlanInputRow newSortingPlanInputRow = CptDatasetLoadFactory.eINSTANCE.createSortingPlanInputRow();
 		this.getSortingPlanInputRow().add(newSortingPlanInputRow);
 		return newSortingPlanInputRow;
 	}
 
-	/* (non-Javadoc)
-	 * @see com.misc.common.moplaf.datasetload.impl.TableImpl#getName()
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 */
 	@Override
-	public String getName() {
-		return "V_SORTING_LEVEL_ASSOC_PLAN";
+	protected void refreshMetaDataImpl() {
+		this.setTableName("V_SORTING_LEVEL_ASSOC_PLAN");
+//		this.setWhereClause(" validto > ? and validfrom < ? ");
+		this.addColumn(true,  "sorting_plan_sk",       EnumColumnType.ENUM_COLUMN_TYPE_INT, CptDatasetLoadPackage.Literals.SORTING_PLAN_INPUT_ROW__SORTING_PLAN_SK);
+		this.addColumn(true, "AVCS_SORTING_LEVEL_SK",  EnumColumnType.ENUM_COLUMN_TYPE_INT, CptDatasetLoadPackage.Literals.SORTING_PLAN_INPUT_ROW__SORTING_LEVEL_AVCS_SK);
+		this.addColumn(true, "MECHANIZATION_LEVEL_SK", EnumColumnType.ENUM_COLUMN_TYPE_INT, CptDatasetLoadPackage.Literals.SORTING_PLAN_INPUT_ROW__MECHANIZATION_LEVEL_SK);
+		this.addColumn(true, "THROUGHPUT_TYPE_SK",     EnumColumnType.ENUM_COLUMN_TYPE_INT, CptDatasetLoadPackage.Literals.SORTING_PLAN_INPUT_ROW__THROUGHPUT_TYPE_SK);
 	}
-
-	
-	/* (non-Javadoc)
-	 * @see com.misc.common.moplaf.datasetload.impl.TableImpl#getSQLStatement()
-	 */
-	@Override
-	public String getSQLStatement() {
-		String sqlStatement = 
-				"select spin.sorting_plan_sk "
-			+	"     , spin.AVCS_SORTING_LEVEL_SK "
-			+	"     , spin.MECHANIZATION_LEVEL_SK "
-			+	"     , spin.THROUGHPUT_TYPE_SK "
-			+	"from v_sorting_level_assoc_plan spin "
-            ;
-		return sqlStatement;
-	}
-
-	/* (non-Javadoc)
-	 * @see com.misc.common.moplaf.datasetload.impl.TableImpl#getColumnTableRowAttributes()
-	 */
-	@Override
-	public EList<EAttribute> getColumnTableRowAttributes() {
-		EList<EAttribute> columnAttributes = new BasicEList<EAttribute>();
-		columnAttributes.add(CptDatasetLoadPackage.Literals.SORTING_PLAN_INPUT_ROW__SORTING_PLAN_SK);
-		columnAttributes.add(CptDatasetLoadPackage.Literals.SORTING_PLAN_INPUT_ROW__SORTING_LEVEL_AVCS_SK);
-		columnAttributes.add(CptDatasetLoadPackage.Literals.SORTING_PLAN_INPUT_ROW__MECHANIZATION_LEVEL_SK);
-		columnAttributes.add(CptDatasetLoadPackage.Literals.SORTING_PLAN_INPUT_ROW__THROUGHPUT_TYPE_SK);
-		return columnAttributes;
-	}
-	
-	/* (non-Javadoc)
-	 * @see com.misc.common.moplaf.datasetload.impl.TableImpl#getKeyColumns()
-	 */
-	@Override
-	public EList<Integer> getKeyColumns() {
-		EList<Integer> keyColumns = new BasicEList<Integer>();
-		keyColumns.add(0); 
-		keyColumns.add(1); 
-		keyColumns.add(2); 
-		keyColumns.add(3); 
-		return keyColumns;
-	}
-
-
 
 } //SortingPlanInputTableImpl

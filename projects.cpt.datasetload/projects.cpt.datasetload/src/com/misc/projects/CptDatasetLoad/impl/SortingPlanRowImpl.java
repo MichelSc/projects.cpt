@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.CptDatasetLoad.impl.SortingPlanRowImpl#getSortingPlanSk <em>Sorting Plan Sk</em>}</li>
  *   <li>{@link com.misc.projects.CptDatasetLoad.impl.SortingPlanRowImpl#getSortingPlanName <em>Sorting Plan Name</em>}</li>
@@ -31,7 +32,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.misc.projects.CptDatasetLoad.impl.SortingPlanRowImpl#getOutputs <em>Outputs</em>}</li>
  *   <li>{@link com.misc.projects.CptDatasetLoad.impl.SortingPlanRowImpl#getDescription <em>Description</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

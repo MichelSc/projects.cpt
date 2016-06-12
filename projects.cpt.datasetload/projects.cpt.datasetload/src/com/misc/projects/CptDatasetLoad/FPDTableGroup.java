@@ -2,7 +2,7 @@
  */
 package com.misc.projects.CptDatasetLoad;
 
-import com.misc.common.moplaf.datasetload.TableGroup;
+import com.misc.common.moplaf.dbsynch.DbSynchUnit;
 
 /**
  * <!-- begin-user-doc -->
@@ -11,16 +11,16 @@ import com.misc.common.moplaf.datasetload.TableGroup;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.CptDatasetLoad.FPDTableGroup#getFPD <em>FPD</em>}</li>
  * </ul>
- * </p>
  *
  * @see com.misc.projects.CptDatasetLoad.CptDatasetLoadPackage#getFPDTableGroup()
  * @model
  * @generated
  */
-public interface FPDTableGroup extends TableGroup {
+public interface FPDTableGroup extends DbSynchUnit {
 	/**
 	 * Returns the value of the '<em><b>FPD</b></em>' reference.
 	 * <!-- begin-user-doc -->

@@ -3,8 +3,8 @@
 package com.misc.projects.CptDatasetLoad.provider;
 
 
-import com.misc.common.moplaf.datasetload.provider.TableRowItemProvider;
-
+import com.misc.common.moplaf.dbsynch.impl.TableRowKeyImpl;
+import com.misc.common.moplaf.dbsynch.provider.TableRowItemProvider;
 import com.misc.projects.CptDatasetLoad.CptDatasetLoadPackage;
 import com.misc.projects.CptDatasetLoad.FPDSortingPanRow;
 
@@ -93,8 +93,11 @@ public class FPDSortingPanRowItemProvider extends TableRowItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		FPDSortingPanRow fpdSortingPanRow = (FPDSortingPanRow)object;
-		return getString("_UI_FPDSortingPanRow_type") + " " + fpdSortingPanRow.getRowNumber();
+		TableRowKeyImpl labelValue = ((FPDSortingPanRow)object).getCurrentKey();
+		String label = labelValue == null ? null : labelValue.toString();
+		return label == null || label.length() == 0 ?
+			getString("_UI_FPDSortingPanRow_type") :
+			getString("_UI_FPDSortingPanRow_type") + " " + label;
 	}
 	
 

@@ -3,7 +3,7 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/projects.cpt.sortingplans/src" modelPluginID="projects.cpt.sortingplans"
     modelName="Sortingplans" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false"
-    usedGenPackages="../../projects.cpt.datasetload/model/cptdatasetload.genmodel#//CptDatasetLoad ../../com.misc.common.moplaf.datasetload.emf/model/datasetload.genmodel#//datasetload ../../com.misc.common.moplaf.datasetload.ora.emf/model/datasetloadora.genmodel#//DatasetLoadOra ../../com.misc.common.moplaf.propagator/model/propagator.genmodel#//propagator"
+    usedGenPackages="../../projects.cpt.datasetload/model/cptdatasetload.genmodel#//CptDatasetLoad ../../com.misc.common.moplaf.dbsynch.emf/model/dbsynch.genmodel#//dbsynch ../../com.misc.common.moplaf.dbsynch.ora.emf/model/dbsynchora.genmodel#//dbsynchora ../../com.misc.common.moplaf.propagator/model/propagator.genmodel#//propagator"
     operationReflection="true" importOrganizing="true">
   <foreignModel>sortingplans.ecore</foreignModel>
   <genPackages prefix="cptsp" basePackage="com.misc.projects" disposableProviderFactory="true"
@@ -17,11 +17,11 @@
       <genFeatures property="Readonly" createChild="false" propertyCategory="" ecoreFeature="ecore:EReference sortingplans.ecore#//Scenario/EndProducts"/>
       <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference sortingplans.ecore#//Scenario/SortingPlanProducts"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sortingplans.ecore#//Scenario/Name"/>
-      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute sortingplans.ecore#//Scenario/Remarks"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sortingplans.ecore#//Scenario/SortingLevelsWithDestination"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sortingplans.ecore#//Scenario/SelectedSortingPlans"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sortingplans.ecore#//Scenario/SelectedEndProducts"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sortingplans.ecore#//Scenario/PrimaryProductsSelected"/>
+      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute sortingplans.ecore#//Scenario/Remarks"/>
       <genOperations ecoreOperation="sortingplans.ecore#//Scenario/refreshSelectedSortingPlans"/>
       <genOperations ecoreOperation="sortingplans.ecore#//Scenario/refresh"/>
       <genOperations ecoreOperation="sortingplans.ecore#//Scenario/refreshSortingPlanProduct"/>

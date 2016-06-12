@@ -13,8 +13,8 @@ Export-Package: com.misc.projects.SortingPlans,
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  projects.cpt.datasetload;visibility:=reexport,
- com.misc.common.moplaf.datasetload.emf;visibility:=reexport,
- com.misc.common.moplaf.datasetload.ora.emf;visibility:=reexport,
  com.misc.common.moplaf.propagator;bundle-version="1.0.0";visibility:=reexport,
+ com.misc.common.moplaf.dbsynch.ora.emf;visibility:=reexport,
+ com.misc.common.moplaf.dbsynch.emf;visibility:=reexport,
  org.apache.commons.lang
 Bundle-ActivationPolicy: lazy

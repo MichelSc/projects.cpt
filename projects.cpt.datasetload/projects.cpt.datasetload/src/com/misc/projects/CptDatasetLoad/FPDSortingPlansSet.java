@@ -11,6 +11,7 @@ import java.util.Date;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.CptDatasetLoad.FPDSortingPlansSet#getFromDate <em>From Date</em>}</li>
  *   <li>{@link com.misc.projects.CptDatasetLoad.FPDSortingPlansSet#getToDate <em>To Date</em>}</li>
@@ -18,7 +19,6 @@ import java.util.Date;
  *   <li>{@link com.misc.projects.CptDatasetLoad.FPDSortingPlansSet#getSortingPlanOutputsTable <em>Sorting Plan Outputs Table</em>}</li>
  *   <li>{@link com.misc.projects.CptDatasetLoad.FPDSortingPlansSet#getSortingPlanInputsTable <em>Sorting Plan Inputs Table</em>}</li>
  * </ul>
- * </p>
  *
  * @see com.misc.projects.CptDatasetLoad.CptDatasetLoadPackage#getFPDSortingPlansSet()
  * @model

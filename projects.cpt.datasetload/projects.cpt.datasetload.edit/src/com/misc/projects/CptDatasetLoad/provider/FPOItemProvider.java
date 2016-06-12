@@ -3,12 +3,10 @@
 package com.misc.projects.CptDatasetLoad.provider;
 
 
-import com.misc.common.moplaf.DatasetLoadOra.provider.DatasetLoadJdbcOraThinItemProvider;
-
+import com.misc.common.moplaf.dbsynch.dbsynchora.provider.DataSourceJdbcOraThinItemProvider;
 import com.misc.projects.CptDatasetLoad.CptDatasetLoadFactory;
 import com.misc.projects.CptDatasetLoad.CptDatasetLoadPackage;
 import com.misc.projects.CptDatasetLoad.FPO;
-
 import java.util.Collection;
 import java.util.List;
 
@@ -27,7 +25,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class FPOItemProvider extends DatasetLoadJdbcOraThinItemProvider {
+public class FPOItemProvider extends DataSourceJdbcOraThinItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

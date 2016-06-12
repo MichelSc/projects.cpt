@@ -34,6 +34,13 @@ import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.PartInitException;
 
+import com.misc.common.moplaf.emf.editor.Util;
+import com.misc.common.moplaf.emf.editor.action.ConnectAction;
+import com.misc.common.moplaf.emf.editor.action.DisconnectAction;
+import com.misc.common.moplaf.emf.editor.action.RefreshAction;
+import com.misc.common.moplaf.emf.editor.action.RefreshMetaDataAction;
+import com.misc.common.moplaf.emf.editor.action.SynchUpAction;
+
 
 /**
  * This is the action bar contributor for the CptDatasetLoad model editor.
@@ -104,35 +111,6 @@ public class CptDatasetLoadActionBarContributor
 			}
 		};
 
-		/**
-		 * This action connects the object
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 */
-		protected ConnectAction connectAction = new ConnectAction();
-			
-		/**
-		 * This action disconnects the object
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 */
-		protected DisconnectAction disconnectAction = new DisconnectAction();
-			
-		/**
-		 * This action loads the object
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 */
-		protected LoadAction loadAction = new LoadAction();
-			
-		/**
-		 * This action loads the object
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 */
-		protected RefreshAction refreshAction = new RefreshAction();
-			
-
 		
 	/**
 	 * This will contain one {@link org.eclipse.emf.edit.ui.action.CreateChildAction} corresponding to each descriptor
@@ -159,6 +137,21 @@ public class CptDatasetLoadActionBarContributor
 	 * @generated
 	 */
 	protected Collection<IAction> createSiblingActions;
+
+	/**
+	 * This will contain one {@link org.eclipse.emf.edit.ui.action.ApplicationPopUpMenuAction} 
+	 * generated for the current selection by the item provider.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 */
+	protected Collection<IAction> applicationPopUpMenuActions;
+
+	/**
+	 * This is the menu manager into which menu contribution items should be added for G4SOptiPost actions.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 */
+	protected IMenuManager applicationPopUpMenuManager;
 
 	/**
 	 * This is the menu manager into which menu contribution items should be added for CreateSibling actions.
@@ -198,7 +191,6 @@ public class CptDatasetLoadActionBarContributor
 	 * as well as the sub-menus for object creation items.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	@Override
 	public void contributeToMenu(IMenuManager menuManager) {
@@ -220,6 +212,13 @@ public class CptDatasetLoadActionBarContributor
 		//
 		createSiblingMenuManager = new MenuManager(CptdatasetloadEditorPlugin.INSTANCE.getString("_UI_CreateSibling_menu_item"));
 		submenuManager.insertBefore("additions", createSiblingMenuManager);
+
+		// Prepare for CptDataLoad item addition or removal.
+		//
+		applicationPopUpMenuManager = new MenuManager("ToUseDbSynch");
+		submenuManager.insertBefore("additions", applicationPopUpMenuManager);
+		
+		submenuManager.insertBefore("additions", new Separator("generic part"));
 
 		// Force an update because Eclipse hides empty menus now.
 		//
@@ -280,6 +279,9 @@ public class CptDatasetLoadActionBarContributor
 		if (createSiblingMenuManager != null) {
 			depopulateManager(createSiblingMenuManager, createSiblingActions);
 		}
+		if (applicationPopUpMenuManager != null) {
+			depopulateManager(applicationPopUpMenuManager, applicationPopUpMenuActions);
+		}
 
 		// Query the new selection for appropriate new child/sibling descriptors
 		//
@@ -301,6 +303,13 @@ public class CptDatasetLoadActionBarContributor
 		createChildActions = generateCreateChildActions(newChildDescriptors, selection);
 		createSiblingActions = generateCreateSiblingActions(newSiblingDescriptors, selection);
 
+		applicationPopUpMenuActions = new ArrayList<IAction>();
+		applicationPopUpMenuActions.add(new ConnectAction        (activeEditorPart, selection));
+		applicationPopUpMenuActions.add(new DisconnectAction     (activeEditorPart, selection));
+		applicationPopUpMenuActions.add(new SynchUpAction        (activeEditorPart, selection));
+		applicationPopUpMenuActions.add(new RefreshAction        (activeEditorPart, selection));
+		applicationPopUpMenuActions.add(new RefreshMetaDataAction(activeEditorPart, selection));
+
 		if (createChildMenuManager != null) {
 			populateManager(createChildMenuManager, createChildActions, null);
 			createChildMenuManager.update(true);
@@ -309,10 +318,10 @@ public class CptDatasetLoadActionBarContributor
 			populateManager(createSiblingMenuManager, createSiblingActions, null);
 			createSiblingMenuManager.update(true);
 		}
-		this.connectAction   .selectionChanged(activeEditorPart, selection);
-		this.disconnectAction.selectionChanged(activeEditorPart, selection);
-		this.loadAction      .selectionChanged(activeEditorPart, selection);
-		this.refreshAction   .selectionChanged(activeEditorPart, selection);
+		if (applicationPopUpMenuManager!= null) {
+			Util.populateManager(applicationPopUpMenuManager, applicationPopUpMenuActions, null);
+			applicationPopUpMenuManager.update(true);
+		}
 	}
 
 	/**
@@ -419,13 +428,9 @@ public class CptDatasetLoadActionBarContributor
 		populateManager(submenuManager, createSiblingActions, null);
 		menuManager.insertBefore("edit", submenuManager);
 
-		submenuManager = new MenuManager("CPT");
+		submenuManager = new MenuManager("CPT DatasetLoad");
+		Util.populateManager(submenuManager, applicationPopUpMenuActions, null);
 		menuManager.insertBefore("edit", submenuManager);
-
-		submenuManager.add(this.connectAction);
-		submenuManager.add(this.disconnectAction);
-		submenuManager.add(this.loadAction);
-		submenuManager.add(this.refreshAction);
 	}
 
 	/**

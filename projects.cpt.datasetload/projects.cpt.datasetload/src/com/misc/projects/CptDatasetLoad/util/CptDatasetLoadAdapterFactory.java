@@ -2,16 +2,14 @@
  */
 package com.misc.projects.CptDatasetLoad.util;
 
-import com.misc.common.moplaf.DatasetLoadOra.DatasetLoadJdbcOraThin;
-
-import com.misc.common.moplaf.datasetload.DataSource;
-import com.misc.common.moplaf.datasetload.DataSourceJdbc;
-import com.misc.common.moplaf.datasetload.Table;
-import com.misc.common.moplaf.datasetload.TableGroup;
-import com.misc.common.moplaf.datasetload.TableRow;
-
+import com.misc.common.moplaf.dbsynch.DataSource;
+import com.misc.common.moplaf.dbsynch.DataSourceJdbc;
+import com.misc.common.moplaf.dbsynch.DbSynchUnit;
+import com.misc.common.moplaf.dbsynch.DbSynchUnitAbstract;
+import com.misc.common.moplaf.dbsynch.Table;
+import com.misc.common.moplaf.dbsynch.TableRow;
+import com.misc.common.moplaf.dbsynch.dbsynchora.DataSourceJdbcOraThin;
 import com.misc.projects.CptDatasetLoad.*;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 
@@ -152,6 +150,10 @@ public class CptDatasetLoadAdapterFactory extends AdapterFactoryImpl {
 				return createFPOForecastBucketsAdapter();
 			}
 			@Override
+			public Adapter caseDbSynchUnitAbstract(DbSynchUnitAbstract object) {
+				return createDbSynchUnitAbstractAdapter();
+			}
+			@Override
 			public Adapter caseDataSource(DataSource object) {
 				return createDataSourceAdapter();
 			}
@@ -160,12 +162,12 @@ public class CptDatasetLoadAdapterFactory extends AdapterFactoryImpl {
 				return createDataSourceJdbcAdapter();
 			}
 			@Override
-			public Adapter caseDatasetLoadJdbcOraThin(DatasetLoadJdbcOraThin object) {
-				return createDatasetLoadJdbcOraThinAdapter();
+			public Adapter caseDataSourceJdbcOraThin(DataSourceJdbcOraThin object) {
+				return createDataSourceJdbcOraThinAdapter();
 			}
 			@Override
-			public Adapter caseTableGroup(TableGroup object) {
-				return createTableGroupAdapter();
+			public Adapter caseDbSynchUnit(DbSynchUnit object) {
+				return createDbSynchUnitAdapter();
 			}
 			@Override
 			public Adapter caseTableRow(TableRow object) {
@@ -364,6 +366,20 @@ public class CptDatasetLoadAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link com.misc.common.moplaf.dbsynch.DbSynchUnitAbstract <em>Unit Abstract</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.misc.common.moplaf.dbsynch.DbSynchUnitAbstract
+	 * @generated
+	 */
+	public Adapter createDbSynchUnitAbstractAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link com.misc.projects.CptDatasetLoad.SortingLevelsTable <em>Sorting Levels Table</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -462,13 +478,13 @@ public class CptDatasetLoadAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link com.misc.common.moplaf.datasetload.DataSource <em>Data Source</em>}'.
+	 * Creates a new adapter for an object of class '{@link com.misc.common.moplaf.dbsynch.DataSource <em>Data Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see com.misc.common.moplaf.datasetload.DataSource
+	 * @see com.misc.common.moplaf.dbsynch.DataSource
 	 * @generated
 	 */
 	public Adapter createDataSourceAdapter() {
@@ -476,13 +492,13 @@ public class CptDatasetLoadAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link com.misc.common.moplaf.datasetload.DataSourceJdbc <em>Data Source Jdbc</em>}'.
+	 * Creates a new adapter for an object of class '{@link com.misc.common.moplaf.dbsynch.DataSourceJdbc <em>Data Source Jdbc</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see com.misc.common.moplaf.datasetload.DataSourceJdbc
+	 * @see com.misc.common.moplaf.dbsynch.DataSourceJdbc
 	 * @generated
 	 */
 	public Adapter createDataSourceJdbcAdapter() {
@@ -490,41 +506,41 @@ public class CptDatasetLoadAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link com.misc.common.moplaf.DatasetLoadOra.DatasetLoadJdbcOraThin <em>Dataset Load Jdbc Ora Thin</em>}'.
+	 * Creates a new adapter for an object of class '{@link com.misc.common.moplaf.dbsynch.dbsynchora.DataSourceJdbcOraThin <em>Data Source Jdbc Ora Thin</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see com.misc.common.moplaf.DatasetLoadOra.DatasetLoadJdbcOraThin
+	 * @see com.misc.common.moplaf.dbsynch.dbsynchora.DataSourceJdbcOraThin
 	 * @generated
 	 */
-	public Adapter createDatasetLoadJdbcOraThinAdapter() {
+	public Adapter createDataSourceJdbcOraThinAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link com.misc.common.moplaf.datasetload.TableGroup <em>Table Group</em>}'.
+	 * Creates a new adapter for an object of class '{@link com.misc.common.moplaf.dbsynch.DbSynchUnit <em>Unit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see com.misc.common.moplaf.datasetload.TableGroup
+	 * @see com.misc.common.moplaf.dbsynch.DbSynchUnit
 	 * @generated
 	 */
-	public Adapter createTableGroupAdapter() {
+	public Adapter createDbSynchUnitAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link com.misc.common.moplaf.datasetload.Table <em>Table</em>}'.
+	 * Creates a new adapter for an object of class '{@link com.misc.common.moplaf.dbsynch.Table <em>Table</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see com.misc.common.moplaf.datasetload.Table
+	 * @see com.misc.common.moplaf.dbsynch.Table
 	 * @generated
 	 */
 	public Adapter createTableAdapter() {
@@ -532,13 +548,13 @@ public class CptDatasetLoadAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link com.misc.common.moplaf.datasetload.TableRow <em>Table Row</em>}'.
+	 * Creates a new adapter for an object of class '{@link com.misc.common.moplaf.dbsynch.TableRow <em>Table Row</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see com.misc.common.moplaf.datasetload.TableRow
+	 * @see com.misc.common.moplaf.dbsynch.TableRow
 	 * @generated
 	 */
 	public Adapter createTableRowAdapter() {

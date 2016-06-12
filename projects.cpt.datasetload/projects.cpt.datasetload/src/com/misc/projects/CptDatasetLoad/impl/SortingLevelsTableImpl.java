@@ -2,25 +2,24 @@
  */
 package com.misc.projects.CptDatasetLoad.impl;
 
-import com.misc.common.moplaf.datasetload.TableRow;
-import com.misc.common.moplaf.datasetload.impl.TableRowKeyImpl;
-import com.misc.projects.CptDatasetLoad.CptDatasetLoadFactory;
-import com.misc.projects.CptDatasetLoad.CptDatasetLoadPackage;
-import com.misc.projects.CptDatasetLoad.SortingLevelRow;
-import com.misc.projects.CptDatasetLoad.SortingLevelsTable;
-
 import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
+import com.misc.common.moplaf.dbsynch.EnumColumnType;
+import com.misc.common.moplaf.dbsynch.TableRow;
+import com.misc.common.moplaf.dbsynch.impl.TableRowKeyImpl;
+import com.misc.projects.CptDatasetLoad.CptDatasetLoadFactory;
+import com.misc.projects.CptDatasetLoad.CptDatasetLoadPackage;
+import com.misc.projects.CptDatasetLoad.SortingLevelRow;
+import com.misc.projects.CptDatasetLoad.SortingLevelsTable;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,10 +27,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.CptDatasetLoad.impl.SortingLevelsTableImpl#getSortinglevelRow <em>Sortinglevel Row</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -181,60 +180,24 @@ public class SortingLevelsTableImpl extends MasterDataTableImpl implements Sorti
 	 * @see com.misc.common.moplaf.datasetload.impl.TableImpl#NewRow()
 	 */
 	@Override
-	public TableRow newRow() {
+	public TableRow constructRow() {
 		SortingLevelRow newSortingLevelRow = CptDatasetLoadFactory.eINSTANCE.createSortingLevelRow();
 		this.getSortinglevelRow().add(newSortingLevelRow);
 		return newSortingLevelRow;
 	}
 
-	
-	/* (non-Javadoc)
-	 * @see com.misc.common.moplaf.datasetload.impl.TableImpl#getName()
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 */
 	@Override
-	public String getName() {
-		return "V_AVCS_SORTING";
-	}
-
-	/* (non-Javadoc)
-	 * @see com.misc.common.moplaf.datasetload.impl.TableImpl#getSQLStatement()
-	 */
-	@Override
-	public String getSQLStatement() {
-		String sqlStatement =	"select AVCS_SORTING_LEVEL_SK "
-				            +	"     , AVCS_SORTING_LEVEL "
-							+	"from v_avcs_sorting "							
-			                ;
-		return sqlStatement;
+	protected void refreshMetaDataImpl() {
+		this.setTableName("v_avcs_sorting");
+//		this.setWhereClause(" validto > ? and validfrom < ? ");
+//		this.addParam(ToUseDbSynchPackage.Literals.FPD_GROUP_SORTING_PLAN__FROM_DATE);
+//		this.addParam(ToUseDbSynchPackage.Literals.FPD_GROUP_SORTING_PLAN__TO_DATE);
+		this.addColumn(true,  "AVCS_SORTING_LEVEL_SK", EnumColumnType.ENUM_COLUMN_TYPE_CHAR, CptDatasetLoadPackage.Literals.SORTING_LEVEL_ROW__SORTING_LEVEL_SK);
+		this.addColumn(false, "AVCS_SORTING_LEVEL",    EnumColumnType.ENUM_COLUMN_TYPE_CHAR, CptDatasetLoadPackage.Literals.SORTING_LEVEL_ROW__SORTING_LEVEL_NAME);
 	}
 	
-	/* (non-Javadoc)
-	 * @see com.misc.common.moplaf.datasetload.impl.TableImpl#getParamTableGroupAttributes()
-	 */
-	@Override
-	public EList<EAttribute> getParamTableGroupAttributes() {
-		EList<EAttribute> columnAttributes = new BasicEList<EAttribute>();
-		return columnAttributes;
-	}
-	/* (non-Javadoc)
-	 * @see com.misc.common.moplaf.datasetload.impl.TableImpl#getColumnTableRowAttributes()
-	 */
-	@Override
-	public EList<EAttribute> getColumnTableRowAttributes() {
-		EList<EAttribute> columnAttributes = new BasicEList<EAttribute>();
-		columnAttributes.add(CptDatasetLoadPackage.Literals.SORTING_LEVEL_ROW__SORTING_LEVEL_SK);
-		columnAttributes.add(CptDatasetLoadPackage.Literals.SORTING_LEVEL_ROW__SORTING_LEVEL_NAME);
-		return columnAttributes;
-	}
-
-	/* (non-Javadoc)
-	 * @see com.misc.common.moplaf.datasetload.impl.TableImpl#getKeyColumns()
-	 */
-	@Override
-	public EList<Integer> getKeyColumns() {
-		EList<Integer> keyColumns = new BasicEList<Integer>();
-		keyColumns.add(0); // zero based
-		return keyColumns;
-	}
-
 } //SortingLevelsTableImpl

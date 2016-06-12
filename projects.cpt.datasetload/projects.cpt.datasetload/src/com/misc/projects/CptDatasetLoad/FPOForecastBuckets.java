@@ -2,7 +2,7 @@
  */
 package com.misc.projects.CptDatasetLoad;
 
-import com.misc.common.moplaf.datasetload.Table;
+import com.misc.common.moplaf.dbsynch.Table;
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -12,10 +12,10 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.CptDatasetLoad.FPOForecastBuckets#getForecastRows <em>Forecast Rows</em>}</li>
  * </ul>
- * </p>
  *
  * @see com.misc.projects.CptDatasetLoad.CptDatasetLoadPackage#getFPOForecastBuckets()
  * @model

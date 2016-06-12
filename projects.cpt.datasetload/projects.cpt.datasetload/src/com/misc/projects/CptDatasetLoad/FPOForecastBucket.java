@@ -2,8 +2,7 @@
  */
 package com.misc.projects.CptDatasetLoad;
 
-import com.misc.common.moplaf.datasetload.TableRow;
-
+import com.misc.common.moplaf.dbsynch.TableRow;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -14,6 +13,7 @@ import java.util.Date;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.CptDatasetLoad.FPOForecastBucket#getBucketDate <em>Bucket Date</em>}</li>
  *   <li>{@link com.misc.projects.CptDatasetLoad.FPOForecastBucket#getBucketBeginTime <em>Bucket Begin Time</em>}</li>
@@ -32,7 +32,6 @@ import java.util.Date;
  *   <li>{@link com.misc.projects.CptDatasetLoad.FPOForecastBucket#getTimeSeriesID <em>Time Series ID</em>}</li>
  *   <li>{@link com.misc.projects.CptDatasetLoad.FPOForecastBucket#getBucketID <em>Bucket ID</em>}</li>
  * </ul>
- * </p>
  *
  * @see com.misc.projects.CptDatasetLoad.CptDatasetLoadPackage#getFPOForecastBucket()
  * @model

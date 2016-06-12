@@ -2,8 +2,7 @@
  */
 package com.misc.projects.CptDatasetLoad.impl;
 
-import com.misc.common.moplaf.datasetload.impl.TableRowImpl;
-
+import com.misc.common.moplaf.dbsynch.impl.TableRowImpl;
 import com.misc.projects.CptDatasetLoad.CptDatasetLoadPackage;
 import com.misc.projects.CptDatasetLoad.FPOForecastBucket;
 
@@ -22,6 +21,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.CptDatasetLoad.impl.FPOForecastBucketImpl#getBucketDate <em>Bucket Date</em>}</li>
  *   <li>{@link com.misc.projects.CptDatasetLoad.impl.FPOForecastBucketImpl#getBucketBeginTime <em>Bucket Begin Time</em>}</li>
@@ -40,7 +40,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link com.misc.projects.CptDatasetLoad.impl.FPOForecastBucketImpl#getTimeSeriesID <em>Time Series ID</em>}</li>
  *   <li>{@link com.misc.projects.CptDatasetLoad.impl.FPOForecastBucketImpl#getBucketID <em>Bucket ID</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

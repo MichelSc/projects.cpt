@@ -3,7 +3,7 @@
 package com.misc.projects.CptDatasetLoad.provider;
 
 
-import com.misc.common.moplaf.datasetload.provider.TableGroupItemProvider;
+import com.misc.common.moplaf.dbsynch.provider.DbSynchUnitItemProvider;
 import com.misc.projects.CptDatasetLoad.CptDatasetLoadPackage;
 import com.misc.projects.CptDatasetLoad.FPDTableGroup;
 import java.util.Collection;
@@ -20,7 +20,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
  * <!-- end-user-doc -->
  * @generated
  */
-public class FPDTableGroupItemProvider extends TableGroupItemProvider {
+public class FPDTableGroupItemProvider extends DbSynchUnitItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -67,17 +67,6 @@ public class FPDTableGroupItemProvider extends TableGroupItemProvider {
 				 null,
 				 null,
 				 null));
-	}
-
-	/**
-	 * This returns FPDTableGroup.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/FPDTableGroup"));
 	}
 
 	/**

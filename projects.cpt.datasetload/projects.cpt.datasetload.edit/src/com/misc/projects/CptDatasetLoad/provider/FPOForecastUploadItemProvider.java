@@ -3,12 +3,11 @@
 package com.misc.projects.CptDatasetLoad.provider;
 
 
-import com.misc.common.moplaf.datasetload.provider.TableGroupItemProvider;
-
+import com.misc.common.moplaf.dbsynch.impl.TableRowKeyImpl;
+import com.misc.common.moplaf.dbsynch.provider.TableRowItemProvider;
 import com.misc.projects.CptDatasetLoad.CptDatasetLoadFactory;
 import com.misc.projects.CptDatasetLoad.CptDatasetLoadPackage;
 import com.misc.projects.CptDatasetLoad.FPOForecastUpload;
-
 import java.util.Collection;
 import java.util.List;
 
@@ -29,7 +28,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class FPOForecastUploadItemProvider extends TableGroupItemProvider {
+public class FPOForecastUploadItemProvider extends TableRowItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -173,7 +172,8 @@ public class FPOForecastUploadItemProvider extends TableGroupItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((FPOForecastUpload)object).getName();
+		TableRowKeyImpl labelValue = ((FPOForecastUpload)object).getCurrentKey();
+		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ?
 			getString("_UI_FPOForecastUpload_type") :
 			getString("_UI_FPOForecastUpload_type") + " " + label;

@@ -2,12 +2,10 @@
  */
 package com.misc.projects.CptDatasetLoad.impl;
 
-import com.misc.common.moplaf.datasetload.impl.TableGroupImpl;
-
+import com.misc.common.moplaf.dbsynch.impl.TableRowImpl;
 import com.misc.projects.CptDatasetLoad.CptDatasetLoadPackage;
 import com.misc.projects.CptDatasetLoad.FPOForecastBuckets;
 import com.misc.projects.CptDatasetLoad.FPOForecastUpload;
-
 import java.util.Date;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -24,17 +22,17 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.CptDatasetLoad.impl.FPOForecastUploadImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link com.misc.projects.CptDatasetLoad.impl.FPOForecastUploadImpl#getToDate <em>To Date</em>}</li>
  *   <li>{@link com.misc.projects.CptDatasetLoad.impl.FPOForecastUploadImpl#getKind <em>Kind</em>}</li>
  *   <li>{@link com.misc.projects.CptDatasetLoad.impl.FPOForecastUploadImpl#getForecastTable <em>Forecast Table</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
-public class FPOForecastUploadImpl extends TableGroupImpl implements FPOForecastUpload {
+public class FPOForecastUploadImpl extends TableRowImpl implements FPOForecastUpload {
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->

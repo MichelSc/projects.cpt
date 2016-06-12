@@ -22,9 +22,9 @@ public class PropagatorCalcScenarioRefreshSelectedSortingPlan extends Propagator
 	}
 
 	@Override
-	protected void addListeners() {
-		super.addListeners();
-		this.addFeatureListener(cptspPackage.Literals.SCENARIO__SELECTED_SORTING_PLANS);
+	protected void addBindings() {
+		super.addBindings();
+		this.addInboundBindingFeature(cptspPackage.Literals.SCENARIO__SELECTED_SORTING_PLANS);
 	}
 
 }

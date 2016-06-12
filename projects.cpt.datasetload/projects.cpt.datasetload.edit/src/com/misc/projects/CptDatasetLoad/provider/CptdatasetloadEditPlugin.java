@@ -2,10 +2,8 @@
  */
 package com.misc.projects.CptDatasetLoad.provider;
 
-import com.misc.common.moplaf.DatasetLoadOra.provider.DatasetloadoraEditPlugin;
-
-import com.misc.common.moplaf.datasetload.provider.DatasetloadEditPlugin;
-
+import com.misc.common.moplaf.dbsynch.dbsynchora.provider.DbsynchoraEditPlugin;
+import com.misc.common.moplaf.dbsynch.provider.dbsynchEditPlugin;
 import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
@@ -42,8 +40,8 @@ public final class CptdatasetloadEditPlugin extends EMFPlugin {
 	public CptdatasetloadEditPlugin() {
 		super
 		  (new ResourceLocator [] {
-		     DatasetloadEditPlugin.INSTANCE,
-		     DatasetloadoraEditPlugin.INSTANCE,
+		     dbsynchEditPlugin.INSTANCE,
+		     DbsynchoraEditPlugin.INSTANCE,
 		   });
 	}
 

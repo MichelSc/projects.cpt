@@ -2,8 +2,7 @@
  */
 package com.misc.projects.CptDatasetLoad.impl;
 
-import com.misc.common.moplaf.datasetload.impl.TableImpl;
-
+import com.misc.common.moplaf.dbsynch.impl.TableImpl;
 import com.misc.projects.CptDatasetLoad.CptDatasetLoadPackage;
 import com.misc.projects.CptDatasetLoad.FPDSortingPlanTable;
 import com.misc.projects.CptDatasetLoad.FPDSortingPlansSet;
@@ -17,10 +16,10 @@ import org.eclipse.emf.ecore.InternalEObject;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.CptDatasetLoad.impl.FPDSortingPlanTableImpl#getFPDSortingPlansSet <em>FPD Sorting Plans Set</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -59,7 +58,7 @@ public class FPDSortingPlanTableImpl extends TableImpl implements FPDSortingPlan
 	 * <!-- end-user-doc -->
 	 */
 	public FPDSortingPlansSet basicGetFPDSortingPlansSet() {
-		FPDSortingPlansSet tableGroup = (FPDSortingPlansSet)this.getTableGroup();
+		FPDSortingPlansSet tableGroup = (FPDSortingPlansSet)this.getSynchUnit();
 		return tableGroup;
 	}
 

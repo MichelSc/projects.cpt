@@ -12,8 +12,8 @@ Export-Package: com.misc.projects.CptDatasetLoad.provider
 Require-Bundle: org.eclipse.core.runtime,
  projects.cpt.datasetload;visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport,
- com.misc.common.moplaf.datasetload.emf;visibility:=reexport,
- com.misc.common.moplaf.datasetload.emf.edit;visibility:=reexport,
- com.misc.common.moplaf.datasetload.ora.emf;visibility:=reexport,
- com.misc.common.moplaf.datasetload.ora.emf.edit;visibility:=reexport
+ com.misc.common.moplaf.dbsynch.emf;visibility:=reexport,
+ com.misc.common.moplaf.dbsynch.emf.edit;visibility:=reexport,
+ com.misc.common.moplaf.dbsynch.ora.emf;visibility:=reexport,
+ com.misc.common.moplaf.dbsynch.ora.emf.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy

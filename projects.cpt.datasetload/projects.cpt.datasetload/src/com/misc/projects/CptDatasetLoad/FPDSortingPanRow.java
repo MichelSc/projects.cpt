@@ -2,7 +2,7 @@
  */
 package com.misc.projects.CptDatasetLoad;
 
-import com.misc.common.moplaf.datasetload.TableRow;
+import com.misc.common.moplaf.dbsynch.TableRow;
 
 /**
  * <!-- begin-user-doc -->
@@ -11,10 +11,10 @@ import com.misc.common.moplaf.datasetload.TableRow;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.CptDatasetLoad.FPDSortingPanRow#getFPDSortingPlanTable <em>FPD Sorting Plan Table</em>}</li>
  * </ul>
- * </p>
  *
  * @see com.misc.projects.CptDatasetLoad.CptDatasetLoadPackage#getFPDSortingPanRow()
  * @model

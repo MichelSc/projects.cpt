@@ -2,12 +2,10 @@
  */
 package com.misc.projects.CptDatasetLoad.impl;
 
-import com.misc.common.moplaf.datasetload.impl.TableGroupImpl;
-
+import com.misc.common.moplaf.dbsynch.impl.DbSynchUnitImpl;
 import com.misc.projects.CptDatasetLoad.CptDatasetLoadPackage;
 import com.misc.projects.CptDatasetLoad.FPD;
 import com.misc.projects.CptDatasetLoad.FPDTableGroup;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -17,14 +15,14 @@ import org.eclipse.emf.ecore.InternalEObject;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.CptDatasetLoad.impl.FPDTableGroupImpl#getFPD <em>FPD</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
-public class FPDTableGroupImpl extends TableGroupImpl implements FPDTableGroup {
+public class FPDTableGroupImpl extends DbSynchUnitImpl implements FPDTableGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

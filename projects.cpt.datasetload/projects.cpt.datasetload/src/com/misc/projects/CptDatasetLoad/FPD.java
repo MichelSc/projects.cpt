@@ -2,7 +2,7 @@
  */
 package com.misc.projects.CptDatasetLoad;
 
-import com.misc.common.moplaf.DatasetLoadOra.DatasetLoadJdbcOraThin;
+import com.misc.common.moplaf.dbsynch.dbsynchora.DataSourceJdbcOraThin;
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -12,17 +12,17 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.CptDatasetLoad.FPD#getMasterData <em>Master Data</em>}</li>
  *   <li>{@link com.misc.projects.CptDatasetLoad.FPD#getSortingPlansSets <em>Sorting Plans Sets</em>}</li>
  * </ul>
- * </p>
  *
  * @see com.misc.projects.CptDatasetLoad.CptDatasetLoadPackage#getFPD()
  * @model
  * @generated
  */
-public interface FPD extends DatasetLoadJdbcOraThin {
+public interface FPD extends DataSourceJdbcOraThin {
 
 	/**
 	 * Returns the value of the '<em><b>Master Data</b></em>' containment reference.

@@ -3,8 +3,8 @@
 package com.misc.projects.CptDatasetLoad.provider;
 
 
-import com.misc.common.moplaf.datasetload.provider.TableRowItemProvider;
-
+import com.misc.common.moplaf.dbsynch.impl.TableRowKeyImpl;
+import com.misc.common.moplaf.dbsynch.provider.TableRowItemProvider;
 import com.misc.projects.CptDatasetLoad.CptDatasetLoadPackage;
 import com.misc.projects.CptDatasetLoad.FPOForecastBucket;
 
@@ -440,8 +440,11 @@ public class FPOForecastBucketItemProvider extends TableRowItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		FPOForecastBucket fpoForecastBucket = (FPOForecastBucket)object;
-		return getString("_UI_FPOForecastBucket_type") + " " + fpoForecastBucket.getRowNumber();
+		TableRowKeyImpl labelValue = ((FPOForecastBucket)object).getCurrentKey();
+		String label = labelValue == null ? null : labelValue.toString();
+		return label == null || label.length() == 0 ?
+			getString("_UI_FPOForecastBucket_type") :
+			getString("_UI_FPOForecastBucket_type") + " " + label;
 	}
 	
 

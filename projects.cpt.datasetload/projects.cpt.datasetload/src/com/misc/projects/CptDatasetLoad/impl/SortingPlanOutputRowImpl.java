@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.CptDatasetLoad.impl.SortingPlanOutputRowImpl#getSortingPlanSk <em>Sorting Plan Sk</em>}</li>
  *   <li>{@link com.misc.projects.CptDatasetLoad.impl.SortingPlanOutputRowImpl#getSortingLevelAVCSSk <em>Sorting Level AVCS Sk</em>}</li>
@@ -29,7 +30,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link com.misc.projects.CptDatasetLoad.impl.SortingPlanOutputRowImpl#getSortingLevel <em>Sorting Level</em>}</li>
  *   <li>{@link com.misc.projects.CptDatasetLoad.impl.SortingPlanOutputRowImpl#getDescription <em>Description</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

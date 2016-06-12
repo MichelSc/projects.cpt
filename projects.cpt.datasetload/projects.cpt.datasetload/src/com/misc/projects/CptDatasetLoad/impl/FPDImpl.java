@@ -2,7 +2,7 @@
  */
 package com.misc.projects.CptDatasetLoad.impl;
 
-import com.misc.common.moplaf.DatasetLoadOra.impl.DatasetLoadJdbcOraThinImpl;
+import com.misc.common.moplaf.dbsynch.dbsynchora.impl.DataSourceJdbcOraThinImpl;
 import com.misc.projects.CptDatasetLoad.CptDatasetLoadPackage;
 import com.misc.projects.CptDatasetLoad.FPD;
 import com.misc.projects.CptDatasetLoad.FPDMasterData;
@@ -23,15 +23,15 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.CptDatasetLoad.impl.FPDImpl#getMasterData <em>Master Data</em>}</li>
  *   <li>{@link com.misc.projects.CptDatasetLoad.impl.FPDImpl#getSortingPlansSets <em>Sorting Plans Sets</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
-public class FPDImpl extends DatasetLoadJdbcOraThinImpl implements FPD {
+public class FPDImpl extends DataSourceJdbcOraThinImpl implements FPD {
 	/**
 	 * The cached value of the '{@link #getMasterData() <em>Master Data</em>}' containment reference.
 	 * <!-- begin-user-doc -->

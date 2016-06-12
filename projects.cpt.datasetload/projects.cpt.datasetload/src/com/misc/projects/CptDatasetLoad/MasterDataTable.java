@@ -2,7 +2,7 @@
  */
 package com.misc.projects.CptDatasetLoad;
 
-import com.misc.common.moplaf.datasetload.Table;
+import com.misc.common.moplaf.dbsynch.Table;
 
 /**
  * <!-- begin-user-doc -->

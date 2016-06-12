@@ -2,16 +2,14 @@
  */
 package com.misc.projects.CptDatasetLoad.util;
 
-import com.misc.common.moplaf.DatasetLoadOra.DatasetLoadJdbcOraThin;
-
-import com.misc.common.moplaf.datasetload.DataSource;
-import com.misc.common.moplaf.datasetload.DataSourceJdbc;
-import com.misc.common.moplaf.datasetload.Table;
-import com.misc.common.moplaf.datasetload.TableGroup;
-import com.misc.common.moplaf.datasetload.TableRow;
-
+import com.misc.common.moplaf.dbsynch.DataSource;
+import com.misc.common.moplaf.dbsynch.DataSourceJdbc;
+import com.misc.common.moplaf.dbsynch.DbSynchUnit;
+import com.misc.common.moplaf.dbsynch.DbSynchUnitAbstract;
+import com.misc.common.moplaf.dbsynch.Table;
+import com.misc.common.moplaf.dbsynch.TableRow;
+import com.misc.common.moplaf.dbsynch.dbsynchora.DataSourceJdbcOraThin;
 import com.misc.projects.CptDatasetLoad.*;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -55,7 +53,7 @@ public class CptDatasetLoadSwitch<T> extends Switch<T> {
 	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @parameter ePackage the package in question.
+	 * @param ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
 	 */
@@ -77,16 +75,18 @@ public class CptDatasetLoadSwitch<T> extends Switch<T> {
 			case CptDatasetLoadPackage.FPD: {
 				FPD fpd = (FPD)theEObject;
 				T result = caseFPD(fpd);
-				if (result == null) result = caseDatasetLoadJdbcOraThin(fpd);
+				if (result == null) result = caseDataSourceJdbcOraThin(fpd);
 				if (result == null) result = caseDataSourceJdbc(fpd);
 				if (result == null) result = caseDataSource(fpd);
+				if (result == null) result = caseDbSynchUnitAbstract(fpd);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CptDatasetLoadPackage.FPD_TABLE_GROUP: {
 				FPDTableGroup fpdTableGroup = (FPDTableGroup)theEObject;
 				T result = caseFPDTableGroup(fpdTableGroup);
-				if (result == null) result = caseTableGroup(fpdTableGroup);
+				if (result == null) result = caseDbSynchUnit(fpdTableGroup);
+				if (result == null) result = caseDbSynchUnitAbstract(fpdTableGroup);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -94,7 +94,8 @@ public class CptDatasetLoadSwitch<T> extends Switch<T> {
 				FPDMasterData fpdMasterData = (FPDMasterData)theEObject;
 				T result = caseFPDMasterData(fpdMasterData);
 				if (result == null) result = caseFPDTableGroup(fpdMasterData);
-				if (result == null) result = caseTableGroup(fpdMasterData);
+				if (result == null) result = caseDbSynchUnit(fpdMasterData);
+				if (result == null) result = caseDbSynchUnitAbstract(fpdMasterData);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -102,7 +103,8 @@ public class CptDatasetLoadSwitch<T> extends Switch<T> {
 				FPDSortingPlansSet fpdSortingPlansSet = (FPDSortingPlansSet)theEObject;
 				T result = caseFPDSortingPlansSet(fpdSortingPlansSet);
 				if (result == null) result = caseFPDTableGroup(fpdSortingPlansSet);
-				if (result == null) result = caseTableGroup(fpdSortingPlansSet);
+				if (result == null) result = caseDbSynchUnit(fpdSortingPlansSet);
+				if (result == null) result = caseDbSynchUnitAbstract(fpdSortingPlansSet);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -193,16 +195,17 @@ public class CptDatasetLoadSwitch<T> extends Switch<T> {
 			case CptDatasetLoadPackage.FPO: {
 				FPO fpo = (FPO)theEObject;
 				T result = caseFPO(fpo);
-				if (result == null) result = caseDatasetLoadJdbcOraThin(fpo);
+				if (result == null) result = caseDataSourceJdbcOraThin(fpo);
 				if (result == null) result = caseDataSourceJdbc(fpo);
 				if (result == null) result = caseDataSource(fpo);
+				if (result == null) result = caseDbSynchUnitAbstract(fpo);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CptDatasetLoadPackage.FPO_FORECAST_UPLOAD: {
 				FPOForecastUpload fpoForecastUpload = (FPOForecastUpload)theEObject;
 				T result = caseFPOForecastUpload(fpoForecastUpload);
-				if (result == null) result = caseTableGroup(fpoForecastUpload);
+				if (result == null) result = caseTableRow(fpoForecastUpload);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -405,6 +408,111 @@ public class CptDatasetLoadSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Unit Abstract</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Unit Abstract</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDbSynchUnitAbstract(DbSynchUnitAbstract object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Data Source</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Data Source</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDataSource(DataSource object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Data Source Jdbc</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Data Source Jdbc</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDataSourceJdbc(DataSourceJdbc object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Data Source Jdbc Ora Thin</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Data Source Jdbc Ora Thin</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDataSourceJdbcOraThin(DataSourceJdbcOraThin object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Unit</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Unit</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDbSynchUnit(DbSynchUnit object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Table Row</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Table Row</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTableRow(TableRow object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Table</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Table</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTable(Table object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Sorting Levels Table</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -506,96 +614,6 @@ public class CptDatasetLoadSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseFPDTableGroup(FPDTableGroup object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Data Source</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Data Source</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseDataSource(DataSource object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Data Source Jdbc</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Data Source Jdbc</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseDataSourceJdbc(DataSourceJdbc object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Dataset Load Jdbc Ora Thin</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Dataset Load Jdbc Ora Thin</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseDatasetLoadJdbcOraThin(DatasetLoadJdbcOraThin object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Table Group</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Table Group</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseTableGroup(TableGroup object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Table</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Table</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseTable(Table object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Table Row</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Table Row</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseTableRow(TableRow object) {
 		return null;
 	}
 

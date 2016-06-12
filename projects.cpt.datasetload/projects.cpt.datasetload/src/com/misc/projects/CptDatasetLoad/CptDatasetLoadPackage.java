@@ -2,10 +2,8 @@
  */
 package com.misc.projects.CptDatasetLoad;
 
-import com.misc.common.moplaf.DatasetLoadOra.DatasetLoadOraPackage;
-
-import com.misc.common.moplaf.datasetload.DatasetloadPackage;
-
+import com.misc.common.moplaf.dbsynch.DbSynchPackage;
+import com.misc.common.moplaf.dbsynch.dbsynchora.DbsynchoraPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EOperation;
@@ -72,13 +70,40 @@ public interface CptDatasetLoadPackage extends EPackage {
 	int FPD = 0;
 
 	/**
+	 * The feature id for the '<em><b>Tables</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPD__TABLES = DbsynchoraPackage.DATA_SOURCE_JDBC_ORA_THIN__TABLES;
+
+	/**
+	 * The feature id for the '<em><b>Data Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPD__DATA_SOURCE = DbsynchoraPackage.DATA_SOURCE_JDBC_ORA_THIN__DATA_SOURCE;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FPD__NAME = DatasetLoadOraPackage.DATASET_LOAD_JDBC_ORA_THIN__NAME;
+	int FPD__NAME = DbsynchoraPackage.DATA_SOURCE_JDBC_ORA_THIN__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Child Units</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPD__CHILD_UNITS = DbsynchoraPackage.DATA_SOURCE_JDBC_ORA_THIN__CHILD_UNITS;
 
 	/**
 	 * The feature id for the '<em><b>Connected</b></em>' attribute.
@@ -87,7 +112,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPD__CONNECTED = DatasetLoadOraPackage.DATASET_LOAD_JDBC_ORA_THIN__CONNECTED;
+	int FPD__CONNECTED = DbsynchoraPackage.DATA_SOURCE_JDBC_ORA_THIN__CONNECTED;
 
 	/**
 	 * The feature id for the '<em><b>Data Base User</b></em>' attribute.
@@ -96,7 +121,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPD__DATA_BASE_USER = DatasetLoadOraPackage.DATASET_LOAD_JDBC_ORA_THIN__DATA_BASE_USER;
+	int FPD__DATA_BASE_USER = DbsynchoraPackage.DATA_SOURCE_JDBC_ORA_THIN__DATA_BASE_USER;
 
 	/**
 	 * The feature id for the '<em><b>Data Base User Pwd</b></em>' attribute.
@@ -105,7 +130,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPD__DATA_BASE_USER_PWD = DatasetLoadOraPackage.DATASET_LOAD_JDBC_ORA_THIN__DATA_BASE_USER_PWD;
+	int FPD__DATA_BASE_USER_PWD = DbsynchoraPackage.DATA_SOURCE_JDBC_ORA_THIN__DATA_BASE_USER_PWD;
 
 	/**
 	 * The feature id for the '<em><b>Default Schema</b></em>' attribute.
@@ -114,7 +139,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPD__DEFAULT_SCHEMA = DatasetLoadOraPackage.DATASET_LOAD_JDBC_ORA_THIN__DEFAULT_SCHEMA;
+	int FPD__DEFAULT_SCHEMA = DbsynchoraPackage.DATA_SOURCE_JDBC_ORA_THIN__DEFAULT_SCHEMA;
 
 	/**
 	 * The feature id for the '<em><b>Host</b></em>' attribute.
@@ -123,7 +148,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPD__HOST = DatasetLoadOraPackage.DATASET_LOAD_JDBC_ORA_THIN__HOST;
+	int FPD__HOST = DbsynchoraPackage.DATA_SOURCE_JDBC_ORA_THIN__HOST;
 
 	/**
 	 * The feature id for the '<em><b>Port</b></em>' attribute.
@@ -132,7 +157,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPD__PORT = DatasetLoadOraPackage.DATASET_LOAD_JDBC_ORA_THIN__PORT;
+	int FPD__PORT = DbsynchoraPackage.DATA_SOURCE_JDBC_ORA_THIN__PORT;
 
 	/**
 	 * The feature id for the '<em><b>Data Base</b></em>' attribute.
@@ -141,7 +166,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPD__DATA_BASE = DatasetLoadOraPackage.DATASET_LOAD_JDBC_ORA_THIN__DATA_BASE;
+	int FPD__DATA_BASE = DbsynchoraPackage.DATA_SOURCE_JDBC_ORA_THIN__DATA_BASE;
 
 	/**
 	 * The feature id for the '<em><b>Master Data</b></em>' containment reference.
@@ -150,7 +175,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPD__MASTER_DATA = DatasetLoadOraPackage.DATASET_LOAD_JDBC_ORA_THIN_FEATURE_COUNT + 0;
+	int FPD__MASTER_DATA = DbsynchoraPackage.DATA_SOURCE_JDBC_ORA_THIN_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Sorting Plans Sets</b></em>' containment reference list.
@@ -159,7 +184,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPD__SORTING_PLANS_SETS = DatasetLoadOraPackage.DATASET_LOAD_JDBC_ORA_THIN_FEATURE_COUNT + 1;
+	int FPD__SORTING_PLANS_SETS = DbsynchoraPackage.DATA_SOURCE_JDBC_ORA_THIN_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>FPD</em>' class.
@@ -168,7 +193,52 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPD_FEATURE_COUNT = DatasetLoadOraPackage.DATASET_LOAD_JDBC_ORA_THIN_FEATURE_COUNT + 2;
+	int FPD_FEATURE_COUNT = DbsynchoraPackage.DATA_SOURCE_JDBC_ORA_THIN_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Refresh Meta Data</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPD___REFRESH_META_DATA = DbsynchoraPackage.DATA_SOURCE_JDBC_ORA_THIN___REFRESH_META_DATA;
+
+	/**
+	 * The operation id for the '<em>Synch Up</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPD___SYNCH_UP = DbsynchoraPackage.DATA_SOURCE_JDBC_ORA_THIN___SYNCH_UP;
+
+	/**
+	 * The operation id for the '<em>Synch Down</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPD___SYNCH_DOWN = DbsynchoraPackage.DATA_SOURCE_JDBC_ORA_THIN___SYNCH_DOWN;
+
+	/**
+	 * The operation id for the '<em>Get Param Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPD___GET_PARAM_VALUE__EATTRIBUTE = DbsynchoraPackage.DATA_SOURCE_JDBC_ORA_THIN___GET_PARAM_VALUE__EATTRIBUTE;
+
+	/**
+	 * The operation id for the '<em>Get Param Attributes</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPD___GET_PARAM_ATTRIBUTES = DbsynchoraPackage.DATA_SOURCE_JDBC_ORA_THIN___GET_PARAM_ATTRIBUTES;
 
 	/**
 	 * The operation id for the '<em>Connect</em>' operation.
@@ -177,7 +247,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPD___CONNECT = DatasetLoadOraPackage.DATASET_LOAD_JDBC_ORA_THIN___CONNECT;
+	int FPD___CONNECT = DbsynchoraPackage.DATA_SOURCE_JDBC_ORA_THIN___CONNECT;
 
 	/**
 	 * The operation id for the '<em>Disconnect</em>' operation.
@@ -186,16 +256,25 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPD___DISCONNECT = DatasetLoadOraPackage.DATASET_LOAD_JDBC_ORA_THIN___DISCONNECT;
+	int FPD___DISCONNECT = DbsynchoraPackage.DATA_SOURCE_JDBC_ORA_THIN___DISCONNECT;
 
 	/**
-	 * The operation id for the '<em>Load Table Impl</em>' operation.
+	 * The operation id for the '<em>Synch Down Table Impl</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FPD___LOAD_TABLE_IMPL__TABLE = DatasetLoadOraPackage.DATASET_LOAD_JDBC_ORA_THIN___LOAD_TABLE_IMPL__TABLE;
+	int FPD___SYNCH_DOWN_TABLE_IMPL__TABLE = DbsynchoraPackage.DATA_SOURCE_JDBC_ORA_THIN___SYNCH_DOWN_TABLE_IMPL__TABLE;
+
+	/**
+	 * The operation id for the '<em>Synch Up Table Impl</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPD___SYNCH_UP_TABLE_IMPL__TABLE = DbsynchoraPackage.DATA_SOURCE_JDBC_ORA_THIN___SYNCH_UP_TABLE_IMPL__TABLE;
 
 	/**
 	 * The number of operations of the '<em>FPD</em>' class.
@@ -204,7 +283,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPD_OPERATION_COUNT = DatasetLoadOraPackage.DATASET_LOAD_JDBC_ORA_THIN_OPERATION_COUNT + 0;
+	int FPD_OPERATION_COUNT = DbsynchoraPackage.DATA_SOURCE_JDBC_ORA_THIN_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link com.misc.projects.CptDatasetLoad.impl.FPDTableGroupImpl <em>FPD Table Group</em>}' class.
@@ -217,22 +296,13 @@ public interface CptDatasetLoadPackage extends EPackage {
 	int FPD_TABLE_GROUP = 1;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FPD_TABLE_GROUP__NAME = DatasetloadPackage.TABLE_GROUP__NAME;
-
-	/**
 	 * The feature id for the '<em><b>Tables</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FPD_TABLE_GROUP__TABLES = DatasetloadPackage.TABLE_GROUP__TABLES;
+	int FPD_TABLE_GROUP__TABLES = DbSynchPackage.DB_SYNCH_UNIT__TABLES;
 
 	/**
 	 * The feature id for the '<em><b>Data Source</b></em>' reference.
@@ -241,7 +311,34 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPD_TABLE_GROUP__DATA_SOURCE = DatasetloadPackage.TABLE_GROUP__DATA_SOURCE;
+	int FPD_TABLE_GROUP__DATA_SOURCE = DbSynchPackage.DB_SYNCH_UNIT__DATA_SOURCE;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPD_TABLE_GROUP__NAME = DbSynchPackage.DB_SYNCH_UNIT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Child Units</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPD_TABLE_GROUP__CHILD_UNITS = DbSynchPackage.DB_SYNCH_UNIT__CHILD_UNITS;
+
+	/**
+	 * The feature id for the '<em><b>Parent Unit</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPD_TABLE_GROUP__PARENT_UNIT = DbSynchPackage.DB_SYNCH_UNIT__PARENT_UNIT;
 
 	/**
 	 * The feature id for the '<em><b>FPD</b></em>' reference.
@@ -250,7 +347,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPD_TABLE_GROUP__FPD = DatasetloadPackage.TABLE_GROUP_FEATURE_COUNT + 0;
+	int FPD_TABLE_GROUP__FPD = DbSynchPackage.DB_SYNCH_UNIT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>FPD Table Group</em>' class.
@@ -259,16 +356,52 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPD_TABLE_GROUP_FEATURE_COUNT = DatasetloadPackage.TABLE_GROUP_FEATURE_COUNT + 1;
+	int FPD_TABLE_GROUP_FEATURE_COUNT = DbSynchPackage.DB_SYNCH_UNIT_FEATURE_COUNT + 1;
 
 	/**
-	 * The operation id for the '<em>Load</em>' operation.
+	 * The operation id for the '<em>Refresh Meta Data</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FPD_TABLE_GROUP___LOAD = DatasetloadPackage.TABLE_GROUP___LOAD;
+	int FPD_TABLE_GROUP___REFRESH_META_DATA = DbSynchPackage.DB_SYNCH_UNIT___REFRESH_META_DATA;
+
+	/**
+	 * The operation id for the '<em>Synch Up</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPD_TABLE_GROUP___SYNCH_UP = DbSynchPackage.DB_SYNCH_UNIT___SYNCH_UP;
+
+	/**
+	 * The operation id for the '<em>Synch Down</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPD_TABLE_GROUP___SYNCH_DOWN = DbSynchPackage.DB_SYNCH_UNIT___SYNCH_DOWN;
+
+	/**
+	 * The operation id for the '<em>Get Param Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPD_TABLE_GROUP___GET_PARAM_VALUE__EATTRIBUTE = DbSynchPackage.DB_SYNCH_UNIT___GET_PARAM_VALUE__EATTRIBUTE;
+
+	/**
+	 * The operation id for the '<em>Get Param Attributes</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPD_TABLE_GROUP___GET_PARAM_ATTRIBUTES = DbSynchPackage.DB_SYNCH_UNIT___GET_PARAM_ATTRIBUTES;
 
 	/**
 	 * The operation id for the '<em>Refresh</em>' operation.
@@ -277,7 +410,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPD_TABLE_GROUP___REFRESH = DatasetloadPackage.TABLE_GROUP___REFRESH;
+	int FPD_TABLE_GROUP___REFRESH = DbSynchPackage.DB_SYNCH_UNIT___REFRESH;
 
 	/**
 	 * The number of operations of the '<em>FPD Table Group</em>' class.
@@ -286,7 +419,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPD_TABLE_GROUP_OPERATION_COUNT = DatasetloadPackage.TABLE_GROUP_OPERATION_COUNT + 0;
+	int FPD_TABLE_GROUP_OPERATION_COUNT = DbSynchPackage.DB_SYNCH_UNIT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link com.misc.projects.CptDatasetLoad.impl.FPDSortingPlansSetImpl <em>FPD Sorting Plans Set</em>}' class.
@@ -419,15 +552,6 @@ public interface CptDatasetLoadPackage extends EPackage {
 	int FPD_MASTER_DATA = 2;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FPD_MASTER_DATA__NAME = FPD_TABLE_GROUP__NAME;
-
-	/**
 	 * The feature id for the '<em><b>Tables</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -444,6 +568,33 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @ordered
 	 */
 	int FPD_MASTER_DATA__DATA_SOURCE = FPD_TABLE_GROUP__DATA_SOURCE;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPD_MASTER_DATA__NAME = FPD_TABLE_GROUP__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Child Units</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPD_MASTER_DATA__CHILD_UNITS = FPD_TABLE_GROUP__CHILD_UNITS;
+
+	/**
+	 * The feature id for the '<em><b>Parent Unit</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPD_MASTER_DATA__PARENT_UNIT = FPD_TABLE_GROUP__PARENT_UNIT;
 
 	/**
 	 * The feature id for the '<em><b>FPD</b></em>' reference.
@@ -473,13 +624,49 @@ public interface CptDatasetLoadPackage extends EPackage {
 	int FPD_MASTER_DATA_FEATURE_COUNT = FPD_TABLE_GROUP_FEATURE_COUNT + 1;
 
 	/**
-	 * The operation id for the '<em>Load</em>' operation.
+	 * The operation id for the '<em>Refresh Meta Data</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FPD_MASTER_DATA___LOAD = FPD_TABLE_GROUP___LOAD;
+	int FPD_MASTER_DATA___REFRESH_META_DATA = FPD_TABLE_GROUP___REFRESH_META_DATA;
+
+	/**
+	 * The operation id for the '<em>Synch Up</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPD_MASTER_DATA___SYNCH_UP = FPD_TABLE_GROUP___SYNCH_UP;
+
+	/**
+	 * The operation id for the '<em>Synch Down</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPD_MASTER_DATA___SYNCH_DOWN = FPD_TABLE_GROUP___SYNCH_DOWN;
+
+	/**
+	 * The operation id for the '<em>Get Param Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPD_MASTER_DATA___GET_PARAM_VALUE__EATTRIBUTE = FPD_TABLE_GROUP___GET_PARAM_VALUE__EATTRIBUTE;
+
+	/**
+	 * The operation id for the '<em>Get Param Attributes</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPD_MASTER_DATA___GET_PARAM_ATTRIBUTES = FPD_TABLE_GROUP___GET_PARAM_ATTRIBUTES;
 
 	/**
 	 * The operation id for the '<em>Refresh</em>' operation.
@@ -500,15 +687,6 @@ public interface CptDatasetLoadPackage extends EPackage {
 	int FPD_MASTER_DATA_OPERATION_COUNT = FPD_TABLE_GROUP_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FPD_SORTING_PLANS_SET__NAME = FPD_TABLE_GROUP__NAME;
-
-	/**
 	 * The feature id for the '<em><b>Tables</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -525,6 +703,33 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @ordered
 	 */
 	int FPD_SORTING_PLANS_SET__DATA_SOURCE = FPD_TABLE_GROUP__DATA_SOURCE;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPD_SORTING_PLANS_SET__NAME = FPD_TABLE_GROUP__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Child Units</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPD_SORTING_PLANS_SET__CHILD_UNITS = FPD_TABLE_GROUP__CHILD_UNITS;
+
+	/**
+	 * The feature id for the '<em><b>Parent Unit</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPD_SORTING_PLANS_SET__PARENT_UNIT = FPD_TABLE_GROUP__PARENT_UNIT;
 
 	/**
 	 * The feature id for the '<em><b>FPD</b></em>' reference.
@@ -590,13 +795,49 @@ public interface CptDatasetLoadPackage extends EPackage {
 	int FPD_SORTING_PLANS_SET_FEATURE_COUNT = FPD_TABLE_GROUP_FEATURE_COUNT + 5;
 
 	/**
-	 * The operation id for the '<em>Load</em>' operation.
+	 * The operation id for the '<em>Refresh Meta Data</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FPD_SORTING_PLANS_SET___LOAD = FPD_TABLE_GROUP___LOAD;
+	int FPD_SORTING_PLANS_SET___REFRESH_META_DATA = FPD_TABLE_GROUP___REFRESH_META_DATA;
+
+	/**
+	 * The operation id for the '<em>Synch Up</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPD_SORTING_PLANS_SET___SYNCH_UP = FPD_TABLE_GROUP___SYNCH_UP;
+
+	/**
+	 * The operation id for the '<em>Synch Down</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPD_SORTING_PLANS_SET___SYNCH_DOWN = FPD_TABLE_GROUP___SYNCH_DOWN;
+
+	/**
+	 * The operation id for the '<em>Get Param Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPD_SORTING_PLANS_SET___GET_PARAM_VALUE__EATTRIBUTE = FPD_TABLE_GROUP___GET_PARAM_VALUE__EATTRIBUTE;
+
+	/**
+	 * The operation id for the '<em>Get Param Attributes</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPD_SORTING_PLANS_SET___GET_PARAM_ATTRIBUTES = FPD_TABLE_GROUP___GET_PARAM_ATTRIBUTES;
 
 	/**
 	 * The operation id for the '<em>Refresh</em>' operation.
@@ -617,31 +858,76 @@ public interface CptDatasetLoadPackage extends EPackage {
 	int FPD_SORTING_PLANS_SET_OPERATION_COUNT = FPD_TABLE_GROUP_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Row Number</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FPD_SORTING_PAN_ROW__ROW_NUMBER = DatasetloadPackage.TABLE_ROW__ROW_NUMBER;
-
-	/**
 	 * The feature id for the '<em><b>Table</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FPD_SORTING_PAN_ROW__TABLE = DatasetloadPackage.TABLE_ROW__TABLE;
+	int FPD_SORTING_PAN_ROW__TABLE = DbSynchPackage.TABLE_ROW__TABLE;
 
 	/**
-	 * The feature id for the '<em><b>Key</b></em>' attribute.
+	 * The feature id for the '<em><b>Current Key</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FPD_SORTING_PAN_ROW__KEY = DatasetloadPackage.TABLE_ROW__KEY;
+	int FPD_SORTING_PAN_ROW__CURRENT_KEY = DbSynchPackage.TABLE_ROW__CURRENT_KEY;
+
+	/**
+	 * The feature id for the '<em><b>Deleted</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPD_SORTING_PAN_ROW__DELETED = DbSynchPackage.TABLE_ROW__DELETED;
+
+	/**
+	 * The feature id for the '<em><b>Index Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPD_SORTING_PAN_ROW__INDEX_KEY = DbSynchPackage.TABLE_ROW__INDEX_KEY;
+
+	/**
+	 * The feature id for the '<em><b>Last Synch Down Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPD_SORTING_PAN_ROW__LAST_SYNCH_DOWN_KEY = DbSynchPackage.TABLE_ROW__LAST_SYNCH_DOWN_KEY;
+
+	/**
+	 * The feature id for the '<em><b>Last Synch Down Deleted</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPD_SORTING_PAN_ROW__LAST_SYNCH_DOWN_DELETED = DbSynchPackage.TABLE_ROW__LAST_SYNCH_DOWN_DELETED;
+
+	/**
+	 * The feature id for the '<em><b>Modification Last Synch Up</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPD_SORTING_PAN_ROW__MODIFICATION_LAST_SYNCH_UP = DbSynchPackage.TABLE_ROW__MODIFICATION_LAST_SYNCH_UP;
+
+	/**
+	 * The feature id for the '<em><b>Modification Next Synch Down</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPD_SORTING_PAN_ROW__MODIFICATION_NEXT_SYNCH_DOWN = DbSynchPackage.TABLE_ROW__MODIFICATION_NEXT_SYNCH_DOWN;
 
 	/**
 	 * The feature id for the '<em><b>FPD Sorting Plan Table</b></em>' reference.
@@ -650,7 +936,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPD_SORTING_PAN_ROW__FPD_SORTING_PLAN_TABLE = DatasetloadPackage.TABLE_ROW_FEATURE_COUNT + 0;
+	int FPD_SORTING_PAN_ROW__FPD_SORTING_PLAN_TABLE = DbSynchPackage.TABLE_ROW_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>FPD Sorting Pan Row</em>' class.
@@ -659,7 +945,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPD_SORTING_PAN_ROW_FEATURE_COUNT = DatasetloadPackage.TABLE_ROW_FEATURE_COUNT + 1;
+	int FPD_SORTING_PAN_ROW_FEATURE_COUNT = DbSynchPackage.TABLE_ROW_FEATURE_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Refresh</em>' operation.
@@ -668,7 +954,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPD_SORTING_PAN_ROW___REFRESH = DatasetloadPackage.TABLE_ROW___REFRESH;
+	int FPD_SORTING_PAN_ROW___REFRESH = DbSynchPackage.TABLE_ROW___REFRESH;
 
 	/**
 	 * The number of operations of the '<em>FPD Sorting Pan Row</em>' class.
@@ -677,25 +963,70 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPD_SORTING_PAN_ROW_OPERATION_COUNT = DatasetloadPackage.TABLE_ROW_OPERATION_COUNT + 0;
+	int FPD_SORTING_PAN_ROW_OPERATION_COUNT = DbSynchPackage.TABLE_ROW_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Synch Unit</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FPD_SORTING_PLAN_TABLE__NAME = DatasetloadPackage.TABLE__NAME;
+	int FPD_SORTING_PLAN_TABLE__SYNCH_UNIT = DbSynchPackage.TABLE__SYNCH_UNIT;
 
 	/**
-	 * The feature id for the '<em><b>Table Group</b></em>' reference.
+	 * The feature id for the '<em><b>Columns</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FPD_SORTING_PLAN_TABLE__TABLE_GROUP = DatasetloadPackage.TABLE__TABLE_GROUP;
+	int FPD_SORTING_PLAN_TABLE__COLUMNS = DbSynchPackage.TABLE__COLUMNS;
+
+	/**
+	 * The feature id for the '<em><b>Key Columns</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPD_SORTING_PLAN_TABLE__KEY_COLUMNS = DbSynchPackage.TABLE__KEY_COLUMNS;
+
+	/**
+	 * The feature id for the '<em><b>Data Columns</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPD_SORTING_PLAN_TABLE__DATA_COLUMNS = DbSynchPackage.TABLE__DATA_COLUMNS;
+
+	/**
+	 * The feature id for the '<em><b>Table Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPD_SORTING_PLAN_TABLE__TABLE_NAME = DbSynchPackage.TABLE__TABLE_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Where Clause</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPD_SORTING_PLAN_TABLE__WHERE_CLAUSE = DbSynchPackage.TABLE__WHERE_CLAUSE;
+
+	/**
+	 * The feature id for the '<em><b>Param Db Synch Unit Attributes</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPD_SORTING_PLAN_TABLE__PARAM_DB_SYNCH_UNIT_ATTRIBUTES = DbSynchPackage.TABLE__PARAM_DB_SYNCH_UNIT_ATTRIBUTES;
 
 	/**
 	 * The feature id for the '<em><b>Rows</b></em>' reference list.
@@ -704,43 +1035,70 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPD_SORTING_PLAN_TABLE__ROWS = DatasetloadPackage.TABLE__ROWS;
+	int FPD_SORTING_PLAN_TABLE__ROWS = DbSynchPackage.TABLE__ROWS;
 
 	/**
-	 * The feature id for the '<em><b>Param Table Group Attributes</b></em>' attribute list.
+	 * The feature id for the '<em><b>Select Sql Statement</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FPD_SORTING_PLAN_TABLE__PARAM_TABLE_GROUP_ATTRIBUTES = DatasetloadPackage.TABLE__PARAM_TABLE_GROUP_ATTRIBUTES;
+	int FPD_SORTING_PLAN_TABLE__SELECT_SQL_STATEMENT = DbSynchPackage.TABLE__SELECT_SQL_STATEMENT;
 
 	/**
-	 * The feature id for the '<em><b>SQL Statement</b></em>' attribute.
+	 * The feature id for the '<em><b>Insert Sql Statement</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FPD_SORTING_PLAN_TABLE__SQL_STATEMENT = DatasetloadPackage.TABLE__SQL_STATEMENT;
+	int FPD_SORTING_PLAN_TABLE__INSERT_SQL_STATEMENT = DbSynchPackage.TABLE__INSERT_SQL_STATEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Column Table Row Attributes</b></em>' attribute list.
+	 * The feature id for the '<em><b>Update Sql Statement</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FPD_SORTING_PLAN_TABLE__COLUMN_TABLE_ROW_ATTRIBUTES = DatasetloadPackage.TABLE__COLUMN_TABLE_ROW_ATTRIBUTES;
+	int FPD_SORTING_PLAN_TABLE__UPDATE_SQL_STATEMENT = DbSynchPackage.TABLE__UPDATE_SQL_STATEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Key Columns</b></em>' attribute list.
+	 * The feature id for the '<em><b>Delete Sql Statement</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FPD_SORTING_PLAN_TABLE__KEY_COLUMNS = DatasetloadPackage.TABLE__KEY_COLUMNS;
+	int FPD_SORTING_PLAN_TABLE__DELETE_SQL_STATEMENT = DbSynchPackage.TABLE__DELETE_SQL_STATEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Number Of Rows</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPD_SORTING_PLAN_TABLE__NUMBER_OF_ROWS = DbSynchPackage.TABLE__NUMBER_OF_ROWS;
+
+	/**
+	 * The feature id for the '<em><b>Last Synch Down</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPD_SORTING_PLAN_TABLE__LAST_SYNCH_DOWN = DbSynchPackage.TABLE__LAST_SYNCH_DOWN;
+
+	/**
+	 * The feature id for the '<em><b>Last Synch Up</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPD_SORTING_PLAN_TABLE__LAST_SYNCH_UP = DbSynchPackage.TABLE__LAST_SYNCH_UP;
 
 	/**
 	 * The feature id for the '<em><b>FPD Sorting Plans Set</b></em>' reference.
@@ -749,7 +1107,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPD_SORTING_PLAN_TABLE__FPD_SORTING_PLANS_SET = DatasetloadPackage.TABLE_FEATURE_COUNT + 0;
+	int FPD_SORTING_PLAN_TABLE__FPD_SORTING_PLANS_SET = DbSynchPackage.TABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>FPD Sorting Plan Table</em>' class.
@@ -758,52 +1116,52 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPD_SORTING_PLAN_TABLE_FEATURE_COUNT = DatasetloadPackage.TABLE_FEATURE_COUNT + 1;
+	int FPD_SORTING_PLAN_TABLE_FEATURE_COUNT = DbSynchPackage.TABLE_FEATURE_COUNT + 1;
 
 	/**
-	 * The operation id for the '<em>Load</em>' operation.
+	 * The operation id for the '<em>Add Column</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FPD_SORTING_PLAN_TABLE___LOAD = DatasetloadPackage.TABLE___LOAD;
+	int FPD_SORTING_PLAN_TABLE___ADD_COLUMN__BOOLEAN_STRING_ENUMCOLUMNTYPE_EATTRIBUTE = DbSynchPackage.TABLE___ADD_COLUMN__BOOLEAN_STRING_ENUMCOLUMNTYPE_EATTRIBUTE;
 
 	/**
-	 * The operation id for the '<em>New Row</em>' operation.
+	 * The operation id for the '<em>Add Param</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FPD_SORTING_PLAN_TABLE___NEW_ROW = DatasetloadPackage.TABLE___NEW_ROW;
+	int FPD_SORTING_PLAN_TABLE___ADD_PARAM__EATTRIBUTE = DbSynchPackage.TABLE___ADD_PARAM__EATTRIBUTE;
 
 	/**
-	 * The operation id for the '<em>Add Row</em>' operation.
+	 * The operation id for the '<em>Refresh Meta Data</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FPD_SORTING_PLAN_TABLE___ADD_ROW__TABLEROW = DatasetloadPackage.TABLE___ADD_ROW__TABLEROW;
+	int FPD_SORTING_PLAN_TABLE___REFRESH_META_DATA = DbSynchPackage.TABLE___REFRESH_META_DATA;
 
 	/**
-	 * The operation id for the '<em>Get Row</em>' operation.
+	 * The operation id for the '<em>Synch Down</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FPD_SORTING_PLAN_TABLE___GET_ROW__TABLEROWKEYIMPL = DatasetloadPackage.TABLE___GET_ROW__TABLEROWKEYIMPL;
+	int FPD_SORTING_PLAN_TABLE___SYNCH_DOWN = DbSynchPackage.TABLE___SYNCH_DOWN;
 
 	/**
-	 * The operation id for the '<em>Remove Row</em>' operation.
+	 * The operation id for the '<em>Synch Up</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FPD_SORTING_PLAN_TABLE___REMOVE_ROW__TABLEROW = DatasetloadPackage.TABLE___REMOVE_ROW__TABLEROW;
+	int FPD_SORTING_PLAN_TABLE___SYNCH_UP = DbSynchPackage.TABLE___SYNCH_UP;
 
 	/**
 	 * The operation id for the '<em>Refresh</em>' operation.
@@ -812,7 +1170,52 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPD_SORTING_PLAN_TABLE___REFRESH = DatasetloadPackage.TABLE___REFRESH;
+	int FPD_SORTING_PLAN_TABLE___REFRESH = DbSynchPackage.TABLE___REFRESH;
+
+	/**
+	 * The operation id for the '<em>Get Row</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPD_SORTING_PLAN_TABLE___GET_ROW__TABLEROWKEYIMPL = DbSynchPackage.TABLE___GET_ROW__TABLEROWKEYIMPL;
+
+	/**
+	 * The operation id for the '<em>Construct Row</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPD_SORTING_PLAN_TABLE___CONSTRUCT_ROW = DbSynchPackage.TABLE___CONSTRUCT_ROW;
+
+	/**
+	 * The operation id for the '<em>Index Row</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPD_SORTING_PLAN_TABLE___INDEX_ROW__TABLEROW = DbSynchPackage.TABLE___INDEX_ROW__TABLEROW;
+
+	/**
+	 * The operation id for the '<em>Unindex Row</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPD_SORTING_PLAN_TABLE___UNINDEX_ROW__TABLEROW = DbSynchPackage.TABLE___UNINDEX_ROW__TABLEROW;
+
+	/**
+	 * The operation id for the '<em>Refresh Index</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPD_SORTING_PLAN_TABLE___REFRESH_INDEX = DbSynchPackage.TABLE___REFRESH_INDEX;
 
 	/**
 	 * The number of operations of the '<em>FPD Sorting Plan Table</em>' class.
@@ -821,25 +1224,70 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPD_SORTING_PLAN_TABLE_OPERATION_COUNT = DatasetloadPackage.TABLE_OPERATION_COUNT + 0;
+	int FPD_SORTING_PLAN_TABLE_OPERATION_COUNT = DbSynchPackage.TABLE_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Synch Unit</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MASTER_DATA_TABLE__NAME = DatasetloadPackage.TABLE__NAME;
+	int MASTER_DATA_TABLE__SYNCH_UNIT = DbSynchPackage.TABLE__SYNCH_UNIT;
 
 	/**
-	 * The feature id for the '<em><b>Table Group</b></em>' reference.
+	 * The feature id for the '<em><b>Columns</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MASTER_DATA_TABLE__TABLE_GROUP = DatasetloadPackage.TABLE__TABLE_GROUP;
+	int MASTER_DATA_TABLE__COLUMNS = DbSynchPackage.TABLE__COLUMNS;
+
+	/**
+	 * The feature id for the '<em><b>Key Columns</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MASTER_DATA_TABLE__KEY_COLUMNS = DbSynchPackage.TABLE__KEY_COLUMNS;
+
+	/**
+	 * The feature id for the '<em><b>Data Columns</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MASTER_DATA_TABLE__DATA_COLUMNS = DbSynchPackage.TABLE__DATA_COLUMNS;
+
+	/**
+	 * The feature id for the '<em><b>Table Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MASTER_DATA_TABLE__TABLE_NAME = DbSynchPackage.TABLE__TABLE_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Where Clause</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MASTER_DATA_TABLE__WHERE_CLAUSE = DbSynchPackage.TABLE__WHERE_CLAUSE;
+
+	/**
+	 * The feature id for the '<em><b>Param Db Synch Unit Attributes</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MASTER_DATA_TABLE__PARAM_DB_SYNCH_UNIT_ATTRIBUTES = DbSynchPackage.TABLE__PARAM_DB_SYNCH_UNIT_ATTRIBUTES;
 
 	/**
 	 * The feature id for the '<em><b>Rows</b></em>' reference list.
@@ -848,43 +1296,70 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MASTER_DATA_TABLE__ROWS = DatasetloadPackage.TABLE__ROWS;
+	int MASTER_DATA_TABLE__ROWS = DbSynchPackage.TABLE__ROWS;
 
 	/**
-	 * The feature id for the '<em><b>Param Table Group Attributes</b></em>' attribute list.
+	 * The feature id for the '<em><b>Select Sql Statement</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MASTER_DATA_TABLE__PARAM_TABLE_GROUP_ATTRIBUTES = DatasetloadPackage.TABLE__PARAM_TABLE_GROUP_ATTRIBUTES;
+	int MASTER_DATA_TABLE__SELECT_SQL_STATEMENT = DbSynchPackage.TABLE__SELECT_SQL_STATEMENT;
 
 	/**
-	 * The feature id for the '<em><b>SQL Statement</b></em>' attribute.
+	 * The feature id for the '<em><b>Insert Sql Statement</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MASTER_DATA_TABLE__SQL_STATEMENT = DatasetloadPackage.TABLE__SQL_STATEMENT;
+	int MASTER_DATA_TABLE__INSERT_SQL_STATEMENT = DbSynchPackage.TABLE__INSERT_SQL_STATEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Column Table Row Attributes</b></em>' attribute list.
+	 * The feature id for the '<em><b>Update Sql Statement</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MASTER_DATA_TABLE__COLUMN_TABLE_ROW_ATTRIBUTES = DatasetloadPackage.TABLE__COLUMN_TABLE_ROW_ATTRIBUTES;
+	int MASTER_DATA_TABLE__UPDATE_SQL_STATEMENT = DbSynchPackage.TABLE__UPDATE_SQL_STATEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Key Columns</b></em>' attribute list.
+	 * The feature id for the '<em><b>Delete Sql Statement</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MASTER_DATA_TABLE__KEY_COLUMNS = DatasetloadPackage.TABLE__KEY_COLUMNS;
+	int MASTER_DATA_TABLE__DELETE_SQL_STATEMENT = DbSynchPackage.TABLE__DELETE_SQL_STATEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Number Of Rows</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MASTER_DATA_TABLE__NUMBER_OF_ROWS = DbSynchPackage.TABLE__NUMBER_OF_ROWS;
+
+	/**
+	 * The feature id for the '<em><b>Last Synch Down</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MASTER_DATA_TABLE__LAST_SYNCH_DOWN = DbSynchPackage.TABLE__LAST_SYNCH_DOWN;
+
+	/**
+	 * The feature id for the '<em><b>Last Synch Up</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MASTER_DATA_TABLE__LAST_SYNCH_UP = DbSynchPackage.TABLE__LAST_SYNCH_UP;
 
 	/**
 	 * The number of structural features of the '<em>Master Data Table</em>' class.
@@ -893,52 +1368,52 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MASTER_DATA_TABLE_FEATURE_COUNT = DatasetloadPackage.TABLE_FEATURE_COUNT + 0;
+	int MASTER_DATA_TABLE_FEATURE_COUNT = DbSynchPackage.TABLE_FEATURE_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Load</em>' operation.
+	 * The operation id for the '<em>Add Column</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MASTER_DATA_TABLE___LOAD = DatasetloadPackage.TABLE___LOAD;
+	int MASTER_DATA_TABLE___ADD_COLUMN__BOOLEAN_STRING_ENUMCOLUMNTYPE_EATTRIBUTE = DbSynchPackage.TABLE___ADD_COLUMN__BOOLEAN_STRING_ENUMCOLUMNTYPE_EATTRIBUTE;
 
 	/**
-	 * The operation id for the '<em>New Row</em>' operation.
+	 * The operation id for the '<em>Add Param</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MASTER_DATA_TABLE___NEW_ROW = DatasetloadPackage.TABLE___NEW_ROW;
+	int MASTER_DATA_TABLE___ADD_PARAM__EATTRIBUTE = DbSynchPackage.TABLE___ADD_PARAM__EATTRIBUTE;
 
 	/**
-	 * The operation id for the '<em>Add Row</em>' operation.
+	 * The operation id for the '<em>Refresh Meta Data</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MASTER_DATA_TABLE___ADD_ROW__TABLEROW = DatasetloadPackage.TABLE___ADD_ROW__TABLEROW;
+	int MASTER_DATA_TABLE___REFRESH_META_DATA = DbSynchPackage.TABLE___REFRESH_META_DATA;
 
 	/**
-	 * The operation id for the '<em>Get Row</em>' operation.
+	 * The operation id for the '<em>Synch Down</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MASTER_DATA_TABLE___GET_ROW__TABLEROWKEYIMPL = DatasetloadPackage.TABLE___GET_ROW__TABLEROWKEYIMPL;
+	int MASTER_DATA_TABLE___SYNCH_DOWN = DbSynchPackage.TABLE___SYNCH_DOWN;
 
 	/**
-	 * The operation id for the '<em>Remove Row</em>' operation.
+	 * The operation id for the '<em>Synch Up</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MASTER_DATA_TABLE___REMOVE_ROW__TABLEROW = DatasetloadPackage.TABLE___REMOVE_ROW__TABLEROW;
+	int MASTER_DATA_TABLE___SYNCH_UP = DbSynchPackage.TABLE___SYNCH_UP;
 
 	/**
 	 * The operation id for the '<em>Refresh</em>' operation.
@@ -947,7 +1422,52 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MASTER_DATA_TABLE___REFRESH = DatasetloadPackage.TABLE___REFRESH;
+	int MASTER_DATA_TABLE___REFRESH = DbSynchPackage.TABLE___REFRESH;
+
+	/**
+	 * The operation id for the '<em>Get Row</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MASTER_DATA_TABLE___GET_ROW__TABLEROWKEYIMPL = DbSynchPackage.TABLE___GET_ROW__TABLEROWKEYIMPL;
+
+	/**
+	 * The operation id for the '<em>Construct Row</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MASTER_DATA_TABLE___CONSTRUCT_ROW = DbSynchPackage.TABLE___CONSTRUCT_ROW;
+
+	/**
+	 * The operation id for the '<em>Index Row</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MASTER_DATA_TABLE___INDEX_ROW__TABLEROW = DbSynchPackage.TABLE___INDEX_ROW__TABLEROW;
+
+	/**
+	 * The operation id for the '<em>Unindex Row</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MASTER_DATA_TABLE___UNINDEX_ROW__TABLEROW = DbSynchPackage.TABLE___UNINDEX_ROW__TABLEROW;
+
+	/**
+	 * The operation id for the '<em>Refresh Index</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MASTER_DATA_TABLE___REFRESH_INDEX = DbSynchPackage.TABLE___REFRESH_INDEX;
 
 	/**
 	 * The number of operations of the '<em>Master Data Table</em>' class.
@@ -956,25 +1476,70 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MASTER_DATA_TABLE_OPERATION_COUNT = DatasetloadPackage.TABLE_OPERATION_COUNT + 0;
+	int MASTER_DATA_TABLE_OPERATION_COUNT = DbSynchPackage.TABLE_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Synch Unit</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_LEVELS_TABLE__NAME = MASTER_DATA_TABLE__NAME;
+	int SORTING_LEVELS_TABLE__SYNCH_UNIT = MASTER_DATA_TABLE__SYNCH_UNIT;
 
 	/**
-	 * The feature id for the '<em><b>Table Group</b></em>' reference.
+	 * The feature id for the '<em><b>Columns</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_LEVELS_TABLE__TABLE_GROUP = MASTER_DATA_TABLE__TABLE_GROUP;
+	int SORTING_LEVELS_TABLE__COLUMNS = MASTER_DATA_TABLE__COLUMNS;
+
+	/**
+	 * The feature id for the '<em><b>Key Columns</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_LEVELS_TABLE__KEY_COLUMNS = MASTER_DATA_TABLE__KEY_COLUMNS;
+
+	/**
+	 * The feature id for the '<em><b>Data Columns</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_LEVELS_TABLE__DATA_COLUMNS = MASTER_DATA_TABLE__DATA_COLUMNS;
+
+	/**
+	 * The feature id for the '<em><b>Table Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_LEVELS_TABLE__TABLE_NAME = MASTER_DATA_TABLE__TABLE_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Where Clause</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_LEVELS_TABLE__WHERE_CLAUSE = MASTER_DATA_TABLE__WHERE_CLAUSE;
+
+	/**
+	 * The feature id for the '<em><b>Param Db Synch Unit Attributes</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_LEVELS_TABLE__PARAM_DB_SYNCH_UNIT_ATTRIBUTES = MASTER_DATA_TABLE__PARAM_DB_SYNCH_UNIT_ATTRIBUTES;
 
 	/**
 	 * The feature id for the '<em><b>Rows</b></em>' reference list.
@@ -986,40 +1551,67 @@ public interface CptDatasetLoadPackage extends EPackage {
 	int SORTING_LEVELS_TABLE__ROWS = MASTER_DATA_TABLE__ROWS;
 
 	/**
-	 * The feature id for the '<em><b>Param Table Group Attributes</b></em>' attribute list.
+	 * The feature id for the '<em><b>Select Sql Statement</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_LEVELS_TABLE__PARAM_TABLE_GROUP_ATTRIBUTES = MASTER_DATA_TABLE__PARAM_TABLE_GROUP_ATTRIBUTES;
+	int SORTING_LEVELS_TABLE__SELECT_SQL_STATEMENT = MASTER_DATA_TABLE__SELECT_SQL_STATEMENT;
 
 	/**
-	 * The feature id for the '<em><b>SQL Statement</b></em>' attribute.
+	 * The feature id for the '<em><b>Insert Sql Statement</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_LEVELS_TABLE__SQL_STATEMENT = MASTER_DATA_TABLE__SQL_STATEMENT;
+	int SORTING_LEVELS_TABLE__INSERT_SQL_STATEMENT = MASTER_DATA_TABLE__INSERT_SQL_STATEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Column Table Row Attributes</b></em>' attribute list.
+	 * The feature id for the '<em><b>Update Sql Statement</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_LEVELS_TABLE__COLUMN_TABLE_ROW_ATTRIBUTES = MASTER_DATA_TABLE__COLUMN_TABLE_ROW_ATTRIBUTES;
+	int SORTING_LEVELS_TABLE__UPDATE_SQL_STATEMENT = MASTER_DATA_TABLE__UPDATE_SQL_STATEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Key Columns</b></em>' attribute list.
+	 * The feature id for the '<em><b>Delete Sql Statement</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_LEVELS_TABLE__KEY_COLUMNS = MASTER_DATA_TABLE__KEY_COLUMNS;
+	int SORTING_LEVELS_TABLE__DELETE_SQL_STATEMENT = MASTER_DATA_TABLE__DELETE_SQL_STATEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Number Of Rows</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_LEVELS_TABLE__NUMBER_OF_ROWS = MASTER_DATA_TABLE__NUMBER_OF_ROWS;
+
+	/**
+	 * The feature id for the '<em><b>Last Synch Down</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_LEVELS_TABLE__LAST_SYNCH_DOWN = MASTER_DATA_TABLE__LAST_SYNCH_DOWN;
+
+	/**
+	 * The feature id for the '<em><b>Last Synch Up</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_LEVELS_TABLE__LAST_SYNCH_UP = MASTER_DATA_TABLE__LAST_SYNCH_UP;
 
 	/**
 	 * The feature id for the '<em><b>Sortinglevel Row</b></em>' containment reference list.
@@ -1040,31 +1632,58 @@ public interface CptDatasetLoadPackage extends EPackage {
 	int SORTING_LEVELS_TABLE_FEATURE_COUNT = MASTER_DATA_TABLE_FEATURE_COUNT + 1;
 
 	/**
-	 * The operation id for the '<em>Load</em>' operation.
+	 * The operation id for the '<em>Add Column</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_LEVELS_TABLE___LOAD = MASTER_DATA_TABLE___LOAD;
+	int SORTING_LEVELS_TABLE___ADD_COLUMN__BOOLEAN_STRING_ENUMCOLUMNTYPE_EATTRIBUTE = MASTER_DATA_TABLE___ADD_COLUMN__BOOLEAN_STRING_ENUMCOLUMNTYPE_EATTRIBUTE;
 
 	/**
-	 * The operation id for the '<em>New Row</em>' operation.
+	 * The operation id for the '<em>Add Param</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_LEVELS_TABLE___NEW_ROW = MASTER_DATA_TABLE___NEW_ROW;
+	int SORTING_LEVELS_TABLE___ADD_PARAM__EATTRIBUTE = MASTER_DATA_TABLE___ADD_PARAM__EATTRIBUTE;
 
 	/**
-	 * The operation id for the '<em>Add Row</em>' operation.
+	 * The operation id for the '<em>Refresh Meta Data</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_LEVELS_TABLE___ADD_ROW__TABLEROW = MASTER_DATA_TABLE___ADD_ROW__TABLEROW;
+	int SORTING_LEVELS_TABLE___REFRESH_META_DATA = MASTER_DATA_TABLE___REFRESH_META_DATA;
+
+	/**
+	 * The operation id for the '<em>Synch Down</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_LEVELS_TABLE___SYNCH_DOWN = MASTER_DATA_TABLE___SYNCH_DOWN;
+
+	/**
+	 * The operation id for the '<em>Synch Up</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_LEVELS_TABLE___SYNCH_UP = MASTER_DATA_TABLE___SYNCH_UP;
+
+	/**
+	 * The operation id for the '<em>Refresh</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_LEVELS_TABLE___REFRESH = MASTER_DATA_TABLE___REFRESH;
 
 	/**
 	 * The operation id for the '<em>Get Row</em>' operation.
@@ -1076,22 +1695,40 @@ public interface CptDatasetLoadPackage extends EPackage {
 	int SORTING_LEVELS_TABLE___GET_ROW__TABLEROWKEYIMPL = MASTER_DATA_TABLE___GET_ROW__TABLEROWKEYIMPL;
 
 	/**
-	 * The operation id for the '<em>Remove Row</em>' operation.
+	 * The operation id for the '<em>Construct Row</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_LEVELS_TABLE___REMOVE_ROW__TABLEROW = MASTER_DATA_TABLE___REMOVE_ROW__TABLEROW;
+	int SORTING_LEVELS_TABLE___CONSTRUCT_ROW = MASTER_DATA_TABLE___CONSTRUCT_ROW;
 
 	/**
-	 * The operation id for the '<em>Refresh</em>' operation.
+	 * The operation id for the '<em>Index Row</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_LEVELS_TABLE___REFRESH = MASTER_DATA_TABLE___REFRESH;
+	int SORTING_LEVELS_TABLE___INDEX_ROW__TABLEROW = MASTER_DATA_TABLE___INDEX_ROW__TABLEROW;
+
+	/**
+	 * The operation id for the '<em>Unindex Row</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_LEVELS_TABLE___UNINDEX_ROW__TABLEROW = MASTER_DATA_TABLE___UNINDEX_ROW__TABLEROW;
+
+	/**
+	 * The operation id for the '<em>Refresh Index</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_LEVELS_TABLE___REFRESH_INDEX = MASTER_DATA_TABLE___REFRESH_INDEX;
 
 	/**
 	 * The operation id for the '<em>Get Row</em>' operation.
@@ -1112,22 +1749,67 @@ public interface CptDatasetLoadPackage extends EPackage {
 	int SORTING_LEVELS_TABLE_OPERATION_COUNT = MASTER_DATA_TABLE_OPERATION_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Synch Unit</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLANS_TABLE__NAME = FPD_SORTING_PLAN_TABLE__NAME;
+	int SORTING_PLANS_TABLE__SYNCH_UNIT = FPD_SORTING_PLAN_TABLE__SYNCH_UNIT;
 
 	/**
-	 * The feature id for the '<em><b>Table Group</b></em>' reference.
+	 * The feature id for the '<em><b>Columns</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLANS_TABLE__TABLE_GROUP = FPD_SORTING_PLAN_TABLE__TABLE_GROUP;
+	int SORTING_PLANS_TABLE__COLUMNS = FPD_SORTING_PLAN_TABLE__COLUMNS;
+
+	/**
+	 * The feature id for the '<em><b>Key Columns</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLANS_TABLE__KEY_COLUMNS = FPD_SORTING_PLAN_TABLE__KEY_COLUMNS;
+
+	/**
+	 * The feature id for the '<em><b>Data Columns</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLANS_TABLE__DATA_COLUMNS = FPD_SORTING_PLAN_TABLE__DATA_COLUMNS;
+
+	/**
+	 * The feature id for the '<em><b>Table Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLANS_TABLE__TABLE_NAME = FPD_SORTING_PLAN_TABLE__TABLE_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Where Clause</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLANS_TABLE__WHERE_CLAUSE = FPD_SORTING_PLAN_TABLE__WHERE_CLAUSE;
+
+	/**
+	 * The feature id for the '<em><b>Param Db Synch Unit Attributes</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLANS_TABLE__PARAM_DB_SYNCH_UNIT_ATTRIBUTES = FPD_SORTING_PLAN_TABLE__PARAM_DB_SYNCH_UNIT_ATTRIBUTES;
 
 	/**
 	 * The feature id for the '<em><b>Rows</b></em>' reference list.
@@ -1139,40 +1821,67 @@ public interface CptDatasetLoadPackage extends EPackage {
 	int SORTING_PLANS_TABLE__ROWS = FPD_SORTING_PLAN_TABLE__ROWS;
 
 	/**
-	 * The feature id for the '<em><b>Param Table Group Attributes</b></em>' attribute list.
+	 * The feature id for the '<em><b>Select Sql Statement</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLANS_TABLE__PARAM_TABLE_GROUP_ATTRIBUTES = FPD_SORTING_PLAN_TABLE__PARAM_TABLE_GROUP_ATTRIBUTES;
+	int SORTING_PLANS_TABLE__SELECT_SQL_STATEMENT = FPD_SORTING_PLAN_TABLE__SELECT_SQL_STATEMENT;
 
 	/**
-	 * The feature id for the '<em><b>SQL Statement</b></em>' attribute.
+	 * The feature id for the '<em><b>Insert Sql Statement</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLANS_TABLE__SQL_STATEMENT = FPD_SORTING_PLAN_TABLE__SQL_STATEMENT;
+	int SORTING_PLANS_TABLE__INSERT_SQL_STATEMENT = FPD_SORTING_PLAN_TABLE__INSERT_SQL_STATEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Column Table Row Attributes</b></em>' attribute list.
+	 * The feature id for the '<em><b>Update Sql Statement</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLANS_TABLE__COLUMN_TABLE_ROW_ATTRIBUTES = FPD_SORTING_PLAN_TABLE__COLUMN_TABLE_ROW_ATTRIBUTES;
+	int SORTING_PLANS_TABLE__UPDATE_SQL_STATEMENT = FPD_SORTING_PLAN_TABLE__UPDATE_SQL_STATEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Key Columns</b></em>' attribute list.
+	 * The feature id for the '<em><b>Delete Sql Statement</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLANS_TABLE__KEY_COLUMNS = FPD_SORTING_PLAN_TABLE__KEY_COLUMNS;
+	int SORTING_PLANS_TABLE__DELETE_SQL_STATEMENT = FPD_SORTING_PLAN_TABLE__DELETE_SQL_STATEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Number Of Rows</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLANS_TABLE__NUMBER_OF_ROWS = FPD_SORTING_PLAN_TABLE__NUMBER_OF_ROWS;
+
+	/**
+	 * The feature id for the '<em><b>Last Synch Down</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLANS_TABLE__LAST_SYNCH_DOWN = FPD_SORTING_PLAN_TABLE__LAST_SYNCH_DOWN;
+
+	/**
+	 * The feature id for the '<em><b>Last Synch Up</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLANS_TABLE__LAST_SYNCH_UP = FPD_SORTING_PLAN_TABLE__LAST_SYNCH_UP;
 
 	/**
 	 * The feature id for the '<em><b>FPD Sorting Plans Set</b></em>' reference.
@@ -1202,31 +1911,58 @@ public interface CptDatasetLoadPackage extends EPackage {
 	int SORTING_PLANS_TABLE_FEATURE_COUNT = FPD_SORTING_PLAN_TABLE_FEATURE_COUNT + 1;
 
 	/**
-	 * The operation id for the '<em>Load</em>' operation.
+	 * The operation id for the '<em>Add Column</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLANS_TABLE___LOAD = FPD_SORTING_PLAN_TABLE___LOAD;
+	int SORTING_PLANS_TABLE___ADD_COLUMN__BOOLEAN_STRING_ENUMCOLUMNTYPE_EATTRIBUTE = FPD_SORTING_PLAN_TABLE___ADD_COLUMN__BOOLEAN_STRING_ENUMCOLUMNTYPE_EATTRIBUTE;
 
 	/**
-	 * The operation id for the '<em>New Row</em>' operation.
+	 * The operation id for the '<em>Add Param</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLANS_TABLE___NEW_ROW = FPD_SORTING_PLAN_TABLE___NEW_ROW;
+	int SORTING_PLANS_TABLE___ADD_PARAM__EATTRIBUTE = FPD_SORTING_PLAN_TABLE___ADD_PARAM__EATTRIBUTE;
 
 	/**
-	 * The operation id for the '<em>Add Row</em>' operation.
+	 * The operation id for the '<em>Refresh Meta Data</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLANS_TABLE___ADD_ROW__TABLEROW = FPD_SORTING_PLAN_TABLE___ADD_ROW__TABLEROW;
+	int SORTING_PLANS_TABLE___REFRESH_META_DATA = FPD_SORTING_PLAN_TABLE___REFRESH_META_DATA;
+
+	/**
+	 * The operation id for the '<em>Synch Down</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLANS_TABLE___SYNCH_DOWN = FPD_SORTING_PLAN_TABLE___SYNCH_DOWN;
+
+	/**
+	 * The operation id for the '<em>Synch Up</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLANS_TABLE___SYNCH_UP = FPD_SORTING_PLAN_TABLE___SYNCH_UP;
+
+	/**
+	 * The operation id for the '<em>Refresh</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLANS_TABLE___REFRESH = FPD_SORTING_PLAN_TABLE___REFRESH;
 
 	/**
 	 * The operation id for the '<em>Get Row</em>' operation.
@@ -1238,22 +1974,40 @@ public interface CptDatasetLoadPackage extends EPackage {
 	int SORTING_PLANS_TABLE___GET_ROW__TABLEROWKEYIMPL = FPD_SORTING_PLAN_TABLE___GET_ROW__TABLEROWKEYIMPL;
 
 	/**
-	 * The operation id for the '<em>Remove Row</em>' operation.
+	 * The operation id for the '<em>Construct Row</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLANS_TABLE___REMOVE_ROW__TABLEROW = FPD_SORTING_PLAN_TABLE___REMOVE_ROW__TABLEROW;
+	int SORTING_PLANS_TABLE___CONSTRUCT_ROW = FPD_SORTING_PLAN_TABLE___CONSTRUCT_ROW;
 
 	/**
-	 * The operation id for the '<em>Refresh</em>' operation.
+	 * The operation id for the '<em>Index Row</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLANS_TABLE___REFRESH = FPD_SORTING_PLAN_TABLE___REFRESH;
+	int SORTING_PLANS_TABLE___INDEX_ROW__TABLEROW = FPD_SORTING_PLAN_TABLE___INDEX_ROW__TABLEROW;
+
+	/**
+	 * The operation id for the '<em>Unindex Row</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLANS_TABLE___UNINDEX_ROW__TABLEROW = FPD_SORTING_PLAN_TABLE___UNINDEX_ROW__TABLEROW;
+
+	/**
+	 * The operation id for the '<em>Refresh Index</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLANS_TABLE___REFRESH_INDEX = FPD_SORTING_PLAN_TABLE___REFRESH_INDEX;
 
 	/**
 	 * The operation id for the '<em>Get Row</em>' operation.
@@ -1274,22 +2028,67 @@ public interface CptDatasetLoadPackage extends EPackage {
 	int SORTING_PLANS_TABLE_OPERATION_COUNT = FPD_SORTING_PLAN_TABLE_OPERATION_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Synch Unit</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_INPUT_TABLE__NAME = FPD_SORTING_PLAN_TABLE__NAME;
+	int SORTING_PLAN_INPUT_TABLE__SYNCH_UNIT = FPD_SORTING_PLAN_TABLE__SYNCH_UNIT;
 
 	/**
-	 * The feature id for the '<em><b>Table Group</b></em>' reference.
+	 * The feature id for the '<em><b>Columns</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_INPUT_TABLE__TABLE_GROUP = FPD_SORTING_PLAN_TABLE__TABLE_GROUP;
+	int SORTING_PLAN_INPUT_TABLE__COLUMNS = FPD_SORTING_PLAN_TABLE__COLUMNS;
+
+	/**
+	 * The feature id for the '<em><b>Key Columns</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_INPUT_TABLE__KEY_COLUMNS = FPD_SORTING_PLAN_TABLE__KEY_COLUMNS;
+
+	/**
+	 * The feature id for the '<em><b>Data Columns</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_INPUT_TABLE__DATA_COLUMNS = FPD_SORTING_PLAN_TABLE__DATA_COLUMNS;
+
+	/**
+	 * The feature id for the '<em><b>Table Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_INPUT_TABLE__TABLE_NAME = FPD_SORTING_PLAN_TABLE__TABLE_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Where Clause</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_INPUT_TABLE__WHERE_CLAUSE = FPD_SORTING_PLAN_TABLE__WHERE_CLAUSE;
+
+	/**
+	 * The feature id for the '<em><b>Param Db Synch Unit Attributes</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_INPUT_TABLE__PARAM_DB_SYNCH_UNIT_ATTRIBUTES = FPD_SORTING_PLAN_TABLE__PARAM_DB_SYNCH_UNIT_ATTRIBUTES;
 
 	/**
 	 * The feature id for the '<em><b>Rows</b></em>' reference list.
@@ -1301,40 +2100,67 @@ public interface CptDatasetLoadPackage extends EPackage {
 	int SORTING_PLAN_INPUT_TABLE__ROWS = FPD_SORTING_PLAN_TABLE__ROWS;
 
 	/**
-	 * The feature id for the '<em><b>Param Table Group Attributes</b></em>' attribute list.
+	 * The feature id for the '<em><b>Select Sql Statement</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_INPUT_TABLE__PARAM_TABLE_GROUP_ATTRIBUTES = FPD_SORTING_PLAN_TABLE__PARAM_TABLE_GROUP_ATTRIBUTES;
+	int SORTING_PLAN_INPUT_TABLE__SELECT_SQL_STATEMENT = FPD_SORTING_PLAN_TABLE__SELECT_SQL_STATEMENT;
 
 	/**
-	 * The feature id for the '<em><b>SQL Statement</b></em>' attribute.
+	 * The feature id for the '<em><b>Insert Sql Statement</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_INPUT_TABLE__SQL_STATEMENT = FPD_SORTING_PLAN_TABLE__SQL_STATEMENT;
+	int SORTING_PLAN_INPUT_TABLE__INSERT_SQL_STATEMENT = FPD_SORTING_PLAN_TABLE__INSERT_SQL_STATEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Column Table Row Attributes</b></em>' attribute list.
+	 * The feature id for the '<em><b>Update Sql Statement</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_INPUT_TABLE__COLUMN_TABLE_ROW_ATTRIBUTES = FPD_SORTING_PLAN_TABLE__COLUMN_TABLE_ROW_ATTRIBUTES;
+	int SORTING_PLAN_INPUT_TABLE__UPDATE_SQL_STATEMENT = FPD_SORTING_PLAN_TABLE__UPDATE_SQL_STATEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Key Columns</b></em>' attribute list.
+	 * The feature id for the '<em><b>Delete Sql Statement</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_INPUT_TABLE__KEY_COLUMNS = FPD_SORTING_PLAN_TABLE__KEY_COLUMNS;
+	int SORTING_PLAN_INPUT_TABLE__DELETE_SQL_STATEMENT = FPD_SORTING_PLAN_TABLE__DELETE_SQL_STATEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Number Of Rows</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_INPUT_TABLE__NUMBER_OF_ROWS = FPD_SORTING_PLAN_TABLE__NUMBER_OF_ROWS;
+
+	/**
+	 * The feature id for the '<em><b>Last Synch Down</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_INPUT_TABLE__LAST_SYNCH_DOWN = FPD_SORTING_PLAN_TABLE__LAST_SYNCH_DOWN;
+
+	/**
+	 * The feature id for the '<em><b>Last Synch Up</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_INPUT_TABLE__LAST_SYNCH_UP = FPD_SORTING_PLAN_TABLE__LAST_SYNCH_UP;
 
 	/**
 	 * The feature id for the '<em><b>FPD Sorting Plans Set</b></em>' reference.
@@ -1364,31 +2190,58 @@ public interface CptDatasetLoadPackage extends EPackage {
 	int SORTING_PLAN_INPUT_TABLE_FEATURE_COUNT = FPD_SORTING_PLAN_TABLE_FEATURE_COUNT + 1;
 
 	/**
-	 * The operation id for the '<em>Load</em>' operation.
+	 * The operation id for the '<em>Add Column</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_INPUT_TABLE___LOAD = FPD_SORTING_PLAN_TABLE___LOAD;
+	int SORTING_PLAN_INPUT_TABLE___ADD_COLUMN__BOOLEAN_STRING_ENUMCOLUMNTYPE_EATTRIBUTE = FPD_SORTING_PLAN_TABLE___ADD_COLUMN__BOOLEAN_STRING_ENUMCOLUMNTYPE_EATTRIBUTE;
 
 	/**
-	 * The operation id for the '<em>New Row</em>' operation.
+	 * The operation id for the '<em>Add Param</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_INPUT_TABLE___NEW_ROW = FPD_SORTING_PLAN_TABLE___NEW_ROW;
+	int SORTING_PLAN_INPUT_TABLE___ADD_PARAM__EATTRIBUTE = FPD_SORTING_PLAN_TABLE___ADD_PARAM__EATTRIBUTE;
 
 	/**
-	 * The operation id for the '<em>Add Row</em>' operation.
+	 * The operation id for the '<em>Refresh Meta Data</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_INPUT_TABLE___ADD_ROW__TABLEROW = FPD_SORTING_PLAN_TABLE___ADD_ROW__TABLEROW;
+	int SORTING_PLAN_INPUT_TABLE___REFRESH_META_DATA = FPD_SORTING_PLAN_TABLE___REFRESH_META_DATA;
+
+	/**
+	 * The operation id for the '<em>Synch Down</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_INPUT_TABLE___SYNCH_DOWN = FPD_SORTING_PLAN_TABLE___SYNCH_DOWN;
+
+	/**
+	 * The operation id for the '<em>Synch Up</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_INPUT_TABLE___SYNCH_UP = FPD_SORTING_PLAN_TABLE___SYNCH_UP;
+
+	/**
+	 * The operation id for the '<em>Refresh</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_INPUT_TABLE___REFRESH = FPD_SORTING_PLAN_TABLE___REFRESH;
 
 	/**
 	 * The operation id for the '<em>Get Row</em>' operation.
@@ -1400,22 +2253,40 @@ public interface CptDatasetLoadPackage extends EPackage {
 	int SORTING_PLAN_INPUT_TABLE___GET_ROW__TABLEROWKEYIMPL = FPD_SORTING_PLAN_TABLE___GET_ROW__TABLEROWKEYIMPL;
 
 	/**
-	 * The operation id for the '<em>Remove Row</em>' operation.
+	 * The operation id for the '<em>Construct Row</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_INPUT_TABLE___REMOVE_ROW__TABLEROW = FPD_SORTING_PLAN_TABLE___REMOVE_ROW__TABLEROW;
+	int SORTING_PLAN_INPUT_TABLE___CONSTRUCT_ROW = FPD_SORTING_PLAN_TABLE___CONSTRUCT_ROW;
 
 	/**
-	 * The operation id for the '<em>Refresh</em>' operation.
+	 * The operation id for the '<em>Index Row</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_INPUT_TABLE___REFRESH = FPD_SORTING_PLAN_TABLE___REFRESH;
+	int SORTING_PLAN_INPUT_TABLE___INDEX_ROW__TABLEROW = FPD_SORTING_PLAN_TABLE___INDEX_ROW__TABLEROW;
+
+	/**
+	 * The operation id for the '<em>Unindex Row</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_INPUT_TABLE___UNINDEX_ROW__TABLEROW = FPD_SORTING_PLAN_TABLE___UNINDEX_ROW__TABLEROW;
+
+	/**
+	 * The operation id for the '<em>Refresh Index</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_INPUT_TABLE___REFRESH_INDEX = FPD_SORTING_PLAN_TABLE___REFRESH_INDEX;
 
 	/**
 	 * The operation id for the '<em>Get Row</em>' operation.
@@ -1436,22 +2307,67 @@ public interface CptDatasetLoadPackage extends EPackage {
 	int SORTING_PLAN_INPUT_TABLE_OPERATION_COUNT = FPD_SORTING_PLAN_TABLE_OPERATION_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Synch Unit</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_OUTPUT_TABLE__NAME = FPD_SORTING_PLAN_TABLE__NAME;
+	int SORTING_PLAN_OUTPUT_TABLE__SYNCH_UNIT = FPD_SORTING_PLAN_TABLE__SYNCH_UNIT;
 
 	/**
-	 * The feature id for the '<em><b>Table Group</b></em>' reference.
+	 * The feature id for the '<em><b>Columns</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_OUTPUT_TABLE__TABLE_GROUP = FPD_SORTING_PLAN_TABLE__TABLE_GROUP;
+	int SORTING_PLAN_OUTPUT_TABLE__COLUMNS = FPD_SORTING_PLAN_TABLE__COLUMNS;
+
+	/**
+	 * The feature id for the '<em><b>Key Columns</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_OUTPUT_TABLE__KEY_COLUMNS = FPD_SORTING_PLAN_TABLE__KEY_COLUMNS;
+
+	/**
+	 * The feature id for the '<em><b>Data Columns</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_OUTPUT_TABLE__DATA_COLUMNS = FPD_SORTING_PLAN_TABLE__DATA_COLUMNS;
+
+	/**
+	 * The feature id for the '<em><b>Table Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_OUTPUT_TABLE__TABLE_NAME = FPD_SORTING_PLAN_TABLE__TABLE_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Where Clause</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_OUTPUT_TABLE__WHERE_CLAUSE = FPD_SORTING_PLAN_TABLE__WHERE_CLAUSE;
+
+	/**
+	 * The feature id for the '<em><b>Param Db Synch Unit Attributes</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_OUTPUT_TABLE__PARAM_DB_SYNCH_UNIT_ATTRIBUTES = FPD_SORTING_PLAN_TABLE__PARAM_DB_SYNCH_UNIT_ATTRIBUTES;
 
 	/**
 	 * The feature id for the '<em><b>Rows</b></em>' reference list.
@@ -1463,40 +2379,67 @@ public interface CptDatasetLoadPackage extends EPackage {
 	int SORTING_PLAN_OUTPUT_TABLE__ROWS = FPD_SORTING_PLAN_TABLE__ROWS;
 
 	/**
-	 * The feature id for the '<em><b>Param Table Group Attributes</b></em>' attribute list.
+	 * The feature id for the '<em><b>Select Sql Statement</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_OUTPUT_TABLE__PARAM_TABLE_GROUP_ATTRIBUTES = FPD_SORTING_PLAN_TABLE__PARAM_TABLE_GROUP_ATTRIBUTES;
+	int SORTING_PLAN_OUTPUT_TABLE__SELECT_SQL_STATEMENT = FPD_SORTING_PLAN_TABLE__SELECT_SQL_STATEMENT;
 
 	/**
-	 * The feature id for the '<em><b>SQL Statement</b></em>' attribute.
+	 * The feature id for the '<em><b>Insert Sql Statement</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_OUTPUT_TABLE__SQL_STATEMENT = FPD_SORTING_PLAN_TABLE__SQL_STATEMENT;
+	int SORTING_PLAN_OUTPUT_TABLE__INSERT_SQL_STATEMENT = FPD_SORTING_PLAN_TABLE__INSERT_SQL_STATEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Column Table Row Attributes</b></em>' attribute list.
+	 * The feature id for the '<em><b>Update Sql Statement</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_OUTPUT_TABLE__COLUMN_TABLE_ROW_ATTRIBUTES = FPD_SORTING_PLAN_TABLE__COLUMN_TABLE_ROW_ATTRIBUTES;
+	int SORTING_PLAN_OUTPUT_TABLE__UPDATE_SQL_STATEMENT = FPD_SORTING_PLAN_TABLE__UPDATE_SQL_STATEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Key Columns</b></em>' attribute list.
+	 * The feature id for the '<em><b>Delete Sql Statement</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_OUTPUT_TABLE__KEY_COLUMNS = FPD_SORTING_PLAN_TABLE__KEY_COLUMNS;
+	int SORTING_PLAN_OUTPUT_TABLE__DELETE_SQL_STATEMENT = FPD_SORTING_PLAN_TABLE__DELETE_SQL_STATEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Number Of Rows</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_OUTPUT_TABLE__NUMBER_OF_ROWS = FPD_SORTING_PLAN_TABLE__NUMBER_OF_ROWS;
+
+	/**
+	 * The feature id for the '<em><b>Last Synch Down</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_OUTPUT_TABLE__LAST_SYNCH_DOWN = FPD_SORTING_PLAN_TABLE__LAST_SYNCH_DOWN;
+
+	/**
+	 * The feature id for the '<em><b>Last Synch Up</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_OUTPUT_TABLE__LAST_SYNCH_UP = FPD_SORTING_PLAN_TABLE__LAST_SYNCH_UP;
 
 	/**
 	 * The feature id for the '<em><b>FPD Sorting Plans Set</b></em>' reference.
@@ -1526,31 +2469,58 @@ public interface CptDatasetLoadPackage extends EPackage {
 	int SORTING_PLAN_OUTPUT_TABLE_FEATURE_COUNT = FPD_SORTING_PLAN_TABLE_FEATURE_COUNT + 1;
 
 	/**
-	 * The operation id for the '<em>Load</em>' operation.
+	 * The operation id for the '<em>Add Column</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_OUTPUT_TABLE___LOAD = FPD_SORTING_PLAN_TABLE___LOAD;
+	int SORTING_PLAN_OUTPUT_TABLE___ADD_COLUMN__BOOLEAN_STRING_ENUMCOLUMNTYPE_EATTRIBUTE = FPD_SORTING_PLAN_TABLE___ADD_COLUMN__BOOLEAN_STRING_ENUMCOLUMNTYPE_EATTRIBUTE;
 
 	/**
-	 * The operation id for the '<em>New Row</em>' operation.
+	 * The operation id for the '<em>Add Param</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_OUTPUT_TABLE___NEW_ROW = FPD_SORTING_PLAN_TABLE___NEW_ROW;
+	int SORTING_PLAN_OUTPUT_TABLE___ADD_PARAM__EATTRIBUTE = FPD_SORTING_PLAN_TABLE___ADD_PARAM__EATTRIBUTE;
 
 	/**
-	 * The operation id for the '<em>Add Row</em>' operation.
+	 * The operation id for the '<em>Refresh Meta Data</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_OUTPUT_TABLE___ADD_ROW__TABLEROW = FPD_SORTING_PLAN_TABLE___ADD_ROW__TABLEROW;
+	int SORTING_PLAN_OUTPUT_TABLE___REFRESH_META_DATA = FPD_SORTING_PLAN_TABLE___REFRESH_META_DATA;
+
+	/**
+	 * The operation id for the '<em>Synch Down</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_OUTPUT_TABLE___SYNCH_DOWN = FPD_SORTING_PLAN_TABLE___SYNCH_DOWN;
+
+	/**
+	 * The operation id for the '<em>Synch Up</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_OUTPUT_TABLE___SYNCH_UP = FPD_SORTING_PLAN_TABLE___SYNCH_UP;
+
+	/**
+	 * The operation id for the '<em>Refresh</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_OUTPUT_TABLE___REFRESH = FPD_SORTING_PLAN_TABLE___REFRESH;
 
 	/**
 	 * The operation id for the '<em>Get Row</em>' operation.
@@ -1562,22 +2532,40 @@ public interface CptDatasetLoadPackage extends EPackage {
 	int SORTING_PLAN_OUTPUT_TABLE___GET_ROW__TABLEROWKEYIMPL = FPD_SORTING_PLAN_TABLE___GET_ROW__TABLEROWKEYIMPL;
 
 	/**
-	 * The operation id for the '<em>Remove Row</em>' operation.
+	 * The operation id for the '<em>Construct Row</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_OUTPUT_TABLE___REMOVE_ROW__TABLEROW = FPD_SORTING_PLAN_TABLE___REMOVE_ROW__TABLEROW;
+	int SORTING_PLAN_OUTPUT_TABLE___CONSTRUCT_ROW = FPD_SORTING_PLAN_TABLE___CONSTRUCT_ROW;
 
 	/**
-	 * The operation id for the '<em>Refresh</em>' operation.
+	 * The operation id for the '<em>Index Row</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_OUTPUT_TABLE___REFRESH = FPD_SORTING_PLAN_TABLE___REFRESH;
+	int SORTING_PLAN_OUTPUT_TABLE___INDEX_ROW__TABLEROW = FPD_SORTING_PLAN_TABLE___INDEX_ROW__TABLEROW;
+
+	/**
+	 * The operation id for the '<em>Unindex Row</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_OUTPUT_TABLE___UNINDEX_ROW__TABLEROW = FPD_SORTING_PLAN_TABLE___UNINDEX_ROW__TABLEROW;
+
+	/**
+	 * The operation id for the '<em>Refresh Index</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_OUTPUT_TABLE___REFRESH_INDEX = FPD_SORTING_PLAN_TABLE___REFRESH_INDEX;
 
 	/**
 	 * The operation id for the '<em>Get Row</em>' operation.
@@ -1598,31 +2586,76 @@ public interface CptDatasetLoadPackage extends EPackage {
 	int SORTING_PLAN_OUTPUT_TABLE_OPERATION_COUNT = FPD_SORTING_PLAN_TABLE_OPERATION_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Row Number</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SORTING_LEVEL_ROW__ROW_NUMBER = DatasetloadPackage.TABLE_ROW__ROW_NUMBER;
-
-	/**
 	 * The feature id for the '<em><b>Table</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_LEVEL_ROW__TABLE = DatasetloadPackage.TABLE_ROW__TABLE;
+	int SORTING_LEVEL_ROW__TABLE = DbSynchPackage.TABLE_ROW__TABLE;
 
 	/**
-	 * The feature id for the '<em><b>Key</b></em>' attribute.
+	 * The feature id for the '<em><b>Current Key</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_LEVEL_ROW__KEY = DatasetloadPackage.TABLE_ROW__KEY;
+	int SORTING_LEVEL_ROW__CURRENT_KEY = DbSynchPackage.TABLE_ROW__CURRENT_KEY;
+
+	/**
+	 * The feature id for the '<em><b>Deleted</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_LEVEL_ROW__DELETED = DbSynchPackage.TABLE_ROW__DELETED;
+
+	/**
+	 * The feature id for the '<em><b>Index Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_LEVEL_ROW__INDEX_KEY = DbSynchPackage.TABLE_ROW__INDEX_KEY;
+
+	/**
+	 * The feature id for the '<em><b>Last Synch Down Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_LEVEL_ROW__LAST_SYNCH_DOWN_KEY = DbSynchPackage.TABLE_ROW__LAST_SYNCH_DOWN_KEY;
+
+	/**
+	 * The feature id for the '<em><b>Last Synch Down Deleted</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_LEVEL_ROW__LAST_SYNCH_DOWN_DELETED = DbSynchPackage.TABLE_ROW__LAST_SYNCH_DOWN_DELETED;
+
+	/**
+	 * The feature id for the '<em><b>Modification Last Synch Up</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_LEVEL_ROW__MODIFICATION_LAST_SYNCH_UP = DbSynchPackage.TABLE_ROW__MODIFICATION_LAST_SYNCH_UP;
+
+	/**
+	 * The feature id for the '<em><b>Modification Next Synch Down</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_LEVEL_ROW__MODIFICATION_NEXT_SYNCH_DOWN = DbSynchPackage.TABLE_ROW__MODIFICATION_NEXT_SYNCH_DOWN;
 
 	/**
 	 * The feature id for the '<em><b>Sorting Level Sk</b></em>' attribute.
@@ -1631,7 +2664,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_LEVEL_ROW__SORTING_LEVEL_SK = DatasetloadPackage.TABLE_ROW_FEATURE_COUNT + 0;
+	int SORTING_LEVEL_ROW__SORTING_LEVEL_SK = DbSynchPackage.TABLE_ROW_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Sorting Level Name</b></em>' attribute.
@@ -1640,7 +2673,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_LEVEL_ROW__SORTING_LEVEL_NAME = DatasetloadPackage.TABLE_ROW_FEATURE_COUNT + 1;
+	int SORTING_LEVEL_ROW__SORTING_LEVEL_NAME = DbSynchPackage.TABLE_ROW_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1649,7 +2682,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_LEVEL_ROW__DESCRIPTION = DatasetloadPackage.TABLE_ROW_FEATURE_COUNT + 2;
+	int SORTING_LEVEL_ROW__DESCRIPTION = DbSynchPackage.TABLE_ROW_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Sorting Level Row</em>' class.
@@ -1658,7 +2691,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_LEVEL_ROW_FEATURE_COUNT = DatasetloadPackage.TABLE_ROW_FEATURE_COUNT + 3;
+	int SORTING_LEVEL_ROW_FEATURE_COUNT = DbSynchPackage.TABLE_ROW_FEATURE_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Refresh</em>' operation.
@@ -1667,7 +2700,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_LEVEL_ROW___REFRESH = DatasetloadPackage.TABLE_ROW___REFRESH;
+	int SORTING_LEVEL_ROW___REFRESH = DbSynchPackage.TABLE_ROW___REFRESH;
 
 	/**
 	 * The number of operations of the '<em>Sorting Level Row</em>' class.
@@ -1676,16 +2709,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_LEVEL_ROW_OPERATION_COUNT = DatasetloadPackage.TABLE_ROW_OPERATION_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Row Number</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SORTING_PLAN_ROW__ROW_NUMBER = FPD_SORTING_PAN_ROW__ROW_NUMBER;
+	int SORTING_LEVEL_ROW_OPERATION_COUNT = DbSynchPackage.TABLE_ROW_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Table</b></em>' reference.
@@ -1697,13 +2721,67 @@ public interface CptDatasetLoadPackage extends EPackage {
 	int SORTING_PLAN_ROW__TABLE = FPD_SORTING_PAN_ROW__TABLE;
 
 	/**
-	 * The feature id for the '<em><b>Key</b></em>' attribute.
+	 * The feature id for the '<em><b>Current Key</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_ROW__KEY = FPD_SORTING_PAN_ROW__KEY;
+	int SORTING_PLAN_ROW__CURRENT_KEY = FPD_SORTING_PAN_ROW__CURRENT_KEY;
+
+	/**
+	 * The feature id for the '<em><b>Deleted</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_ROW__DELETED = FPD_SORTING_PAN_ROW__DELETED;
+
+	/**
+	 * The feature id for the '<em><b>Index Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_ROW__INDEX_KEY = FPD_SORTING_PAN_ROW__INDEX_KEY;
+
+	/**
+	 * The feature id for the '<em><b>Last Synch Down Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_ROW__LAST_SYNCH_DOWN_KEY = FPD_SORTING_PAN_ROW__LAST_SYNCH_DOWN_KEY;
+
+	/**
+	 * The feature id for the '<em><b>Last Synch Down Deleted</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_ROW__LAST_SYNCH_DOWN_DELETED = FPD_SORTING_PAN_ROW__LAST_SYNCH_DOWN_DELETED;
+
+	/**
+	 * The feature id for the '<em><b>Modification Last Synch Up</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_ROW__MODIFICATION_LAST_SYNCH_UP = FPD_SORTING_PAN_ROW__MODIFICATION_LAST_SYNCH_UP;
+
+	/**
+	 * The feature id for the '<em><b>Modification Next Synch Down</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_ROW__MODIFICATION_NEXT_SYNCH_DOWN = FPD_SORTING_PAN_ROW__MODIFICATION_NEXT_SYNCH_DOWN;
 
 	/**
 	 * The feature id for the '<em><b>FPD Sorting Plan Table</b></em>' reference.
@@ -1796,15 +2874,6 @@ public interface CptDatasetLoadPackage extends EPackage {
 	int SORTING_PLAN_ROW_OPERATION_COUNT = FPD_SORTING_PAN_ROW_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Row Number</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SORTING_PLAN_OUTPUT_ROW__ROW_NUMBER = FPD_SORTING_PAN_ROW__ROW_NUMBER;
-
-	/**
 	 * The feature id for the '<em><b>Table</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1814,13 +2883,67 @@ public interface CptDatasetLoadPackage extends EPackage {
 	int SORTING_PLAN_OUTPUT_ROW__TABLE = FPD_SORTING_PAN_ROW__TABLE;
 
 	/**
-	 * The feature id for the '<em><b>Key</b></em>' attribute.
+	 * The feature id for the '<em><b>Current Key</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_OUTPUT_ROW__KEY = FPD_SORTING_PAN_ROW__KEY;
+	int SORTING_PLAN_OUTPUT_ROW__CURRENT_KEY = FPD_SORTING_PAN_ROW__CURRENT_KEY;
+
+	/**
+	 * The feature id for the '<em><b>Deleted</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_OUTPUT_ROW__DELETED = FPD_SORTING_PAN_ROW__DELETED;
+
+	/**
+	 * The feature id for the '<em><b>Index Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_OUTPUT_ROW__INDEX_KEY = FPD_SORTING_PAN_ROW__INDEX_KEY;
+
+	/**
+	 * The feature id for the '<em><b>Last Synch Down Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_OUTPUT_ROW__LAST_SYNCH_DOWN_KEY = FPD_SORTING_PAN_ROW__LAST_SYNCH_DOWN_KEY;
+
+	/**
+	 * The feature id for the '<em><b>Last Synch Down Deleted</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_OUTPUT_ROW__LAST_SYNCH_DOWN_DELETED = FPD_SORTING_PAN_ROW__LAST_SYNCH_DOWN_DELETED;
+
+	/**
+	 * The feature id for the '<em><b>Modification Last Synch Up</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_OUTPUT_ROW__MODIFICATION_LAST_SYNCH_UP = FPD_SORTING_PAN_ROW__MODIFICATION_LAST_SYNCH_UP;
+
+	/**
+	 * The feature id for the '<em><b>Modification Next Synch Down</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_OUTPUT_ROW__MODIFICATION_NEXT_SYNCH_DOWN = FPD_SORTING_PAN_ROW__MODIFICATION_NEXT_SYNCH_DOWN;
 
 	/**
 	 * The feature id for the '<em><b>FPD Sorting Plan Table</b></em>' reference.
@@ -1931,15 +3054,6 @@ public interface CptDatasetLoadPackage extends EPackage {
 	int SORTING_PLAN_OUTPUT_ROW_OPERATION_COUNT = FPD_SORTING_PAN_ROW_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Row Number</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SORTING_PLAN_INPUT_ROW__ROW_NUMBER = FPD_SORTING_PAN_ROW__ROW_NUMBER;
-
-	/**
 	 * The feature id for the '<em><b>Table</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1949,13 +3063,67 @@ public interface CptDatasetLoadPackage extends EPackage {
 	int SORTING_PLAN_INPUT_ROW__TABLE = FPD_SORTING_PAN_ROW__TABLE;
 
 	/**
-	 * The feature id for the '<em><b>Key</b></em>' attribute.
+	 * The feature id for the '<em><b>Current Key</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_INPUT_ROW__KEY = FPD_SORTING_PAN_ROW__KEY;
+	int SORTING_PLAN_INPUT_ROW__CURRENT_KEY = FPD_SORTING_PAN_ROW__CURRENT_KEY;
+
+	/**
+	 * The feature id for the '<em><b>Deleted</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_INPUT_ROW__DELETED = FPD_SORTING_PAN_ROW__DELETED;
+
+	/**
+	 * The feature id for the '<em><b>Index Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_INPUT_ROW__INDEX_KEY = FPD_SORTING_PAN_ROW__INDEX_KEY;
+
+	/**
+	 * The feature id for the '<em><b>Last Synch Down Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_INPUT_ROW__LAST_SYNCH_DOWN_KEY = FPD_SORTING_PAN_ROW__LAST_SYNCH_DOWN_KEY;
+
+	/**
+	 * The feature id for the '<em><b>Last Synch Down Deleted</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_INPUT_ROW__LAST_SYNCH_DOWN_DELETED = FPD_SORTING_PAN_ROW__LAST_SYNCH_DOWN_DELETED;
+
+	/**
+	 * The feature id for the '<em><b>Modification Last Synch Up</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_INPUT_ROW__MODIFICATION_LAST_SYNCH_UP = FPD_SORTING_PAN_ROW__MODIFICATION_LAST_SYNCH_UP;
+
+	/**
+	 * The feature id for the '<em><b>Modification Next Synch Down</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_INPUT_ROW__MODIFICATION_NEXT_SYNCH_DOWN = FPD_SORTING_PAN_ROW__MODIFICATION_NEXT_SYNCH_DOWN;
 
 	/**
 	 * The feature id for the '<em><b>FPD Sorting Plan Table</b></em>' reference.
@@ -2067,13 +3235,40 @@ public interface CptDatasetLoadPackage extends EPackage {
 	int FPO = 15;
 
 	/**
+	 * The feature id for the '<em><b>Tables</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPO__TABLES = DbsynchoraPackage.DATA_SOURCE_JDBC_ORA_THIN__TABLES;
+
+	/**
+	 * The feature id for the '<em><b>Data Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPO__DATA_SOURCE = DbsynchoraPackage.DATA_SOURCE_JDBC_ORA_THIN__DATA_SOURCE;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FPO__NAME = DatasetLoadOraPackage.DATASET_LOAD_JDBC_ORA_THIN__NAME;
+	int FPO__NAME = DbsynchoraPackage.DATA_SOURCE_JDBC_ORA_THIN__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Child Units</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPO__CHILD_UNITS = DbsynchoraPackage.DATA_SOURCE_JDBC_ORA_THIN__CHILD_UNITS;
 
 	/**
 	 * The feature id for the '<em><b>Connected</b></em>' attribute.
@@ -2082,7 +3277,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPO__CONNECTED = DatasetLoadOraPackage.DATASET_LOAD_JDBC_ORA_THIN__CONNECTED;
+	int FPO__CONNECTED = DbsynchoraPackage.DATA_SOURCE_JDBC_ORA_THIN__CONNECTED;
 
 	/**
 	 * The feature id for the '<em><b>Data Base User</b></em>' attribute.
@@ -2091,7 +3286,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPO__DATA_BASE_USER = DatasetLoadOraPackage.DATASET_LOAD_JDBC_ORA_THIN__DATA_BASE_USER;
+	int FPO__DATA_BASE_USER = DbsynchoraPackage.DATA_SOURCE_JDBC_ORA_THIN__DATA_BASE_USER;
 
 	/**
 	 * The feature id for the '<em><b>Data Base User Pwd</b></em>' attribute.
@@ -2100,7 +3295,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPO__DATA_BASE_USER_PWD = DatasetLoadOraPackage.DATASET_LOAD_JDBC_ORA_THIN__DATA_BASE_USER_PWD;
+	int FPO__DATA_BASE_USER_PWD = DbsynchoraPackage.DATA_SOURCE_JDBC_ORA_THIN__DATA_BASE_USER_PWD;
 
 	/**
 	 * The feature id for the '<em><b>Default Schema</b></em>' attribute.
@@ -2109,7 +3304,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPO__DEFAULT_SCHEMA = DatasetLoadOraPackage.DATASET_LOAD_JDBC_ORA_THIN__DEFAULT_SCHEMA;
+	int FPO__DEFAULT_SCHEMA = DbsynchoraPackage.DATA_SOURCE_JDBC_ORA_THIN__DEFAULT_SCHEMA;
 
 	/**
 	 * The feature id for the '<em><b>Host</b></em>' attribute.
@@ -2118,7 +3313,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPO__HOST = DatasetLoadOraPackage.DATASET_LOAD_JDBC_ORA_THIN__HOST;
+	int FPO__HOST = DbsynchoraPackage.DATA_SOURCE_JDBC_ORA_THIN__HOST;
 
 	/**
 	 * The feature id for the '<em><b>Port</b></em>' attribute.
@@ -2127,7 +3322,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPO__PORT = DatasetLoadOraPackage.DATASET_LOAD_JDBC_ORA_THIN__PORT;
+	int FPO__PORT = DbsynchoraPackage.DATA_SOURCE_JDBC_ORA_THIN__PORT;
 
 	/**
 	 * The feature id for the '<em><b>Data Base</b></em>' attribute.
@@ -2136,7 +3331,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPO__DATA_BASE = DatasetLoadOraPackage.DATASET_LOAD_JDBC_ORA_THIN__DATA_BASE;
+	int FPO__DATA_BASE = DbsynchoraPackage.DATA_SOURCE_JDBC_ORA_THIN__DATA_BASE;
 
 	/**
 	 * The feature id for the '<em><b>Forecast Uploads</b></em>' containment reference list.
@@ -2145,7 +3340,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPO__FORECAST_UPLOADS = DatasetLoadOraPackage.DATASET_LOAD_JDBC_ORA_THIN_FEATURE_COUNT + 0;
+	int FPO__FORECAST_UPLOADS = DbsynchoraPackage.DATA_SOURCE_JDBC_ORA_THIN_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>FPO</em>' class.
@@ -2154,7 +3349,52 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPO_FEATURE_COUNT = DatasetLoadOraPackage.DATASET_LOAD_JDBC_ORA_THIN_FEATURE_COUNT + 1;
+	int FPO_FEATURE_COUNT = DbsynchoraPackage.DATA_SOURCE_JDBC_ORA_THIN_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Refresh Meta Data</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPO___REFRESH_META_DATA = DbsynchoraPackage.DATA_SOURCE_JDBC_ORA_THIN___REFRESH_META_DATA;
+
+	/**
+	 * The operation id for the '<em>Synch Up</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPO___SYNCH_UP = DbsynchoraPackage.DATA_SOURCE_JDBC_ORA_THIN___SYNCH_UP;
+
+	/**
+	 * The operation id for the '<em>Synch Down</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPO___SYNCH_DOWN = DbsynchoraPackage.DATA_SOURCE_JDBC_ORA_THIN___SYNCH_DOWN;
+
+	/**
+	 * The operation id for the '<em>Get Param Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPO___GET_PARAM_VALUE__EATTRIBUTE = DbsynchoraPackage.DATA_SOURCE_JDBC_ORA_THIN___GET_PARAM_VALUE__EATTRIBUTE;
+
+	/**
+	 * The operation id for the '<em>Get Param Attributes</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPO___GET_PARAM_ATTRIBUTES = DbsynchoraPackage.DATA_SOURCE_JDBC_ORA_THIN___GET_PARAM_ATTRIBUTES;
 
 	/**
 	 * The operation id for the '<em>Connect</em>' operation.
@@ -2163,7 +3403,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPO___CONNECT = DatasetLoadOraPackage.DATASET_LOAD_JDBC_ORA_THIN___CONNECT;
+	int FPO___CONNECT = DbsynchoraPackage.DATA_SOURCE_JDBC_ORA_THIN___CONNECT;
 
 	/**
 	 * The operation id for the '<em>Disconnect</em>' operation.
@@ -2172,16 +3412,25 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPO___DISCONNECT = DatasetLoadOraPackage.DATASET_LOAD_JDBC_ORA_THIN___DISCONNECT;
+	int FPO___DISCONNECT = DbsynchoraPackage.DATA_SOURCE_JDBC_ORA_THIN___DISCONNECT;
 
 	/**
-	 * The operation id for the '<em>Load Table Impl</em>' operation.
+	 * The operation id for the '<em>Synch Down Table Impl</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FPO___LOAD_TABLE_IMPL__TABLE = DatasetLoadOraPackage.DATASET_LOAD_JDBC_ORA_THIN___LOAD_TABLE_IMPL__TABLE;
+	int FPO___SYNCH_DOWN_TABLE_IMPL__TABLE = DbsynchoraPackage.DATA_SOURCE_JDBC_ORA_THIN___SYNCH_DOWN_TABLE_IMPL__TABLE;
+
+	/**
+	 * The operation id for the '<em>Synch Up Table Impl</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPO___SYNCH_UP_TABLE_IMPL__TABLE = DbsynchoraPackage.DATA_SOURCE_JDBC_ORA_THIN___SYNCH_UP_TABLE_IMPL__TABLE;
 
 	/**
 	 * The number of operations of the '<em>FPO</em>' class.
@@ -2190,7 +3439,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPO_OPERATION_COUNT = DatasetLoadOraPackage.DATASET_LOAD_JDBC_ORA_THIN_OPERATION_COUNT + 0;
+	int FPO_OPERATION_COUNT = DbsynchoraPackage.DATA_SOURCE_JDBC_ORA_THIN_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link com.misc.projects.CptDatasetLoad.impl.FPOForecastUploadImpl <em>FPO Forecast Upload</em>}' class.
@@ -2203,31 +3452,76 @@ public interface CptDatasetLoadPackage extends EPackage {
 	int FPO_FORECAST_UPLOAD = 16;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Table</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FPO_FORECAST_UPLOAD__NAME = DatasetloadPackage.TABLE_GROUP__NAME;
+	int FPO_FORECAST_UPLOAD__TABLE = DbSynchPackage.TABLE_ROW__TABLE;
 
 	/**
-	 * The feature id for the '<em><b>Tables</b></em>' reference list.
+	 * The feature id for the '<em><b>Current Key</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FPO_FORECAST_UPLOAD__TABLES = DatasetloadPackage.TABLE_GROUP__TABLES;
+	int FPO_FORECAST_UPLOAD__CURRENT_KEY = DbSynchPackage.TABLE_ROW__CURRENT_KEY;
 
 	/**
-	 * The feature id for the '<em><b>Data Source</b></em>' reference.
+	 * The feature id for the '<em><b>Deleted</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FPO_FORECAST_UPLOAD__DATA_SOURCE = DatasetloadPackage.TABLE_GROUP__DATA_SOURCE;
+	int FPO_FORECAST_UPLOAD__DELETED = DbSynchPackage.TABLE_ROW__DELETED;
+
+	/**
+	 * The feature id for the '<em><b>Index Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPO_FORECAST_UPLOAD__INDEX_KEY = DbSynchPackage.TABLE_ROW__INDEX_KEY;
+
+	/**
+	 * The feature id for the '<em><b>Last Synch Down Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPO_FORECAST_UPLOAD__LAST_SYNCH_DOWN_KEY = DbSynchPackage.TABLE_ROW__LAST_SYNCH_DOWN_KEY;
+
+	/**
+	 * The feature id for the '<em><b>Last Synch Down Deleted</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPO_FORECAST_UPLOAD__LAST_SYNCH_DOWN_DELETED = DbSynchPackage.TABLE_ROW__LAST_SYNCH_DOWN_DELETED;
+
+	/**
+	 * The feature id for the '<em><b>Modification Last Synch Up</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPO_FORECAST_UPLOAD__MODIFICATION_LAST_SYNCH_UP = DbSynchPackage.TABLE_ROW__MODIFICATION_LAST_SYNCH_UP;
+
+	/**
+	 * The feature id for the '<em><b>Modification Next Synch Down</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPO_FORECAST_UPLOAD__MODIFICATION_NEXT_SYNCH_DOWN = DbSynchPackage.TABLE_ROW__MODIFICATION_NEXT_SYNCH_DOWN;
 
 	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
@@ -2236,7 +3530,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPO_FORECAST_UPLOAD__FROM_DATE = DatasetloadPackage.TABLE_GROUP_FEATURE_COUNT + 0;
+	int FPO_FORECAST_UPLOAD__FROM_DATE = DbSynchPackage.TABLE_ROW_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>To Date</b></em>' attribute.
@@ -2245,7 +3539,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPO_FORECAST_UPLOAD__TO_DATE = DatasetloadPackage.TABLE_GROUP_FEATURE_COUNT + 1;
+	int FPO_FORECAST_UPLOAD__TO_DATE = DbSynchPackage.TABLE_ROW_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
@@ -2254,7 +3548,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPO_FORECAST_UPLOAD__KIND = DatasetloadPackage.TABLE_GROUP_FEATURE_COUNT + 2;
+	int FPO_FORECAST_UPLOAD__KIND = DbSynchPackage.TABLE_ROW_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Forecast Table</b></em>' containment reference.
@@ -2263,7 +3557,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPO_FORECAST_UPLOAD__FORECAST_TABLE = DatasetloadPackage.TABLE_GROUP_FEATURE_COUNT + 3;
+	int FPO_FORECAST_UPLOAD__FORECAST_TABLE = DbSynchPackage.TABLE_ROW_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>FPO Forecast Upload</em>' class.
@@ -2272,16 +3566,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPO_FORECAST_UPLOAD_FEATURE_COUNT = DatasetloadPackage.TABLE_GROUP_FEATURE_COUNT + 4;
-
-	/**
-	 * The operation id for the '<em>Load</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FPO_FORECAST_UPLOAD___LOAD = DatasetloadPackage.TABLE_GROUP___LOAD;
+	int FPO_FORECAST_UPLOAD_FEATURE_COUNT = DbSynchPackage.TABLE_ROW_FEATURE_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>Refresh</em>' operation.
@@ -2290,7 +3575,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPO_FORECAST_UPLOAD___REFRESH = DatasetloadPackage.TABLE_GROUP___REFRESH;
+	int FPO_FORECAST_UPLOAD___REFRESH = DbSynchPackage.TABLE_ROW___REFRESH;
 
 	/**
 	 * The number of operations of the '<em>FPO Forecast Upload</em>' class.
@@ -2299,7 +3584,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPO_FORECAST_UPLOAD_OPERATION_COUNT = DatasetloadPackage.TABLE_GROUP_OPERATION_COUNT + 0;
+	int FPO_FORECAST_UPLOAD_OPERATION_COUNT = DbSynchPackage.TABLE_ROW_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link com.misc.projects.CptDatasetLoad.impl.FPOForecastBucketImpl <em>FPO Forecast Bucket</em>}' class.
@@ -2312,31 +3597,76 @@ public interface CptDatasetLoadPackage extends EPackage {
 	int FPO_FORECAST_BUCKET = 17;
 
 	/**
-	 * The feature id for the '<em><b>Row Number</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FPO_FORECAST_BUCKET__ROW_NUMBER = DatasetloadPackage.TABLE_ROW__ROW_NUMBER;
-
-	/**
 	 * The feature id for the '<em><b>Table</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FPO_FORECAST_BUCKET__TABLE = DatasetloadPackage.TABLE_ROW__TABLE;
+	int FPO_FORECAST_BUCKET__TABLE = DbSynchPackage.TABLE_ROW__TABLE;
 
 	/**
-	 * The feature id for the '<em><b>Key</b></em>' attribute.
+	 * The feature id for the '<em><b>Current Key</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FPO_FORECAST_BUCKET__KEY = DatasetloadPackage.TABLE_ROW__KEY;
+	int FPO_FORECAST_BUCKET__CURRENT_KEY = DbSynchPackage.TABLE_ROW__CURRENT_KEY;
+
+	/**
+	 * The feature id for the '<em><b>Deleted</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPO_FORECAST_BUCKET__DELETED = DbSynchPackage.TABLE_ROW__DELETED;
+
+	/**
+	 * The feature id for the '<em><b>Index Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPO_FORECAST_BUCKET__INDEX_KEY = DbSynchPackage.TABLE_ROW__INDEX_KEY;
+
+	/**
+	 * The feature id for the '<em><b>Last Synch Down Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPO_FORECAST_BUCKET__LAST_SYNCH_DOWN_KEY = DbSynchPackage.TABLE_ROW__LAST_SYNCH_DOWN_KEY;
+
+	/**
+	 * The feature id for the '<em><b>Last Synch Down Deleted</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPO_FORECAST_BUCKET__LAST_SYNCH_DOWN_DELETED = DbSynchPackage.TABLE_ROW__LAST_SYNCH_DOWN_DELETED;
+
+	/**
+	 * The feature id for the '<em><b>Modification Last Synch Up</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPO_FORECAST_BUCKET__MODIFICATION_LAST_SYNCH_UP = DbSynchPackage.TABLE_ROW__MODIFICATION_LAST_SYNCH_UP;
+
+	/**
+	 * The feature id for the '<em><b>Modification Next Synch Down</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPO_FORECAST_BUCKET__MODIFICATION_NEXT_SYNCH_DOWN = DbSynchPackage.TABLE_ROW__MODIFICATION_NEXT_SYNCH_DOWN;
 
 	/**
 	 * The feature id for the '<em><b>Bucket Date</b></em>' attribute.
@@ -2345,7 +3675,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPO_FORECAST_BUCKET__BUCKET_DATE = DatasetloadPackage.TABLE_ROW_FEATURE_COUNT + 0;
+	int FPO_FORECAST_BUCKET__BUCKET_DATE = DbSynchPackage.TABLE_ROW_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Bucket Begin Time</b></em>' attribute.
@@ -2354,7 +3684,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPO_FORECAST_BUCKET__BUCKET_BEGIN_TIME = DatasetloadPackage.TABLE_ROW_FEATURE_COUNT + 1;
+	int FPO_FORECAST_BUCKET__BUCKET_BEGIN_TIME = DbSynchPackage.TABLE_ROW_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Bucket End Time</b></em>' attribute.
@@ -2363,7 +3693,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPO_FORECAST_BUCKET__BUCKET_END_TIME = DatasetloadPackage.TABLE_ROW_FEATURE_COUNT + 2;
+	int FPO_FORECAST_BUCKET__BUCKET_END_TIME = DbSynchPackage.TABLE_ROW_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Bucket Hour</b></em>' attribute.
@@ -2372,7 +3702,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPO_FORECAST_BUCKET__BUCKET_HOUR = DatasetloadPackage.TABLE_ROW_FEATURE_COUNT + 3;
+	int FPO_FORECAST_BUCKET__BUCKET_HOUR = DbSynchPackage.TABLE_ROW_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Customer</b></em>' attribute.
@@ -2381,7 +3711,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPO_FORECAST_BUCKET__CUSTOMER = DatasetloadPackage.TABLE_ROW_FEATURE_COUNT + 4;
+	int FPO_FORECAST_BUCKET__CUSTOMER = DbSynchPackage.TABLE_ROW_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>First Sorting Imc</b></em>' attribute.
@@ -2390,7 +3720,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPO_FORECAST_BUCKET__FIRST_SORTING_IMC = DatasetloadPackage.TABLE_ROW_FEATURE_COUNT + 5;
+	int FPO_FORECAST_BUCKET__FIRST_SORTING_IMC = DbSynchPackage.TABLE_ROW_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Intake Channel</b></em>' attribute.
@@ -2399,7 +3729,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPO_FORECAST_BUCKET__INTAKE_CHANNEL = DatasetloadPackage.TABLE_ROW_FEATURE_COUNT + 6;
+	int FPO_FORECAST_BUCKET__INTAKE_CHANNEL = DbSynchPackage.TABLE_ROW_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Intake Location</b></em>' attribute.
@@ -2408,7 +3738,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPO_FORECAST_BUCKET__INTAKE_LOCATION = DatasetloadPackage.TABLE_ROW_FEATURE_COUNT + 7;
+	int FPO_FORECAST_BUCKET__INTAKE_LOCATION = DbSynchPackage.TABLE_ROW_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Day Plus</b></em>' attribute.
@@ -2417,7 +3747,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPO_FORECAST_BUCKET__DAY_PLUS = DatasetloadPackage.TABLE_ROW_FEATURE_COUNT + 8;
+	int FPO_FORECAST_BUCKET__DAY_PLUS = DbSynchPackage.TABLE_ROW_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Throughput Type</b></em>' attribute.
@@ -2426,7 +3756,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPO_FORECAST_BUCKET__THROUGHPUT_TYPE = DatasetloadPackage.TABLE_ROW_FEATURE_COUNT + 9;
+	int FPO_FORECAST_BUCKET__THROUGHPUT_TYPE = DbSynchPackage.TABLE_ROW_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Mechanization Level</b></em>' attribute.
@@ -2435,7 +3765,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPO_FORECAST_BUCKET__MECHANIZATION_LEVEL = DatasetloadPackage.TABLE_ROW_FEATURE_COUNT + 10;
+	int FPO_FORECAST_BUCKET__MECHANIZATION_LEVEL = DbSynchPackage.TABLE_ROW_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Sorting Level AGG</b></em>' attribute.
@@ -2444,7 +3774,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPO_FORECAST_BUCKET__SORTING_LEVEL_AGG = DatasetloadPackage.TABLE_ROW_FEATURE_COUNT + 11;
+	int FPO_FORECAST_BUCKET__SORTING_LEVEL_AGG = DbSynchPackage.TABLE_ROW_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Volume</b></em>' attribute.
@@ -2453,7 +3783,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPO_FORECAST_BUCKET__VOLUME = DatasetloadPackage.TABLE_ROW_FEATURE_COUNT + 12;
+	int FPO_FORECAST_BUCKET__VOLUME = DbSynchPackage.TABLE_ROW_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Publication ID</b></em>' attribute.
@@ -2462,7 +3792,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPO_FORECAST_BUCKET__PUBLICATION_ID = DatasetloadPackage.TABLE_ROW_FEATURE_COUNT + 13;
+	int FPO_FORECAST_BUCKET__PUBLICATION_ID = DbSynchPackage.TABLE_ROW_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Time Series ID</b></em>' attribute.
@@ -2471,7 +3801,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPO_FORECAST_BUCKET__TIME_SERIES_ID = DatasetloadPackage.TABLE_ROW_FEATURE_COUNT + 14;
+	int FPO_FORECAST_BUCKET__TIME_SERIES_ID = DbSynchPackage.TABLE_ROW_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Bucket ID</b></em>' attribute.
@@ -2480,7 +3810,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPO_FORECAST_BUCKET__BUCKET_ID = DatasetloadPackage.TABLE_ROW_FEATURE_COUNT + 15;
+	int FPO_FORECAST_BUCKET__BUCKET_ID = DbSynchPackage.TABLE_ROW_FEATURE_COUNT + 15;
 
 	/**
 	 * The number of structural features of the '<em>FPO Forecast Bucket</em>' class.
@@ -2489,7 +3819,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPO_FORECAST_BUCKET_FEATURE_COUNT = DatasetloadPackage.TABLE_ROW_FEATURE_COUNT + 16;
+	int FPO_FORECAST_BUCKET_FEATURE_COUNT = DbSynchPackage.TABLE_ROW_FEATURE_COUNT + 16;
 
 	/**
 	 * The operation id for the '<em>Refresh</em>' operation.
@@ -2498,7 +3828,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPO_FORECAST_BUCKET___REFRESH = DatasetloadPackage.TABLE_ROW___REFRESH;
+	int FPO_FORECAST_BUCKET___REFRESH = DbSynchPackage.TABLE_ROW___REFRESH;
 
 	/**
 	 * The number of operations of the '<em>FPO Forecast Bucket</em>' class.
@@ -2507,7 +3837,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPO_FORECAST_BUCKET_OPERATION_COUNT = DatasetloadPackage.TABLE_ROW_OPERATION_COUNT + 0;
+	int FPO_FORECAST_BUCKET_OPERATION_COUNT = DbSynchPackage.TABLE_ROW_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link com.misc.projects.CptDatasetLoad.impl.FPOForecastBucketsImpl <em>FPO Forecast Buckets</em>}' class.
@@ -2520,22 +3850,67 @@ public interface CptDatasetLoadPackage extends EPackage {
 	int FPO_FORECAST_BUCKETS = 18;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Synch Unit</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FPO_FORECAST_BUCKETS__NAME = DatasetloadPackage.TABLE__NAME;
+	int FPO_FORECAST_BUCKETS__SYNCH_UNIT = DbSynchPackage.TABLE__SYNCH_UNIT;
 
 	/**
-	 * The feature id for the '<em><b>Table Group</b></em>' reference.
+	 * The feature id for the '<em><b>Columns</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FPO_FORECAST_BUCKETS__TABLE_GROUP = DatasetloadPackage.TABLE__TABLE_GROUP;
+	int FPO_FORECAST_BUCKETS__COLUMNS = DbSynchPackage.TABLE__COLUMNS;
+
+	/**
+	 * The feature id for the '<em><b>Key Columns</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPO_FORECAST_BUCKETS__KEY_COLUMNS = DbSynchPackage.TABLE__KEY_COLUMNS;
+
+	/**
+	 * The feature id for the '<em><b>Data Columns</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPO_FORECAST_BUCKETS__DATA_COLUMNS = DbSynchPackage.TABLE__DATA_COLUMNS;
+
+	/**
+	 * The feature id for the '<em><b>Table Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPO_FORECAST_BUCKETS__TABLE_NAME = DbSynchPackage.TABLE__TABLE_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Where Clause</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPO_FORECAST_BUCKETS__WHERE_CLAUSE = DbSynchPackage.TABLE__WHERE_CLAUSE;
+
+	/**
+	 * The feature id for the '<em><b>Param Db Synch Unit Attributes</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPO_FORECAST_BUCKETS__PARAM_DB_SYNCH_UNIT_ATTRIBUTES = DbSynchPackage.TABLE__PARAM_DB_SYNCH_UNIT_ATTRIBUTES;
 
 	/**
 	 * The feature id for the '<em><b>Rows</b></em>' reference list.
@@ -2544,43 +3919,70 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPO_FORECAST_BUCKETS__ROWS = DatasetloadPackage.TABLE__ROWS;
+	int FPO_FORECAST_BUCKETS__ROWS = DbSynchPackage.TABLE__ROWS;
 
 	/**
-	 * The feature id for the '<em><b>Param Table Group Attributes</b></em>' attribute list.
+	 * The feature id for the '<em><b>Select Sql Statement</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FPO_FORECAST_BUCKETS__PARAM_TABLE_GROUP_ATTRIBUTES = DatasetloadPackage.TABLE__PARAM_TABLE_GROUP_ATTRIBUTES;
+	int FPO_FORECAST_BUCKETS__SELECT_SQL_STATEMENT = DbSynchPackage.TABLE__SELECT_SQL_STATEMENT;
 
 	/**
-	 * The feature id for the '<em><b>SQL Statement</b></em>' attribute.
+	 * The feature id for the '<em><b>Insert Sql Statement</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FPO_FORECAST_BUCKETS__SQL_STATEMENT = DatasetloadPackage.TABLE__SQL_STATEMENT;
+	int FPO_FORECAST_BUCKETS__INSERT_SQL_STATEMENT = DbSynchPackage.TABLE__INSERT_SQL_STATEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Column Table Row Attributes</b></em>' attribute list.
+	 * The feature id for the '<em><b>Update Sql Statement</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FPO_FORECAST_BUCKETS__COLUMN_TABLE_ROW_ATTRIBUTES = DatasetloadPackage.TABLE__COLUMN_TABLE_ROW_ATTRIBUTES;
+	int FPO_FORECAST_BUCKETS__UPDATE_SQL_STATEMENT = DbSynchPackage.TABLE__UPDATE_SQL_STATEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Key Columns</b></em>' attribute list.
+	 * The feature id for the '<em><b>Delete Sql Statement</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FPO_FORECAST_BUCKETS__KEY_COLUMNS = DatasetloadPackage.TABLE__KEY_COLUMNS;
+	int FPO_FORECAST_BUCKETS__DELETE_SQL_STATEMENT = DbSynchPackage.TABLE__DELETE_SQL_STATEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Number Of Rows</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPO_FORECAST_BUCKETS__NUMBER_OF_ROWS = DbSynchPackage.TABLE__NUMBER_OF_ROWS;
+
+	/**
+	 * The feature id for the '<em><b>Last Synch Down</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPO_FORECAST_BUCKETS__LAST_SYNCH_DOWN = DbSynchPackage.TABLE__LAST_SYNCH_DOWN;
+
+	/**
+	 * The feature id for the '<em><b>Last Synch Up</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPO_FORECAST_BUCKETS__LAST_SYNCH_UP = DbSynchPackage.TABLE__LAST_SYNCH_UP;
 
 	/**
 	 * The feature id for the '<em><b>Forecast Rows</b></em>' containment reference list.
@@ -2589,7 +3991,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPO_FORECAST_BUCKETS__FORECAST_ROWS = DatasetloadPackage.TABLE_FEATURE_COUNT + 0;
+	int FPO_FORECAST_BUCKETS__FORECAST_ROWS = DbSynchPackage.TABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>FPO Forecast Buckets</em>' class.
@@ -2598,52 +4000,52 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPO_FORECAST_BUCKETS_FEATURE_COUNT = DatasetloadPackage.TABLE_FEATURE_COUNT + 1;
+	int FPO_FORECAST_BUCKETS_FEATURE_COUNT = DbSynchPackage.TABLE_FEATURE_COUNT + 1;
 
 	/**
-	 * The operation id for the '<em>Load</em>' operation.
+	 * The operation id for the '<em>Add Column</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FPO_FORECAST_BUCKETS___LOAD = DatasetloadPackage.TABLE___LOAD;
+	int FPO_FORECAST_BUCKETS___ADD_COLUMN__BOOLEAN_STRING_ENUMCOLUMNTYPE_EATTRIBUTE = DbSynchPackage.TABLE___ADD_COLUMN__BOOLEAN_STRING_ENUMCOLUMNTYPE_EATTRIBUTE;
 
 	/**
-	 * The operation id for the '<em>New Row</em>' operation.
+	 * The operation id for the '<em>Add Param</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FPO_FORECAST_BUCKETS___NEW_ROW = DatasetloadPackage.TABLE___NEW_ROW;
+	int FPO_FORECAST_BUCKETS___ADD_PARAM__EATTRIBUTE = DbSynchPackage.TABLE___ADD_PARAM__EATTRIBUTE;
 
 	/**
-	 * The operation id for the '<em>Add Row</em>' operation.
+	 * The operation id for the '<em>Refresh Meta Data</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FPO_FORECAST_BUCKETS___ADD_ROW__TABLEROW = DatasetloadPackage.TABLE___ADD_ROW__TABLEROW;
+	int FPO_FORECAST_BUCKETS___REFRESH_META_DATA = DbSynchPackage.TABLE___REFRESH_META_DATA;
 
 	/**
-	 * The operation id for the '<em>Get Row</em>' operation.
+	 * The operation id for the '<em>Synch Down</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FPO_FORECAST_BUCKETS___GET_ROW__TABLEROWKEYIMPL = DatasetloadPackage.TABLE___GET_ROW__TABLEROWKEYIMPL;
+	int FPO_FORECAST_BUCKETS___SYNCH_DOWN = DbSynchPackage.TABLE___SYNCH_DOWN;
 
 	/**
-	 * The operation id for the '<em>Remove Row</em>' operation.
+	 * The operation id for the '<em>Synch Up</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FPO_FORECAST_BUCKETS___REMOVE_ROW__TABLEROW = DatasetloadPackage.TABLE___REMOVE_ROW__TABLEROW;
+	int FPO_FORECAST_BUCKETS___SYNCH_UP = DbSynchPackage.TABLE___SYNCH_UP;
 
 	/**
 	 * The operation id for the '<em>Refresh</em>' operation.
@@ -2652,7 +4054,52 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPO_FORECAST_BUCKETS___REFRESH = DatasetloadPackage.TABLE___REFRESH;
+	int FPO_FORECAST_BUCKETS___REFRESH = DbSynchPackage.TABLE___REFRESH;
+
+	/**
+	 * The operation id for the '<em>Get Row</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPO_FORECAST_BUCKETS___GET_ROW__TABLEROWKEYIMPL = DbSynchPackage.TABLE___GET_ROW__TABLEROWKEYIMPL;
+
+	/**
+	 * The operation id for the '<em>Construct Row</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPO_FORECAST_BUCKETS___CONSTRUCT_ROW = DbSynchPackage.TABLE___CONSTRUCT_ROW;
+
+	/**
+	 * The operation id for the '<em>Index Row</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPO_FORECAST_BUCKETS___INDEX_ROW__TABLEROW = DbSynchPackage.TABLE___INDEX_ROW__TABLEROW;
+
+	/**
+	 * The operation id for the '<em>Unindex Row</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPO_FORECAST_BUCKETS___UNINDEX_ROW__TABLEROW = DbSynchPackage.TABLE___UNINDEX_ROW__TABLEROW;
+
+	/**
+	 * The operation id for the '<em>Refresh Index</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPO_FORECAST_BUCKETS___REFRESH_INDEX = DbSynchPackage.TABLE___REFRESH_INDEX;
 
 	/**
 	 * The number of operations of the '<em>FPO Forecast Buckets</em>' class.
@@ -2661,7 +4108,7 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FPO_FORECAST_BUCKETS_OPERATION_COUNT = DatasetloadPackage.TABLE_OPERATION_COUNT + 0;
+	int FPO_FORECAST_BUCKETS_OPERATION_COUNT = DbSynchPackage.TABLE_OPERATION_COUNT + 0;
 
 	/**
 	 * Returns the meta object for class '{@link com.misc.projects.CptDatasetLoad.FPD <em>FPD</em>}'.

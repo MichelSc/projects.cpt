@@ -3,6 +3,7 @@
 package com.misc.projects.CptDatasetLoad.provider;
 
 
+import com.misc.common.moplaf.dbsynch.DbSynchPackage;
 import com.misc.projects.CptDatasetLoad.CptDatasetLoadFactory;
 import com.misc.projects.CptDatasetLoad.CptDatasetLoadPackage;
 import com.misc.projects.CptDatasetLoad.SortingLevelsTable;
@@ -95,7 +96,7 @@ public class SortingLevelsTableItemProvider extends MasterDataTableItemProvider 
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((SortingLevelsTable)object).getName();
+		String label = ((SortingLevelsTable)object).getTableName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_SortingLevelsTable_type") :
 			getString("_UI_SortingLevelsTable_type") + " " + label;
@@ -136,6 +137,29 @@ public class SortingLevelsTableItemProvider extends MasterDataTableItemProvider 
 			(createChildParameter
 				(CptDatasetLoadPackage.Literals.SORTING_LEVELS_TABLE__SORTINGLEVEL_ROW,
 				 CptDatasetLoadFactory.eINSTANCE.createSortingLevelRow()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify =
+			childFeature == DbSynchPackage.Literals.TABLE__KEY_COLUMNS ||
+			childFeature == DbSynchPackage.Literals.TABLE__DATA_COLUMNS;
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2",
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }

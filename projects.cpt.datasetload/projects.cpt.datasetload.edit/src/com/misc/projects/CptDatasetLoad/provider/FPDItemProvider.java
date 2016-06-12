@@ -3,7 +3,7 @@
 package com.misc.projects.CptDatasetLoad.provider;
 
 
-import com.misc.common.moplaf.DatasetLoadOra.provider.DatasetLoadJdbcOraThinItemProvider;
+import com.misc.common.moplaf.dbsynch.dbsynchora.provider.DataSourceJdbcOraThinItemProvider;
 import com.misc.projects.CptDatasetLoad.CptDatasetLoadFactory;
 import com.misc.projects.CptDatasetLoad.CptDatasetLoadPackage;
 import com.misc.projects.CptDatasetLoad.FPD;
@@ -22,7 +22,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class FPDItemProvider extends DatasetLoadJdbcOraThinItemProvider {
+public class FPDItemProvider extends DataSourceJdbcOraThinItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -77,17 +77,6 @@ public class FPDItemProvider extends DatasetLoadJdbcOraThinItemProvider {
 		// adding (see {@link AddCommand}) it as a child.
 
 		return super.getChildFeature(object, child);
-	}
-
-	/**
-	 * This returns FPD.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/FPD"));
 	}
 
 	/**

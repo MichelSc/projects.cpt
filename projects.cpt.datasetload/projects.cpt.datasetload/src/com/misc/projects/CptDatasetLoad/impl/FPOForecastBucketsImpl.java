@@ -2,23 +2,23 @@
  */
 package com.misc.projects.CptDatasetLoad.impl;
 
-import com.misc.common.moplaf.datasetload.TableRow;
-import com.misc.common.moplaf.datasetload.impl.TableImpl;
-import com.misc.common.moplaf.datasetload.impl.TableRowKeyImpl;
-import com.misc.projects.CptDatasetLoad.CptDatasetLoadFactory;
-import com.misc.projects.CptDatasetLoad.CptDatasetLoadPackage;
-import com.misc.projects.CptDatasetLoad.FPOForecastBucket;
-import com.misc.projects.CptDatasetLoad.FPOForecastBuckets;
 import java.math.BigDecimal;
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
+import com.misc.common.moplaf.dbsynch.TableRow;
+import com.misc.common.moplaf.dbsynch.impl.TableImpl;
+import com.misc.common.moplaf.dbsynch.impl.TableRowKeyImpl;
+import com.misc.projects.CptDatasetLoad.CptDatasetLoadFactory;
+import com.misc.projects.CptDatasetLoad.CptDatasetLoadPackage;
+import com.misc.projects.CptDatasetLoad.FPOForecastBucket;
+import com.misc.projects.CptDatasetLoad.FPOForecastBuckets;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,10 +26,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.CptDatasetLoad.impl.FPOForecastBucketsImpl#getForecastRows <em>Forecast Rows</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -163,13 +163,12 @@ public class FPOForecastBucketsImpl extends TableImpl implements FPOForecastBuck
     	return (FPOForecastBucket) row;
 	}
 
-
 	
 	/* (non-Javadoc)
 	 * @see com.misc.common.moplaf.datasetload.impl.TableImpl#NewRow()
 	 */
 	@Override
-	public TableRow newRow() {
+	public TableRow constructRow() {
 		FPOForecastBucket newForecastBucket = CptDatasetLoadFactory.eINSTANCE.createFPOForecastBucket();
 		this.getForecastRows().add(newForecastBucket);
 		return newForecastBucket;
@@ -187,6 +186,7 @@ public class FPOForecastBucketsImpl extends TableImpl implements FPOForecastBuck
 	/* (non-Javadoc)
 	 * @see com.misc.common.moplaf.datasetload.impl.TableImpl#getSQLStatement()
 	 */
+	/*
 	@Override
 	public String getSQLStatement() {
 		String sqlStatement = 
@@ -216,10 +216,10 @@ public class FPOForecastBucketsImpl extends TableImpl implements FPOForecastBuck
             ;
 		return sqlStatement;
 	}
+	*/
 	
 	/* (non-Javadoc)
 	 * @see com.misc.common.moplaf.datasetload.impl.TableImpl#getColumnTableRowAttributes()
-	 */
 	@Override
 	public EList<EAttribute> getColumnTableRowAttributes() {
 		EList<EAttribute> columnAttributes = new BasicEList<EAttribute>();
@@ -241,12 +241,12 @@ public class FPOForecastBucketsImpl extends TableImpl implements FPOForecastBuck
 		columnAttributes.add(CptDatasetLoadPackage.Literals.FPO_FORECAST_BUCKET__VOLUME);
 		return columnAttributes;
 	}
+	 */
 	
 	
 
 	/* (non-Javadoc)
 	 * @see com.misc.common.moplaf.datasetload.impl.TableImpl#getParamTableGroupAttributes()
-	 */
 	@Override
 	public EList<EAttribute> getParamTableGroupAttributes() {
 		EList<EAttribute> columnAttributes = new BasicEList<EAttribute>();
@@ -254,10 +254,10 @@ public class FPOForecastBucketsImpl extends TableImpl implements FPOForecastBuck
 		columnAttributes.add(CptDatasetLoadPackage.Literals.FPO_FORECAST_UPLOAD__TO_DATE);
 		return columnAttributes;
 	}
+	 */
 
 	/* (non-Javadoc)
 	 * @see com.misc.common.moplaf.datasetload.impl.TableImpl#getKeyColumns()
-	 */
 	@Override
 	public EList<Integer> getKeyColumns() {
 		EList<Integer> keyColumns = new BasicEList<Integer>();
@@ -266,5 +266,6 @@ public class FPOForecastBucketsImpl extends TableImpl implements FPOForecastBuck
 		keyColumns.add(2); // zero based
 		return keyColumns;
 	}
+	 */
 
 } //FPOForecastBucketsImpl

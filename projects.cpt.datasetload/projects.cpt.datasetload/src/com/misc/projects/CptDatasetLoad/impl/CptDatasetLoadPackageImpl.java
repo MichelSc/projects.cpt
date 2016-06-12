@@ -2,8 +2,8 @@
  */
 package com.misc.projects.CptDatasetLoad.impl;
 
-import com.misc.common.moplaf.DatasetLoadOra.DatasetLoadOraPackage;
-import com.misc.common.moplaf.datasetload.DatasetloadPackage;
+import com.misc.common.moplaf.dbsynch.DbSynchPackage;
+import com.misc.common.moplaf.dbsynch.dbsynchora.DbsynchoraPackage;
 import com.misc.projects.CptDatasetLoad.CptDatasetLoadFactory;
 import com.misc.projects.CptDatasetLoad.CptDatasetLoadPackage;
 import com.misc.projects.CptDatasetLoad.FPDMasterData;
@@ -217,7 +217,7 @@ public class CptDatasetLoadPackageImpl extends EPackageImpl implements CptDatase
 		isInited = true;
 
 		// Initialize simple dependencies
-		DatasetLoadOraPackage.eINSTANCE.eClass();
+		DbsynchoraPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theCptDatasetLoadPackage.createPackageContents();
@@ -1146,33 +1146,33 @@ public class CptDatasetLoadPackageImpl extends EPackageImpl implements CptDatase
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		DatasetLoadOraPackage theDatasetLoadOraPackage = (DatasetLoadOraPackage)EPackage.Registry.INSTANCE.getEPackage(DatasetLoadOraPackage.eNS_URI);
-		DatasetloadPackage theDatasetloadPackage = (DatasetloadPackage)EPackage.Registry.INSTANCE.getEPackage(DatasetloadPackage.eNS_URI);
+		DbsynchoraPackage theDbsynchoraPackage = (DbsynchoraPackage)EPackage.Registry.INSTANCE.getEPackage(DbsynchoraPackage.eNS_URI);
+		DbSynchPackage theDbSynchPackage = (DbSynchPackage)EPackage.Registry.INSTANCE.getEPackage(DbSynchPackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		fpdEClass.getESuperTypes().add(theDatasetLoadOraPackage.getDatasetLoadJdbcOraThin());
-		fpdTableGroupEClass.getESuperTypes().add(theDatasetloadPackage.getTableGroup());
+		fpdEClass.getESuperTypes().add(theDbsynchoraPackage.getDataSourceJdbcOraThin());
+		fpdTableGroupEClass.getESuperTypes().add(theDbSynchPackage.getDbSynchUnit());
 		fpdMasterDataEClass.getESuperTypes().add(this.getFPDTableGroup());
 		fpdSortingPlansSetEClass.getESuperTypes().add(this.getFPDTableGroup());
-		fpdSortingPanRowEClass.getESuperTypes().add(theDatasetloadPackage.getTableRow());
-		fpdSortingPlanTableEClass.getESuperTypes().add(theDatasetloadPackage.getTable());
-		masterDataTableEClass.getESuperTypes().add(theDatasetloadPackage.getTable());
+		fpdSortingPanRowEClass.getESuperTypes().add(theDbSynchPackage.getTableRow());
+		fpdSortingPlanTableEClass.getESuperTypes().add(theDbSynchPackage.getTable());
+		masterDataTableEClass.getESuperTypes().add(theDbSynchPackage.getTable());
 		sortingLevelsTableEClass.getESuperTypes().add(this.getMasterDataTable());
 		sortingPlansTableEClass.getESuperTypes().add(this.getFPDSortingPlanTable());
 		sortingPlanInputTableEClass.getESuperTypes().add(this.getFPDSortingPlanTable());
 		sortingPlanOutputTableEClass.getESuperTypes().add(this.getFPDSortingPlanTable());
-		sortingLevelRowEClass.getESuperTypes().add(theDatasetloadPackage.getTableRow());
+		sortingLevelRowEClass.getESuperTypes().add(theDbSynchPackage.getTableRow());
 		sortingPlanRowEClass.getESuperTypes().add(this.getFPDSortingPanRow());
 		sortingPlanOutputRowEClass.getESuperTypes().add(this.getFPDSortingPanRow());
 		sortingPlanInputRowEClass.getESuperTypes().add(this.getFPDSortingPanRow());
-		fpoEClass.getESuperTypes().add(theDatasetLoadOraPackage.getDatasetLoadJdbcOraThin());
-		fpoForecastUploadEClass.getESuperTypes().add(theDatasetloadPackage.getTableGroup());
-		fpoForecastBucketEClass.getESuperTypes().add(theDatasetloadPackage.getTableRow());
-		fpoForecastBucketsEClass.getESuperTypes().add(theDatasetloadPackage.getTable());
+		fpoEClass.getESuperTypes().add(theDbsynchoraPackage.getDataSourceJdbcOraThin());
+		fpoForecastUploadEClass.getESuperTypes().add(theDbSynchPackage.getTableRow());
+		fpoForecastBucketEClass.getESuperTypes().add(theDbSynchPackage.getTableRow());
+		fpoForecastBucketsEClass.getESuperTypes().add(theDbSynchPackage.getTable());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(fpdEClass, com.misc.projects.CptDatasetLoad.FPD.class, "FPD", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

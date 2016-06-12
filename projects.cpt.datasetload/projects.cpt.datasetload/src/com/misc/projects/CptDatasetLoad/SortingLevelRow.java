@@ -2,7 +2,7 @@
  */
 package com.misc.projects.CptDatasetLoad;
 
-import com.misc.common.moplaf.datasetload.TableRow;
+import com.misc.common.moplaf.dbsynch.TableRow;
 import java.math.BigDecimal;
 
 /**
@@ -12,12 +12,12 @@ import java.math.BigDecimal;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.CptDatasetLoad.SortingLevelRow#getSortingLevelSk <em>Sorting Level Sk</em>}</li>
  *   <li>{@link com.misc.projects.CptDatasetLoad.SortingLevelRow#getSortingLevelName <em>Sorting Level Name</em>}</li>
  *   <li>{@link com.misc.projects.CptDatasetLoad.SortingLevelRow#getDescription <em>Description</em>}</li>
  * </ul>
- * </p>
  *
  * @see com.misc.projects.CptDatasetLoad.CptDatasetLoadPackage#getSortingLevelRow()
  * @model

@@ -2,7 +2,7 @@
  */
 package com.misc.projects.CptDatasetLoad.impl;
 
-import com.misc.common.moplaf.datasetload.Table;
+import com.misc.common.moplaf.dbsynch.Table;
 import com.misc.projects.CptDatasetLoad.CptDatasetLoadPackage;
 import com.misc.projects.CptDatasetLoad.FPDSortingPlansSet;
 import com.misc.projects.CptDatasetLoad.SortingPlanInputTable;
@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.CptDatasetLoad.impl.FPDSortingPlansSetImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link com.misc.projects.CptDatasetLoad.impl.FPDSortingPlansSetImpl#getToDate <em>To Date</em>}</li>
@@ -30,7 +31,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link com.misc.projects.CptDatasetLoad.impl.FPDSortingPlansSetImpl#getSortingPlanOutputsTable <em>Sorting Plan Outputs Table</em>}</li>
  *   <li>{@link com.misc.projects.CptDatasetLoad.impl.FPDSortingPlansSetImpl#getSortingPlanInputsTable <em>Sorting Plan Inputs Table</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

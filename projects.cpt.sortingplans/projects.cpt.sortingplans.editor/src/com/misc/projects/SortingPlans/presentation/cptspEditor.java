@@ -130,8 +130,8 @@ import com.misc.projects.SortingPlans.EndProductSortingPlanOutput;
 import com.misc.projects.SortingPlans.Scenario;
 import com.misc.projects.SortingPlans.SortingPlanOutput;
 import com.misc.projects.SortingPlans.provider.cptspItemProviderAdapterFactory;
-import com.misc.common.moplaf.DatasetLoadOra.provider.DatasetLoadOraItemProviderAdapterFactory;
-import com.misc.common.moplaf.datasetload.provider.DatasetloadItemProviderAdapterFactory;
+import com.misc.common.moplaf.dbsynch.dbsynchora.provider.DbsynchoraItemProviderAdapterFactory;
+import com.misc.common.moplaf.dbsynch.provider.DbSynchItemProviderAdapterFactory;
 import com.misc.common.moplaf.propagator.PropagatorFunctionAdapterManager;
 import com.misc.projects.CptDatasetLoad.provider.CptDatasetLoadItemProviderAdapterFactory;
 
@@ -688,8 +688,8 @@ public class cptspEditor
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new cptspItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new CptDatasetLoadItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new DatasetloadItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new DatasetLoadOraItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new DbSynchItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new DbsynchoraItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
 		// Create the command stack that will notify this editor as commands are executed.

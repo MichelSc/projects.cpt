@@ -118,8 +118,8 @@ import org.eclipse.emf.edit.ui.util.EditUIMarkerHelper;
 import org.eclipse.emf.edit.ui.util.EditUIUtil;
 import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 import com.misc.projects.CptDatasetLoad.provider.CptDatasetLoadItemProviderAdapterFactory;
-import com.misc.common.moplaf.DatasetLoadOra.provider.DatasetLoadOraItemProviderAdapterFactory;
-import com.misc.common.moplaf.datasetload.provider.DatasetloadItemProviderAdapterFactory;
+import com.misc.common.moplaf.dbsynch.dbsynchora.provider.DbsynchoraItemProviderAdapterFactory;
+import com.misc.common.moplaf.dbsynch.provider.DbSynchItemProviderAdapterFactory;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 
 
@@ -666,8 +666,8 @@ public class CptDatasetLoadEditor
 
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new CptDatasetLoadItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new DatasetloadItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new DatasetLoadOraItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new DbSynchItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new DbsynchoraItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
 		// Create the command stack that will notify this editor as commands are executed.
@@ -915,7 +915,7 @@ public class CptDatasetLoadEditor
 	 * @generated
 	 */
 	public void createModel() {
-		URI resourceURI = EditUIUtil.getURI(getEditorInput());
+		URI resourceURI = EditUIUtil.getURI(getEditorInput(), editingDomain.getResourceSet().getURIConverter());
 		Exception exception = null;
 		Resource resource = null;
 		try {
@@ -943,10 +943,11 @@ public class CptDatasetLoadEditor
 	 * @generated
 	 */
 	public Diagnostic analyzeResourceProblems(Resource resource, Exception exception) {
-		if (!resource.getErrors().isEmpty() || !resource.getWarnings().isEmpty()) {
+		boolean hasErrors = !resource.getErrors().isEmpty();
+		if (hasErrors || !resource.getWarnings().isEmpty()) {
 			BasicDiagnostic basicDiagnostic =
 				new BasicDiagnostic
-					(Diagnostic.ERROR,
+					(hasErrors ? Diagnostic.ERROR : Diagnostic.WARNING,
 					 "projects.cpt.datasetload.editor",
 					 0,
 					 getString("_UI_CreateModelError_message", resource.getURI()),

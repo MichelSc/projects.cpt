@@ -25,24 +25,24 @@ public class PropagatorCalcEndProductRefreshSortingPlans extends PropagatorFunct
 	}
 
 	@Override
-	protected void addListeners() {
-		super.addListeners();
+	protected void addBindings() {
+		super.addBindings();
 //		this.addNavigationFeatureListener(cptspPackage.Literals.END_PRODUCT__SCENARIO, DependencyScenario.class);
 //		this.addFeatureListener(cptspPackage.Literals.END_PRODUCT__SCENARIO_AS_SELECTED);
-		this.addNavigationFeatureListener(cptspPackage.Literals.END_PRODUCT__SCENARIO_AS_SELECTED, DependencyScenario.class);
+		this.addInboundBindingNavigationFeature(cptspPackage.Literals.END_PRODUCT__SCENARIO_AS_SELECTED, DependencyScenario.class);
 	}
 
 	static public class DependencyScenario extends PropagatorDependencyAdapter{
-		protected void addListeners() {
-			super.addListeners();
-			this.addNavigationFeatureListener(cptspPackage.Literals.SCENARIO__SORTING_PLANS, DependencySortingPlan.class);
+		protected void addBindings() {
+			super.addBindings();
+			this.addInboundBindingNavigationFeature(cptspPackage.Literals.SCENARIO__SORTING_PLANS, DependencySortingPlan.class);
 		}
 
 		static public class DependencySortingPlan extends PropagatorDependencyAdapter{
-			protected void addListeners() {
-				super.addListeners();
-				this.addFeatureListener(cptspPackage.Literals.SORTING_PLAN__INPUTS);
-				this.addFeatureListener(cptspPackage.Literals.SORTING_PLAN__OUTPUTS);
+			protected void addBindings() {
+				super.addBindings();
+				this.addInboundBindingFeature(cptspPackage.Literals.SORTING_PLAN__INPUTS);
+				this.addInboundBindingFeature(cptspPackage.Literals.SORTING_PLAN__OUTPUTS);
 			}
 		}; 
 	}; 

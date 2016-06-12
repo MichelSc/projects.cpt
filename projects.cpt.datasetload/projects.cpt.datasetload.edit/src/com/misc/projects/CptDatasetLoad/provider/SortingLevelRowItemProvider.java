@@ -3,7 +3,7 @@
 package com.misc.projects.CptDatasetLoad.provider;
 
 
-import com.misc.common.moplaf.datasetload.provider.TableRowItemProvider;
+import com.misc.common.moplaf.dbsynch.provider.TableRowItemProvider;
 import com.misc.projects.CptDatasetLoad.CptDatasetLoadPackage;
 import com.misc.projects.CptDatasetLoad.SortingLevelRow;
 import java.util.Collection;

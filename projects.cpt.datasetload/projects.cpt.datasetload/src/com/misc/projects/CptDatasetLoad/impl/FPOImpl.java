@@ -2,8 +2,7 @@
  */
 package com.misc.projects.CptDatasetLoad.impl;
 
-import com.misc.common.moplaf.DatasetLoadOra.impl.DatasetLoadJdbcOraThinImpl;
-
+import com.misc.common.moplaf.dbsynch.dbsynchora.impl.DataSourceJdbcOraThinImpl;
 import com.misc.projects.CptDatasetLoad.CptDatasetLoadPackage;
 import com.misc.projects.CptDatasetLoad.FPO;
 
@@ -22,14 +21,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.CptDatasetLoad.impl.FPOImpl#getForecastUploads <em>Forecast Uploads</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
-public class FPOImpl extends DatasetLoadJdbcOraThinImpl implements FPO {
+public class FPOImpl extends DataSourceJdbcOraThinImpl implements FPO {
 	/**
 	 * The cached value of the '{@link #getForecastUploads() <em>Forecast Uploads</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

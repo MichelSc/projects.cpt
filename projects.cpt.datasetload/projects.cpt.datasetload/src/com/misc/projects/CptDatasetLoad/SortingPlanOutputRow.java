@@ -11,6 +11,7 @@ import java.math.BigDecimal;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.CptDatasetLoad.SortingPlanOutputRow#getSortingPlanSk <em>Sorting Plan Sk</em>}</li>
  *   <li>{@link com.misc.projects.CptDatasetLoad.SortingPlanOutputRow#getSortingLevelAVCSSk <em>Sorting Level AVCS Sk</em>}</li>
@@ -21,7 +22,6 @@ import java.math.BigDecimal;
  *   <li>{@link com.misc.projects.CptDatasetLoad.SortingPlanOutputRow#getSortingLevel <em>Sorting Level</em>}</li>
  *   <li>{@link com.misc.projects.CptDatasetLoad.SortingPlanOutputRow#getDescription <em>Description</em>}</li>
  * </ul>
- * </p>
  *
  * @see com.misc.projects.CptDatasetLoad.CptDatasetLoadPackage#getSortingPlanOutputRow()
  * @model

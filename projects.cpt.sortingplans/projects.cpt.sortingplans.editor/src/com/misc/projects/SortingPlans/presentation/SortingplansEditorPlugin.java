@@ -2,10 +2,8 @@
  */
 package com.misc.projects.SortingPlans.presentation;
 
-import com.misc.common.moplaf.DatasetLoadOra.provider.DatasetloadoraEditPlugin;
-
-import com.misc.common.moplaf.datasetload.provider.DatasetloadEditPlugin;
-
+import com.misc.common.moplaf.dbsynch.dbsynchora.provider.DbsynchoraEditPlugin;
+import com.misc.common.moplaf.dbsynch.provider.dbsynchEditPlugin;
 import com.misc.common.moplaf.propagator.provider.PropagatorEditPlugin;
 import com.misc.projects.CptDatasetLoad.provider.CptdatasetloadEditPlugin;
 
@@ -48,8 +46,8 @@ public final class SortingplansEditorPlugin extends EMFPlugin {
 		super
 			(new ResourceLocator [] {
 				CptdatasetloadEditPlugin.INSTANCE,
-				DatasetloadEditPlugin.INSTANCE,
-				DatasetloadoraEditPlugin.INSTANCE,
+				dbsynchEditPlugin.INSTANCE,
+				DbsynchoraEditPlugin.INSTANCE,
 				PropagatorEditPlugin.INSTANCE,
 			});
 	}

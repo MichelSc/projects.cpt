@@ -12,6 +12,7 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.CptDatasetLoad.SortingPlanRow#getSortingPlanSk <em>Sorting Plan Sk</em>}</li>
  *   <li>{@link com.misc.projects.CptDatasetLoad.SortingPlanRow#getSortingPlanName <em>Sorting Plan Name</em>}</li>
@@ -20,7 +21,6 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link com.misc.projects.CptDatasetLoad.SortingPlanRow#getOutputs <em>Outputs</em>}</li>
  *   <li>{@link com.misc.projects.CptDatasetLoad.SortingPlanRow#getDescription <em>Description</em>}</li>
  * </ul>
- * </p>
  *
  * @see com.misc.projects.CptDatasetLoad.CptDatasetLoadPackage#getSortingPlanRow()
  * @model

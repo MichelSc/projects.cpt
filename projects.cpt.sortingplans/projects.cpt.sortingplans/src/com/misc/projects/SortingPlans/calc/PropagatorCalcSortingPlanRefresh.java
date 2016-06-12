@@ -27,16 +27,16 @@ public class PropagatorCalcSortingPlanRefresh extends PropagatorFunctionAdapter 
 	}
 
 	@Override
-	protected void addListeners() {
-		super.addListeners();
-		this.addNavigationFeatureListener(cptspPackage.Literals.SORTING_PLAN__FPD_SORTING_PLAN, DependencyFPDSortingPlan.class);
+	protected void addBindings() {
+		super.addBindings();
+		this.addInboundBindingNavigationFeature(cptspPackage.Literals.SORTING_PLAN__FPD_SORTING_PLAN, DependencyFPDSortingPlan.class);
 	}
 
 	static public class DependencyFPDSortingPlan extends PropagatorDependencyAdapter{
-		protected void addListeners() {
-			super.addListeners();
-			this.addFeatureListener(CptDatasetLoadPackage.Literals.SORTING_PLAN_ROW__INPUTS);
-			this.addFeatureListener(CptDatasetLoadPackage.Literals.SORTING_PLAN_ROW__OUTPUTS);
+		protected void addBindings() {
+			super.addBindings();
+			this.addInboundBindingFeature(CptDatasetLoadPackage.Literals.SORTING_PLAN_ROW__INPUTS);
+			this.addInboundBindingFeature(CptDatasetLoadPackage.Literals.SORTING_PLAN_ROW__OUTPUTS);
 		}
 	}; 
 };

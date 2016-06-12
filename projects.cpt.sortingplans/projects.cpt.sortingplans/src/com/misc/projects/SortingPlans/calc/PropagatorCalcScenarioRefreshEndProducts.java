@@ -34,16 +34,16 @@ public class PropagatorCalcScenarioRefreshEndProducts extends PropagatorFunction
 	}
 
 	@Override
-	protected void addListeners() {
-		super.addListeners();
-		this.addNavigationFeatureListener(cptspPackage.Literals.SCENARIO__SORTING_PLAN_PRODUCTS, DependencySortingPlanProduct.class);
+	protected void addBindings() {
+		super.addBindings();
+		this.addInboundBindingNavigationFeature(cptspPackage.Literals.SCENARIO__SORTING_PLAN_PRODUCTS, DependencySortingPlanProduct.class);
 	}
 
 	static public class DependencySortingPlanProduct extends PropagatorDependencyAdapter{
-		protected void addListeners() {
-			super.addListeners();
-			this.addFeatureListener(cptspPackage.Literals.SORTING_PLAN_PRODUCT__SORTING_PLANS_ACCEPTING);
-			this.addFeatureListener(cptspPackage.Literals.SORTING_PLAN_PRODUCT__SORTING_PLANS_PRODUCING);
+		protected void addBindings() {
+			super.addBindings();
+			this.addInboundBindingFeature(cptspPackage.Literals.SORTING_PLAN_PRODUCT__SORTING_PLANS_ACCEPTING);
+			this.addInboundBindingFeature(cptspPackage.Literals.SORTING_PLAN_PRODUCT__SORTING_PLANS_PRODUCING);
 		}
 	}; 
 }

@@ -3,10 +3,10 @@
 package com.misc.projects.CptDatasetLoad.provider;
 
 
+import com.misc.common.moplaf.dbsynch.DbSynchPackage;
 import com.misc.projects.CptDatasetLoad.CptDatasetLoadFactory;
 import com.misc.projects.CptDatasetLoad.CptDatasetLoadPackage;
 import com.misc.projects.CptDatasetLoad.SortingPlanInputTable;
-
 import java.util.Collection;
 import java.util.List;
 
@@ -99,7 +99,7 @@ public class SortingPlanInputTableItemProvider extends FPDSortingPlanTableItemPr
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((SortingPlanInputTable)object).getName();
+		String label = ((SortingPlanInputTable)object).getTableName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_SortingPlanInputTable_type") :
 			getString("_UI_SortingPlanInputTable_type") + " " + label;
@@ -140,6 +140,29 @@ public class SortingPlanInputTableItemProvider extends FPDSortingPlanTableItemPr
 			(createChildParameter
 				(CptDatasetLoadPackage.Literals.SORTING_PLAN_INPUT_TABLE__SORTING_PLAN_INPUT_ROW,
 				 CptDatasetLoadFactory.eINSTANCE.createSortingPlanInputRow()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify =
+			childFeature == DbSynchPackage.Literals.TABLE__KEY_COLUMNS ||
+			childFeature == DbSynchPackage.Literals.TABLE__DATA_COLUMNS;
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2",
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }

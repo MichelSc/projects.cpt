@@ -2,8 +2,7 @@
  */
 package com.misc.projects.CptDatasetLoad.impl;
 
-import com.misc.common.moplaf.datasetload.impl.TableRowImpl;
-
+import com.misc.common.moplaf.dbsynch.impl.TableRowImpl;
 import com.misc.projects.CptDatasetLoad.CptDatasetLoadPackage;
 import com.misc.projects.CptDatasetLoad.FPDSortingPanRow;
 import com.misc.projects.CptDatasetLoad.FPDSortingPlanTable;
@@ -17,10 +16,10 @@ import org.eclipse.emf.ecore.InternalEObject;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.CptDatasetLoad.impl.FPDSortingPanRowImpl#getFPDSortingPlanTable <em>FPD Sorting Plan Table</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

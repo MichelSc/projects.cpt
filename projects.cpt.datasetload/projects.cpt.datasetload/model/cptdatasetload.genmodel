@@ -3,19 +3,19 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/projects.cpt.datasetload/src" modelPluginID="projects.cpt.datasetload"
     modelName="Cptdatasetload" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false"
-    usedGenPackages="../../com.misc.common.moplaf.datasetload.emf/model/datasetload.genmodel#//datasetload ../../com.misc.common.moplaf.datasetload.ora.emf/model/datasetloadora.genmodel#//DatasetLoadOra"
+    usedGenPackages="../../com.misc.common.moplaf.dbsynch.emf/model/dbsynch.genmodel#//dbsynch ../../com.misc.common.moplaf.dbsynch.ora.emf/model/dbsynchora.genmodel#//dbsynchora"
     operationReflection="true" importOrganizing="true">
   <foreignModel>cptdatasetload.ecore</foreignModel>
   <genPackages prefix="CptDatasetLoad" basePackage="com.misc.projects" disposableProviderFactory="true"
       ecorePackage="cptdatasetload.ecore#/">
-    <genClasses ecoreClass="cptdatasetload.ecore#//FPD">
+    <genClasses image="false" ecoreClass="cptdatasetload.ecore#//FPD">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cptdatasetload.ecore#//FPD/MasterData"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cptdatasetload.ecore#//FPD/SortingPlansSets"/>
     </genClasses>
-    <genClasses ecoreClass="cptdatasetload.ecore#//FPDTableGroup">
+    <genClasses image="false" ecoreClass="cptdatasetload.ecore#//FPDTableGroup">
       <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference cptdatasetload.ecore#//FPDTableGroup/FPD"/>
     </genClasses>
-    <genClasses ecoreClass="cptdatasetload.ecore#//FPDMasterData">
+    <genClasses image="false" ecoreClass="cptdatasetload.ecore#//FPDMasterData">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cptdatasetload.ecore#//FPDMasterData/SortingLevelTable"/>
     </genClasses>
     <genClasses ecoreClass="cptdatasetload.ecore#//FPDSortingPlansSet">

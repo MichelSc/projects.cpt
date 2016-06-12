@@ -2,13 +2,13 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="CptDatasetLoad" nsURI="http://com.misc.projects.cpt.datasetload"
     nsPrefix="cptload">
-  <eClassifiers xsi:type="ecore:EClass" name="FPD" eSuperTypes="../../com.misc.common.moplaf.datasetload.ora.emf/model/datasetloadora.ecore#//DatasetLoadJdbcOraThin">
+  <eClassifiers xsi:type="ecore:EClass" name="FPD" eSuperTypes="../../com.misc.common.moplaf.dbsynch.ora.emf/model/dbsynchora.ecore#//DataSourceJdbcOraThin">
     <eStructuralFeatures xsi:type="ecore:EReference" name="MasterData" eType="#//FPDMasterData"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="SortingPlansSets" upperBound="-1"
         eType="#//FPDSortingPlansSet" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FPDTableGroup" eSuperTypes="../../com.misc.common.moplaf.datasetload.emf/model/datasetload.ecore#//TableGroup">
+  <eClassifiers xsi:type="ecore:EClass" name="FPDTableGroup" eSuperTypes="../../com.misc.common.moplaf.dbsynch.emf/model/dbsynch.ecore#//DbSynchUnit">
     <eStructuralFeatures xsi:type="ecore:EReference" name="FPD" eType="#//FPD" changeable="false"
         volatile="true" transient="true" derived="true"/>
   </eClassifiers>
@@ -26,15 +26,15 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="SortingPlanInputsTable"
         eType="#//SortingPlanInputTable" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FPDSortingPanRow" eSuperTypes="../../com.misc.common.moplaf.datasetload.emf/model/datasetload.ecore#//TableRow">
+  <eClassifiers xsi:type="ecore:EClass" name="FPDSortingPanRow" eSuperTypes="../../com.misc.common.moplaf.dbsynch.emf/model/dbsynch.ecore#//TableRow">
     <eStructuralFeatures xsi:type="ecore:EReference" name="FPDSortingPlanTable" eType="#//FPDSortingPlanTable"
         changeable="false" volatile="true" transient="true" derived="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FPDSortingPlanTable" eSuperTypes="../../com.misc.common.moplaf.datasetload.emf/model/datasetload.ecore#//Table">
+  <eClassifiers xsi:type="ecore:EClass" name="FPDSortingPlanTable" eSuperTypes="../../com.misc.common.moplaf.dbsynch.emf/model/dbsynch.ecore#//Table">
     <eStructuralFeatures xsi:type="ecore:EReference" name="FPDSortingPlansSet" eType="#//FPDSortingPlansSet"
         changeable="false" volatile="true" transient="true" derived="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MasterDataTable" eSuperTypes="../../com.misc.common.moplaf.datasetload.emf/model/datasetload.ecore#//Table"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MasterDataTable" eSuperTypes="../../com.misc.common.moplaf.dbsynch.emf/model/dbsynch.ecore#//Table"/>
   <eClassifiers xsi:type="ecore:EClass" name="SortingLevelsTable" eSuperTypes="#//MasterDataTable">
     <eOperations name="getRow" eType="#//SortingLevelRow">
       <eParameters name="sk" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
@@ -70,7 +70,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="SortingPlanOutputRow" upperBound="-1"
         eType="#//SortingPlanOutputRow" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SortingLevelRow" eSuperTypes="../../com.misc.common.moplaf.datasetload.emf/model/datasetload.ecore#//TableRow">
+  <eClassifiers xsi:type="ecore:EClass" name="SortingLevelRow" eSuperTypes="../../com.misc.common.moplaf.dbsynch.emf/model/dbsynch.ecore#//TableRow">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="SortingLevelSk" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="SortingLevelName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -108,18 +108,18 @@
         changeable="false" volatile="true" transient="true" derived="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FPO" eSuperTypes="../../com.misc.common.moplaf.datasetload.ora.emf/model/datasetloadora.ecore#//DatasetLoadJdbcOraThin">
+  <eClassifiers xsi:type="ecore:EClass" name="FPO" eSuperTypes="../../com.misc.common.moplaf.dbsynch.ora.emf/model/dbsynchora.ecore#//DataSourceJdbcOraThin">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ForecastUploads" upperBound="-1"
         eType="#//FPOForecastUpload" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FPOForecastUpload" eSuperTypes="../../com.misc.common.moplaf.datasetload.emf/model/datasetload.ecore#//TableGroup">
+  <eClassifiers xsi:type="ecore:EClass" name="FPOForecastUpload" eSuperTypes="../../com.misc.common.moplaf.dbsynch.emf/model/dbsynch.ecore#//TableRow">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="FromDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ToDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Kind" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ForecastTable" lowerBound="1"
         eType="#//FPOForecastBuckets" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FPOForecastBucket" eSuperTypes="../../com.misc.common.moplaf.datasetload.emf/model/datasetload.ecore#//TableRow">
+  <eClassifiers xsi:type="ecore:EClass" name="FPOForecastBucket" eSuperTypes="../../com.misc.common.moplaf.dbsynch.emf/model/dbsynch.ecore#//TableRow">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="BucketDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="BucketBeginTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="BucketEndTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
@@ -137,7 +137,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="TimeSeriesID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="BucketID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FPOForecastBuckets" eSuperTypes="../../com.misc.common.moplaf.datasetload.emf/model/datasetload.ecore#//Table">
+  <eClassifiers xsi:type="ecore:EClass" name="FPOForecastBuckets" eSuperTypes="../../com.misc.common.moplaf.dbsynch.emf/model/dbsynch.ecore#//Table">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ForecastRows" upperBound="-1"
         eType="#//FPOForecastBucket" containment="true"/>
   </eClassifiers>

@@ -2,8 +2,7 @@
  */
 package com.misc.projects.CptDatasetLoad;
 
-import com.misc.common.moplaf.datasetload.TableGroup;
-
+import com.misc.common.moplaf.dbsynch.TableRow;
 import java.util.Date;
 
 /**
@@ -13,19 +12,19 @@ import java.util.Date;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.CptDatasetLoad.FPOForecastUpload#getFromDate <em>From Date</em>}</li>
  *   <li>{@link com.misc.projects.CptDatasetLoad.FPOForecastUpload#getToDate <em>To Date</em>}</li>
  *   <li>{@link com.misc.projects.CptDatasetLoad.FPOForecastUpload#getKind <em>Kind</em>}</li>
  *   <li>{@link com.misc.projects.CptDatasetLoad.FPOForecastUpload#getForecastTable <em>Forecast Table</em>}</li>
  * </ul>
- * </p>
  *
  * @see com.misc.projects.CptDatasetLoad.CptDatasetLoadPackage#getFPOForecastUpload()
  * @model
  * @generated
  */
-public interface FPOForecastUpload extends TableGroup {
+public interface FPOForecastUpload extends TableRow {
 	/**
 	 * Returns the value of the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->

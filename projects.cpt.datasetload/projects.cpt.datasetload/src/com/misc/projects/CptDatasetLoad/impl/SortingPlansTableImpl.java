@@ -2,23 +2,24 @@
  */
 package com.misc.projects.CptDatasetLoad.impl;
 
-import com.misc.common.moplaf.datasetload.TableRow;
-import com.misc.common.moplaf.datasetload.impl.TableRowKeyImpl;
-import com.misc.projects.CptDatasetLoad.CptDatasetLoadFactory;
-import com.misc.projects.CptDatasetLoad.CptDatasetLoadPackage;
-import com.misc.projects.CptDatasetLoad.SortingPlanRow;
-import com.misc.projects.CptDatasetLoad.SortingPlansTable;
 import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
+import com.misc.common.moplaf.dbsynch.EnumColumnType;
+import com.misc.common.moplaf.dbsynch.TableRow;
+import com.misc.common.moplaf.dbsynch.impl.TableRowKeyImpl;
+import com.misc.projects.CptDatasetLoad.CptDatasetLoadFactory;
+import com.misc.projects.CptDatasetLoad.CptDatasetLoadPackage;
+import com.misc.projects.CptDatasetLoad.SortingPlanRow;
+import com.misc.projects.CptDatasetLoad.SortingPlansTable;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,10 +27,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.CptDatasetLoad.impl.SortingPlansTableImpl#getSortingPlansRow <em>Sorting Plans Row</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -179,55 +180,25 @@ public class SortingPlansTableImpl extends FPDSortingPlanTableImpl implements So
 	 * @see com.misc.common.moplaf.datasetload.impl.TableImpl#NewRow()
 	 */
 	@Override
-	public TableRow newRow() {
+	public TableRow constructRow() {
 		SortingPlanRow newSortingPlanRow = CptDatasetLoadFactory.eINSTANCE.createSortingPlanRow();
 		this.getSortingPlansRow().add(newSortingPlanRow);
 		return newSortingPlanRow;
 	}
 
-	
-	/* (non-Javadoc)
-	 * @see com.misc.common.moplaf.datasetload.impl.TableImpl#getName()
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 */
 	@Override
-	public String getName() {
-		return "V_SORTING_PLAN";
-	}
-
-	/* (non-Javadoc)
-	 * @see com.misc.common.moplaf.datasetload.impl.TableImpl#getSQLStatement()
-	 */
-	@Override
-	public String getSQLStatement() {
-		String sqlStatement = 
-				"select sp.sorting_plan_sk "
-			+	"     , sp.SORTING_PLAN_SHORT_NAME "
-			+	"     , sp.PL_AGGR_SRTNG_LVL_SK "
-			+	"from v_sorting_plan             sp "
-            ;
-		return sqlStatement;
-	}
-	
-	/* (non-Javadoc)
-	 * @see com.misc.common.moplaf.datasetload.impl.TableImpl#getColumnTableRowAttributes()
-	 */
-	@Override
-	public EList<EAttribute> getColumnTableRowAttributes() {
-		EList<EAttribute> columnAttributes = new BasicEList<EAttribute>();
-		columnAttributes.add(CptDatasetLoadPackage.Literals.SORTING_PLAN_ROW__SORTING_PLAN_SK);
-		columnAttributes.add(CptDatasetLoadPackage.Literals.SORTING_PLAN_ROW__SORTING_PLAN_NAME);
-		columnAttributes.add(CptDatasetLoadPackage.Literals.SORTING_PLAN_ROW__SORTING_LEVEL_PLAGG_SK);
-		return columnAttributes;
-	}
-
-	/* (non-Javadoc)
-	 * @see com.misc.common.moplaf.datasetload.impl.TableImpl#getKeyColumns()
-	 */
-	@Override
-	public EList<Integer> getKeyColumns() {
-		EList<Integer> keyColumns = new BasicEList<Integer>();
-		keyColumns.add(0); // zero based
-		return keyColumns;
+	protected void refreshMetaDataImpl() {
+		this.setTableName("V_SORTING_PLAN");
+//		this.setWhereClause(" validto > ? and validfrom < ? ");
+//		this.addParam(ToUseDbSynchPackage.Literals.FPD_GROUP_SORTING_PLAN__FROM_DATE);
+//		this.addParam(ToUseDbSynchPackage.Literals.FPD_GROUP_SORTING_PLAN__TO_DATE);
+		this.addColumn(true,  "sorting_plan_sk",         EnumColumnType.ENUM_COLUMN_TYPE_INT,  CptDatasetLoadPackage.Literals.SORTING_PLAN_ROW__SORTING_PLAN_SK);
+		this.addColumn(false, "SORTING_PLAN_SHORT_NAME", EnumColumnType.ENUM_COLUMN_TYPE_CHAR, CptDatasetLoadPackage.Literals.SORTING_PLAN_ROW__SORTING_PLAN_NAME);
+		this.addColumn(false, "PL_AGGR_SRTNG_LVL_SK",    EnumColumnType.ENUM_COLUMN_TYPE_INT,  CptDatasetLoadPackage.Literals.SORTING_PLAN_ROW__SORTING_LEVEL_PLAGG_SK);
 	}
 
 
