@@ -9,6 +9,7 @@ import com.misc.projects.SortingPlans.cptspPackage;
 
 public class PropagatorCalcScenarioRefreshEndProducts extends PropagatorFunctionAdapter {
 
+	
 	@Override
 	protected PropagatorFunctionAdapter getParent() {
 		Scenario scenario= (Scenario)this.target;
