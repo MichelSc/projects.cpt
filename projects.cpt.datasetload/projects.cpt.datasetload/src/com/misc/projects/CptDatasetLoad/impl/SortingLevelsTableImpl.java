@@ -193,11 +193,8 @@ public class SortingLevelsTableImpl extends MasterDataTableImpl implements Sorti
 	@Override
 	protected void refreshMetaDataImpl() {
 		this.setTableName("v_avcs_sorting");
-//		this.setWhereClause(" validto > ? and validfrom < ? ");
-//		this.addParam(ToUseDbSynchPackage.Literals.FPD_GROUP_SORTING_PLAN__FROM_DATE);
-//		this.addParam(ToUseDbSynchPackage.Literals.FPD_GROUP_SORTING_PLAN__TO_DATE);
-		this.addColumn(true,  "AVCS_SORTING_LEVEL_SK", EnumColumnType.ENUM_COLUMN_TYPE_CHAR, CptDatasetLoadPackage.Literals.SORTING_LEVEL_ROW__SORTING_LEVEL_SK);
-		this.addColumn(false, "AVCS_SORTING_LEVEL",    EnumColumnType.ENUM_COLUMN_TYPE_CHAR, CptDatasetLoadPackage.Literals.SORTING_LEVEL_ROW__SORTING_LEVEL_NAME);
+		this.addColumn(true,  "AVCS_SORTING_LEVEL_SK", EnumColumnType.ENUM_COLUMN_TYPE_INT, CptDatasetLoadPackage.Literals.SORTING_LEVEL_ROW__SORTING_LEVEL_SK);
+		this.addColumn(false, "AVCS_SORTING_LEVEL",    EnumColumnType.ENUM_COLUMN_TYPE_INT, CptDatasetLoadPackage.Literals.SORTING_LEVEL_ROW__SORTING_LEVEL_NAME);
 	}
 	
 } //SortingLevelsTableImpl
