@@ -197,10 +197,10 @@ public class SortingPlanInputTableImpl extends FPDSortingPlanTableImpl implement
 	protected void refreshMetaDataImpl() {
 		this.setTableName("V_SORTING_LEVEL_ASSOC_PLAN");
 //		this.setWhereClause(" validto > ? and validfrom < ? ");
-		this.addColumn(true,  "sorting_plan_sk",       EnumColumnType.ENUM_COLUMN_TYPE_INT, CptDatasetLoadPackage.Literals.SORTING_PLAN_INPUT_ROW__SORTING_PLAN_SK);
-		this.addColumn(true, "AVCS_SORTING_LEVEL_SK",  EnumColumnType.ENUM_COLUMN_TYPE_INT, CptDatasetLoadPackage.Literals.SORTING_PLAN_INPUT_ROW__SORTING_LEVEL_AVCS_SK);
-		this.addColumn(true, "MECHANIZATION_LEVEL_SK", EnumColumnType.ENUM_COLUMN_TYPE_INT, CptDatasetLoadPackage.Literals.SORTING_PLAN_INPUT_ROW__MECHANIZATION_LEVEL_SK);
-		this.addColumn(true, "THROUGHPUT_TYPE_SK",     EnumColumnType.ENUM_COLUMN_TYPE_INT, CptDatasetLoadPackage.Literals.SORTING_PLAN_INPUT_ROW__THROUGHPUT_TYPE_SK);
+		this.addColumn(true,  "sorting_plan_sk",       EnumColumnType.ENUM_COLUMN_TYPE_BIGFLOAT, CptDatasetLoadPackage.Literals.SORTING_PLAN_INPUT_ROW__SORTING_PLAN_SK);
+		this.addColumn(true, "AVCS_SORTING_LEVEL_SK",  EnumColumnType.ENUM_COLUMN_TYPE_BIGFLOAT, CptDatasetLoadPackage.Literals.SORTING_PLAN_INPUT_ROW__SORTING_LEVEL_AVCS_SK);
+		this.addColumn(true, "MECHANIZATION_LEVEL_SK", EnumColumnType.ENUM_COLUMN_TYPE_BIGFLOAT, CptDatasetLoadPackage.Literals.SORTING_PLAN_INPUT_ROW__MECHANIZATION_LEVEL_SK);
+		this.addColumn(true, "THROUGHPUT_TYPE_SK",     EnumColumnType.ENUM_COLUMN_TYPE_BIGFLOAT, CptDatasetLoadPackage.Literals.SORTING_PLAN_INPUT_ROW__THROUGHPUT_TYPE_SK);
 	}
 
 } //SortingPlanInputTableImpl

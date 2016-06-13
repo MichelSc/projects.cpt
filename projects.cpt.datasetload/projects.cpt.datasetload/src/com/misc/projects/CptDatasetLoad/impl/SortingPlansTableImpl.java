@@ -196,9 +196,9 @@ public class SortingPlansTableImpl extends FPDSortingPlanTableImpl implements So
 //		this.setWhereClause(" validto > ? and validfrom < ? ");
 //		this.addParam(ToUseDbSynchPackage.Literals.FPD_GROUP_SORTING_PLAN__FROM_DATE);
 //		this.addParam(ToUseDbSynchPackage.Literals.FPD_GROUP_SORTING_PLAN__TO_DATE);
-		this.addColumn(true,  "sorting_plan_sk",         EnumColumnType.ENUM_COLUMN_TYPE_INT,  CptDatasetLoadPackage.Literals.SORTING_PLAN_ROW__SORTING_PLAN_SK);
-		this.addColumn(false, "SORTING_PLAN_SHORT_NAME", EnumColumnType.ENUM_COLUMN_TYPE_CHAR, CptDatasetLoadPackage.Literals.SORTING_PLAN_ROW__SORTING_PLAN_NAME);
-		this.addColumn(false, "PL_AGGR_SRTNG_LVL_SK",    EnumColumnType.ENUM_COLUMN_TYPE_INT,  CptDatasetLoadPackage.Literals.SORTING_PLAN_ROW__SORTING_LEVEL_PLAGG_SK);
+		this.addColumn(true,  "sorting_plan_sk",         EnumColumnType.ENUM_COLUMN_TYPE_BIGFLOAT, CptDatasetLoadPackage.Literals.SORTING_PLAN_ROW__SORTING_PLAN_SK);
+		this.addColumn(false, "SORTING_PLAN_SHORT_NAME", EnumColumnType.ENUM_COLUMN_TYPE_CHAR,     CptDatasetLoadPackage.Literals.SORTING_PLAN_ROW__SORTING_PLAN_NAME);
+		this.addColumn(false, "PL_AGGR_SRTNG_LVL_SK",    EnumColumnType.ENUM_COLUMN_TYPE_BIGFLOAT, CptDatasetLoadPackage.Literals.SORTING_PLAN_ROW__SORTING_LEVEL_PLAGG_SK);
 	}
 
 

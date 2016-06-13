@@ -201,11 +201,11 @@ public class SortingPlanOutputTableImpl extends FPDSortingPlanTableImpl implemen
 //		this.setWhereClause(" validto > ? and validfrom < ? ");
 //		this.addParam(ToUseDbSynchPackage.Literals.FPD_GROUP_SORTING_PLAN__FROM_DATE);
 //		this.addParam(ToUseDbSynchPackage.Literals.FPD_GROUP_SORTING_PLAN__TO_DATE);
-		this.addColumn(true, "SORTING_PLAN_SK",              EnumColumnType.ENUM_COLUMN_TYPE_INT, CptDatasetLoadPackage.Literals.SORTING_PLAN_OUTPUT_ROW__SORTING_PLAN_SK);
-		this.addColumn(true, "OUTPUT_AVCS_SORTING_LEVEL_SK", EnumColumnType.ENUM_COLUMN_TYPE_INT, CptDatasetLoadPackage.Literals.SORTING_PLAN_OUTPUT_ROW__SORTING_LEVEL_AVCS_SK);
-		this.addColumn(true, "MECHANIZATION_LEVEL_SK",       EnumColumnType.ENUM_COLUMN_TYPE_INT, CptDatasetLoadPackage.Literals.SORTING_PLAN_OUTPUT_ROW__MECHANIZATION_LEVEL_SK);
-		this.addColumn(true, "THROUGHPUT_TYPE_SK",           EnumColumnType.ENUM_COLUMN_TYPE_INT, CptDatasetLoadPackage.Literals.SORTING_PLAN_OUTPUT_ROW__THROUGHPUT_TYPE_SK);
-		this.addColumn(true, "DESTINATION_SK",               EnumColumnType.ENUM_COLUMN_TYPE_INT, CptDatasetLoadPackage.Literals.SORTING_PLAN_OUTPUT_ROW__DESTINATION_SK);
+		this.addColumn(true, "SORTING_PLAN_SK",              EnumColumnType.ENUM_COLUMN_TYPE_BIGFLOAT, CptDatasetLoadPackage.Literals.SORTING_PLAN_OUTPUT_ROW__SORTING_PLAN_SK);
+		this.addColumn(true, "OUTPUT_AVCS_SORTING_LEVEL_SK", EnumColumnType.ENUM_COLUMN_TYPE_BIGFLOAT, CptDatasetLoadPackage.Literals.SORTING_PLAN_OUTPUT_ROW__SORTING_LEVEL_AVCS_SK);
+		this.addColumn(true, "MECHANIZATION_LEVEL_SK",       EnumColumnType.ENUM_COLUMN_TYPE_BIGFLOAT, CptDatasetLoadPackage.Literals.SORTING_PLAN_OUTPUT_ROW__MECHANIZATION_LEVEL_SK);
+		this.addColumn(true, "THROUGHPUT_TYPE_SK",           EnumColumnType.ENUM_COLUMN_TYPE_BIGFLOAT, CptDatasetLoadPackage.Literals.SORTING_PLAN_OUTPUT_ROW__THROUGHPUT_TYPE_SK);
+		this.addColumn(true, "DESTINATION_SK",               EnumColumnType.ENUM_COLUMN_TYPE_BIGFLOAT, CptDatasetLoadPackage.Literals.SORTING_PLAN_OUTPUT_ROW__DESTINATION_SK);
 	}
 
 } //SortingPlanOutputTableImpl
