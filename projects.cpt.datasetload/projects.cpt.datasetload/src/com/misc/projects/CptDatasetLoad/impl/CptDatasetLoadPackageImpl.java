@@ -545,6 +545,24 @@ public class CptDatasetLoadPackageImpl extends EPackageImpl implements CptDatase
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getSortingPlanOutputRow_ValidFromDate() {
+		return (EAttribute)sortingPlanOutputRowEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSortingPlanOutputRow_ValidToDate() {
+		return (EAttribute)sortingPlanOutputRowEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getSortingPlanInputRow() {
 		return sortingPlanInputRowEClass;
 	}
@@ -1081,6 +1099,8 @@ public class CptDatasetLoadPackageImpl extends EPackageImpl implements CptDatase
 		createEReference(sortingPlanOutputRowEClass, SORTING_PLAN_OUTPUT_ROW__SORTING_PLAN);
 		createEReference(sortingPlanOutputRowEClass, SORTING_PLAN_OUTPUT_ROW__SORTING_LEVEL);
 		createEAttribute(sortingPlanOutputRowEClass, SORTING_PLAN_OUTPUT_ROW__DESCRIPTION);
+		createEAttribute(sortingPlanOutputRowEClass, SORTING_PLAN_OUTPUT_ROW__VALID_FROM_DATE);
+		createEAttribute(sortingPlanOutputRowEClass, SORTING_PLAN_OUTPUT_ROW__VALID_TO_DATE);
 
 		sortingPlanInputRowEClass = createEClass(SORTING_PLAN_INPUT_ROW);
 		createEAttribute(sortingPlanInputRowEClass, SORTING_PLAN_INPUT_ROW__SORTING_PLAN_SK);
@@ -1253,6 +1273,8 @@ public class CptDatasetLoadPackageImpl extends EPackageImpl implements CptDatase
 		initEReference(getSortingPlanOutputRow_SortingPlan(), this.getSortingPlanRow(), this.getSortingPlanRow_Outputs(), "SortingPlan", null, 0, 1, SortingPlanOutputRow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSortingPlanOutputRow_SortingLevel(), this.getSortingLevelRow(), null, "SortingLevel", null, 0, 1, SortingPlanOutputRow.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSortingPlanOutputRow_Description(), ecorePackage.getEString(), "Description", null, 0, 1, SortingPlanOutputRow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSortingPlanOutputRow_ValidFromDate(), ecorePackage.getEDate(), "ValidFromDate", null, 0, 1, SortingPlanOutputRow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSortingPlanOutputRow_ValidToDate(), ecorePackage.getEDate(), "ValidToDate", null, 0, 1, SortingPlanOutputRow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sortingPlanInputRowEClass, SortingPlanInputRow.class, "SortingPlanInputRow", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSortingPlanInputRow_SortingPlanSk(), ecorePackage.getEBigDecimal(), "SortingPlanSk", null, 0, 1, SortingPlanInputRow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

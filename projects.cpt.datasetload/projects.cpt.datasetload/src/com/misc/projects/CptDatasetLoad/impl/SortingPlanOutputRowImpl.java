@@ -7,6 +7,7 @@ import com.misc.projects.CptDatasetLoad.SortingLevelRow;
 import com.misc.projects.CptDatasetLoad.SortingPlanOutputRow;
 import com.misc.projects.CptDatasetLoad.SortingPlanRow;
 import java.math.BigDecimal;
+import java.util.Date;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
@@ -29,6 +30,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link com.misc.projects.CptDatasetLoad.impl.SortingPlanOutputRowImpl#getSortingPlan <em>Sorting Plan</em>}</li>
  *   <li>{@link com.misc.projects.CptDatasetLoad.impl.SortingPlanOutputRowImpl#getSortingLevel <em>Sorting Level</em>}</li>
  *   <li>{@link com.misc.projects.CptDatasetLoad.impl.SortingPlanOutputRowImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link com.misc.projects.CptDatasetLoad.impl.SortingPlanOutputRowImpl#getValidFromDate <em>Valid From Date</em>}</li>
+ *   <li>{@link com.misc.projects.CptDatasetLoad.impl.SortingPlanOutputRowImpl#getValidToDate <em>Valid To Date</em>}</li>
  * </ul>
  *
  * @generated
@@ -163,6 +166,46 @@ public class SortingPlanOutputRowImpl extends FPDSortingPanRowImpl implements So
 	 * @ordered
 	 */
 	protected String description = DESCRIPTION_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getValidFromDate() <em>Valid From Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValidFromDate()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Date VALID_FROM_DATE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getValidFromDate() <em>Valid From Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValidFromDate()
+	 * @generated
+	 * @ordered
+	 */
+	protected Date validFromDate = VALID_FROM_DATE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getValidToDate() <em>Valid To Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValidToDate()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Date VALID_TO_DATE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getValidToDate() <em>Valid To Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValidToDate()
+	 * @generated
+	 * @ordered
+	 */
+	protected Date validToDate = VALID_TO_DATE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -412,6 +455,48 @@ public class SortingPlanOutputRowImpl extends FPDSortingPanRowImpl implements So
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Date getValidFromDate() {
+		return validFromDate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setValidFromDate(Date newValidFromDate) {
+		Date oldValidFromDate = validFromDate;
+		validFromDate = newValidFromDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CptDatasetLoadPackage.SORTING_PLAN_OUTPUT_ROW__VALID_FROM_DATE, oldValidFromDate, validFromDate));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Date getValidToDate() {
+		return validToDate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setValidToDate(Date newValidToDate) {
+		Date oldValidToDate = validToDate;
+		validToDate = newValidToDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CptDatasetLoadPackage.SORTING_PLAN_OUTPUT_ROW__VALID_TO_DATE, oldValidToDate, validToDate));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -463,6 +548,10 @@ public class SortingPlanOutputRowImpl extends FPDSortingPanRowImpl implements So
 				return basicGetSortingLevel();
 			case CptDatasetLoadPackage.SORTING_PLAN_OUTPUT_ROW__DESCRIPTION:
 				return getDescription();
+			case CptDatasetLoadPackage.SORTING_PLAN_OUTPUT_ROW__VALID_FROM_DATE:
+				return getValidFromDate();
+			case CptDatasetLoadPackage.SORTING_PLAN_OUTPUT_ROW__VALID_TO_DATE:
+				return getValidToDate();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -495,6 +584,12 @@ public class SortingPlanOutputRowImpl extends FPDSortingPanRowImpl implements So
 				return;
 			case CptDatasetLoadPackage.SORTING_PLAN_OUTPUT_ROW__DESCRIPTION:
 				setDescription((String)newValue);
+				return;
+			case CptDatasetLoadPackage.SORTING_PLAN_OUTPUT_ROW__VALID_FROM_DATE:
+				setValidFromDate((Date)newValue);
+				return;
+			case CptDatasetLoadPackage.SORTING_PLAN_OUTPUT_ROW__VALID_TO_DATE:
+				setValidToDate((Date)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -529,6 +624,12 @@ public class SortingPlanOutputRowImpl extends FPDSortingPanRowImpl implements So
 			case CptDatasetLoadPackage.SORTING_PLAN_OUTPUT_ROW__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
+			case CptDatasetLoadPackage.SORTING_PLAN_OUTPUT_ROW__VALID_FROM_DATE:
+				setValidFromDate(VALID_FROM_DATE_EDEFAULT);
+				return;
+			case CptDatasetLoadPackage.SORTING_PLAN_OUTPUT_ROW__VALID_TO_DATE:
+				setValidToDate(VALID_TO_DATE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -557,6 +658,10 @@ public class SortingPlanOutputRowImpl extends FPDSortingPanRowImpl implements So
 				return basicGetSortingLevel() != null;
 			case CptDatasetLoadPackage.SORTING_PLAN_OUTPUT_ROW__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+			case CptDatasetLoadPackage.SORTING_PLAN_OUTPUT_ROW__VALID_FROM_DATE:
+				return VALID_FROM_DATE_EDEFAULT == null ? validFromDate != null : !VALID_FROM_DATE_EDEFAULT.equals(validFromDate);
+			case CptDatasetLoadPackage.SORTING_PLAN_OUTPUT_ROW__VALID_TO_DATE:
+				return VALID_TO_DATE_EDEFAULT == null ? validToDate != null : !VALID_TO_DATE_EDEFAULT.equals(validToDate);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -583,6 +688,10 @@ public class SortingPlanOutputRowImpl extends FPDSortingPanRowImpl implements So
 		result.append(destinationSk);
 		result.append(", Description: ");
 		result.append(description);
+		result.append(", ValidFromDate: ");
+		result.append(validFromDate);
+		result.append(", ValidToDate: ");
+		result.append(validToDate);
 		result.append(')');
 		return result.toString();
 	}

@@ -3,6 +3,7 @@
 package com.misc.projects.CptDatasetLoad;
 
 import java.math.BigDecimal;
+import java.util.Date;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,6 +22,8 @@ import java.math.BigDecimal;
  *   <li>{@link com.misc.projects.CptDatasetLoad.SortingPlanOutputRow#getSortingPlan <em>Sorting Plan</em>}</li>
  *   <li>{@link com.misc.projects.CptDatasetLoad.SortingPlanOutputRow#getSortingLevel <em>Sorting Level</em>}</li>
  *   <li>{@link com.misc.projects.CptDatasetLoad.SortingPlanOutputRow#getDescription <em>Description</em>}</li>
+ *   <li>{@link com.misc.projects.CptDatasetLoad.SortingPlanOutputRow#getValidFromDate <em>Valid From Date</em>}</li>
+ *   <li>{@link com.misc.projects.CptDatasetLoad.SortingPlanOutputRow#getValidToDate <em>Valid To Date</em>}</li>
  * </ul>
  *
  * @see com.misc.projects.CptDatasetLoad.CptDatasetLoadPackage#getSortingPlanOutputRow()
@@ -226,5 +229,57 @@ public interface SortingPlanOutputRow extends FPDSortingPanRow {
 	 * @generated
 	 */
 	void setDescription(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Valid From Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Valid From Date</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Valid From Date</em>' attribute.
+	 * @see #setValidFromDate(Date)
+	 * @see com.misc.projects.CptDatasetLoad.CptDatasetLoadPackage#getSortingPlanOutputRow_ValidFromDate()
+	 * @model
+	 * @generated
+	 */
+	Date getValidFromDate();
+
+	/**
+	 * Sets the value of the '{@link com.misc.projects.CptDatasetLoad.SortingPlanOutputRow#getValidFromDate <em>Valid From Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Valid From Date</em>' attribute.
+	 * @see #getValidFromDate()
+	 * @generated
+	 */
+	void setValidFromDate(Date value);
+
+	/**
+	 * Returns the value of the '<em><b>Valid To Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Valid To Date</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Valid To Date</em>' attribute.
+	 * @see #setValidToDate(Date)
+	 * @see com.misc.projects.CptDatasetLoad.CptDatasetLoadPackage#getSortingPlanOutputRow_ValidToDate()
+	 * @model
+	 * @generated
+	 */
+	Date getValidToDate();
+
+	/**
+	 * Sets the value of the '{@link com.misc.projects.CptDatasetLoad.SortingPlanOutputRow#getValidToDate <em>Valid To Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Valid To Date</em>' attribute.
+	 * @see #getValidToDate()
+	 * @generated
+	 */
+	void setValidToDate(Date value);
 
 } // SortingPlanOutputRow

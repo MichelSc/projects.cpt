@@ -14,6 +14,8 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import com.misc.common.moplaf.dbsynch.EnumColumnType;
+import com.misc.common.moplaf.dbsynch.Table;
+import com.misc.common.moplaf.dbsynch.TableColumn;
 import com.misc.common.moplaf.dbsynch.TableRow;
 import com.misc.common.moplaf.dbsynch.impl.TableRowKeyImpl;
 import com.misc.projects.CptDatasetLoad.CptDatasetLoadFactory;
@@ -197,15 +199,21 @@ public class SortingPlanOutputTableImpl extends FPDSortingPlanTableImpl implemen
 	 */
 	@Override
 	protected void refreshMetaDataImpl() {
+		Table parentTable = this.getFPDSortingPlansSet().getSortingPlansTable();
+		TableColumn parentColumn = parentTable.getColumn("SORTING_PLAN_SK");
+
 		this.setTableName("V_SORTING_PLAN_DETAIL");
-//		this.setWhereClause(" validto > ? and validfrom < ? ");
-//		this.addParam(ToUseDbSynchPackage.Literals.FPD_GROUP_SORTING_PLAN__FROM_DATE);
-//		this.addParam(ToUseDbSynchPackage.Literals.FPD_GROUP_SORTING_PLAN__TO_DATE);
-		this.addColumn(true, "SORTING_PLAN_SK",              EnumColumnType.ENUM_COLUMN_TYPE_BIGFLOAT, CptDatasetLoadPackage.Literals.SORTING_PLAN_OUTPUT_ROW__SORTING_PLAN_SK);
+		this.setParent(parentTable);
+		this.setWhereClause(" DATE_VALID_TILL > ? and DATE_VALID_FROM < ? ");
+		this.addParam(CptDatasetLoadPackage.Literals.FPD_SORTING_PLANS_SET__FROM_DATE);
+		this.addParam(CptDatasetLoadPackage.Literals.FPD_SORTING_PLANS_SET__FROM_DATE);
+		this.addColumn(true, "SORTING_PLAN_SK",              EnumColumnType.ENUM_COLUMN_TYPE_BIGFLOAT, CptDatasetLoadPackage.Literals.SORTING_PLAN_OUTPUT_ROW__SORTING_PLAN_SK, parentColumn);
 		this.addColumn(true, "OUTPUT_AVCS_SORTING_LEVEL_SK", EnumColumnType.ENUM_COLUMN_TYPE_BIGFLOAT, CptDatasetLoadPackage.Literals.SORTING_PLAN_OUTPUT_ROW__SORTING_LEVEL_AVCS_SK);
 		this.addColumn(true, "MECHANIZATION_LEVEL_SK",       EnumColumnType.ENUM_COLUMN_TYPE_BIGFLOAT, CptDatasetLoadPackage.Literals.SORTING_PLAN_OUTPUT_ROW__MECHANIZATION_LEVEL_SK);
 		this.addColumn(true, "THROUGHPUT_TYPE_SK",           EnumColumnType.ENUM_COLUMN_TYPE_BIGFLOAT, CptDatasetLoadPackage.Literals.SORTING_PLAN_OUTPUT_ROW__THROUGHPUT_TYPE_SK);
 		this.addColumn(true, "DESTINATION_SK",               EnumColumnType.ENUM_COLUMN_TYPE_BIGFLOAT, CptDatasetLoadPackage.Literals.SORTING_PLAN_OUTPUT_ROW__DESTINATION_SK);
+		this.addColumn(true, "DATE_VALID_FROM",              EnumColumnType.ENUM_COLUMN_TYPE_DATE,     CptDatasetLoadPackage.Literals.SORTING_PLAN_OUTPUT_ROW__VALID_FROM_DATE);
+		this.addColumn(true, "DATE_VALID_TILL",              EnumColumnType.ENUM_COLUMN_TYPE_DATE,     CptDatasetLoadPackage.Literals.SORTING_PLAN_OUTPUT_ROW__VALID_TO_DATE);
 	}
 
 } //SortingPlanOutputTableImpl

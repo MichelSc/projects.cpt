@@ -1101,6 +1101,15 @@ public interface CptDatasetLoadPackage extends EPackage {
 	int FPD_SORTING_PLAN_TABLE__LAST_SYNCH_UP = DbSynchPackage.TABLE__LAST_SYNCH_UP;
 
 	/**
+	 * The feature id for the '<em><b>Parent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPD_SORTING_PLAN_TABLE__PARENT = DbSynchPackage.TABLE__PARENT;
+
+	/**
 	 * The feature id for the '<em><b>FPD Sorting Plans Set</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1119,6 +1128,15 @@ public interface CptDatasetLoadPackage extends EPackage {
 	int FPD_SORTING_PLAN_TABLE_FEATURE_COUNT = DbSynchPackage.TABLE_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Get Column</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPD_SORTING_PLAN_TABLE___GET_COLUMN__STRING = DbSynchPackage.TABLE___GET_COLUMN__STRING;
+
+	/**
 	 * The operation id for the '<em>Add Column</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1126,6 +1144,24 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @ordered
 	 */
 	int FPD_SORTING_PLAN_TABLE___ADD_COLUMN__BOOLEAN_STRING_ENUMCOLUMNTYPE_EATTRIBUTE = DbSynchPackage.TABLE___ADD_COLUMN__BOOLEAN_STRING_ENUMCOLUMNTYPE_EATTRIBUTE;
+
+	/**
+	 * The operation id for the '<em>Add Column</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPD_SORTING_PLAN_TABLE___ADD_COLUMN__BOOLEAN_STRING_ENUMCOLUMNTYPE_EATTRIBUTE_TABLECOLUMN = DbSynchPackage.TABLE___ADD_COLUMN__BOOLEAN_STRING_ENUMCOLUMNTYPE_EATTRIBUTE_TABLECOLUMN;
+
+	/**
+	 * The operation id for the '<em>Add Column</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPD_SORTING_PLAN_TABLE___ADD_COLUMN__BOOLEAN_STRING_ENUMCOLUMNTYPE_EATTRIBUTE_STRING = DbSynchPackage.TABLE___ADD_COLUMN__BOOLEAN_STRING_ENUMCOLUMNTYPE_EATTRIBUTE_STRING;
 
 	/**
 	 * The operation id for the '<em>Add Param</em>' operation.
@@ -1362,6 +1398,15 @@ public interface CptDatasetLoadPackage extends EPackage {
 	int MASTER_DATA_TABLE__LAST_SYNCH_UP = DbSynchPackage.TABLE__LAST_SYNCH_UP;
 
 	/**
+	 * The feature id for the '<em><b>Parent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MASTER_DATA_TABLE__PARENT = DbSynchPackage.TABLE__PARENT;
+
+	/**
 	 * The number of structural features of the '<em>Master Data Table</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1371,6 +1416,15 @@ public interface CptDatasetLoadPackage extends EPackage {
 	int MASTER_DATA_TABLE_FEATURE_COUNT = DbSynchPackage.TABLE_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Get Column</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MASTER_DATA_TABLE___GET_COLUMN__STRING = DbSynchPackage.TABLE___GET_COLUMN__STRING;
+
+	/**
 	 * The operation id for the '<em>Add Column</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1378,6 +1432,24 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @ordered
 	 */
 	int MASTER_DATA_TABLE___ADD_COLUMN__BOOLEAN_STRING_ENUMCOLUMNTYPE_EATTRIBUTE = DbSynchPackage.TABLE___ADD_COLUMN__BOOLEAN_STRING_ENUMCOLUMNTYPE_EATTRIBUTE;
+
+	/**
+	 * The operation id for the '<em>Add Column</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MASTER_DATA_TABLE___ADD_COLUMN__BOOLEAN_STRING_ENUMCOLUMNTYPE_EATTRIBUTE_TABLECOLUMN = DbSynchPackage.TABLE___ADD_COLUMN__BOOLEAN_STRING_ENUMCOLUMNTYPE_EATTRIBUTE_TABLECOLUMN;
+
+	/**
+	 * The operation id for the '<em>Add Column</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MASTER_DATA_TABLE___ADD_COLUMN__BOOLEAN_STRING_ENUMCOLUMNTYPE_EATTRIBUTE_STRING = DbSynchPackage.TABLE___ADD_COLUMN__BOOLEAN_STRING_ENUMCOLUMNTYPE_EATTRIBUTE_STRING;
 
 	/**
 	 * The operation id for the '<em>Add Param</em>' operation.
@@ -1614,6 +1686,15 @@ public interface CptDatasetLoadPackage extends EPackage {
 	int SORTING_LEVELS_TABLE__LAST_SYNCH_UP = MASTER_DATA_TABLE__LAST_SYNCH_UP;
 
 	/**
+	 * The feature id for the '<em><b>Parent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_LEVELS_TABLE__PARENT = MASTER_DATA_TABLE__PARENT;
+
+	/**
 	 * The feature id for the '<em><b>Sortinglevel Row</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1632,6 +1713,15 @@ public interface CptDatasetLoadPackage extends EPackage {
 	int SORTING_LEVELS_TABLE_FEATURE_COUNT = MASTER_DATA_TABLE_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Get Column</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_LEVELS_TABLE___GET_COLUMN__STRING = MASTER_DATA_TABLE___GET_COLUMN__STRING;
+
+	/**
 	 * The operation id for the '<em>Add Column</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1639,6 +1729,24 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @ordered
 	 */
 	int SORTING_LEVELS_TABLE___ADD_COLUMN__BOOLEAN_STRING_ENUMCOLUMNTYPE_EATTRIBUTE = MASTER_DATA_TABLE___ADD_COLUMN__BOOLEAN_STRING_ENUMCOLUMNTYPE_EATTRIBUTE;
+
+	/**
+	 * The operation id for the '<em>Add Column</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_LEVELS_TABLE___ADD_COLUMN__BOOLEAN_STRING_ENUMCOLUMNTYPE_EATTRIBUTE_TABLECOLUMN = MASTER_DATA_TABLE___ADD_COLUMN__BOOLEAN_STRING_ENUMCOLUMNTYPE_EATTRIBUTE_TABLECOLUMN;
+
+	/**
+	 * The operation id for the '<em>Add Column</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_LEVELS_TABLE___ADD_COLUMN__BOOLEAN_STRING_ENUMCOLUMNTYPE_EATTRIBUTE_STRING = MASTER_DATA_TABLE___ADD_COLUMN__BOOLEAN_STRING_ENUMCOLUMNTYPE_EATTRIBUTE_STRING;
 
 	/**
 	 * The operation id for the '<em>Add Param</em>' operation.
@@ -1884,6 +1992,15 @@ public interface CptDatasetLoadPackage extends EPackage {
 	int SORTING_PLANS_TABLE__LAST_SYNCH_UP = FPD_SORTING_PLAN_TABLE__LAST_SYNCH_UP;
 
 	/**
+	 * The feature id for the '<em><b>Parent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLANS_TABLE__PARENT = FPD_SORTING_PLAN_TABLE__PARENT;
+
+	/**
 	 * The feature id for the '<em><b>FPD Sorting Plans Set</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1911,6 +2028,15 @@ public interface CptDatasetLoadPackage extends EPackage {
 	int SORTING_PLANS_TABLE_FEATURE_COUNT = FPD_SORTING_PLAN_TABLE_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Get Column</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLANS_TABLE___GET_COLUMN__STRING = FPD_SORTING_PLAN_TABLE___GET_COLUMN__STRING;
+
+	/**
 	 * The operation id for the '<em>Add Column</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1918,6 +2044,24 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @ordered
 	 */
 	int SORTING_PLANS_TABLE___ADD_COLUMN__BOOLEAN_STRING_ENUMCOLUMNTYPE_EATTRIBUTE = FPD_SORTING_PLAN_TABLE___ADD_COLUMN__BOOLEAN_STRING_ENUMCOLUMNTYPE_EATTRIBUTE;
+
+	/**
+	 * The operation id for the '<em>Add Column</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLANS_TABLE___ADD_COLUMN__BOOLEAN_STRING_ENUMCOLUMNTYPE_EATTRIBUTE_TABLECOLUMN = FPD_SORTING_PLAN_TABLE___ADD_COLUMN__BOOLEAN_STRING_ENUMCOLUMNTYPE_EATTRIBUTE_TABLECOLUMN;
+
+	/**
+	 * The operation id for the '<em>Add Column</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLANS_TABLE___ADD_COLUMN__BOOLEAN_STRING_ENUMCOLUMNTYPE_EATTRIBUTE_STRING = FPD_SORTING_PLAN_TABLE___ADD_COLUMN__BOOLEAN_STRING_ENUMCOLUMNTYPE_EATTRIBUTE_STRING;
 
 	/**
 	 * The operation id for the '<em>Add Param</em>' operation.
@@ -2163,6 +2307,15 @@ public interface CptDatasetLoadPackage extends EPackage {
 	int SORTING_PLAN_INPUT_TABLE__LAST_SYNCH_UP = FPD_SORTING_PLAN_TABLE__LAST_SYNCH_UP;
 
 	/**
+	 * The feature id for the '<em><b>Parent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_INPUT_TABLE__PARENT = FPD_SORTING_PLAN_TABLE__PARENT;
+
+	/**
 	 * The feature id for the '<em><b>FPD Sorting Plans Set</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2190,6 +2343,15 @@ public interface CptDatasetLoadPackage extends EPackage {
 	int SORTING_PLAN_INPUT_TABLE_FEATURE_COUNT = FPD_SORTING_PLAN_TABLE_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Get Column</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_INPUT_TABLE___GET_COLUMN__STRING = FPD_SORTING_PLAN_TABLE___GET_COLUMN__STRING;
+
+	/**
 	 * The operation id for the '<em>Add Column</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2197,6 +2359,24 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @ordered
 	 */
 	int SORTING_PLAN_INPUT_TABLE___ADD_COLUMN__BOOLEAN_STRING_ENUMCOLUMNTYPE_EATTRIBUTE = FPD_SORTING_PLAN_TABLE___ADD_COLUMN__BOOLEAN_STRING_ENUMCOLUMNTYPE_EATTRIBUTE;
+
+	/**
+	 * The operation id for the '<em>Add Column</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_INPUT_TABLE___ADD_COLUMN__BOOLEAN_STRING_ENUMCOLUMNTYPE_EATTRIBUTE_TABLECOLUMN = FPD_SORTING_PLAN_TABLE___ADD_COLUMN__BOOLEAN_STRING_ENUMCOLUMNTYPE_EATTRIBUTE_TABLECOLUMN;
+
+	/**
+	 * The operation id for the '<em>Add Column</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_INPUT_TABLE___ADD_COLUMN__BOOLEAN_STRING_ENUMCOLUMNTYPE_EATTRIBUTE_STRING = FPD_SORTING_PLAN_TABLE___ADD_COLUMN__BOOLEAN_STRING_ENUMCOLUMNTYPE_EATTRIBUTE_STRING;
 
 	/**
 	 * The operation id for the '<em>Add Param</em>' operation.
@@ -2442,6 +2622,15 @@ public interface CptDatasetLoadPackage extends EPackage {
 	int SORTING_PLAN_OUTPUT_TABLE__LAST_SYNCH_UP = FPD_SORTING_PLAN_TABLE__LAST_SYNCH_UP;
 
 	/**
+	 * The feature id for the '<em><b>Parent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_OUTPUT_TABLE__PARENT = FPD_SORTING_PLAN_TABLE__PARENT;
+
+	/**
 	 * The feature id for the '<em><b>FPD Sorting Plans Set</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2469,6 +2658,15 @@ public interface CptDatasetLoadPackage extends EPackage {
 	int SORTING_PLAN_OUTPUT_TABLE_FEATURE_COUNT = FPD_SORTING_PLAN_TABLE_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Get Column</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_OUTPUT_TABLE___GET_COLUMN__STRING = FPD_SORTING_PLAN_TABLE___GET_COLUMN__STRING;
+
+	/**
 	 * The operation id for the '<em>Add Column</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2476,6 +2674,24 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @ordered
 	 */
 	int SORTING_PLAN_OUTPUT_TABLE___ADD_COLUMN__BOOLEAN_STRING_ENUMCOLUMNTYPE_EATTRIBUTE = FPD_SORTING_PLAN_TABLE___ADD_COLUMN__BOOLEAN_STRING_ENUMCOLUMNTYPE_EATTRIBUTE;
+
+	/**
+	 * The operation id for the '<em>Add Column</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_OUTPUT_TABLE___ADD_COLUMN__BOOLEAN_STRING_ENUMCOLUMNTYPE_EATTRIBUTE_TABLECOLUMN = FPD_SORTING_PLAN_TABLE___ADD_COLUMN__BOOLEAN_STRING_ENUMCOLUMNTYPE_EATTRIBUTE_TABLECOLUMN;
+
+	/**
+	 * The operation id for the '<em>Add Column</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_OUTPUT_TABLE___ADD_COLUMN__BOOLEAN_STRING_ENUMCOLUMNTYPE_EATTRIBUTE_STRING = FPD_SORTING_PLAN_TABLE___ADD_COLUMN__BOOLEAN_STRING_ENUMCOLUMNTYPE_EATTRIBUTE_STRING;
 
 	/**
 	 * The operation id for the '<em>Add Param</em>' operation.
@@ -3027,13 +3243,31 @@ public interface CptDatasetLoadPackage extends EPackage {
 	int SORTING_PLAN_OUTPUT_ROW__DESCRIPTION = FPD_SORTING_PAN_ROW_FEATURE_COUNT + 7;
 
 	/**
+	 * The feature id for the '<em><b>Valid From Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_OUTPUT_ROW__VALID_FROM_DATE = FPD_SORTING_PAN_ROW_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Valid To Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTING_PLAN_OUTPUT_ROW__VALID_TO_DATE = FPD_SORTING_PAN_ROW_FEATURE_COUNT + 9;
+
+	/**
 	 * The number of structural features of the '<em>Sorting Plan Output Row</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTING_PLAN_OUTPUT_ROW_FEATURE_COUNT = FPD_SORTING_PAN_ROW_FEATURE_COUNT + 8;
+	int SORTING_PLAN_OUTPUT_ROW_FEATURE_COUNT = FPD_SORTING_PAN_ROW_FEATURE_COUNT + 10;
 
 	/**
 	 * The operation id for the '<em>Refresh</em>' operation.
@@ -3985,6 +4219,15 @@ public interface CptDatasetLoadPackage extends EPackage {
 	int FPO_FORECAST_BUCKETS__LAST_SYNCH_UP = DbSynchPackage.TABLE__LAST_SYNCH_UP;
 
 	/**
+	 * The feature id for the '<em><b>Parent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPO_FORECAST_BUCKETS__PARENT = DbSynchPackage.TABLE__PARENT;
+
+	/**
 	 * The feature id for the '<em><b>Forecast Rows</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4003,6 +4246,15 @@ public interface CptDatasetLoadPackage extends EPackage {
 	int FPO_FORECAST_BUCKETS_FEATURE_COUNT = DbSynchPackage.TABLE_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Get Column</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPO_FORECAST_BUCKETS___GET_COLUMN__STRING = DbSynchPackage.TABLE___GET_COLUMN__STRING;
+
+	/**
 	 * The operation id for the '<em>Add Column</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4010,6 +4262,24 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @ordered
 	 */
 	int FPO_FORECAST_BUCKETS___ADD_COLUMN__BOOLEAN_STRING_ENUMCOLUMNTYPE_EATTRIBUTE = DbSynchPackage.TABLE___ADD_COLUMN__BOOLEAN_STRING_ENUMCOLUMNTYPE_EATTRIBUTE;
+
+	/**
+	 * The operation id for the '<em>Add Column</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPO_FORECAST_BUCKETS___ADD_COLUMN__BOOLEAN_STRING_ENUMCOLUMNTYPE_EATTRIBUTE_TABLECOLUMN = DbSynchPackage.TABLE___ADD_COLUMN__BOOLEAN_STRING_ENUMCOLUMNTYPE_EATTRIBUTE_TABLECOLUMN;
+
+	/**
+	 * The operation id for the '<em>Add Column</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FPO_FORECAST_BUCKETS___ADD_COLUMN__BOOLEAN_STRING_ENUMCOLUMNTYPE_EATTRIBUTE_STRING = DbSynchPackage.TABLE___ADD_COLUMN__BOOLEAN_STRING_ENUMCOLUMNTYPE_EATTRIBUTE_STRING;
 
 	/**
 	 * The operation id for the '<em>Add Param</em>' operation.
@@ -4473,6 +4743,28 @@ public interface CptDatasetLoadPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getSortingPlanOutputRow_Description();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.misc.projects.CptDatasetLoad.SortingPlanOutputRow#getValidFromDate <em>Valid From Date</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Valid From Date</em>'.
+	 * @see com.misc.projects.CptDatasetLoad.SortingPlanOutputRow#getValidFromDate()
+	 * @see #getSortingPlanOutputRow()
+	 * @generated
+	 */
+	EAttribute getSortingPlanOutputRow_ValidFromDate();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.misc.projects.CptDatasetLoad.SortingPlanOutputRow#getValidToDate <em>Valid To Date</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Valid To Date</em>'.
+	 * @see com.misc.projects.CptDatasetLoad.SortingPlanOutputRow#getValidToDate()
+	 * @see #getSortingPlanOutputRow()
+	 * @generated
+	 */
+	EAttribute getSortingPlanOutputRow_ValidToDate();
 
 	/**
 	 * Returns the meta object for class '{@link com.misc.projects.CptDatasetLoad.SortingPlanInputRow <em>Sorting Plan Input Row</em>}'.
@@ -5319,6 +5611,22 @@ public interface CptDatasetLoadPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SORTING_PLAN_OUTPUT_ROW__DESCRIPTION = eINSTANCE.getSortingPlanOutputRow_Description();
+
+		/**
+		 * The meta object literal for the '<em><b>Valid From Date</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SORTING_PLAN_OUTPUT_ROW__VALID_FROM_DATE = eINSTANCE.getSortingPlanOutputRow_ValidFromDate();
+
+		/**
+		 * The meta object literal for the '<em><b>Valid To Date</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SORTING_PLAN_OUTPUT_ROW__VALID_TO_DATE = eINSTANCE.getSortingPlanOutputRow_ValidToDate();
 
 		/**
 		 * The meta object literal for the '{@link com.misc.projects.CptDatasetLoad.impl.SortingPlanInputRowImpl <em>Sorting Plan Input Row</em>}' class.

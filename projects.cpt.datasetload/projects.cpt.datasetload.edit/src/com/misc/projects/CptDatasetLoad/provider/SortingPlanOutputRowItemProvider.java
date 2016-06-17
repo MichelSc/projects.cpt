@@ -50,6 +50,8 @@ public class SortingPlanOutputRowItemProvider extends FPDSortingPanRowItemProvid
 			addSortingPlanPropertyDescriptor(object);
 			addSortingLevelPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
+			addValidFromDatePropertyDescriptor(object);
+			addValidToDatePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -231,6 +233,50 @@ public class SortingPlanOutputRowItemProvider extends FPDSortingPanRowItemProvid
 	}
 
 	/**
+	 * This adds a property descriptor for the Valid From Date feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addValidFromDatePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_SortingPlanOutputRow_ValidFromDate_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SortingPlanOutputRow_ValidFromDate_feature", "_UI_SortingPlanOutputRow_type"),
+				 CptDatasetLoadPackage.Literals.SORTING_PLAN_OUTPUT_ROW__VALID_FROM_DATE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Valid To Date feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addValidToDatePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_SortingPlanOutputRow_ValidToDate_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SortingPlanOutputRow_ValidToDate_feature", "_UI_SortingPlanOutputRow_type"),
+				 CptDatasetLoadPackage.Literals.SORTING_PLAN_OUTPUT_ROW__VALID_TO_DATE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -263,6 +309,8 @@ public class SortingPlanOutputRowItemProvider extends FPDSortingPanRowItemProvid
 			case CptDatasetLoadPackage.SORTING_PLAN_OUTPUT_ROW__THROUGHPUT_TYPE_SK:
 			case CptDatasetLoadPackage.SORTING_PLAN_OUTPUT_ROW__DESTINATION_SK:
 			case CptDatasetLoadPackage.SORTING_PLAN_OUTPUT_ROW__DESCRIPTION:
+			case CptDatasetLoadPackage.SORTING_PLAN_OUTPUT_ROW__VALID_FROM_DATE:
+			case CptDatasetLoadPackage.SORTING_PLAN_OUTPUT_ROW__VALID_TO_DATE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
