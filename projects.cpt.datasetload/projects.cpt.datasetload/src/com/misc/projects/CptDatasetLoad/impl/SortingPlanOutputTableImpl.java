@@ -206,7 +206,7 @@ public class SortingPlanOutputTableImpl extends FPDSortingPlanTableImpl implemen
 		this.setParent(parentTable);
 		this.setWhereClause(" DATE_VALID_TILL > ? and DATE_VALID_FROM < ? ");
 		this.addParam(CptDatasetLoadPackage.Literals.FPD_SORTING_PLANS_SET__FROM_DATE);
-		this.addParam(CptDatasetLoadPackage.Literals.FPD_SORTING_PLANS_SET__FROM_DATE);
+		this.addParam(CptDatasetLoadPackage.Literals.FPD_SORTING_PLANS_SET__TO_DATE);
 		this.addColumn(true, "SORTING_PLAN_SK",              EnumColumnType.ENUM_COLUMN_TYPE_BIGFLOAT, CptDatasetLoadPackage.Literals.SORTING_PLAN_OUTPUT_ROW__SORTING_PLAN_SK, parentColumn);
 		this.addColumn(true, "OUTPUT_AVCS_SORTING_LEVEL_SK", EnumColumnType.ENUM_COLUMN_TYPE_BIGFLOAT, CptDatasetLoadPackage.Literals.SORTING_PLAN_OUTPUT_ROW__SORTING_LEVEL_AVCS_SK);
 		this.addColumn(true, "MECHANIZATION_LEVEL_SK",       EnumColumnType.ENUM_COLUMN_TYPE_BIGFLOAT, CptDatasetLoadPackage.Literals.SORTING_PLAN_OUTPUT_ROW__MECHANIZATION_LEVEL_SK);
