@@ -14,6 +14,8 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import com.misc.common.moplaf.dbsynch.EnumColumnType;
+import com.misc.common.moplaf.dbsynch.Table;
+import com.misc.common.moplaf.dbsynch.TableColumn;
 import com.misc.common.moplaf.dbsynch.TableRow;
 import com.misc.common.moplaf.dbsynch.impl.TableRowKeyImpl;
 import com.misc.projects.CptDatasetLoad.CptDatasetLoadFactory;
@@ -195,9 +197,12 @@ public class SortingPlanInputTableImpl extends FPDSortingPlanTableImpl implement
 	 */
 	@Override
 	protected void refreshMetaDataImpl() {
+		Table parentTable = this.getFPDSortingPlansSet().getSortingPlansTable();
+		TableColumn parentColumn = parentTable.getColumn("SORTING_PLAN_SK");
+		
 		this.setTableName("V_SORTING_LEVEL_ASSOC_PLAN");
-//		this.setWhereClause(" validto > ? and validfrom < ? ");
-		this.addColumn(true,  "sorting_plan_sk",       EnumColumnType.ENUM_COLUMN_TYPE_BIGFLOAT, CptDatasetLoadPackage.Literals.SORTING_PLAN_INPUT_ROW__SORTING_PLAN_SK);
+		this.setParent(parentTable);
+		this.addColumn(true, "SORTING_PLAN_SK",        EnumColumnType.ENUM_COLUMN_TYPE_BIGFLOAT, CptDatasetLoadPackage.Literals.SORTING_PLAN_INPUT_ROW__SORTING_PLAN_SK, parentColumn);
 		this.addColumn(true, "AVCS_SORTING_LEVEL_SK",  EnumColumnType.ENUM_COLUMN_TYPE_BIGFLOAT, CptDatasetLoadPackage.Literals.SORTING_PLAN_INPUT_ROW__SORTING_LEVEL_AVCS_SK);
 		this.addColumn(true, "MECHANIZATION_LEVEL_SK", EnumColumnType.ENUM_COLUMN_TYPE_BIGFLOAT, CptDatasetLoadPackage.Literals.SORTING_PLAN_INPUT_ROW__MECHANIZATION_LEVEL_SK);
 		this.addColumn(true, "THROUGHPUT_TYPE_SK",     EnumColumnType.ENUM_COLUMN_TYPE_BIGFLOAT, CptDatasetLoadPackage.Literals.SORTING_PLAN_INPUT_ROW__THROUGHPUT_TYPE_SK);
