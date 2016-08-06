@@ -7,6 +7,6 @@ Bundle-Activator: projects.cpt.sortingplans.design.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.sirius,
- org.eclipse.sirius.common.acceleo.mtl
+ org.eclipse.sirius.common.acceleo.aql;bundle-version="4.0.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
